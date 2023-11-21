@@ -27760,7 +27760,7 @@ By agreeing this policy, you agree to give up any rights to lawsuit our platform
 __**__**__yingshaoxo_is_the_top_one__**__**__
 
 
-实用型matrix人体休眠箱：
+实用型 matrix 人体休眠箱：
 
 一个有气孔的封闭式箱体，头朝上有着35°的斜率。
 
@@ -27775,6 +27775,8 @@ __**__**__yingshaoxo_is_the_top_one__**__**__
 (肚子处可加带磁吸的可下放键盘，眼部上方可加可调角度与位置的屏幕)
 
 (口部可加两个吸嘴，一个是纯净水，另一个是灭菌牛奶)
+
+(屁股处可加一个小肛塞奶嘴，营养液用直肠吸收)
 
 #matrix #body #box
 
@@ -29451,7 +29453,7 @@ __**__**__yingshaoxo_is_the_top_one__**__**__
 
 他们说，是因为市场短时间剧烈波动，帮我抹平了波动。
 
-可以那价格一直稳定到了20倍啊，几天后还是20倍啊。
+可是那价格一直稳定到了20倍啊，几天后还是20倍啊。
 
 看起来这些交易所是“只算跌，不算涨”，图表画得再好，都和用户没有关系。
 
@@ -29641,6 +29643,12 @@ The party will not take any money from anyone except they want to sell AD.
 
 #idea #business #life #yingshaoxo
 
+___
+
+Unlimited Party could plus Virtual Reality Tech to create a virtual party experience.
+
+You can eat nice food, find nice girl or boy, experience nice room, make nice love.
+
 
 __**__**__yingshaoxo_is_the_top_one__**__**__
 
@@ -29694,3 +29702,857 @@ __**__**__yingshaoxo_is_the_top_one__**__**__
 
 
 #yingshaoxo #ai #idea #bot_verify
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+冬天如何御寒：
+
+用 厚棉絮 被褥 隔离出来的房间，天然具有 保温功能、隔冷功能。
+
+#idea #life
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+现代厨房3件套：
+
+电饭煲、微波炉、电磁炉
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+I don't only want to create an apk or a mobile system for old devices 
+
+I want to create a MIT based ecosystem
+
+
+I see the iPhone and Android system is getting more and more strict and unopened
+
+For example, apple store and google play or new android system is trying to limit developers to use powerful permissions (For example, you can't publish another app store app in old store app)
+
+And another reason is, android source code is around 60GB, almost about to explode. We need to cut it down to 50MB or less. (So anyone can do modification)
+
+And another reason is the mobile hardware manufacturer is also not doing right thing, they encrypting everything about their hardware, for example you can't directly use camera, microphone, screen, NFC, GPS in your mobile device, you have to use manufacturer pre_compiled binary drivers. Which makes new system developing on old phone harder and harder. (If you have a 100MB mobile system, 80MB might be the drive binarys, it limits new system porting for different devices)
+
+
+If we could create a new mobile phone hardware standards by using micropython project, everything would be easier.
+
+
+#micropython #idea #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+Online shop products quality improvement method:
+
+1. Seller send platform 1 product fee per month. (Or per 100 deals)
+
+2. Platform use that money to buy that seller's product with a fake user account in a random time.
+
+3. Platform check if that product is ok or not, the seller is doing false description for their product or not.
+
+4. If seller product has problem, disable their account with clear reasons. If not, send that product to platform second_hand sub_platform for selling.
+
+#online #shop #strategy #yingshaoxo
+
+___
+
+网店产品品质提升方法：
+
+1.卖家每月向平台发送1次产品费用。(或者每100笔交易发送一次)
+
+2. 平台随机使用该资金通过虚假用户帐户购买该卖家的产品。
+
+3. 平台检查该产品是否合格，卖家是否对其产品进行虚假描述。
+
+4. 如果卖家产品有问题，请在明确原因的情况下禁用其帐户。 如果没有，则将该产品发送到平台二手子市场进行销售。
+
+#online #shop #strategy #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+How to merge context into chat bot response?
+
+
+Dataset example:
+A: I create a package {package}.
+B: You created a package {package}? That's amazing!
+
+
+Input example: "I create a package auto_everything."
+
+When use, parse the question to get dict {"package": 'auto_everything'}
+
+Return the response: "You created a package auto_everything? That's amazing!"
+
+
+#ai #idea #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+看起来很高大上的 openai chatgpt
+
+实际上只是做了自动信息抽取，生成了一个 memory dict
+
+硬搜索出来一个 python script
+
+python script + memory dict 一执行，就得到了完美的答案
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+How to make an electronic bike?
+
+Battery + motor + gear + gear chain + bike + 12v/24v controller (relay)
+
+https://youtu.be/nH9rSwmHiy0?si=PuGuLsG5asB07qFc
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+一种新型海上游牧民族(科幻)：
+
+
+有一类人，它们能在海下呼吸，它们是常温动物。
+
+它们构建了一个“海上火车头”，巨大的牵引力可以带动后面一群人。
+
+具体是，一个“火车头”带动2个小游艇，每个小游艇又分别带动2个小轮船，每个小轮船又分别带动2个小船，无穷无尽。
+
+这里的游艇、小船，可以是任何海上漂浮地基。
+
+这套系统自然而然的产生了邀请制和民主制度，比如，你只能邀请两个家庭跟在你轮船的后面。
+
+同时，如果你前面的人对你不好，你可以脱钩，另寻其他牵引动力源，或者自己成为动力源。
+
+这套体系可以引申到太空移民。一群太空游牧民族，每次只在一个星球生存10年。考察的逻辑是，先去一个侦查兵，看看该星球是否有合适的环境，是否有敌对势力，如果没问题，就再派10个侦查兵下去，如果没问题，就再派100个人下去，直到全部人口进入该星球。
+
+> 这对于现实中的人也有参考意义，狡兔三窟，不在一个地方常驻，当你有1000个居住地时，没人能捉住你。
+
+
+#idea #星际移民 #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+一种新型 氢气子弹 制作以及使用 流程：
+
+
+传统的子弹加火药，我们加氢气。
+
+1. 传统的 子弹 加工厂
+2. 子弹空腔朝下，注射氢气的针孔向上充气，然后快速用 软塑料盖 旋转 封口
+3. 整体再加一层薄的塑料覆膜
+
+
+使用时，用钢针戳穿软塑料盖，释放高压电、点火发射 (类似打火机放电)
+
+
+#idea #business #氢气子弹 #氢气枪 #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+人民币无法轻易兑换成美元
+
+从“made in china”标签来看，美元可以轻易兑换成人民币
+
+美元 大于 人民币，外国人可以轻而易举叫中国人工作，中国人却没办法叫外国人工作
+
+说明中国人是美元的打工奴隶，中国是世界工厂
+
+中国的实际控制者有可能是美国
+
+#made_in_china
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+究极简单的验证码制作：
+
+
+方式1，让用户赠送一毛钱给平台。
+
+方式2，接入“完成验证码就给钱”平台，让用户完成该平台的验证码任务。这样一天一次，平台一天可以赚很多钱。
+
+
+#yingshaoxo #ai #idea #bot_verify
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+我被 坑钱交易所 坑了6万人民币
+
+假设 交易所 从每个人身上 骗取 6万人民币
+
+假设 一个交易所 有60万用户
+
+600000×60000=360亿人民币
+
+实际上一个交易所不止60万用户
+
+共产国际控制12亿人，收益可能是天文数字
+
+#business #idea #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+中国有3家网络运营商
+
+中国有12亿网络用户
+
+假设一个用户每月的话费，花费是5元
+
+那么 4亿×5 = 20亿
+
+所以一个运营商每年至少能挣 20亿×12 = 240亿
+
+我还没算带宽费，实际上你们的月租不止5元一个月
+
+#business #idea #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+How to merge context into chat bot response, method 2:
+
+
+
+Brute Force Way by using deep learning or dict:
+
+One sentence segment predict next sentence segment
+Two sentence segment predict next sentence segment
+3 sentence segment predict next sentence segment
+...
+
+
+
+Complex way:
+
+Use input text to generate a 512 key memory dict, use memory dict to generate next paragraph.
+
+
+
+What kind of deep learning method you need?
+
+Did you see AA? => I see AA.
+Did you see BB? => I see BB.
+
+That deep learning framework needs to be able to handle new data more than AA or BB, for example CC, and generate the right response based on general rule "I see **".
+
+(Relative unknown word reposition transformer)
+
+
+#ai #idea #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+自制羽毛服装(毛绒服装)：
+
+
+1. 薅羊毛、剪鸡鸭鹅毛、剪狗毛、剪猫毛，干燥存储
+
+2. 准备两张布，一根针和一圈线。把毛发缝在两块布之间，形成一个密闭的小方块，这样毛发不会逃逸。把毛发均匀地缝制在一个个紧密连接的小方块里。
+
+3. 把成品弯曲一下，剪出头和手臂的洞。然后你就有了一个羽绒背心。
+
+
+#idea #life #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+How to implement the relative unknown word reposition transformer with regex module?
+
+
+Did you see AA? => I see AA.
+Did you see BB? => I see BB.
+
+A deep learning framework needs to be able to handle new data more than AA or BB, for example CC, and generate the right response "I see *" based on general rule "Did you see *".
+
+But if you use regex, you could also make it.
+
+All you have to do is do auto regex expression generation from pure text data.
+
+For example, when you face "multiple key link to one value" case, you merge those keys into one general regex expression.
+
+
+#ai #idea #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+一种新型VPN ：
+
+基于社交应用API接口，把 socket packet level communication 映射到聊天API上，实现在网络白名单下的翻墙自由。
+
+或者你也可以在某种定向无限流量SIM下使用，实现无限免流。(比如基于微信的无限流量翻墙)
+
+> Or people as VPN, “你在国外是吧？帮我下载一部色情视频。”
+
+#chat #as #vpn #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+一种新型 语音控制 VR游戏：
+
+
+玩家扮演一名刚接受完手术的残疾人，该人物之前没有手脚，但现在有了新的机器人身体。
+
+该角色的机器人身体自带一个小AI，你可以语音控制你的身体。
+
+比如，向前跑、环顾四周、爬上房顶、和lisa交谈、乘坐蓝色那辆车、下次我讲“冲刺”你就疯狂向前跑。
+
+当你和某人交谈时，你必须要自然的结束对话，比如“先不聊了，我还有事”。这些角色都有记忆，会根据你的行为作出不同的反应。(类似ChatGPT)
+
+游戏内所有人的室内空间你都可以参观，但你不能搞破坏。这些房间的主人会向你详细介绍他们的喜好，以及你在他们的空间可以做的事情。(比如造蒸汽机、造枪、写代码、做爱)
+
+游戏充值主要是因为你要交电费、食物费、车费。其次是因为你在游戏里做了坏事，被投诉、被罚款。
+
+
+#game #ai #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+新型企业文化：休眠日
+
+一周拿一天的时间，比如星期一，让员工带上折叠床来公司睡觉。
+
+关上灯，通过冥想来反思总结之前工作是否有改进的地方、流程是否可以更优化、代码是不是写复杂了、需求是不是可以不存在。
+
+或者突然灵光一闪，想出一个改变世界的创意。
+
+睡眠过程中尽量不发出声音。
+
+#business #idea #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+如何打通线上支付渠道？
+
+
+1. 使用 伪区块链 公链API，实则 中心服务器预付积分系统API (有服务提供商跑路的风险、有提取现金困难的问题)
+
+2. 和银行合作，让银行出一个新的API系统。100元以下，用户可以直接让银行生成一个随机数二维码token，用户把这串代码发送给商家，商家凭此码 能让银行把对应的钱 从用户钱包 直接转到 自己的账号
+
+
+#money #business #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+新型企业文化：休眠月、休眠年
+
+如在淡季，企业可设立休眠月或者休眠年计划。
+
+员工在休眠月回家休养，工资发4分之1。在休眠年回家休养，工资发8分之1，每月到工作现场领取。
+
+员工闲得无聊会反思总结之前工作是否有改进的地方、流程是否可以更优化、工作中的问题是不是可以被灵活解决。
+
+#business #idea #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+Everyone could sell, second hand online shop quality improvement method:
+
+1. If you want to sell one product, you should send 1 currency to platform, this money won't get returned.
+
+2. If you are doing false description of your product, for example, use a wrong price that could not buy your product, then this product will get removed from platform.
+
+#online #shop #second_hand #yingshaoxo
+
+___
+
+人人都可以卖，二手网店品质提升方法（类似闲鱼）：
+
+1. 如果您想出售一件产品，您需要向平台发送1个货币，这笔钱不会被退回。
+
+2. 如果您对产品进行虚假描述，例如使用虚假的价格，则该产品会被平台下架。
+
+#online #shop #second_hand #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+买 连接轴 或者 齿轮，要买中心对称穿孔的，这样可以适配更多尺寸的马达发动机
+
+淘宝上的连接器大部分都是垃圾，都不是中心对称钻孔 (目的是多卖你几个没用的连接件)
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+如何合法的开银行？
+
+
+做一个游戏，游戏世界的货币可转让。
+
+再开一家场外交易平台，在那个平台，可以用虚拟币买现实世界的产品，可以把虚拟币兑换成现实世界的货币。
+
+
+#开银行自由 #business #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+有人跟我讲，为什么你会那么多东西“英语、编程、世界观”，却还是失败？
+
+我个人觉得，他想表达的是，那些技能与智力之间没有必然的联系
+
+要么就是我学的是过时的知识，要么就是我一边学习这些知识，这些知识一边过时 (因为强监控 和 知识盗窃)。
+
+要么就是我智力太低，没办法冲出预设的牢笼。
+
+#idea #life #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+如何生产蚕丝？
+
+1. 煮茧。在锅中注入清水，放入5％的小苏打，将蚕茧放入烹煮，水沸腾后闷上3-4小时
+2. 剥茧。将煮过的蚕茧剥开，取出里面的蛹。然后用手指将蚕茧轻扯成网状
+3. 用蚕丝缝制羽绒服
+
+也可以用 木棉或者棉花 代替 蚕丝。因为用蚕丝，蚕虫会被活煮而亡。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+2000美金、15000人民币，你可以买多少烧烤等小吃请客？买多少储存卡送人？买多少年的服务器？
+
+但是你送给赌场，几秒就没了，啥也没捞着。
+
+#idea #yingshaoxo #投资的智慧
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+我们性福心理学的一个核心观点就是：
+
+你和谁做爱不重要，重要的是你多久做一次爱。
+
+时间间隔越长，你感觉越性福。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+如何自制肉夹馍，如何煎大饼？
+
+
+1. 准备好3个小碗，分别装糖水、盐水、面粉
+
+2. 面粉中心加几滴水，形成一个小球，放盐水里0.2秒，拿出在面粉里边滚边揉搓，形成一个大一点的球后，放糖水里0.2秒，拿出在面粉里边滚边揉搓，如此反复，直到它变成半个手掌大的圆球
+
+3. 把带面粉的球放在菜板上，用手掌按成一个圆饼，把火腿肠切碎放在圆饼中间，把圆饼对折，按压封口圆饼四周，让火腿肠被严格封闭在饼内
+
+4. 放入满油锅，小火，等待饼变成外硬里软，用筷子试。捞出即可
+
+5. 另外可将糖水倒入剩余的面粉中，形成浆糊，倒入薄油锅中，用铲子划成一个饼，小火待其由液态变成固态即可，可多次翻面使其受热均匀。盐水同理。
+
+
+#food #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+猫猫狗狗的体内驱虫药可以直接从肛门塞进去
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+不截肢理论：
+
+设想一段水管，我把水管砍掉1厘米，中间用水桶代替，只要密封到位，不影响使用
+
+设想一棵树，把枝丫截去1厘米，再把枝丫接回去，只要密封得好，枝丫照样存活 (类似嫁接)
+
+设想一根动物尾吧，截去2厘米，再把其余部分接上，只要密封得当，尾巴仍能存活
+
+同理，手和腿也不需要截肢，只要密封得当，中间缺一部分也可以
+
+#surgery #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+反抗洗脑，从我做起
+
+主流媒体、垄断集团、军阀、房间里的大象，它们总是会利用各种东西，告诉你什么是好的，什么是坏的，什么是美的，什么是丑的 (凡是和它们意见不一致的，它们一律404处理)
+
+但你得知道，最终那都是为了它们自己好，而不是你
+
+你要怎样以几千块一个月的工资，去对抗几千亿一个月的垄断集团们？你要怎样的单兵作战能力才能抗衡几十万的军队？
+
+我感觉我做不到，再见。
+
+#yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+你要反抗的势力有多少人，你就要聚集多少人
+
+你要对抗的势力一年赚多少钱，你就要赚多少钱
+
+你要对抗的势力有多大的能量，你就要聚集多大的能量
+
+不然反集权、反独裁、反垄断，都是痴人说梦！
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+外地打工族的被压榨分析：
+
+1. 他们去到大城市，首先要花高价租房子、吃饭，先消费一波
+2. 然后他们在大城市生产产品，回到家乡后又要以更高的价格把他们自己生产的产品买回去
+3. 你说他们是缺少使用工具的技能吗？不是。他们是缺少工具吗？也不是。他们是被洗脑了，不知道自己可以独立生产、独立销售、自己当老板
+
+举个例子，四川人到浙江、深圳打工，然后从电商买回来的东西，基本又都是从浙江、深圳等沿海城市发的货
+
+转了一圈，自己花了更高的价格买了他们自己生产的产品。(并且我甚至听说某些大城市潜规则不让打工者带他们挣的钱回家乡，要求在当地把钱花光，一穷二白地回家乡)
+
+#idea #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+传奇剧本、小说、文艺作品创作秘诀：
+
+在没有其他作品可观赏的情况下，没有其他娱乐活动的情况下，就你一个人独自创造作品
+
+对于你的作品，如果你提前知道剧情，但仍然看一次舒服一次、开心一次，那就是好作品
+
+好作品百看不厌、百听不厌
+
+创作者应沉浸在自己的精神世界无法自拔、随心所欲地创造
+
+#idea #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+如何防止坏人占用影视带宽？
+
+叫用户充钱，1元看5个小时，同一时间只能看一个视频，但有几乎无限的电影、电视剧、动漫可看
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+反抗军的策略：
+
+1. Divide and conquer，分成n个小团体。不通信，只按照建团初心、最初愿望做事。
+
+2. 作为一个小团体，如果你做的事情有价值，被其他团队认可，其他团队会默默帮助你。你不知道你什么时候会被帮助，你也不知道你会不会被帮助。
+
+#反抗
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+从魔女看世界 (the witch: part 1. the subversion)：
+
+你就是那个实验室的小白鼠，你的世界、包括小镇，都是假的。
+
+假药假酒假朋友。
+
+#yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+良种选育小实验：
+
+培育捕食蚊子的蜂鸟。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+All you need is sugar water!
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+实用超能力清单：
+
+1. 不被蚊虫叮咬、不被寄生虫侵扰
+
+2. 变成常温动物，吃得少+适应夏冬两季可不穿衣服
+
+3. 可呼吸空气+可水下呼吸
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+实用超能力清单：
+
+1. 不被蚊虫叮咬、不被寄生虫侵扰
+
+2. 变成常温动物，吃得少+适应夏冬两季可不穿衣服
+
+3. 可呼吸空气+可水下呼吸
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+找男友(女友)保险：
+
+1. 有传染性疾病，如艾滋病，赔付
+2. 有暴力倾向，会家暴甚至杀人，赔付
+3. 是诈骗犯，敲诈勒索甚至绑架你，赔付
+
+1000元一个，我们帮你提前检验你的男、女友。
+
+#business #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+良种宠物培育方法：
+
+测心率，心率快的新生宠物直接淘汰，低价售出，因为有多动症，不好养、不乖。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+警惕宠物店小型犬阴谋！
+
+如果宠物店只卖小型犬，一段时间后市面上就没有大型犬了，你要再买大型犬就得花几十万，因为没有可选项
+
+最好的方法就是扔500元给宠物店老板，让他帮你收一只大型犬，收到了再联系你
+
+#dog #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+警惕 面试送代码 或者 送思路 或者 送方案：
+
+此案例不止适用于线上，线下也可能出现
+
+比如某某公司需要解决某个问题，他把这个问题抽象成一道算法题让面试者解决
+
+或者抽象成一道问答题让面试者解决
+
+由此，该公司获得了无数种方案
+
+所谓高薪只是假象，智力产业因此全部完蛋
+
+#warning #yingshaoxo
+
+___
+
+Be wary of sending code or ideas or plans during interviews:
+
+This case is not only happening in online, but may also occurs in offline
+
+For example, a company needs to solve a problem, they abstracts the problem into an algorithm question for the interviewer to solve.
+
+Or abstract it into a question and answer question for the interviewer to solve
+
+As a result, that company will received many solutions
+
+The so-called high salary is just an illusion, and the intellectual industry is all over because of this.
+
+#warning #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+除了赠送外，还有什么样的商业形式可以逃避法律监管呢？
+
+你买好原材料，再写个雇佣合同，说让我在一个月之内生产出1台不带审查的智能设备，完成后给我发xx工资。
+
+#business #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+Raspberry_Pi_Zero_W + TFT Touchable SPI LCD + Alpine Linux = Light Mobile Phone
+
+Alpine Linux + Pi Zero W + TFT Touchable LCD 似乎是做手机的好材料
+
+https://wiki.alpinelinux.org/wiki/Raspberry_Pi_Zero_W_-_Installation
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+基于 Alpine 的 mobile Linux system, 和安卓脱钩:
+
+https://en.m.wikipedia.org/wiki/PostmarketOS
+
+https://wiki.postmarketos.org/wiki/Raspberry_Pi_Zero_(raspberry-pi0)
+
+https://wiki.postmarketos.org/wiki/Devices
+
+https://ivonblog.com/posts/postmarketos-general-installation/
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+How to do responsive UI design?
+
+1. Use percent number that relative to parent container for width
+2. Use fixed pixels number for height
+3. Make two css rules for desktop and mobile if necessary
+
+#design #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+真：求真务实、尊重客观事实、尊重物理定律与科学真理
+
+善：不主动做坏事，人不犯我，我不犯人
+
+忍：隐藏实力，不主动出风头
+
+#真善忍 #idea #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+If amd64 chip only needs 1.5 voltage to run, why you guys need arm64 for mobile CPU?
+
+I'm pretty sure everything will work OK with a amd64 chip.
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+什么样的 外设设备 是好的？
+
+只暴露4根线的，比如 5v,ground,data1, data2
+
+比如麦克风、喇叭、键盘、触屏、显示屏、键盘、鼠标、存储器，等等
+
+#yingshaoxo #idea
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+https://www.xda-developers.com/xiaomi-anti-rollback-protection-brick-phone/#:~:text=The%20biggest%20difference%20between%20Google%20and%20Xiaomi%E2%80%99s%20implementation%20is%20that%20Google%E2%80%99s%20anti%2Drollback%20protection%20is%20disabled%20if%20you%20unlock%20the%20bootloader%20while%20Xiaomi%E2%80%99s%20can%E2%80%99t%20be%20disabled.
+
+
+小米手机的刷机只能升级，不能降级
+
+意味着就算是新版本里面全是屎，你也得吃
+
+其他有“anti-rollback protection”的手机同理，fastboot都解决不了这个问题，只能把手机扔搅拌机里毁掉解气一点
+
+#你的手机不是你的手机
+
+___
+
+我的手机解锁过bootloader，目前是没有锁的状态。而且我手机里面什么数据都没有。
+
+我就想刷postmarketos，但是它提示：“FAILED (remote: 'rollback version downgrade')”
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+如何减少管制区内产品生产的外部依赖？
+
+1. 如果你产品有外国原料依赖，每个产品多加3元的罚款。
+
+2. 如果你产品有外省原料依赖，每个产品多加2元的罚款。
+
+3. 如果你产品有外市原料依赖，每个产品多加1元的罚款。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+一点都不能忍、不将就
+
+
+一言不合就换产品、换依赖链、换依靠
+
+这样你才不会陷入泥沼、陷入沉没理论的怪圈、陷入死循环、陷入困境
+
+
+#back_is_farward
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+AV信号线、电视三色线：
+
+红色线为右声道音频信号线，白色线为左声道音频信号线，黄色线为视频信号线。
+
+> 用一根线传输视频图像信号，我感觉很神奇
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+总有人觉得2维码很方便，实际不是
+
+从收款码的角度来看，6位字母更方便
+
+它可以同时有 26的6次方=3亿 的收款人
+
+#qr #idea #yingshaoxo
