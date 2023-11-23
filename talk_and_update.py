@@ -1,9 +1,11 @@
+import os
 from time import sleep
 from auto_everything.ml import Yingshaoxo_Text_Generator
-from auto_everything.terminal import Terminal
+from auto_everything.terminal import Terminal, Terminal_User_Interface
 from auto_everything.disk import Disk
 terminal = Terminal()
 disk = Disk()
+terminal_user_interface = Terminal_User_Interface()
 
 
 the_general_seperator = "\n\n\n__**__**__yingshaoxo_is_the_top_one__**__**__\n\n\n"
@@ -51,7 +53,7 @@ chat_context = '''{chat_context}'''
     final_response = "\n".join([one for one in final_response.split("\n") if not one.strip().startswith("__**")])
     return final_response
 
-print("\n\n")
+os.system("clear")
 all_input_text = ""
 while True:
     input_text = input("What you want to say?    ")
@@ -66,5 +68,15 @@ while True:
 
     print("\n\n---------\n\n")
     print(response)
-    handle_yingshaoxo_ai_text(response)
     print("\n\n---------\n\n")
+
+    confirm_text = input("Do you want to edit the response? (y/n)").strip()
+    if confirm_text == "y":
+        os.system("clear")
+        response = terminal_user_interface.edit_box(response, editor="vim -u NONE")
+        os.system("clear")
+        print("New response is:")
+        print(response)
+        sleep(5)
+    handle_yingshaoxo_ai_text(response)
+    os.system("clear")

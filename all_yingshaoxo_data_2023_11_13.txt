@@ -30570,3 +30570,140 @@ __**__**__yingshaoxo_is_the_top_one__**__**__
 3. 你没有精准数据储存能力，所以记不住、记不对公式、例子
 
 #注定中文数学不及格 #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+自制防寒服：
+
+1. 准备两块布，一块锡纸、铝箔纸
+2. 用防水胶把锡纸、铝箔纸沾在两块布中间
+3. 像羽绒服一样缝制它，你可以加动物毛发进去
+
+#idea #cold #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+你帮我向你法律专业的同学问问，
+
+如果我在公共网络讲：“拉屎 某某人”，
+
+会不会构成诽谤罪、侮辱罪。
+
+我没有说谎，是人就要吃饭拉屎。
+
+#你有讲真话的言论自由权利吗？
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+很多社交平台都没有担当，
+
+一有人投诉，就删帖封号。
+
+实际上应该这么处理：
+
+1. 有人提出版权、投诉，就把请求作为纯文本，绑定到封禁关键词提示里，比如“习近平希望你不要在微博骂他，所以该信息无法被发出”、“网信办觉得VPN不合法，所以你不能发出含有VPN的信息”
+
+2. 一旦有人在前端编辑文字并发送，一旦触发封禁关键字，就弹窗提醒，而不是事后删帖封号
+
+#business #speech_freedom #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+如何把好人强行变成坏人？
+
+假设你被放入一个虚拟世界，通过脑机接口。
+
+游戏一开始，你父母就要杀了你，你可以选择原地不动、或者自杀，但很快你会发现，你既要忍受痛苦，游戏又会把你放在初始地(重启)。
+
+所以几千个循环下来，你会发现，只有你把父母解决掉，游戏才能进入下一关。下一关是解决掉每个你认识的人。
+
+当你通关后，你就变成了坏人。
+
+#今天是好人明天不一定
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+What kind of function you need for a mobile device?
+
+1. Timer, Alert
+2. Diary Editor, twitter_like, freedom app
+3. Offline search engine, offline chat bot
+4. Email box, receiver and sender.
+5. LAN Remote desktop or launcher, you do more online things with it, for example, browser. For this device, it only gets rendered image from service, send touch information to service.
+
+#dev #idea #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+## How to make a desktop envirnoment for linux
+
+First, we don't need those application in our platform to do anything but give us images when they think the user interface should get updated.
+
+Then, what we need to do is send the keyboard, mouse, touchscreen, resolution to that application that is currently running at the front-end.
+
+For each time, there would only have one single app is running at the front-end, I mean they can't send you image/graphic data at the background.
+
+And for the desktop or launcher we have, there would always have 3 buttons at the bottom: recent_apps, home, back.
+
+And what we will do as a desktop envirnoment is to send the mixed graphic data directly to the FTF SPI LCD Screen.
+
+In this case, we don't need any modern desktop envirnoment that is normally greater than 1GB, but a simple python script that is smaller than 500KB.
+
+
+### Protocol
+#### For launcher
+/add_or_update_app
+
+request:
+{
+    "app_name": "",
+    "app_icon_url": "",
+    "app_url": ""
+}
+
+#### For each app
+/get_graphic_image
+
+request:
+{
+}
+
+response:
+{
+    "has_image": true/false,
+    "image": <base64_string>
+}
+
+
+
+/send_control_info
+
+request:
+{
+    "keyboard": ascii_for_keyboard,
+    "mouse": ...,
+    "touch_screen": ...,,
+    "resolution": 1080x1920,
+}
+
+
+
+### More Info
+I'm not making a desktop launcher, it is mobile only. And all design is resposive since I'll send resolution info to apps in realtime. (By the way, if user want to open two window in desktop, they could just do it, what is the difficulty? Render two window, one is left, another is right, they are all images.)
+
+The multiple_window is not a problem, for those applications, they will always running in the backgroud, if user want to switch back to an app, they just have to use bottom 'recent app' to get recent app list, then click it to do a quick switch.
+
+The camera, microphone, speaker is useable for every application. The camera, microphone is read only, each time will only return one, data or none. The speaker will receive quite a lot of data, we will do a mix and play. (They all can get disabled in global level)
+
