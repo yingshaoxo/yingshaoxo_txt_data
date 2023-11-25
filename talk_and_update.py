@@ -61,7 +61,8 @@ while True:
 
     all_input_text += input_text + "\n"
     real_input = all_input_text[-8000:].strip()
-    response = yingshaoxo_text_generator.search_and_get_following_text_in_a_exact_way(input_text=real_input, quick_mode=False)
+    #response = yingshaoxo_text_generator.search_and_get_following_text_in_a_exact_way(input_text=real_input, quick_mode=False)
+    previous_text, response = yingshaoxo_text_generator.next_fuzz_sentence_generation(text_source_data=yingshaoxo_text_generator.text_source_data, input_text=real_input, how_long_the_text_you_want_to_get=800, compare_times=10, also_return_previous_text=True)
 
     response = decode_response(text=response, chat_context=all_input_text)
     #all_input_text += response
