@@ -30561,15 +30561,15 @@ __**__**__yingshaoxo_is_the_top_one__**__**__
 __**__**__yingshaoxo_is_the_top_one__**__**__
 
 
-为什么你不会做数学题？
+What kind of function you need for a mobile device?
 
-1. 你不会写代码，所以不会设置已知与未知变量、不会构建等式和不等式
+1. Timer, Alert
+2. Diary Editor, twitter_like, freedom app
+3. Offline search engine, offline chat bot
+4. Email box, receiver and sender.
+5. LAN Remote desktop or launcher, you do more online things with it, for example, browser. For this device, it only gets rendered image from service, send touch information to service.
 
-2. 你不是计算器，所以你的计算会出错、速度会很慢
-
-3. 你没有精准数据储存能力，所以记不住、记不对公式、例子
-
-#注定中文数学不及格 #yingshaoxo
+#dev #idea #yingshaoxo
 
 
 __**__**__yingshaoxo_is_the_top_one__**__**__
@@ -30612,36 +30612,6 @@ __**__**__yingshaoxo_is_the_top_one__**__**__
 2. 一旦有人在前端编辑文字并发送，一旦触发封禁关键字，就弹窗提醒，而不是事后删帖封号
 
 #business #speech_freedom #yingshaoxo
-
-
-__**__**__yingshaoxo_is_the_top_one__**__**__
-
-
-如何把好人强行变成坏人？
-
-假设你被放入一个虚拟世界，通过脑机接口。
-
-游戏一开始，你父母就要杀了你，你可以选择原地不动、或者自杀，但很快你会发现，你既要忍受痛苦，游戏又会把你放在初始地(重启)。
-
-所以几千个循环下来，你会发现，只有你把父母解决掉，游戏才能进入下一关。下一关是解决掉每个你认识的人。
-
-当你通关后，你就变成了坏人。
-
-#今天是好人明天不一定
-
-
-__**__**__yingshaoxo_is_the_top_one__**__**__
-
-
-What kind of function you need for a mobile device?
-
-1. Timer, Alert
-2. Diary Editor, twitter_like, freedom app
-3. Offline search engine, offline chat bot
-4. Email box, receiver and sender.
-5. LAN Remote desktop or launcher, you do more online things with it, for example, browser. For this device, it only gets rendered image from service, send touch information to service.
-
-#dev #idea #yingshaoxo
 
 
 __**__**__yingshaoxo_is_the_top_one__**__**__
@@ -30707,3 +30677,390 @@ The multiple_window is not a problem, for those applications, they will always r
 
 The camera, microphone, speaker is useable for every application. The camera, microphone is read only, each time will only return one, data or none. The speaker will receive quite a lot of data, we will do a mix and play. (They all can get disabled in global level)
 
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+如何建立新国家？
+
+一个旧系统的法律如果严格到不合理，这也不让那也不让
+
+你就可以说：“我不承认你那个旧系统”
+
+如果你一口咬定你是外星人，或者美国人
+
+你就可以不遵守任何旧条规
+
+类似于所有人都失忆了，就当这个系统不曾存在
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+沙盒游戏、互动小说，实际上是一类东西
+
+你可以用它来进行战争模拟、智力升级、文明收割
+
+只要它的模拟符合逻辑、拟真现实，就还行
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+安卓手机的存储，用的是普通 SD card，写入速度只有25MB/s.
+
+系统操作速度之所以快，是因为它们把系统加载到了内存里
+
+这就是为什么安卓开机要1分钟，因为要把1.5G的系统加载到内存
+
+#你要是懂手机维修你可以把CPU换成降频amd64
+
+#你要是懂手机维修你可以给自己加上2T存储卡
+
+苹果手机同理
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+人在室内，保证安全，最简单的方法就是加门栓
+
+这样就算别人有你家门钥匙，也打不开
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+如何分辨真乞丐与假乞丐？
+
+准备一瓶安眠药，能过量致死的那种。
+
+给乞丐讲：“你好，我看你活得这么痛苦，不妨想个办法让自己安乐死，我这儿有一瓶安眠药，如果你现在把它吃下去，我就免费送给你。”
+
+乞丐想了想，觉得总算找到了解脱之法，于是将药物一口吞下。这就是真乞丐，因为活着太痛苦。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+5平方米室内、5000平方米小镇的有关你自己的矛盾问题，你都解决不了
+
+你怎么能奢望500万米外的青天大老爷能帮你做主，维持公道呢？
+
+#自己解决问题
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+橡胶防揍衣：
+
+想象蝙蝠侠的衣服、肌肉都是橡胶的，有一定的硬度，但又可以轻易被弯曲。
+
+材料类似软警棍。
+
+除了肌肉线条是橡胶，拳头、膝盖等关节处也可以加橡胶。
+
+最终结果是，你对着墙一顿乱打不会感到疼，别人用警棍打你，你也不会疼。
+
+同时你又行动自如。
+
+衣内加牛顿液体可变防弹衣。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+硬气功的科学实现：
+
+1. 我们人脑可以控制肌肉的收缩来移动四肢，通信速度堪比电缆
+
+2. 肌肉收缩时变得像硬橡胶，可以反弹动力
+
+3. 通过伪造脑信号，我们可以瞬间让身体某个部位变硬，从而实现抗击打
+
+> 硬气功的全称：通过憋气、收缩肌肉，让肌肉变硬的功夫。
+
+#功夫 #idea #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+How to train a fighting bot?
+
+1. Create two bot, one to fight, one to protect.
+2. Let the two fight in different environment and situations, see at which case, fighting is better, at which case, protection is better.
+3. Based on the data, merge two bot intelligence into one, sometimes switch to fight bot, sometimes switch to protect bot. (Protection including run away)
+
+> If you want to upgrade the fighting from body level to society level, it is also possible.
+
+#fight #bot #idea #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+How to fix multimeter point pin connector?
+
+When you got a multimeter, the first thing you do is use glue gun to fix its pin connector.
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+We could make a hardware company, where all of our hardware are programming_able if that hardware has program inside.
+
+Where the price is 3 times of the average market price. (It is to prevent this company become evil for money.)
+
+#business #idea #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+Manufacturing for end_customer could have new method: batch_making and selling.
+
+
+If user wants to buy a product from your company, you let them pay your money in advance, for example, one month before you making that product.
+
+So for each month, you will make a group of products, and all products are basically sold in advance.
+
+In this case, business can be stable, product price can be stable.
+
+
+#business #idea #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+面向终端客户的制造业可以有新的生产方法：批量生产和销售，类似众筹。
+
+
+如果有用户想从您的公司购买产品，您可以让他们提前下订单付款，例如在您生产该产品的一个月前。
+
+所以每个月的月初，你就知道你要做多少个产品。这批产品是提前售出的。
+
+这样的话，生意就能稳定，产品价格就能稳定。
+
+
+#商业 #idea #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+如何使用用户购物车数据，预测未来哪些商品会被售出？
+
+
+1. 用户购物车购买率 = 用户曾经购买过的购物车商品数量 ÷ 用户曾经添加到购物车的商品数量 ÷ 100
+
+2. 某商品未来会售出的数量 = sum([(该商品被一个用户添加到了购物车 × 该用户购物车购买率) for one in 平台总用户数])
+
+
+#business #idea #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+用 自行车充气桶(单向气阀) 能做千斤顶，用千斤顶又能给气枪充气。
+
+https://youtu.be/46XZ-8MNubE?si=8q6Cr3EPFsJ2DVHr
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+新型工资合同：某某商品市场平均价格的多少倍。
+
+比如工资是10kg大米的市场平均价格的100倍。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+我可以搞一种饮料：英少充能饮料
+
+配料为 白砂糖+白开水。
+
+2元一瓶。
+
+不吝啬糖。
+
+#business #idea
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+我还有两个商业想法：
+
+精液抑菌美容面膜
+
+人屎高营养化肥
+
+#business #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+You may not need newest type of disk.
+
+Because those storage companies always want to control your data by encrypt their hardware.
+
+Instead of SSD or newer tech, DVD maybe a good idea for you.
+
+A DVD disk is both readable and writeable for multiple times.
+
+#dev #idea #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+您可能不需要最新类型的磁盘。
+
+因为那些存储公司总是希望通过加密他们的硬件来控制你的数据。
+
+DVD 可能比 SSD 或更新的技术更适合您。
+
+DVD盘可多次读写。
+
+#dev #idea #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+硬件软件的升级换代，有时候是以一种很黑暗的形式进行的。
+
+比如降低产品质量、按时间计划性报废。
+
+你多次购买或安装，实际上每次都是买的更新后的产品。
+
+而这些产品本质上都是为了卖家的利益而升级的，比如能更方便地插入广告、比如让你更依赖卖家的在线服务。
+
+最终的结果是，你不每月给卖家送钱，卖家的产品你就用不了。
+
+#business #idea #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+千斤顶的原理可以拿来做自加压气枪。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+How to fix DVD or VCD data losing?
+
+Method 1: use 'AI' to generate missing part from good data.
+
+Method 2: if you have multiple DVD disk, and they used to have same data, then you extract common good part. Good + ... + Good = All good.
+
+> DVD can be renewed by removing the outer protective layer and adding a new one.
+
+#dev #idea #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+如何修复 DVD 或 VCD 数据丢失？
+
+方法1：利用“AI”，基于好的数据，生成缺失的部分(插帧算法)。
+
+方法2：如果您有多个DVD盘，并且它们曾存有相同的数据，则提取并集，公有的好的部分。每个盘取一点好的部分，好的就很多了。
+
+> 光碟DVD可翻新，只需去除最外层的保护膜，然后加入新的即可。
+
+#dev #idea #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+追求仪式感、整齐排面的军队，实际上弱不经风。
+
+一方面是因为他们的行为模式高度一致，一被人发现弱点就会全员牺牲。比如站成整齐的一排让人扫射。
+
+另一方面是他们缺少个人英雄主义式领导，缺乏多样性的策略去征服多变的形势。比如，“相信我的兄弟们听我指挥、跟我行动。或者 你不能跟着我，你某某方面不行”。这样可以让军队适应复杂局面，免得全军覆没。
+
+#war #idea #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+如何把鸡汤文(模糊的规律描述)变为确定性文字描述？
+
+
+做减法。让复杂的规律变成简单的规律，让测试环境变得可以被轻易创建。
+
+比如，“卡耐基的人性的弱点”变为“人的弱点”，人性有没有弱点我不知道，人肯定是有弱点的：“需要食物，3天不给饭吃，就变弱了”。
+
+
+#鸡汤文 #提炼 #检验 #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+现在的存储设备，基本上你自己是修不好的了，除了DVD，因为厂商的加密。但你可以多买几个，方便切换。
+
+追求速度：笔记本 m2 SSD + USB m2 SSD 硬盘盒读卡器
+
+追求大容量：500元 5t 机械移动硬盘
+
+追求小巧：512GB SD卡 + 读卡器
+
+追求长期稳定：可擦除DVD光盘 + USB DVD刻录读取机
+
+#idea #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+大部分人离开学校后只需要这些和学习有关的技能：理解说明书、按说明书操作或测试、用计算机查找资料、用计算机记录数据。
+
+所以高学历、好成绩对99%的人来说，毫无意义，还不如健康学习、快乐成长。
+
+另外，如果你考试时有无穷精准的数据库可查询、无限顺手的工具库可用，那你也能考高分。
+
+#idea #学校 #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+为什么你不会做数学题？
+
+1. 你不会写代码，所以不会设置已知与未知变量、不会构建等式和不等式
+
+2. 你不是计算器，所以你的计算会出错、速度会很慢
+
+3. 你没有精准数据储存能力，所以记不住、记不对公式、例子
+
+#注定中文数学不及格 #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+如何把好人强行变成坏人？
+
+假设你被放入一个虚拟世界，通过脑机接口。
+
+游戏一开始，你父母就要杀了你，你可以选择原地不动、或者自杀，但很快你会发现，你既要忍受痛苦，游戏又会把你放在初始地(重启)。
+
+所以几千个循环下来，你会发现，只有你把父母解决掉，游戏才能进入下一关。下一关是解决掉每个你认识的人。
+
+当你通关后，你就变成了坏人。
+
+#今天是好人明天不一定
