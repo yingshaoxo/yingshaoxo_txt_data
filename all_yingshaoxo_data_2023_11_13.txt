@@ -31064,3 +31064,23 @@ __**__**__yingshaoxo_is_the_top_one__**__**__
 当你通关后，你就变成了坏人。
 
 #今天是好人明天不一定
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+I recently face a problem from Android system and MacOS/iPhone system.
+
+Syncthing can't sync 'two files with same name but have different case' between Linux and Android and MacOS/iPhone.
+
+It seems like the Android is working just like Windows system.
+
+They do not distinguish `~/Download/HI.png` and `~/Download/hi.png`.
+
+Both android and windows will think `~/Download/HI.png` and `~/Download/hi.png` as the same file. Which is not right, which means their storage system is case-insensitive.
+
+But for general Linux system, it is fine, linux storage are case-sensitive.
+
+Does this mean the android/macos/iPhone enginner secrectly come from microsoft? I don't know.
+
+#android #storage #bug #yingshaoxo
