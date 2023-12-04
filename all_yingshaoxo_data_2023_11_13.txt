@@ -31069,18 +31069,658 @@ __**__**__yingshaoxo_is_the_top_one__**__**__
 __**__**__yingshaoxo_is_the_top_one__**__**__
 
 
-I recently face a problem from Android system and MacOS/iPhone system.
+如何建立新国家？
 
-Syncthing can't sync 'two files with same name but have different case' between Linux and Android and MacOS/iPhone.
+一个旧系统的法律如果严格到不合理，这也不让那也不让
+
+你就可以说：“我不承认你那个旧系统”
+
+如果你一口咬定你是外星人，或者美国人
+
+你就可以不遵守任何旧条规
+
+类似于所有人都失忆了，就当这个系统不曾存在
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+沙盒游戏、互动小说，实际上是一类东西
+
+你可以用它来进行战争模拟、智力升级、文明收割
+
+只要它的模拟符合逻辑、拟真现实，就还行
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+安卓手机的存储，用的是普通 SD card，写入速度只有25MB/s.
+
+系统操作速度之所以快，是因为它们把系统加载到了内存里
+
+这就是为什么安卓开机要1分钟，因为要把1.5G的系统加载到内存
+
+#你要是懂手机维修你可以把CPU换成降频amd64
+
+#你要是懂手机维修你可以给自己加上2T存储卡
+
+苹果手机同理
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+人在室内，保证安全，最简单的方法就是加门栓
+
+这样就算别人有你家门钥匙，也打不开
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+如何分辨真乞丐与假乞丐？
+
+准备一瓶安眠药，能过量致死的那种。
+
+给乞丐讲：“你好，我看你活得这么痛苦，不妨想个办法让自己安乐死，我这儿有一瓶安眠药，如果你现在把它吃下去，我就免费送给你。”
+
+乞丐想了想，觉得总算找到了解脱之法，于是将药物一口吞下。这就是真乞丐，因为活着太痛苦。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+5平方米室内、5000平方米小镇的有关你自己的矛盾问题，你都解决不了
+
+你怎么能奢望500万米外的青天大老爷能帮你做主，维持公道呢？
+
+#自己解决问题
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+橡胶防揍衣：
+
+想象蝙蝠侠的衣服、肌肉都是橡胶的，有一定的硬度，但又可以轻易被弯曲。
+
+材料类似软警棍。
+
+除了肌肉线条是橡胶，拳头、膝盖等关节处也可以加橡胶。
+
+最终结果是，你对着墙一顿乱打不会感到疼，别人用警棍打你，你也不会疼。
+
+同时你又行动自如。
+
+衣内加牛顿液体可变防弹衣。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+硬气功的科学实现：
+
+1. 我们人脑可以控制肌肉的收缩来移动四肢，通信速度堪比电缆
+
+2. 肌肉收缩时变得像硬橡胶，可以反弹动力
+
+3. 通过伪造脑信号，我们可以瞬间让身体某个部位变硬，从而实现抗击打
+
+#功夫 #idea #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+How to train a fighting bot?
+
+1. Create two bot, one to fight, one to protect.
+2. Let the two fight in different environment and situations, see at which case, fighting is better, at which case, protection is better.
+3. Based on the data, merge two bot intelligence into one, sometimes switch to fight bot, sometimes switch to protect bot. (Protection including run away)
+
+> If you want to upgrade the fighting from body level to society level, it is also possible.
+
+#fight #bot #idea #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+How to fix multimeter point pin connector?
+
+When you got a multimeter, the first thing you do is use glue gun to fix its pin connector.
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+硬气功的全称：通过憋气、收缩肌肉，让肌肉变硬的功夫。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+We could make a hardware company, where all of our hardware are programming_able if that hardware has program inside.
+
+Where the price is 3 times of the average market price. (It is to prevent this company become evil for money.)
+
+#business #idea #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+Manufacturing for end_customer could have new method: batch_making and selling.
+
+
+If user wants to buy a product from your company, you let them pay your money in advance, for example, one month before you making that product.
+
+So for each month, you will make a group of products, and all products are basically sold in advance.
+
+In this case, business can be stable, product price can be stable.
+
+
+#business #idea #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+面向终端客户的制造业可以有新的生产方法：批量生产和销售，类似众筹。
+
+
+如果有用户想从您的公司购买产品，您可以让他们提前下订单付款，例如在您生产该产品的一个月前。
+
+所以每个月的月初，你就知道你要做多少个产品。这批产品是提前售出的。
+
+这样的话，生意就能稳定，产品价格就能稳定。
+
+
+#商业 #idea #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+如何使用用户购物车数据，预测未来哪些商品会被售出？
+
+
+1. 用户购物车购买率 = 用户曾经购买过的购物车商品数量 ÷ 用户曾经添加到购物车的商品数量 ÷ 100
+
+2. 某商品未来会售出的数量 = sum([(该商品被一个用户添加到了购物车 × 该用户购物车购买率) for one in 平台总用户数])
+
+
+#business #idea #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+用 自行车充气桶(单向气阀) 能做千斤顶，用千斤顶又能给气枪充气。
+
+https://youtu.be/46XZ-8MNubE?si=8q6Cr3EPFsJ2DVHr
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+新型工资合同：某某商品市场平均价格的多少倍。
+
+比如工资是10kg大米的市场平均价格的100倍。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+我可以搞一种饮料：英少充能饮料
+
+配料为 白砂糖+白开水。
+
+2元一瓶。
+
+不吝啬糖。
+
+#business #idea
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+我还有两个商业想法：
+
+精液抑菌美容面膜
+
+人屎高营养化肥
+
+#business #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+You may not need newest type of disk.
+
+Because those storage companies always want to control your data by encrypt their hardware.
+
+Instead of SSD or newer tech, DVD maybe a good idea for you.
+
+A DVD disk is both readable and writeable for multiple times.
+
+#dev #idea #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+您可能不需要最新类型的磁盘。
+
+因为那些存储公司总是希望通过加密他们的硬件来控制你的数据。
+
+DVD 可能比 SSD 或更新的技术更适合您。
+
+DVD盘可多次读写。
+
+#dev #idea #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+硬件软件的升级换代，有时候是以一种很黑暗的形式进行的。
+
+比如降低产品质量、按时间计划性报废。
+
+你多次购买或安装，实际上每次都是买的更新后的产品。
+
+而这些产品本质上都是为了卖家的利益而升级的，比如能更方便地插入广告、比如让你更依赖卖家的在线服务。
+
+最终的结果是，你不每月给卖家送钱，卖家的产品你就用不了。
+
+#business #idea #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+Download everything under a python HTTP servering:
+
+
+In host:
+python -m http.server
+
+
+In guest:
+wget -r -np -nH -R / http://192.168.19.22:8000
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+How to fix DVD or VCD data losing?
+
+Method 1: use 'AI' to generate missing part from good data.
+
+Method 2: if you have multiple DVD disk, and they used to have same data, then you extract common good part. Good + ... + Good = All good.
+
+> DVD can be renewed by removing the outer protective layer and adding a new one.
+
+#dev #idea #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+如何修复 DVD 或 VCD 数据丢失？
+
+方法1：利用“AI”，基于好的数据，生成缺失的部分(插帧算法)。
+
+方法2：如果您有多个DVD盘，并且它们曾存有相同的数据，则提取并集，公有的好的部分。每个盘取一点好的部分，好的就很多了。
+
+> 光碟DVD可翻新，只需去除最外层的保护膜，然后加入新的即可。
+
+#dev #idea #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+追求仪式感、整齐排面的军队，实际上弱不经风。
+
+一方面是因为他们的行为模式高度一致，一被人发现弱点就会全员牺牲。比如站成整齐的一排让人扫射。
+
+另一方面是他们缺少个人英雄主义式领导，缺乏多样性的策略去征服多变的形势。比如，“相信我的兄弟们听我指挥、跟我行动。或者 你不能跟着我，你某某方面不行”。这样可以让军队适应复杂局面，免得全军覆没。
+
+#war #idea #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+如何把鸡汤文(模糊的规律描述)变为确定性文字描述？
+
+
+做减法。让复杂的规律变成简单的规律，让测试环境变得可以被轻易创建。
+
+比如，“卡耐基的人性的弱点”变为“人的弱点”，人性有没有弱点我不知道，人肯定是有弱点的：“需要食物，3天不给饭吃，就变弱了”。
+
+
+#鸡汤文 #提炼 #检验 #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+现在的存储设备，基本上你自己是修不好的了，除了DVD，因为厂商的加密。但你可以多买几个，方便切换。
+
+追求速度：笔记本 m2 SSD + USB m2 SSD 硬盘盒读卡器
+
+追求大容量：500元 5t 机械移动硬盘
+
+追求小巧：512GB SD卡 + 读卡器
+
+追求长期稳定：可擦除DVD光盘 + USB DVD刻录读取机
+
+#idea #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+大部分人离开学校后只需要这些和学习有关的技能：理解说明书、按说明书操作或测试、用计算机查找资料、用计算机记录数据。
+
+所以高学历、好成绩对99%的人来说，毫无意义，还不如健康学习、快乐成长。
+
+另外，如果你考试时有无穷精准的数据库可查询、无限顺手的工具库可用，那你也能考高分。
+
+#idea #学校 #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+I recently face a problem from Android system and MacOS/IPhone system.
+
+Syncthing can't sync 'two files with same name but have different case' between Linux and Android and MacOS/IPhone.
 
 It seems like the Android is working just like Windows system.
 
-They do not distinguish `~/Download/HI.png` and `~/Download/hi.png`.
+They do not distinguish ~/Download/HI.png and ~/Download/hi.png.
 
-Both android and windows will think `~/Download/HI.png` and `~/Download/hi.png` as the same file. Which is not right, which means their storage system is case-insensitive.
+Both android and windows will think ~/Download/HI.png and ~/Download/hi.png as the same file. Which is not right, which means their storage system is case-insensitive.
 
 But for general Linux system, it is fine, linux storage are case-sensitive.
 
-Does this mean the android/macos/iPhone enginner secrectly come from microsoft? I don't know.
+Does this mean the android/macos/IPhone enginner secrectly come from microsoft? I don't know.
 
 #android #storage #bug #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+电子元器件选购指南：
+
+
+如果商家回答不了技术问题，淘汰处理，不做考虑。
+
+因为有 严重虚标 和 无参数可参考的 使用风险。就像别人提供了API，但不提供API parameters。
+
+比如你买个升压模块，但电流小到几乎不能用。
+
+买个马达，商家连 使用电流、电压、功率、电机电阻、扭矩力 都无法提供，最后你用不了。
+
+
+#hardware #idea #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+https://www.youtube.com/watch?v=EhKEqi74yAQ
+
+用升压电路 不如 直接串联电池
+
+因为升压电路的电流小，带不动大功率电器
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+nmos chip 竟然允许你用单片机控制大电压！充当了一个继电器的功能。
+
+你用 5v电磁铁+跷跷板导体 也能做一个继电器。
+
+https://youtu.be/fdaP0KGb954?si=RzaMh8Imk4gq0XGg
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+一种5v的恒温38度洗澡水加热器实现：
+
+把38度加热器放入水中，5小时后开始洗澡。
+
+类似于中档位电热毯放入水中，只不过输入变成了5v。
+
+#hardware #idea #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+涨包锂电池修复方法：
+
+完全放电后，最外层戳一个小洞，把气挤出来，然后用透明胶带完全密封，确保整块电池完全不透空气。
+
+接着用。
+
+#fix #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+很粘人的狗狗，如果一直关在室内，从小喂养
+
+那么晚上你遛狗，都不用套链子，它自己会跟着你跑
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+我上网查资料，多少亩地可以养活一个人，网上说1亩地
+
+1亩地是666平方米
+
+但你想想房价
+
+你得花多少钱 买666平方米的土地+上面的7层楼，才能养活你自己？
+
+假设一平方米3000元，你得花3000×666×7=1.4千万，才能种地养活你自己
+
+我们是不是活在假世界？
+
+#idea #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+伴侣幸福理论:
+
+针对穷人的特殊情况: 
+伴侣的幸福指数取决于：
+1.冲突、意见分歧的次数，越少越好。
+2.伴侣间的不同实用技能数目，越多越好，你不会的东西，伴侣会，你的生活就会变得很轻松。
+
+普遍定律: 
+1.冲突、意见分歧的次数，越少越好。
+2.伴侣的能量、能力级别，你不行，伴侣行，你的生活就会变得很轻松。极端的例子是，你养一条狗，狗的生活很轻松，狗的幸福指数很高。
+
+#idea #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+Happiness theory for couples:
+
+Special: 
+Couple happiness depends on：
+1. Fighting numbers, the less the better.
+2. Different Skills between two people, the more the better. Something you can't do but she or he can, your life would be easy.
+
+General: 
+1. Fighting numbers, the less the better.
+2. Power of He or She, the more the better. Something you can't but other can, your life would be easy. A extreme example is when you raise a dog, the dog life is easy, the happiness of dog is very high.
+
+#idea #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+电插排指示灯，只用了一个电阻+zener diode，就成功地把AC220V转换成了小LED能用的低压电…
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+220v电容 并联在 "由4个2级管组成的整流电路" 后面，可以进一步过滤掉交流电成分。
+
+(整流电路把AC220V变成DC220V，但会残存一些交流电。经过电容的过滤，DC220V会变成纯粹的DC330V。)
+
+#electricity #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+一种新型可安全刷机手机：
+
+手机上有两块存储，一个2GB的基础程序，该程序 软件和硬件层面上 不可更改，负责控制恢复出厂设置、或者引导第二个存储上的Linux系统启动。
+
+第二块存储上的操作系统，是纯文件系统，用户拥有绝对控制权，可随意被更改，可变为任意基于纯文件的操作系统。
+
+#idea #yingshaoxo #os
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+Zener Diode 确实可以用来做DC电压转换，但就是得串联一个1k电阻。
+
+当把 Zener Diode 并联到输出端时，如果电压高于该diode的击穿电压，diode则会把高电压送回源电源。如此一来，输出端就只剩小于击穿电压的电压了。
+
+另外，你直接串联2个大电阻到电路，也能实现DC降压。(只是不如zener diode稳定，因为最终效果要看负载)
+
+升压电路同理，只是要前置一个升压电路，先把小电压转成大电压
+
+#electricity #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+不建议购买无刷电机，建议购买永磁有刷电机马达
+
+因为让无刷电机动起来的操作很复杂，并且它的动力不强、容易打滑
+
+我也不建议购买 超级电容，因为它的容量太小，只能当个打火机启动装置
+
+#两个骗局 #yingshaoxo #electricity
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+我们不能老是纠结于实体物品的价格，只要是有用的、质量好的产品，买买买
+
+比起你在股市、赌场、区块链等虚拟产品上输的钱，物理实体产品都是便宜货
+
+不能总让老实人变穷，让骗子变富。
+
+#idea #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+如何判别室外视频是否是自动生成的？没蚊子叮咬，假视频。
+
+除非他们把蚊子种群灭绝，不然室外活动绝对是一件令人难受的事情。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+你的依赖会成为你的致命弱点。
+
+因为你离不开它。
+
+举个例子，常年依赖于某个东西，一旦没有它，你就会死。比如氧气、食物、水、电力工具。
+
+#idea #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+人类以及有体温动物，都是被创造出来，利用体温 快速把食物转化为生物能、甚至是血液循环电能 的容器。
+
+如果不是为了快速转换，我们完全可以像鱼一样，以常温生活。吃得少、动力又足。
+
+说明哺乳类生物根本就不是从海里出来的，不然我们就会是冷血动物。
+
+我们都是“人造生物”。
+
+这种容器是AI或者电基生物创造的。目的就是寄生在我们脑子里，高效地利用生物能。
+
+#idea #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+如何知道一个电机的工作电压是多少？
+
+用手持电钻把电机连接起来，测试生成的反向电压是多少。
+
+一般来讲不会超过12v~24v。
+
+#electricity #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+小到只能容下一张单人床的房间，加上门栓后竟然更让人感到安心，因为有隐身衣和隐身人的存在。
+
+埋伏在你的房间，只需要2个人，一个夜班、一个白班。
+
+#safety #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+语音识别算法：
+
+1. 先用音高或音调做初步筛选，然后用长语音做模糊匹配，谁最相似选谁。数据库没有，就截断audio[0, len()-1]
+2. 数据库可被实时更新，看用户改不改输出结果
+3. 越用越精准
+
+#voice_recognition #algorithm #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+General AI 的算法都是实时生成的
+
+需要完成什么任务就生成什么样的代码
+
+只要有自更新、自纠正，就可以很轻松的完成任务
+
+从某方面来讲，这叫做“适应性强”
