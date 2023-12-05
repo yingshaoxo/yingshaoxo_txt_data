@@ -31724,3 +31724,59 @@ General AI 的算法都是实时生成的
 只要有自更新、自纠正，就可以很轻松的完成任务
 
 从某方面来讲，这叫做“适应性强”
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+We could make a intelligence tree application:
+
+
+For example, when user search an operation system, like alpine, we immediately suggest user 'docker' or 'virtualbox' or any hardware that could install all kinds of system.
+
+And when user search for 'statically compile', we immediately suggest user 'musl' or 'alpine'.
+
+I think this is another kind of intelligence representation compared to long sequence text data.
+
+
+#search #data #ai #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+Let's talk about the user interface library we are going to make:
+
+1. It is a pure image based library. or RGBA 2-dimensional array based library. The final output and middle representation is pure number and arrays. We can add sub_picture to the top of another picture in a specified position. Anything photoshop_like image editor could do, we could do. Anything a 3D game engine could do, we could do.
+
+2. For the input part, we treat touch_screen as mouse pointer, so that for the desktop and mobile, we use one single user interactive system. For example, when user touch a position at touch screen, we first move the mouse to that position, then automatically click that position. In the end, we will only handle mouse and keyboard and any other USB devices.
+
+3. The user interface is a responsive one. It changes interface width or layout based on resolution change. Normally UI component height won't get changed. So that for any application that uses this graphic library, they could get adopted to different resolution of screens.
+
+#UI #Library #yingshaoxo
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+但凡有举报按钮的平台，都不是自由的平台。
+
+一旦你多加几个坏人，或者你内容被几个坏人看到了，你就被封禁了。
+
+另外，小开发者根本没时间做举报功能，有举报的都是大公司的产品，只要是大公司做的东西，就一定有审查
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+谁使用实名制的平台，谁就是傻逼
+
+你在明，敌在暗，你怎么反抗都是输
+
+举个简单的例子，某个组织可以轻而易举地封掉 与你手机号、身份证有关的 一切账号
+
+那你就社会性死亡了，无法联系他人，无法发布信息，无法花钱，极端情况下甚至无法挣钱
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+Any platform that has no report function, has no censorship.
