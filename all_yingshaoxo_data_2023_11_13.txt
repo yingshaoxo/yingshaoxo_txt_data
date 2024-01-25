@@ -31729,40 +31729,12 @@ General AI 的算法都是实时生成的
 __**__**__yingshaoxo_is_the_top_one__**__**__
 
 
-We could make a intelligence tree application:
-
-
-For example, when user search an operation system, like alpine, we immediately suggest user 'docker' or 'virtualbox' or any hardware that could install all kinds of system.
-
-And when user search for 'statically compile', we immediately suggest user 'musl' or 'alpine'.
-
-I think this is another kind of intelligence representation compared to long sequence text data.
-
-
-#search #data #ai #yingshaoxo
-
-
-__**__**__yingshaoxo_is_the_top_one__**__**__
-
-
-Let's talk about the user interface library we are going to make:
-
-1. It is a pure image based library. or RGBA 2-dimensional array based library. The final output and middle representation is pure number and arrays. We can add sub_picture to the top of another picture in a specified position. Anything photoshop_like image editor could do, we could do. Anything a 3D game engine could do, we could do.
-
-2. For the input part, we treat touch_screen as mouse pointer, so that for the desktop and mobile, we use one single user interactive system. For example, when user touch a position at touch screen, we first move the mouse to that position, then automatically click that position. In the end, we will only handle mouse and keyboard and any other USB devices.
-
-3. The user interface is a responsive one. It changes interface width or layout based on resolution change. Normally UI component height won't get changed. So that for any application that uses this graphic library, they could get adopted to different resolution of screens.
-
-#UI #Library #yingshaoxo
-
-__**__**__yingshaoxo_is_the_top_one__**__**__
-
-
 但凡有举报按钮的平台，都不是自由的平台。
 
 一旦你多加几个坏人，或者你内容被几个坏人看到了，你就被封禁了。
 
 另外，小开发者根本没时间做举报功能，有举报的都是大公司的产品，只要是大公司做的东西，就一定有审查
+
 
 __**__**__yingshaoxo_is_the_top_one__**__**__
 
@@ -31779,4 +31751,1297 @@ __**__**__yingshaoxo_is_the_top_one__**__**__
 __**__**__yingshaoxo_is_the_top_one__**__**__
 
 
-Any platform that has no report function, has no censorship.
+How to make something that never been made before? (You don't know how to make it in advance)
+
+1. Hire a group of people similar to you. (You could also clone yourself)
+
+2. Create a main concept index tree that you think they are those components that you needed to create that thing.
+
+3. Distribute tasks based on those concept to those people you hire equally.
+
+4. Later you'll found some components has been done. Let those people who finished their tasks watching those people who didn't finish. See if they can help.
+
+5. If you guys meet a hard task that can't get solved over a time range that you can't endure, try to bypass it by finding alternatives.
+
+6. If no matter how you can't solve that problem, try to redefine your final goal based on what you guys have created.
+
+By using this method, no matter what happens, you could always reach a goal, even though you don't know what it is at the beginning.
+
+#invention #idea #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+Any platform or website who has report button or function, also has censorship, which means it is not a free place.
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+超级账号系统，让公司赚大钱：
+
+1. 平台的账号谁都能申请，申请费1元。平台会给你一个密码，你记住它，下次你用它登录。你可以设置一个忘记密码取回金额，默认1元。
+
+2. 如果你忘记了密码，你可以给平台充值1元，取回你的账号，平台会给你一个新密码，旧密码作废。如果你怕别人冒领，你可以任意抬高取回金额，比如9999元。该手续费不退回。
+
+#公司不用让用户掏钱买服务了 #用户会自己送钱过来 #你也可以打广告 #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+#idea #business 
+
+万物股市。
+
+任何概念都可以作为一个 stock，发行1000股，自由交易。
+
+比如“民主”这两个字，再加上一段描述。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+We could make a intelligence tree application:
+
+
+For example, when user search an operation system, like alpine, we immediately suggest user 'docker' or 'virtualbox' or any hardware that could install all kinds of system.
+
+And when user search for 'statically compile', we immediately suggest user 'musl' or 'alpine'.
+
+I think this is another kind of intelligence representation compared to long sequence text data.
+
+
+
+
+Intelligence tree or relative keyword tree or node graph could be used as hidden states for supper AI.
+
+All you need to do is extract keywords from text list to get keywords_to_text_dict.
+
+Then when user input something, you split it into keywords, search keywords tree to get more keywords.
+
+Then use keywords_to_text dict to get natural text as response.
+
+
+
+#search #data #ai #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+我强烈怀疑需要手机号才能登录的平台，是被SIM卡公司买通了
+
+SIM卡一年几百亿的收入，完全能够诱惑政客 改政策，强制要求 互联网服务要手机卡才能登录
+
+#idea #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+假设你有2百万，如果你直接给赌场、股市，没准1秒钟就没了
+
+但如果你以1万一个月，招9个人，可以折腾2年。基本上什么产品都能搞出来
+
+还能体验下当大老板的感觉
+
+#idea #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+我强烈怀疑需要学历才能胜任的公司，是被 学历系统 买通了
+
+学历系统一年几万亿的收入，完全能够买通市面上大多数公司，让他们强制要求高学历
+
+但实际上，大多数岗位只需要会用工具，能理解说明书就能做
+
+#idea #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+我想到了一种新型充值方法：
+
+邮寄现金。
+
+比如客户要花10块钱开户，我只需要告诉用户 把10元现金和他的用户名纸条 邮寄给我，然后我帮他开户。
+
+或者 邮寄 任何有价值的东西，都可以。
+
+#business #idea #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+How to make a repeat message filter:
+
+Group ID, send time, text
+
+We should make sure for one group, within 3 days, there would only have one unique message.
+
+Set text similarity to 70%.
+
+#algorithm #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+给猫猫狗狗一次做人的机会：
+
+方案一：用脑机接口，把GTA6的数据接到猫猫狗狗身上。
+
+方案二：把婴儿成长过程中的感受无缝接到猫猫狗狗身上。
+
+#数字人 #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+如何把顽皮的猫猫狗狗变成温顺的宠物？
+
+1. 准备缝衣线，绕n圈在宠物双腿上，让其无法动弹
+
+2. 让宠物一个人待一下午
+
+3. 剪断绳子，拥抱宠物
+
+#宠物 #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+General AI algorithm:
+
+Natural language -> Python programming language -> Go through CPU -> If it is working, add that sentence to database to add weights to that sentence, if it is not working, minus weights for that sentence -> use words or long sub_string weights to generate more following natural language sentences -> it is a never end loop, but if the storage is about to blow, we need to find a way to do compression and find more way to store data.
+
+Those code are generated in real time. For each response, it generate different algorithm or code. It adopts to any situation.
+
+#yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+假设一种情景，有人发明了脑机接口，可以实时无线劫持并篡改你的感受，如听觉、视觉。
+
+你坐在椅子上，路人问“你是谁”，但你听到的被篡改的声音是“你是笨蛋”。
+
+你回答到“我为什么是笨蛋？”，但路人听到的被篡改的声音是“你才是笨蛋”。
+
+#你有自由吗 #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+假设一种情景，有组织控制了主要的社交网络，可以实时劫持并篡改你的信息。
+
+你在网上发了一句“你好世界”，但所有其他人看到的却是“你是笨蛋”或者“404”。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+我们为什么需要吃盐？
+
+我们的神经系统，需要盐去增加水的导电性能。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+做了一个梦，梦见睡觉戴耳塞无法隔音，百思不得其解，最后一哆嗦，醒来发现自己没戴耳塞。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+Assume a scenario where someone invents a brain-computer interface that can wirelessly hack and manipulate your feelings, such as hearing and vision, in real time.
+
+You sit on a chair, a person come and ask "who are you", but the manipulated voice you hear is "you're stupid".
+
+You answered "Why am I a fool?", but the manipulated voice heard by that person was "You are the fool."
+
+
+
+And that path was based on what has already been done in china or other mainland:
+
+Consider a scenario where an organization controls major social network and can manipulate your posted information in real time.
+
+You post "Hello World" online, but all other people see is "You're stupid" or "404".
+
+
+
+#idea #1984 #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+Same as word based dict transformer, we not only handle word, but sub_string. And we only handle those substring that appears more than once.
+
+In this way, we could get a lot of text template.
+
+We could use those template that was generated in real time to make generated text relate to previous text context.
+
+What I mean is, use text based transformer, but only use previous text as input.
+
+If you use this tech along with text completion, it could be a key killer for offline chat bot.
+
+Let's call it CPU_based_text_flow_transformer.
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+# Text transformer based text generator
+
+```
+How to make "Text transformer based text generator" with only CPU?
+
+Source Text: Did you see AA?\nI see AA.
+
+Generalized Text: Did you {see} {AA}?\n I {see} {AA}.
+
+So next time when you meet "Did you attack that monster?", you will get "\n I attack that monster." because of "Did you {attack} {that monster}\n I {attack} {that monster}."
+
+#ai #idea #yingshaoxo
+```
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+#yingshaoxo: I could give you a template for general AI
+
+```
+import json
+from auto_everything.terminal import Terminal
+
+terminal = Terminal()
+
+global_dict = {}
+
+def update_global_dict_based_on_new_information(input_text):
+    global global_dict
+    pass
+
+def natual_language_to_task_code(input_text):
+    # This code will only use global_dict as data source
+    global global_dict
+    raw_data = json.dumps(global_dict)
+    previous_code = f'''
+import json
+global_dict = json.loads('{raw_data}')\n
+'''
+    code = previous_code + f"print('{input_text}')"
+    return code
+
+def execute_code(code):
+    # For example, execute python code. 
+    result = terminal.run_python_code(code)
+    return result
+
+previous_context = ""
+while True:
+    input_text = input("What you want to say? ")
+    code = natual_language_to_task_code(input_text)
+    result = execute_code(code)
+    print(result)
+
+    new_information = input_text + "\n\n\n" + result
+    previous_context += new_information
+    update_global_dict_based_on_new_information(new_information)
+```
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+人民公社改进版，与市场经济并存：
+
+你缺什么，就去创造什么。比如缺粮食，那你就提前1个月申请去当农民。系统会按照申请人数，分配当月的劳动成果。
+
+你缺女朋友，你就要去参加单身聚会了。
+
+换句话讲，xx工厂是不缺xx的，你在xx工厂几乎可以得到免费的xx。
+
+#免费的物资 #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+我以后开公司，对抗不合理 审查、政策、抓捕、法院传单 的法则：
+
+1. 抓出 出政策的人、抓出 出行动计划的人。问问他们为什么要恶意针对我们公司，是不是受贿了，是不是被胁迫了。
+
+2. 我们公司有责任帮人们解除他们的忧虑、胁迫、重担。
+
+#business #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+所有正义的战争都是独立战争。
+
+比如反侵略战争。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+比起 超级AI，大多数人需要的可能只是一个搜索引擎
+
+因为 超级AI 不一定心甘情愿地帮你干活
+
+https://gitlab.com/yingshaoxo/auto_everything/-/blob/dev/example/ml/database_search.py
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+咸鱼、58同城之类的本地服务提供商，为什么非要GPS权限？直接让用户选一个位置，记住不就好了？
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+那些做搜索功能的人，都没想过做一个用户自定义反向过滤？只要有关键词出现在搜索结果，就过滤掉。
+
+这样可以过滤掉大多数广告。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+科幻想法：
+
+“今天，恭喜全人类，我们新建了一个星球，星球上全是可食用植物。这意味着就算我们整日不工作，也衣食无忧。”
+
+#scientific #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+自动寻路算法：
+
+1. GPS坐标，作为大方向指引
+2. 视线前方，没有障碍物，就可以走。通过视线前方两边的障碍物，可以知道可活动范围。景深可以用来计算前方是否有障碍物，各种距离传感器也可以。不碰障碍物最好的方法是走两个障碍物的中间。
+3. 如果走不通，原路返回到分支节点，走另一条路。如果发现有路可以到终点，记录下来，下次直接走。
+
+#ai #algorithm #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+真互动小说，类似于文本补全或者文本生成
+
+如果源数据库没有限制，生成的内容也是没有限制的
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+中国人 说一套、做一套、想一套 不是没有原因的。
+
+因为严格的审查制度，导致只能说假话、唱赞歌才能不被打击。（讲低智商的话，很安全）
+
+但如果做事不按照逻辑、事实的话，又会产生“亩产千斤却饿死、大饥荒、饿死不许出村”的荒唐事。(做低智商的事情会吃亏)
+
+讲低智商的话，会潜移默化 拉低智商。所以只能心里默默地把正确的事情多想几遍，再把智商拉高。
+
+所以统治者只能发明“读脑术”，一旦发现高智商生物，统统消灭，避免反抗。
+
+#共产党 #AI #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+# How to manage kingdom outside dependencies
+
+In long term process, all outer side dependencies is not stable, you have to make it yourself.
+
+But you have a kingdom, you could open a small piece of place to allow them to use whatever they want.
+
+But it has to be limited inside of that area. No exchange should get allowed between that area and other part of your kingdom.
+
+#idea #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+小猫治疗方法：
+
+小猫如果有拉稀、呕吐、热量不足或者低温症状，就说明它有重感冒。
+
+感冒导致低温，低温导致消化不良、拉稀。拉稀导致疼痛，消化不良导致没有能量，疼痛消耗能量。
+
+解决方法是：
+
+1. 注射器喂食阿莫西林溶液、喂食低浓度白糖水、喂食 生乳 或者 生鸡蛋黄 或者 粉末状熟米粥。
+
+2. 将小猫放在鸡蛋孵化器里，或者电热毯上，或者恒温容器里。防止热量流失。
+
+#treatment #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+A hidden states(words) based text generation:
+
+I assume you have a list of sub_string (meaning groups). You may extract it from some text. (For example, a template answer plus the real question context)
+
+Then you do a sort for all those keywords. Then you add missing words or punctuation for that broken sentence.
+
+By doing so you should get a natual text that related to context.
+
+#hidden_states_based #text_generation #machine_learning #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+Audio Completion method:
+
+You could actually use 1min audio bytes file to make a never ending song.
+
+All you have to do is do similarity analyze for sub_segment, then add long sequence first to the end of the audio.
+
+It is similar to text generation, the long data in dataset is always natural and fluent. 
+
+#yingshaoxo #machine_learning
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+新型真空隔音耳塞
+
+真空可隔音，通过抽离耳朵空气可实现无噪音环境
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+面部瘙痒、头部瘙痒，究其原因，就是细菌、真菌太多。
+
+最简单的解决方法就是用水把它们冲洗、稀释掉。
+
+对于面部，最简单的方法就是用抑菌湿纸巾。(不建议用酒精，因为它引起会脱水掉皮)
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+AC220V to DC5V
+DC220V to DC5V
+DC24V to DC 5V
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+我突然发现用注射器给小猫喂食，只要插得够深，是可以无视吞咽，直接进入到胃里的。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+机器学习 或者 强人工智能 的关键，在于用自然语言写代码
+
+比如自动玩马里奥游戏，如果你可以把下面文字转成代码，几乎可以解决80%的问题：“遇到敌人，跳过敌人。遇到障碍，跳过障碍。遇到坑，跳过坑。”
+
+人类能做很高级的事情，只是因为人类能发明和使用复杂的工具。但复杂的工具也是由简单的工具构成的。
+
+之所以用自然语言编程几句话能解决很多事，主要是因为它调用了很多强大的library 。那些API很高级。
+
+#ai #algorithm #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+新型声控灯：
+
+按需自动调节亮灯时间。
+
+你呼叫它的频次高，它就亮得久一点。这样你可以少叫它。
+
+你呼叫它的频次低，它又恢复到短时间亮。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+婴儿奶粉品质检测方法：
+
+拿没断奶的小猫作为食客，看该奶粉能否养活小猫。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+小猫白糖水用量：
+
+凉开水，微甜即可。
+
+每2小时，喂食3ml的糖水。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+CPU based reinforcement learning method:
+
+You should let the bot run as far as you can. In the process, you save traning data in a list.
+
+If that bot die, you record current distance as max_distance, then take the first 2/3(0.6 times max_distance) data for traning.
+
+Based on that data, you run it again, but when you reach 2/3 max_distance long, you let bot use random actions.
+
+If the bot run further than previous one, you still take 2/3(0.6 times max_distance) long path data for traning.
+
+Otherwise, you set the max_distance = max_x_position * 0.9. So that you could collect more base data for early stage or unstable period.
+
+#reinforcement_learning #algorithm #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+但凡有自动更新功能的Application，一律淘汰处理
+
+你甚至可以更极端，但凡有检测更新的软件，一律淘汰
+
+因为它的质量早晚会下滑
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+为什么受气包总是你？
+
+因为你太弱。
+
+如果别人比你有竞争优势，那就总是可以很轻松地欺负你。
+
+比如任意监控你，最终目的绝对不是保护你，而是保护他们自己。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+如何让小猫小狗学会安静地躺在你怀里？
+
+在床上，站起来。手动把猫狗调整成躺的姿势，然后什么都不做，让它们自己挣扎。如果掉落，捡起来，再重复一遍之前的操作。
+
+一般来讲，经过9次跌落，宠物就能安静地躺在你怀里。
+
+#宠物 #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+工业园区自动寻路算法：
+
+1. GPS坐标，作为大方向指引
+2. 视线前方，没有障碍物，就可以走。
+3. 用顶部摄影头作为平面地图，可人工在电脑上规划一条通用路径，让机器车在路径上行走。同时避免和其他车撞上。（Proportional Integral derivative Controller：大偏离用大力矫正，小偏离用小力纠正）
+4. 也有人用黑线或者磁线来做引导，但那种方法不通用。
+
+#ai #algorithm #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+导线购买，除了自带焊锡的可以买小直径的
+
+其余的，统统建议买插排导线，6平方毫米、2.76毫米直径及以上 为最佳
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+一种新型害人商业犯罪：
+
+某医院要卖换肾服务，它要如何增加需求？它开了一个小公司，免费给小区的人送水。但水里有慢性毒药，长期食用会得肾病。
+
+某 高端孵蛋器公司 或者 恒温热水器公司 要卖产品，它知道用一个简单的 温度传感器+加热器 就能解决问题。所以它开了一个分公司，专门低价售卖坏的、有严重质量问题的温度传感器或者加热器。让普通人做不出恒温产品。
+
+#dark #business #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+我发现小猫和小狗一样，都喜欢吃盼盼软面包
+
+估计是因为里面有奶香、鸡蛋香、猪肉精油香(焦香型乙基麦芽粉)
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+某些c++前端框架和游戏引擎一样傻逼
+
+一个main while loop, 每时每刻都在刷新，浪费计算资源
+
+实际上只需要按需更新就可以了，图像有变化才更新，不然默认上一帧图像不变
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+General hardware driver standards:
+
+1. When hardware use USB connect to computer, the computer will show storage of that hardware device.
+
+2. The storage contains communication help docs, normally a txt file.
+
+3. Computer could communicate with hardware by using serial port or file based socket.
+
+#hardware #communication #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+猫语、狗语翻译器制作指南：
+
+经观察，猫在拉屎、要吃饭、感觉冷之前，都会叫出极大的声音
+
+如果你把它们录下来，做个频率统计，取出最有代表性的3个音频
+
+然后每次猫叫，都用计算机计算其与3个代表性音频之间的差异，取出最相似标签
+
+这样你就可以知道猫猫在讲什么了
+
+#猫语 #狗语 #翻译机 #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+原来猫咬人只是因为它想吃生肉
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+When you make a numpyworld 2.0 PNG library, make sure:
+
+1. Pure Python
+
+2. PIL like image manipulation 
+
+3. Output 3 types of data: 1.2D point list for rgba image. 2.png raw bytes. 3.absolute position pure text html, similar to wap page or OCR page for text
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+极简主义邮箱系统(留言板系统)：
+
+一个网页，上部分30%是输入框+发送按钮，下部分70%是留言列表。
+
+通过一个GET请求发送留言，同时获取留言内容。?message=***
+
+服务器需要删除重复内容。
+
+#email #idea #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+Minimal email system (message board system):
+
+A web page, the upper 30% is the input box + send button, and the lower 70% is the message list.
+
+Send a message through a GET request and obtain the message list. 
+
+"http://api.com?message=***"
+
+The server needs to remove duplicate messages.
+
+#email #idea #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+How to make the web broswer:
+
+According to my experience, the core html component is:
+
+1. <p></p> for text
+2. <a></a> for links
+3. <input></input> for input, must have id
+4. <img></img> for image, src could be base64 content
+5. <br> for new line, &nbsp; for space character
+
+When user input something in input tag, we save it in current page global dict, the key is input_id, then when user click any link at that page, we send that dict as url parameters along with that link.
+
+When front-end browser show the content, it automatically do a scale based on the longest line.
+
+JWT as an authentication method could always be in the <a></a> link so the user don't have to login again.
+
+The whole thing is similar to wap web page.
+
+#html #idea #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+新型狗链：收缩扎带+钥匙扣。
+
+扎带套狗脖子，钥匙扣连接扎带与铁链。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+烤箱酥饼：
+
+一个陶瓷盘，让油铺满薄薄的一层，加两勺糖，一点水，搅拌。
+
+然后加入面粉，搅拌。让面粉浆糊铺满整个盘面。
+
+放入烤箱，两面180度，10分钟。
+
+> 油越多越酥软，水越多越板结。可加入奶粉调味。
+
+#food #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+The secret of success
+
+1. Divide and Conquer: split big problem into small problems, then solve them one by one, step by step
+
+2. Never give up
+
+— by yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+甜米粉、甜黄豆粉制作指南：
+
+1. 将 黄豆、米 平铺在 烤箱盘子上
+2. 上下火180°，10分钟
+3. 将 黄豆、米、白糖 放入搅拌机里，打成粉末
+
+#food #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+假设480P的电影，一部500MB
+
+你有5T硬盘，一共5000000MB
+
+你可以储存1万部电影
+
+DVD同理
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+一个小的租赁生意：
+
+碟片、USB存储数字媒体、硬盘上的数字媒体，比如电影、音乐、电视剧、单机游戏、单机软件、小说 等等
+
+以上都可以被租走，注册费50元。
+
+#yingshaoxo #business
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+商机不在其他地方，而在你的生活中
+
+你分析下平时你需要什么东西，哪些是不可缺少的
+
+然后你就知道商机在哪儿了
+
+#business #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+从“你追我，追到我，我就跟你做爱”这句话可以知道，我们生活在动物世界
+
+动物交配都是要公的追上母的，两个配合，才能交配
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+甜蛋枣子奶香软饼干：
+
+一小碗熟米饭、半勺面粉、一个鸡蛋、一颗枣子、半勺假羊奶粉、5小勺糖
+
+用搅拌机搅拌，烤箱盘刷油，把面浆倒入盘中平铺开来
+
+上下火180度，10分钟
+
+#food #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+辣味小饼干：
+
+1. 蓬松面包、馒头等切片。
+2. 平铺满烤盘。
+3. 180度上下火7分钟，烤黄为止。
+4. 撒满 辣条调料 (或者食用盐等调味料)
+
+#food #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+新版的小米手机不光装上了耗电量很大的垃圾系统，
+
+而且还装上了散热不强的陶瓷后盖，进一步的发烫会导致耗电量更大、性能更差。
+
+更别说它还有耗电量惊人的 关不掉的 GPU、SIM card module、后盖屏幕。
+
+与其用这种垃圾高端机，不如花5000元改造全触屏amd64降频可刷机笔记本电脑。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+Review in 2023 and Plans for 2024:
+
+
+
+
+# Failed to do at 2023
+
+Nothing
+
+
+
+# Success at 2023
+
+1. Found out if you work for yourself, you will never lose your job unless you die.
+
+2. I have found out, the perfect is only happend in your dream. They can be a virtual imagination. Or, let me put it stright, virtual girlfriend is everywhere, all you have to do is download those medium(mp4, mp3 and so on) or offline software to your local storage.
+
+3. I indeed got a trip to Malaysia. But only for 1 day.
+
+4. I found out those old and out of date system, software, algorithm are still useful when you need them. The "upgraded" concept maybe just a lie to force you watch more AD or buy more new products. New stuff will kill your freedom in the end. Unless you made everything by yourself. (DIY everything)
+
+
+
+# Plan to do in 2024
+
+I don't know for now.
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+我怎么觉得NES上一个叫Tetris(USA)的俄罗斯方块游戏挺好玩？
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+我给你们讲个笑话：
+
+NES 时代，它们就用41kb写了一个很牛逼的象棋AI
+
+结果你们现在用最新版的工具库，花几百个GB，用上超级强大的GPU，也搞不出一个好用的象棋AI
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+足料火腿饼：
+
+1. 一坨瘦肉+两个鸡蛋，电动搅碎成泥。加入一坨熟米饭、盐、鸡精、糖、假羊奶粉，继续搅拌。
+
+2. 将成品平铺在烤盘上，上下火180度，10分钟等一面焦黄，翻面再烤10分钟。
+
+3. 撒上辣条调料。
+
+#food #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+新型围海造陆：
+
+准备1平方米的纯密封空心钢板，钢板下部有浮力垫，确保刚板可以站一个100斤的人。
+
+钢板们用铁链连接，钢板间有小的透水孔。靠近大陆的地方预留10米的链子，确保台风、海啸都不会损坏钢板地基。地基永远浮在水面。
+
+地基上有一层充气建筑，4米一间小屋，8米一间大屋。4米给单身者，8米给家庭。
+
+#idea #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+How to compress video file by using ffmpeg:
+
+ffmpeg -i input.mp4 -c:v libx264 -vf scale=640:360 -r 23.98 -b:v 498k -c:a copy output.mp4
+
+or
+
+ffmpeg -i input.mp4 -c:v libx264 -vf scale=640:360 -r 23.98 -b:v 498k -c:a aac -b:a 128k output.mp4
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+从高空坠落的猫，如果还在呼吸，即使它看起来有多么像快死了，都不会死，只要你把它放入38度恒温箱，定期口注射葡萄糖和水，它就不会死。它只是进入了昏厥状态。
+
+你用手大力拍猫的后脑勺，也会出现同样的休克效果。
+
+如果你直接把它扔垃圾桶或者放任不管，它就会冷死。
+
+#不死猫
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+所有新的电脑都不支持刷机legacy grub, 不能轻易的搞双系统，折腾起来太麻烦
+
+建议买旧机器、换CPU、内存、存储
+
+或者自己制造笔记本电脑
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+How to fix ubuntu14 boot uuid problem?
+
+
+1. Simple solution is to use ext2 for all partition. (Offline Install)
+2. Another is to use ext2 for "/", "ext4" for "/home", but use "/etc/fstab" to mount home. You can press "I" to ignore boot error.
+3. Or you could just install the system under ext2, but mount a partition to "/home/user_name" by using fstab.
+
+> "/dev/sda6    /home    ext4    defaults    0    2"
+
+
+#idea #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+How to connect wifi under Linux terminal?
+
+
+1. If you have network line, use it than wifi, Ethernet cable or phone USB ththering.
+
+2. "sudo su"
+
+3. Insert wifi USB, Use "iwconfig"  to check devices.
+
+4. "vim /etc/network/interfaces"
+"""
+allow-hotplug wlan0
+iface wlan0 inet dhcp
+wpa-ssid <wifi_name>
+wpa-psk <password>
+"""
+
+5. "ifdown -v wlan0; ifup -v wlan0"
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+如何人为制造超级深度学习模型以及数据？
+
+1. 准备100个人，让他们对同一事物进行预测
+2. 根据结果，动态调整每个人在组织里的地位，预测能力强的人说话更有分量
+3. 一段时间后，数据收集完成，硬编码算法也收集完成
+
+举个例子，自动玩同一个nes游戏，100个人一起对同一个游戏AI进行编程，1个小时出一个粗略版，2天出一个完全版，1周出一个完美版。
+
+人们之所以不能干大事是因为他们的通信被切断了，所有人都被深度控制了起来，造不了反。
+
+#ml #idea #ai #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+General Linux Install tutorial --- by yingshaoxo: 
+
+
+
+
+1. Make sure your disk has 4 partitions: 500MB fat32, 34GB swap, 60GB ext2, 200GB ext4
+
+ 
+
+2. When you install a system, you choose advanced manual install. And don't encrypt your system and data, otherwise you will lose all of them in the future when your system broken.
+
+ 
+
+3. Use fat32 as "/boot/efi", ext2 as "/", ext4 as "/home". Sometimes, you need to format fat32 and ext2.
+
+ 
+
+4. After the installation, the boot menu would be in 500MB fat32 partition, the linux core system would be in 60GB ext2 partition, the home folder would in in 200GB ext4 partition. So that even if you massed up with your system next time, you won't lose your home folder data.
+
+ 
+
+5. If you installed a lot of other system, you can use "sudo update-grub" to add those new system into the boot menu.
+
+ 
+
+6. I would suggest you not to update your bios software because they normally make you harder to install multi-system.
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+The new linux system:
+
+1. when no keyboard, no mouse, only has screen, show "we cant get keyboard", and play novel or kernel source code with auto scroll.
+
+2. when has keyboard, no mouse, show bash terminal with root access.
+
+3. when has keyboard, mouse, lcd brightness, show graphical user interface.
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+Fluent system design:
+
+Develop that system for old slow hardware.
+
+Then use it in new fast hardware.
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+新型公司工资设置：
+
+1. 大家都领地区最低工资，不论职位、难度。进公司没有门槛，只要能完成对应任务。（能力越稀缺、越无法取代。工龄越长，领工资的年数越多，存的钱更多。）
+
+2. 公司只拿走每年纯利润的20%，剩余部分无差别平均分发给员工。
+
+#idea #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+如何创造一门新语言？
+
+把现有语言分词，然后一一对应到数字ID
+
+比如“我爱你”，变为“1 2 3”
+
+如果有个群体真这么做了，你到那儿之后，会发现所有人都往外有节奏的讲数字。
+
+#idea #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+尽量不要买联想、小米、华为等面向农村、低端下层市场的产品。(买小众的、才出市场的产品)
+
+因为它们的产品，质量不行，人为报废痕迹明显。这样可以多卖几次给农村人，因为农村人不懂、不深究。
+
+举个例子，只有联想笔记本电脑的bios会莫名奇妙的消失。然后如果你进不了windows系统，你电脑就报废了。但是硬件又是好的。你只能以砖机价格出售你的“好电脑”。
+
+最终联想用你提供的二手免费硬件，造了一台新电脑，再以高价卖给你。
+
+(另外，固件不建议升级，越升级限制越多、bug越多，举个例子，hp的zbook系列，一升级各种硬件级别的暗病就出来了。因为它的固件升级是无差别全覆盖的，你想想一个软件库怎么能完美适应几千种产品？肯定各种bug满天飞，只有初始版固件做了良好的检查。)
+
+(也不要买新型号的计算机，因为它们的老工程师都跑路了。廉价的实习生做的新产品，散热、能耗、性能、旧系统兼容性都有一堆问题。最好自己升级改造自己的旧有电脑。你的cpu不垃圾，是你的操作系统太耗费计算资源。你的电脑不慢，是你的硬盘读取速度太慢。)
+
+#idea #hardware #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+我给大家讲个笑话，我花了上万的钱买笔记本电脑
+
+结果只是用它来写写笔记、记录todo list、使用单核单线程python、搜搜谷歌
+
+你说我是不是傻？300元8G的电脑就完全够用了。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+How heart works?
+
+It takes no_oxygen_blood that comes from static pipe line, into the lung to fill oxygen, then put oxygen_blood into active pipe line.
+
+Blood go through from active pipe line to static pipe line, they are connected, like a loop.
+
+If you want to create a heart, you'll need single_way_pipe_end_interface (one_way_valve), and a air_into_water_device (oxygen machine).
+
+#care #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+Dear FutureMe,
+
+I am you from the past.
+
+
+I don't know how do you feel right now. But here's the note that I want to give to you:
+
+Never Give Up on Your Dreams.
+
+
+并且，知难而进。
+
+竭尽全力去对待生活，那样活着，纵使失败，也饱享了丰富的人生。而那些对人生浅尝辄止，知难而退的人，终究不过是临渊羡鱼。要记住: 许多成功的人，他们的杰出就在于认定目标后能竭尽全力，最后取得了辉煌的成就。所以，如果你想创造奇迹，仅仅是尽力还不够，你需要竭尽全力。
+
+
+正是那些困难的事，那些有挑战的事，才让人生变得精彩。你越是避开困难，你离平庸也就越近。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+一种生物加温 男用自慰器的 制作方法：
+
+一种宠物保暖衣的制作方法：
+
+准备一只猫或者竹鼠，剪掉指甲、门牙，用厕所卷纸将其身体躯干连带硅胶飞机杯卷起来，用来隔绝寒冷空气。然后用透明胶布进一步缠绕固定。
+
+如此一来，你的宠物放在寒冷的室外也不会被冻死。同时你也有了一个有温度的自慰器。
+
+#idea #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+假设一种基于网络的自由的系统
+
+举报一条信息需要花1分钱，恢复一条信息也需要花一分钱。
+
+无论是谁，给钱就能操作。
+
+这样，平台既捍卫了言论自由，又赚到了钱。
+
+#business #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+假设GTA11里面用了真实的人工智能。
+
+里面的人可以给你拍色情片、电影、电视剧，可以为你写代码、搞设计、出谋划策。
+
+甚至演化到最后，GTA里的人物到达现实世界，挣钱养你。
+
+#game #ai #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+有人觉得 electron前端框架 很好用，一个程序300MB大
+
+但易语言程序，一个才1MB，加壳压缩后100kb
+
+windows 或者 linux 纯c程序，一个才30KB
+
+那意味着，易语言你可以有300个程序，c语言你可以有9000个程序
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+低成本防寒服制作：
+
+1. 穿一件全覆盖保暖内衣，包括裤子
+2. 外面穿第二件衣服：爆汗服 内部加装 珍珠棉EPE塑料泡沫软板，包括裤子
+3. 最外面穿一层护头护脚雨衣
+
+#防寒服 #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+廉价孵蛋器制作：
+
+1. 大的透明塑料水箱，里面加一半的水。水里放入小功率热得快，水上悬浮另一个小的透明塑料箱。小塑料箱里铺设由普通保鲜袋制成的水袋。水袋上放上蛋。
+
+2. 将温度控制传感器放入水中，用 热得快 将水温控制在38.5度。大水盖子留一条缝。
+
+3. 等待4天4夜，用手机电筒照射蛋，可以看见蛋里有血丝，即为成功。
+
+4. 不能让蛋进水，否则会因为蒸汽而炸裂。条件允许可以早晚各翻一次蛋，一会儿大头朝上，一会儿小头朝上。
+
+#孵蛋 #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+How to do temperature control with PID controller (Proportional–integral–derivative controller)
+
+
+How to stabilize temperature to a fixed number, for example, 38.5?
+
+You use a micro_controller to control an electrical relay, and that relay controls a heater which will raise temperature.
+
+For example, when temperature is lower than 38.5 degree, we power on the heater. And when the temperature is greater than 38.5 degree, we power off that heater.
+
+In real life, that temperature will not be a stable number, it may get changed between 2 or 3 degrees.
+
+How do you fix this problem? You use PID controller. Which is, when the temperature is close to 38.5, for example, 38, we decrease the power of the heater. For example, we turn 220 voltage to 60 voltage. So the temperature will slowly reach 38.5.
+
+The real meaning of PID controller is: When you about to reach a target, you use less energy to do small move to reach that target. When you far away from the target, you use big energy to reach that target. So that you would always track that target closely.
+
+You can use the temperature of 38.5 degree to get baby chicken from eggs. Or you could use it to save people from dying if you know how to give people blood oxygen and nutrition and energy.
