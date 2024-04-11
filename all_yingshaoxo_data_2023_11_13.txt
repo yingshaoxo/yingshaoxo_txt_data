@@ -33017,11 +33017,15 @@ __**__**__yingshaoxo_is_the_top_one__**__**__
 
 1. 大的透明塑料水箱，里面加一半的水。水里放入小功率热得快，水上悬浮另一个小的透明塑料箱。小塑料箱里铺设由普通保鲜袋制成的水袋。水袋上放上蛋。
 
-2. 将温度控制传感器放入水中，用 热得快 将水温控制在38.5度。大水盖子留一条缝。
+2. 将温度控制传感器放入水中，用 热得快 将水温控制在38.5度。大水盖子留一条缝。(温度传感器置于小塑料箱内底部更精准、孵化成功率更高。温度传感器应测空气与箱体的平均温度，而不是蛋的温度，不要让蛋碰到它，不然其他鸡会冷死。)
 
 3. 等待4天4夜，用手机电筒照射蛋，可以看见蛋里有血丝，即为成功。
 
-4. 不能让蛋进水，否则会因为蒸汽而炸裂。条件允许可以早晚各翻一次蛋，一会儿大头朝上，一会儿小头朝上。
+4. 不能让蛋进水，否则它会因为蒸汽而炸裂，或者被细菌感染。条件允许可以早晚各翻一次蛋。剔除有臭味的坏蛋。也可以不翻蛋，让气室朝上即可。
+
+5. 也可以不用水袋、不翻蛋、不喷水。前n天用软塑料锁精环铺地，大头朝上。后三天平铺在地上，上面覆盖几张纸巾。小塑料箱全封闭，只留几个气孔，箱内除底部外其他部分覆盖泡沫隔热板。鸡蛋孵30天，鹌鹑蛋18天。最好有个鱼用小型冲氧器，每4个小时充一次空气。
+
+> 一定要以自己体温为参照，调整温度传感器。36.5 + 2=38.5。
 
 #孵蛋 #yingshaoxo
 
@@ -33045,3 +33049,1097 @@ How do you fix this problem? You use PID controller. Which is, when the temperat
 The real meaning of PID controller is: When you about to reach a target, you use less energy to do small move to reach that target. When you far away from the target, you use big energy to reach that target. So that you would always track that target closely.
 
 You can use the temperature of 38.5 degree to get baby chicken from eggs. Or you could use it to save people from dying if you know how to give people blood oxygen and nutrition and energy.
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+一旦发现自己被监控，尤其是思维级别的实时监控
+
+不用挣扎了，原地等死
+
+因为不管你想什么方法，都会被敌人实时知道，并破解
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+新型万维网，兼顾匿名与开放，在这里，没人知道client的ip，同时人人都能开service：
+
+1. Client查询一个网址，Client把查询请求发向一个或多个上游tracker ip，这些ip是可被设置的，类似于DNS address
+
+2. Tracker 可以是一台电脑，这台电脑有可能自己有一个service, 掌管某个域名。如果你刚好访问那个域名，它就直接返回结果了。如果不是，它就以它自己作为客户端，进一步帮你向它自己设置的上游tracker ip做请求，查询某域名或者发送某个socket request
+
+3. 通过一层一层的tracker查询，你的一个 socket request 有可能从一个国家跑到另一个国家，跳转几千次。但3秒内必定出结果，有回复或者超时。
+
+4. 这种网络的安全性取决于你是否信任你的上游服务提供者。
+
+5. Client本身就是一个DNS service，如果它自己有匹配到它自己的服务，它就直接返回结果了。这样人人都能提供服务。因为这种tree形域名查询，即使你上游tracker ip是一个局域网地址，你也有可能访问到公网的内容。
+
+6. 因为每个人在帮助其他人做请求时，都说是它自己的请求，没有记录下游请求者的IP，所以实现了匿名。
+
+#network #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+眼前实时模拟系统：
+
+想象你前面有一个敌人，你不知道如何战胜它
+
+你告诉脑中电脑，叫它模拟当前情境，然后你与其战斗5分钟
+
+由于模拟速度很快，所以现实世界只经过了一秒
+
+接着你在现实世界与敌人战斗，敌人每移动一下，电脑都会计算它与模拟量是否有偏差，如果偏差过大，电脑会提醒你再模拟一次
+
+于是在你一次次的模拟、拟合之下，敌人的轨迹、行为方式被你完全掌控
+
+这相当于你针对该敌人做了10天的训练，从而轻松打败该敌人。而不是漫无目的地做通用训练
+
+具体来说，系统可在模拟时给出绿色准心，现实时给出红色准心
+
+该实时模拟系统可逐步扩展到国家、星球层面
+
+#tech #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+1. 食人猫只爱吃生肉以及任何有肉香的东西。
+2. 你养猫来捉耗子，结果猫率先把数据线路咬断，同时用猫尿猫屎把机器腐蚀、老化、损坏。
+
+#劝你别养猫 #懒惰的大型犬是不错的选择
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+最近我在玩 老式nmos pwm relay 的时候
+
+发现它只支持5v~12v的signal，并且frequency只支持到10，pwm一秒钟开关10次
+
+动起来像极了老式洗衣机的脱水仓
+
+需要在 ground 与 signal 之间加上10k电阻
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+自己的产品坚决不能开源，开源就是免费给竞争对手送资源。
+
+应该免费给用户使用，同时打一点小广告。
+
+You should not open source your products, but instead, let it be free for using by users.
+
+And you could also use your product to show your own AD.
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+为什么孩子考试成绩高需要给奖励？不需要。如果孩子能从学习知识、使用知识中得到快乐，那快乐就是奖励。学以致用。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+我用 tenga旋吸式吸允感自慰器 + 9w usb发热线 + 3a充电宝 + 润滑油 + 卷纸 + 透明胶带，
+
+做出了一个接近人体体温、体验的飞机杯。
+
+具体：自慰器外部用加热线螺旋缠绕，然后用厕所卷纸缠绕1圈，然后用透明胶带缠绕1圈，然后用厕所卷纸缠绕5圈，然后用透明胶带缠绕1圈。不封顶，露出usb接头，方便插充电宝。如果线不够长，可以用一公一母usb_type_a线加长。插电3分钟，接着把润滑油挤进去，插进去时记得旋转并让肉体充满润滑液。
+
+> You could also raise a big female dog, I mean a real dog, to do sex with you. Normally she won't refuse.
+
+#yingshaoxo #just_like_real_girl
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+单片机外置传感器或者设备，不用两根线的UART serial socket，就是在恶意增加使用难度。加密通信也是在恶意增加使用难度。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+我无意中发现 pyboard, esp, arduino, stm 系列，处理速度还不如10年前的老人机。
+
+不信你去loop一遍256*192的5万个像素。
+
+老人机看不出延时，而所谓的单片机要几十秒。
+
+
+
+建议购买 pyboard 最牛逼的一款，有SD卡槽的那种
+
+不然连MP4都做不出来
+
+https://store.micropython.org/product/PYBD-SF6-W4F2#_
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+我突然想到一个方案，用于把高端手机变成单片机：
+
+利用有线或蓝牙音频，input输入，output输出
+
+音频转串口，可实现320kbs的串口socket通信速度
+
+但由于安卓高于5.0无法让进程后台常驻，同时内存占用过高会被杀进程，又不能自动重启，又不能自由地自动化UI。实际上毫无意义。
+
+还不如使用台式机工控主板，如果它们使用12v单一电源线。
+
+#stupid #android
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+很多人，家里的室内空调装在窗户边，相当于对着室外吹，浪费能源
+
+应该装在室内入口门的上面
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+假设你在某厂房工作，工业齿轮在慢速旋转但势不可挡
+
+你一只手突然卡在里面，噪音太大你无法呼救，你要怎么拯救自己？
+
+假设你做了个远控继电器，你可以单手关闭总开关，你得救了
+
+假设你用的wifi，安卓提醒你该局域网没有网络，自动断网，你被搅碎
+
+假设你用的电容触屏，你手上全是油，点不动，你看着自己被搅碎
+
+无线电+老式电阻触屏 可以拯救你
+
+多放几个带指示灯的空气开关在工人操作的机床旁边 可以拯救你
+
+老式对讲机、高音喇叭 可以拯救你
+
+#它们在害人
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+看起来，学硬件编程，简单的做2个对讲机就可以了
+
+5v电源、麦克风、喇叭、无线电
+
+你要从基础电子元器件，如 电源变压器、整流管、电阻、三极管、天线 等开始构建
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+开水泡冷干饭，是最简单的自热便捷食品。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+Linux commands:
+
+cd: current directory
+ls: list
+mkdir: make directory
+mv: move
+cp: copy
+cat: check txt file
+vi: vim
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+如何证明你是你？
+
+如何在网络中证明你没有被别人替换？
+
+每个知道你的人，都可以对你进行打分，可疑+1
+
+大AI或者中情局每个月会排查可疑度排名前1%的人
+
+看他或她为什么会被标记，被哪些人标记，接触过哪些人，不问原因
+
+然后 切断 这个人+标记他的人 与网络的联系，把他们或她们送到遗弃城市
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+视频极限压缩算法：
+
+音频变为mp3
+
+视频：
+
+方案一：1.转换为图片。2.每张图转为基于上一张图的差异图，相同的地方为透明色。3.差异的像素变为黑色1，其他部分变成白色0，得到蒙版数据。差异的像素被存放到另一个一维list。
+
+方案二：1.转为图片。2. 取一个特殊颜色，比如绿色。3. 后面每张图片都是基于上一张图片的差异图片，没有变化的部分是透明色，透明色填充为绿色，统一格式为jpg。
+
+#algorithm #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+快餐店差异化帅哥美女陪伴服务：
+
+1. 如果男顾客点了100块的食物，美女服务员会主动坐在该男顾客的对面，提供10分钟的陪伴服务。可取消。如果女顾客点了餐，则帅哥服务员会提供服务。
+
+2. 该男性或者女性服务员 会得到 十分之一 他或她服务过的顾客 的消费总额。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+有时候，我脑袋会突然产生邪恶的想法
+
+科技只是工具，物理规则只是工具，谁都可以用
+
+比如你在地下引爆几颗原子弹，就可以人为制造地震，让几万亿的房产归零，再卖它们一次房子，家底清空
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+有些人觉得他们产品的依赖链很稳定
+
+你叫他们买一台20年前的计算机试试，顺便修一下那台电脑。你会发现原材料都找不到。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+怎样简单粗暴的判别某人声是否是噪音？
+
+小于10个字，都是噪音。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+花了几个月玩枪战游戏，就学会了：
+
+1. 他们无法透过他们无法穿透的障碍攻击你。
+2. 他们无法攻击他们没有发现的敌人。
+3. 远程狙击枪是最有效的攻击方式，但游戏厂商故意削弱它的价值
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+最近的新电脑怎么样啊？
+
+新电脑需要16核cpu去完成之前2核就能干的事情。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+带馅儿汤圆是可以用大火油炸的
+
+感觉还行
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+如何判定一个游戏是否公平？
+
+如果你能知道该游戏的所有参数，就是公平的，比如象棋、围棋，你知道它所有的参数。
+
+而其他游戏，如麻将、扑克，你不知道别人手上是什么牌，有可能全是假牌，它就是不公平的。
+
+枪战游戏也不是公平的，你不知道别人的方位、你不知道别人手里枪的威力、你不知道别人的网速比你快。
+
+#yingshaoxo #idea
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+如何以显性非金融的方式掠夺某个国家90%的财富？
+
+首先入侵该国家的米面油水，在里面投放生化毒品，但不会立即生效，需要一种低浓度空气作为诱导，才会变成丧尸
+
+然后在统一时间，各个城市统一人工降雨，投放那种低浓度空气
+
+这样那个国家90%的人都会变成丧尸，该集团就可以假借清除丧尸的正义名义，掠夺该国家90%的财产
+
+#idea #yingshaoxo
+
+
+更牛逼的是种植纳米机器人
+
+然后用4G基站对全球用户进行远控或者引爆
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+我发现我买的大功率nmos芯片
+
+只有 arduino uno3 5v pwm 才能驱动，3v不行
+
+升压模块不行，速率太慢
+
+(市面上有假的arduino只能输出3v pwm
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+原则上来讲，所有需要联网才能使用的游戏和软件，对用户来说都没有收藏价值。
+
+
+这么一想，北朝鲜的局域网似乎还有点作用
+
+听离线的歌、玩离线的游戏、用离线的软件
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+手持电钻+旋转力变杆动力装置+弹簧BB弹枪 = 自上膛弹簧枪
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+万能通用宠物养殖秘籍：
+
+1. 由于宠物或者动物只会乱叫来表达它的需求，但它的需求有无数种可能性，比如吃饭、拉屎、喝水、太冷、太热、太孤独，等等。所以我们需要通用解。
+
+2. 在宠物面前放6个按钮，一键投食、喷水、喷暖气、喷冷气、播放音乐、撒猫砂。让宠物自己选择，适者生存。
+
+#idea #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+原来青春痘是一个谎言，不是只有青春期才长痘，食物里被人下了药也会长青春痘。
+
+我接近7年不长青春痘了，因为我在外面生活，但回到家乡广安，青春痘又回来了(水痘也可以人为制造)。
+
+在深圳时，怎么吃都不会有脓鼻涕，在“家里”，吃一顿有一次。（说明家里人更狠，下起药来，整起人来毫无顾忌）
+
+原来我的任何不舒适感觉都可以被人为制造。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+枪战游戏纯图形算法自动瞄准，是可以基于人类视觉原理来做的。
+
+你得在连续的视频中分清楚什么是背景，什么是运动的物体。射击目标就是运动的物体。但运动的物体有可能是背景。
+
+这涉及到实时3D建模、表皮材质文件映射。比如如果你知道如何用摄像头实时把现实世界的背景转为3D模型，你就知道怎么把虚拟世界的背景实时转为3D模型。
+
+如果你知道了背景的3D模型，那么不是背景的像素运动，就是运动的目标物体。
+
+#idea #tracking #idea
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+总有人觉得自己的网络很稳定
+
+我就一句话：别人拉的网线为什么要给你用？
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+amd cpu可以做得很省电、很低温。只需要把原来的16核变成1核就可以了。
+
+16倍省电、16倍低温。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+被别人控制的互联网，最终的走向可能是：
+
+1. 交一块钱浏览一个网页
+2. 说一句对党忠诚，浏览一个网页
+3. 帮我杀一个人，我帮你运行或者编译一个程序
+4. 不交保护费不允许上架自己的内容
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+世界上大多数别人的算法、协议、接口，都是没有意义的，1是因为算法可能不是最优，2是因为接口或者协议经常升级，不稳定。名气大只是因为被人用得多，广告打得好。
+
+比如 ethernet, socket, jpg, png, mp3, mp4, python, c, type-c。
+
+最好的办法是自己创造一套自己的东西，把转换器或者转换代码作为extension放在另一个池子，随时可以被抛弃。
+
+举个例子，我的设备都有暴露type-a的4根线接口在主板，但是为了迎合市场，加了一个转接type-c在最外层。那一层随时可以被抛弃。
+
+#yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+我突然发现 openwrt 可以设置全局 DNS
+
+这样就可以用域名访问本地IP服务了。
+
+这是路由器级别的DNS
+
+意味着谁连上你家wifi都能用
+
+或者下游路由器连上路由器都能用。
+
+可以直接组成主干网了
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+Ubuntu 不能用了，自带后台病毒，全局搜索你文件，还不让用户使用
+
+tracker-miner-fs.service会占用大量CPU，~/.cache会占用大量空间
+
+还不好禁用
+
+https://zhuanlan.zhihu.com/p/360892389
+
+https://askubuntu.com/questions/1258757/tracker-miner-fs-is-taking-90-of-cpu
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+我个人怀疑是酱油、醋、有色油等食用色素，长期在体内堆积，导致你的肤色暗黄。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+理想上，数字人觉得他们能永远存活
+
+实际上，电脑硬件会损坏，构架、软件、审查会升级，能撑5年就很不错了
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+好多策略性的AI，可以用硬编码做
+
+比如你玩枪战游戏，你一旦语音输入“前方发现多个敌人”
+
+程序立马提醒你“快放炸弹，你用枪干不过多个人”
+
+程序还可以根据历史上你的输入，根据长序列，输出更智能的策略
+
+#game #ai #yingshaoxo #搜数据库
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+钢琴的学习方法：一个星期只增加1个键，从3个键开始。这样可以穷尽所有可能性，对自己将要弹奏的音符有完全的掌控。 -- yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+考试，尤其是高考。如果考的东西真的有用，你不参加那个考试也能拿你的知识 称王称霸、致富、自由快乐的生活。
+
+反之，就算你参加了也没用。这就像知识产权注册一样，你辛辛苦苦发明了一个东西，转手就把其原理送给了 控制版权局的势力。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+袖珍猫，茶杯猫，活体，长不大，20CM长
+
+只爱吃生肉
+
+没有味觉，只信它的鼻子，你觉得好吃的它觉得不好吃，如甜食(糖水)
+
+饭要饿得只剩骨头，快要死了才会吃 (但在吃食前会疯狂地乱叫骚扰你。不放油的饭
+
+一旦活得安逸，温度合适就喜欢咬线，尤其是电线 (我担心会引发火灾
+
+如果没有猫砂，它会直接在你床上拉屎拉尿，吃完猫粮后拉的尿奇臭无比
+
+不喜欢主人，不讨喜，喜欢往黑暗的角落钻
+
+我怀疑所有猫都是这样，只是有些喜欢人，有些不喜欢
+
+不如养狗轻松，大小性别合适还可以当伴侣（但要给有多动症的狗套铁链
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+出壳鸡育雏保温箱制作
+
+
+1. 全封闭只留风扇孔的容器，可以是桶，也可以是方形容器。
+2. 100到200w最高可把环境照到42度的黄炙灯。
+3. 用温控把环境温度控制在38度。确保灯亮的同时，风扇也转，均匀热量。
+4. 如果孵蛋后三天有鸡啄壳但出不来，可以把它扔在保温箱，让它的水分蒸发快一点。一出壳就在全温暖的环境。
+
+每周调整温度，逐步降到室温。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+hqx3硬编码处理图片速度非常快，游戏引擎或者播放器，加上它就能轻松实现super_resolution
+
+https://en.m.wikipedia.org/wiki/Hqx
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+活一年的程序员，写的代码你只能用一年
+
+活10年的程序员，写的代码你能用10年
+
+因为老程序员充分考虑了软件的兼容性问题，以达到适配10年前以及10年后的软件、硬件变动。
+
+主要的措施是：减少依赖项、减少不通用语法的使用、不适配特殊硬件。
+
+#idea #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+用 数据线+针筒自制的胃管 给宠物注射了一个鸡蛋
+
+宠物感觉好极了
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+Maybe in the end, you will find all those compiler is just a translator, which translates one kind of code to another.
+
+It is similar to 'you are good' -> '你是好的'
+
+In simple mode, word link to word. In complex mode, sentence link to sentence. In a very complex mode, one article link to an article.
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+我突然发现，所有界面类的操作，都可以在命令行界面实现
+
+只要自动补全和菜单选择做得好，一切都没问题
+
+换句话讲，只要你有终端和键盘，就可以完成一切任务，包括娱乐活动
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+有些人觉得他们懂安卓编译，实际上不是
+
+你可以叫他们编译一个1MB的空安卓程序，就像手机内置的计算器一样大
+
+你会发现他们根本编译不出来。他们只能编译出大于5MB的东西
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+我突然发现cdroid可以导出100多KB的apk文件
+
+但是用android studio或者任意你目前能在桌面找到的编译软件，你只能编译出大于5MB的apk文件 (flutter更恶心，调试apk500MB，release20MB
+
+你们知道cdroid是怎么编译c到apk的吗？
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+How to make a radio based commnication system?
+
+AC Signal -> antenna -> radio wave -> antenna -> AC amplifier -> AC Signal
+
+You make two channel, one for send, one for recerive.
+
+By converting electrical energy into radio waves or microwaves, power can be transmitted through the air and received by a device equipped with a compatible receiver. The receiver then converts the electromagnetic waves back into electrical energy.
+
+An antenna converts electrical energy into radio waves by producing an alternating current that causes electrons to vibrate, generating electromagnetic radiation that travels as radio waves in the air. 
+
+Radio waves are received by an antenna that is attached to a radio receiver. When radio waves hit the antenna, the metal electrons move back and forth, creating tiny oscillating currents that the receiver detects. The after amplifiering, it is a useable signal.
+
+#yingshaoxo #idea
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+1984
+
+楚门的世界 : 出生在影视棚，全程直播
+
+银翼杀手 : 克隆人的记忆是被灌输的，他不知道自己的记忆是否是真实的
+
+人工智能 + 黑客帝国 : 出生在虚拟世界，万物皆虚拟
+
+外星科技 : 用模拟引擎作为文明收割机
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+利用恐惧来驱使羊群，利用恐惧(皮鞭)来驱使动物，利用恐惧来驱使奴隶。
+
+如果你不怕任何东西，就没有任何人能奴役你。
+
+但它们仍能利用你，通过制造幻觉与假象、通过制造虚假的记忆、通过提供虚假的信息。
+
+毛毛虫很难打倒人类。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+提高实时目标物体检测速度的一个方法是聚焦，只关注视野中心的一个小圆，对小圆内的物体进行物体识别。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+有人对3600块钱没有概念，觉得少
+
+但如果把它换算成3600个鸡蛋，就有概念了
+
+你需要每天吃120个鸡蛋、每顿吃40个鸡蛋才能把它吃完
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+General cross platform software making method:
+
+1. Find a way to execute bytes stream cpu instructions in a certain platform.
+
+2. For each platform, you compile an empty software that could only execute its built_in cpu bytes_stream.
+
+3. When you make new software, you only compile it into bytes cpu instruction stream, then inject that bytes block into the empty software you have for that platform.
+
+4. Problem solved, now you can have a cross platform compiling programming language. It is similar to java or python, but better and smaller, because each software can get running without dependency or interpreter.
+
+#idea #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+独立自主、自食其力、自力更生、自立自强，都是一个意思
+
+为什么别人闹独立就是不对的，你搞独立自主就是好的？
+
+你有特权吗？别人不是人吗？
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+为什么通用solution是最弱的solution?
+
+简单讲，就是：
+
+假设你有机器A，有手无脚，有机器B，有脚无手
+
+你要编写通用于两台机器的程序，那程序必然 既不用手，也不用脚，很弱、很无能。
+
+如果硬是要强行让程序适用于两个机器，那就得写两份代码，size会变大。随着硬件型号越来越多，就算让机器执行一个简单的动作，也得耗费几十GB的代码存储量。不划算。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+正三棱柱型的楼房可以抗最高级地震
+
+前提是外部是近似整体灌注的钢筋结构，每层是近似整体的平面，平面与平面间用几个超级大的减震橡胶柱连接。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+如何制作通用浏览器，使其自适应几十年甚至几百年间的网页？
+
+
+让网站主在html meta tag下写一个数字，比如“build=1997”
+
+那么在浏览器浏览该网页的时候，浏览器会自动切换到1997年的浏览器内核
+
+
+#idea #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+How to make a universal browser that adapts to web pages that either built decades ago or built from current time?
+
+
+Ask the website owner to write a number under the html meta tag, such as "build=1997".
+
+Then when the browser visit the web page, the browser will automatically switch to the 1997 browser kernel.
+
+By doing so, old webpage will work on new browser.
+
+
+#idea #yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+突然发现一个好玩的事情
+
+把歌曲速度调到0.5倍，闭上眼睛静静听会有新体验
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+如果你有什么跨时代的发明、商业机密，不要急于开源，因为开了也没几个人知道，没几个人在意，相反会被一小撮人恶意利用
+
+你应该利用你自己的发明、商业机密，疯狂敛财、集权，等你出名了、掌权了，突然说一句：“我赚钱不是为了钱，是为了把我的发明开源，受益更多人”。或者“我集权不是为了控制你们，是为了按照我的设想，让世界变得更美好”。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+33. "remove every backend project that uses node third party packages, they might has backdoor that could use your VPS as their VPS to act like a general web client for hackers"
+  it is even wrose if you use npm in root VPS, because the npm will always use new version of a package or sub_package, how can you make sure your 3000 dependencies will not have a virus that could use your VPS root permissoin to do bad things?
+
+  it is the same for other package manager, for example, python pip.
+
+  or golang package, java package, rust package, flutter package. in chinese, people usally call those machine that has those software running 'rou ji'
+
+
+
+利用 package manager 自动更新新版本的特性，做远控 轻而易举
+
+就算不更新，利用现有的package，二进制文件一个post发到黑客服务器，它就知道你的电脑能不能被控制
+
+对于root设备，被控制就是被完全控制，对于普通设备，就是被当成hacker web 客户端，可以被拿来在网上发垃圾信息
+
+到时候你的ip就会被当成坏ip被服务器墙掉
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+计算机的应用，主要有三个领域：
+
+1. 数据库。用来做搜索系统、存储或查询资料
+2. 做计算。利用各种算法与数据，来做预测或者得到结果
+3. 搞通信或者远控。控制软件或者硬件改变世界。
+
+超出这3个领域的，基本属于不靠谱应用，对现实世界没有帮助
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+高考在不作弊的情况下如何学习？
+
+6年每科做3张高考卷，
+
+每天最多只能做一道题，要求彻底理解，涉及到的知识点的相关知识彻底掌握
+
+如果第4张卷子在独立思考的情况下能考高分，那就是成功了。
+
+举个例子，英语卷的中英文互译数据，能脱口而出、1比1实时翻译。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+类似《头号玩家》之类的虚拟世界，用vr版的“我的世界”就可以做。只需要每隔一段时间把可用方块缩小。
+
+但这类联网应用，有一个通病，那就是有审查。
+
+那意味着就算有人站在你对面，讲的任何反动言论你都听不到。甚至对方都登不进服务器，因为被封了。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+我亲眼看到猫把自己的尾巴咬断了
+
+你可以想想它能不能咬断你的手指
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+如何想出更周全的决策？
+
+遇事不着急，先找个相对安全的地方待着。
+
+然后静静思考一分钟，得到更优解，换个更安全的地方待着。
+
+接着花1天的时间思考，换个更安全的地方待着。
+
+接着花一周的时间思考，得到最优解，尝试行动，收集数据。
+
+接着花一个月的时间思考，得到最优解，果断行动。
+
+做决策时不光要考虑手里有的工具或优势，还得考虑如果没有这些优势或工具，该决策能否成功被执行。不光要考虑在现代能不能被执行，还得考虑在古代能不能被执行。一般来讲，古代一穷二白都能用的策略，现代也能用。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+一个想法：有艺术感的素描版的3D枪战游戏。重点在于艺术感和流畅的操作体验。另外则是size很小，因为素材是0或1组成的图像。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+土法孵蛋技术，第二代：
+
+
+1. 准备宠物加温垫、温控、不漏水的水袋、羽绒服。
+
+2. 水袋放于加温垫上，温控贴在水袋上，羽绒服把整个装置连蛋一起覆盖上。
+
+3. 温控把温度控制到37.5度，可用人体体温36.5作为参照。
+
+> 如果没有不漏水的水袋，可用水宝宝代替水，防止漏液。
+
+> 如果有不漏水的水袋，甚至可以用一个方形容器装水，用热得快加温。然后蛋放水袋里，冲氧器放水袋里，水袋直接扔容器里。让水隔着袋子包裹受精蛋。
+
+> 一次都不翻蛋，气室朝上即可
+
+#yingshaoxo #idea
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+考试，尤其是高考。如果考的东西真的有用，你不参加那个考试也能拿你的知识 称王称霸、致富、自由快乐的生活。
+
+反之，就算你参加了也没用。这就像知识产权注册一样，你辛辛苦苦发明了一个东西，转手就把其原理送给了 控制版权局的势力。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+一种新型评论平台：万物评
+
+用户给url链接，每个人都可以根据这个链接的内容，进行场外评论，包括添加教程以及代码
+
+通过我们平台，我们可以通过关键字搜索任何评论
+
+这样就变相的实现了言论自由与信息自由
+
+#yingshaoxo #idea
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+理想上，数字人觉得他们能永远存活
+
+实际上，电脑硬件会损坏，构架、软件、审查会升级，能撑5年就很不错了
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+如何减轻开发者的负担、减少软件大小、优化程序性能、增加兼容性：
+
+对于不同的硬件、系统、构架，构建不同的软件包或者repository，让不同的程序员管理
+
+比如vim，可以分为vim_linux, vim_windows, vim_mac, vim_android，等等
+
+如果更精分，可以分为vim_linux_amd64, vim_linux_arm64
+
+这样一来，你可能会发现，只有适配unix那个项目的开发者最聪明、代码量最少、程序最稳定。
+
+#yingshaoxo #idea
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+How to reduce the burden on developers, reduce software size, optimize program performance, and increase compatibility？
+
+
+
+
+
+For different hardware, systems, and architectures, build different software packages or repositories and let different programmers manage them.
+
+
+
+For example, vim can be divided into vim_linux, vim_windows, vim_mac, vim_android, etc.
+
+
+
+If need more precise, it can be divided into vim_linux_amd64, vim_linux_arm64
+
+
+
+In this way, you may find that only the developers of Unix are the smartest, and their project have the least amount of code, and their software are most stable.
+
+
+
+If the project has 0 dependencies, in theory, in that hardware machine it targets to, you can use that software forever without updating or internet access.
+
+
+
+For people who are looking for general cross platform project, they are stupid. They do not own those hardware or operation systems, so they can't make sure in the future, those stuff won't change. So cross platform software is the most unstable software projects you can ever have.
+
+
+
+
+
+#yingshaoxo #idea
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+写代码、做数学，思维要灵活，不能一看到任务有关于某个知识点，就只用那个知识点的知识解题，有可能用其他模块的知识解它更高效。
+
+举个例子，完成一个编程任务，你可以找一个垃圾模块，使用它定义的效率不高的API。也可以费半天劲使用操作系统提供的不人性化、过度复杂的API。
+
+但更可以直接写指令集，用没有在说明书定义的指令。或通过远程，使用其他操作系统或者硬件的更人性化、简便的API。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+我在看《放牛班的春天》，感受是：
+
+如果你把一个会认字理解文章的问题儿童，关进一个有灯、有书桌、有书看的小房间，长达一年
+
+这个有问题的儿童由于无聊只能看书，看着看着就没有问题了
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+Writing diary is a good habit to let your language more accurate and understanable.
+
+It also enhance your memory, so that you will be more wise.
+
+If as an educator, you speak something that your students do not understand, how can you be successful in education?
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+最近中信银行想让我还一笔有可能不是我欠的信用卡贷款，大概3000。
+
+我寻思我都没有手机号、身份证，竟也能欠钱
+
+一穷二白的我想过炸中信银行的大楼，但似乎不合实际，因为我没有炸弹，同时大楼也是中信银行租的
+
+最后得到一个好办法，一有人催债我就打110，然后等警察局的人过来。要么抢劫催债的人3000元用于还款中信银行，要么抢劫警察3000元用于还款中信银行。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+没准儿近太空层绕地飞行，不需要火箭，只需要普通飞机 + 一上一下两个垂直推进器就能做。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+如何实现自我容颜与声音的永远年轻？
+
+在年轻时拍摄一堆面部各个角度的视频，包括说话。数据收集到 直到能流畅的 自己用AI换脸技术实时换脸，看不出作假为止。
+
+老年时用换脸技术换自己的脸与声音。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+我在设想一种新的编程语言构架：
+
+我用 我自己改造出来的Python，自动生成C代码，C代码又编译出类似Dart一样的编译器
+
+用这个dart，我又能写一个改造版的Python
+
+这是一个loop，python -> c -> dart
+
+dart可以写c, python
+c可以写python, dart
+python可以写dart
+
+如果这个dart能不依赖c，独立编译出二进制cpu指令集可执行文件，基本无敌
+
+如果只适配unix，那开发会轻松很多
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+Instead of using type in function, you can directly put the type after variable name, so that python2 could run it, for example:
+
+
+def hi(greeting_string):
+     result_string = "yingshaoxo: " + greeting_string
+     return result_string
+
+
+Normally, all we need is function_name_complete, variable_name_complete, class_function_name_complete, it can be done with regex expression, so no need for using type hint.
+
+
+
+https://yingshaoxo.blogspot.com/2024/04/how-to-make-your-python-code-more.html
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+我最近亦有在思考一个人在离线没有设备的情况下如何自娱自乐
+
+方法很多，我讲几个：
+
+1. 自言自语，自己和自己对话，谈天说地，甚至能写小说
+
+2. 用水画画。
+
+3. 把7个钢琴音记下来，在脑子里弹琴。或者用嘴演奏音乐。
+
+4. 把象棋给记下来，自己和自己在脑子里下棋
+
+5. 精通某门编程语言，在脑子里写代码。时不时用手把重要部分记录下来。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+假设你有一张图片，然后你用7种颜色把图片上所有的点替换掉
+
+颜色的选择以颜色近似值为准，某个像素跟7个颜色中哪个像，就替换成什么色
+
+这样图片动漫化是不是可以用硬编码做了呢？
+
+是不是机器人的视觉也可以用硬编码做了呢？
