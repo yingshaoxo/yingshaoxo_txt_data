@@ -508,7 +508,7 @@ keywords 按空格分割，loop 所有文本数据，所有keywords在文本里�
 
 
 
-第32章 失去工作是一件坏事吗？ (Losing job is a good thing)
+第32章 失去工作是一件坏事吗？ (Losing job can be a good thing)
 
 没有稳定的工作，但有稳定的失业。
 
