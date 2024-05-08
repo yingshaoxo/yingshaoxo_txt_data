@@ -494,7 +494,7 @@ keywords 按空格分割，loop 所有文本数据，所有keywords在文本里�
 
 
 
-第31章 别人真的能联系上你？ (Can people contact you if you do not pay money to other groups?)
+第31章 别人真的能联系上你？ (Others can't contact you if you do not pay communication fee)
 
 假如你没钱交话费，你的手机号就会被取消，别人将无法通过手机联系上你。
 
@@ -508,7 +508,7 @@ keywords 按空格分割，loop 所有文本数据，所有keywords在文本里�
 
 
 
-第32章 失去工作是一件坏事吗？ (Was losing job a bad thing?)
+第32章 失去工作是一件坏事吗？ (Losing job is a good thing)
 
 没有稳定的工作，但有稳定的失业。
 
