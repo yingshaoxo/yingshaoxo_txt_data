@@ -646,7 +646,7 @@ copy and paste, 你觉得你有智力，你就克隆你的记忆。
 
 
 
-第42章 基于空气的计算机文明 之 无法复现的USB协议 (You can't reimplement the USB protocol in a easy way)
+第42章 基于空气的计算机文明 之 无法复现的USB协议 (You can't reimplement the USB protocol in an easy way)
 
 我看到我们的计算机目前只能接收 USB协议的数据。鼠标、键盘、麦克风、音响等等 都只能用 基于USB协议的接口，否则无法被使用。
 
@@ -660,7 +660,7 @@ SPI通信协议可以让一个单片机轻轻松松地与一堆其他硬件设�
 
 SPI协议基本上可以让你对多个设备直接做串口通信，但不管你有多少设备需要通信，它都只要4根线。(第4根线需要做特殊处理，让它使用1根线控制使用哪个外置设备，比如使用0到5v的电压表示0到20个设备的ID) 
 
-(基本上你可以把 SPI协议 理解为在传统的tx,rx上加了个chip selection，发送串口数据的部分是通用的。tx指send, rx指read。它类似于socket，都是发送 0与1的bytes stream。)
+(基本上你可以把 SPI协议 理解为 在传统的tx,rx上加了个chip selection，用于选择要和哪个外置设备通信，而发送串口数据的部分是通用的。tx指send, rx指read。它类似于socket，都是发送 0与1的bytes stream。)
 
 SPI的4个pin分别是: 1. sclk(serial clock that sends time signal) 2. mosi(master output, slave input) 3. miso(master input, slave output) 4. ss(slave select or chip select)
 
