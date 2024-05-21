@@ -1,0 +1,17 @@
+Product: Multiple Storage Files Management System
+
+Author: yingshaoxo
+
+Description: It can be used as a website to manage multiple storage files. You can think it as a multiple device folder sync tool, but you have to handle the merge process manually.
+
+Keys:
+
+1. In the website, we could see the union set of all storages. For example, in diskA, we have 'hi.txt', in diskB, we have 'ok.txt', in diskC, we have 'hi.txt'. Then in the website, we would see ["hi.txt in 2 disk", "ok.txt in 1 disk"].
+
+2. We normally handle things with folder. For example, if we want to sync a folder to all disks, we click a sync button for a folder, then the sync process would be done by computer automatically. If without this function, in real world, you have to use USB Storage to do the copy and paste manually for multiple devices.
+
+3. We can also do delete or move or creation for file or folder for different disk devices.
+
+4. We have to make sure we see the folder or file size taken in real time, for example, a folder takes 10GB, it has to be a clear number to users. And don't forget to do a sort from big to small for the display.
+
+5. Also, for the display, it should have name sort, creation time sort, type sort, size sort.
