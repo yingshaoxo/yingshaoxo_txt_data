@@ -14,8 +14,10 @@ Keys:
 
 4. We have to make sure we see the folder or file size taken in real time, for example, a folder takes 10GB, it has to be a clear number to users. And don't forget to do a sort from big to small for the display.
 
-5. Also, for the display, it should have name sort, creation time sort, type sort, size sort.
+5. Also, for the display, it should have name sort, creation time sort, type sort, size sort. (The size sort should include folder child contents size)
 
 6. Make sure we can share those file or folder by using http links. And for some of those files, we can even view it online, for example, audio or video or books or code.
 
 7. And don't forget to add a search function, so you can search a file or folder by using some keywords. For example, if you have a list of files ["hi_you_all.txt", "hi.txt"], if the search keywords is "hi all", you should only return ["hi_you_all.txt"].
+
+8. There also have manual sync or merge folders function, if you choose two folder and click merge button, if there has conflicts, it will let you choose for each conflict file, ask you "replace A by B or replace B by A?". When it ask you, you can see clearly about the two files size, and you can do a preview for each two file. (conflict happens only when two file have same path name but the content not equal)
