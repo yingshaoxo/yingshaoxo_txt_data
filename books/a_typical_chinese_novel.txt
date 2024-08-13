@@ -1464,3 +1464,16 @@ There has two version of the world:
 That is why people say they live in 1984 style spying world. Or that is why people say 'Life is struggle, Live is struggle, Live is hard'. Because they live in lower level world.
 
 争论送知识，打架送武器，监控送反监控知识。
+
+
+
+第107章 手动构建乌托邦和谐社会 (How to build a peaceful society)
+
+假设人人都有身份证，人人就都有数字ID。国家层面给每个人都发配了一个主页，是和ID深度绑定的。人人都可以在自己的主页上更改自己的信息，比如讲自己是干什么的，联系方式是什么。但人们不能更改自己的ID和名字，ID和名字在主页置顶。人们可以给自己取昵称或别名。人们也可以在主页下新增一个sub_page or iframe，方便展示它自己定义的第三方页面，允许超链接但不允许自动跳转，不允许javascript之类的能对访问者电脑产生性能消耗的网页技术。
+
+个人描述没有审查，所以要提醒访问者，该内容无法保证真实，谨慎对待。
+
+以上覆盖了个人通信的基本机制。下面讲讲生活中，该数字身份证的用处：
+
+1. 自带钱包功能，人们可以直接转账到身份证。大额转账需要线下再三确认，分几个月连续确认，才能转账成功。
+2. 人们也可以直接使用身份证进行消费，举个例子： 每个公交站都要求你先在站台做人脸识别，然后你的身份证才能直接在那个站台刷卡上车。效果持续24小时。
