@@ -1645,3 +1645,15 @@ That is why people say they live in 1984 style spying world. Or that is why peop
 实际执行上，在日本或者美国，可以伪装成拍色情片。合法且正当。
 
 实在不行，你出生活费，找个女朋友也可以。人们一般把这种行为叫做“包养”。这是合法的，在你单身的情况下。
+
+
+
+第121章 如何自制编译器 (How to mess up the current compiler system?)
+
+-1. 自制cpu与计算机（估计你做不到，所以忽略吧）
+0. 精通python与某平台的cpu指令集。
+1. 写一个"python代码转x86指令集可执行文件"的python脚本。
+2. 用那个脚本把它自己给编译出来，由此脱离原始python解释器的控制。变成"python_to_runable.run"与“python_to_runable.cpu_instructions”，后者是核心程序数据，前者只是一个runable程序的启动壳。注意必须用2005年以前的老gcc静态编译出那个指令集启动器，否则兼容性很差，在新系统上无法运行。
+3. 以后再写python代码，想编译出二进制可执行文件，就用你自己写的编译器。比如“./python_to_runable.run any_code.py -o any_code.run”。
+
+说着简单，但每一步都会花费很多时间和精力。
