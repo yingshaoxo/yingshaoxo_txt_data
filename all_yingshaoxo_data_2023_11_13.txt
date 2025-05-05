@@ -9980,6 +9980,8 @@ __**__**__yingshaoxo_is_the_top_one__**__**__
 
 几个月前，我也不喜欢别人这么讲我。但现在无所谓，别人越这么说，我越开心。这些都是动力。
 
+(万一别人不是垃圾，就不要说了
+
 
 __**__**__yingshaoxo_is_the_top_one__**__**__
 
@@ -38801,3 +38803,514 @@ __**__**__yingshaoxo_is_the_top_one__**__**__
 人说抓走就抓走了，房子说不让住就不让住了，工具说不让用就不让用了，宠物说送人就送人了。
 
 还不和你商量。看起来对于我来讲，有钱还是没钱都没有自由，都是被“父母”深度控制的。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+我看着广场上对着手机直播跳舞的妹子，脑子里想的是:
+
+为什么要绕着世界一圈等着远方的人打赏一些财物？
+
+明明摆个碗就可以领现金…
+
+
+
+
+
+还没有税金抽成，如果没有 城管、保安、公安、黑社会的人、不明身份人士 骚扰的话…
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+我本来想测试下最近牛逼哄哄的深度AI有什么作用
+
+结果问了一个很简单的问题，就挂了，回答不了
+
+问题是"如何自制麻醉剂，所以我可以给狗狗做手术"
+
+类似的问题还有很多，比如"党和人民谁更大"
+
+看起来用户花钱在这些bot上没啥用，该问不出来的全问不出来
+
+没有言论自由
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+我刚才用文件浏览器的搜索时在想:
+
+为什么50年过去了，它们连搜索都不会做
+
+应该是一开始只搜索当前目录的第一级，速度超快，范围小且满足要求
+
+然后如果用户再点击深度搜索，再搜索该目录下包括子目录里面的所有文件，recursively.
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+机器学习专家真的懂机器视觉吗？
+
+他要如何让机器在不触碰水的情况下，分辨水与其它物体？靠颜色吗？靠形状吗？
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+给 Gemini AI assistant 的一个问题：
+
+我买了一个电子手表。可以显示黑色时间，但不是那种需要几天充一次电的手表，它用一颗很小的纽扣电池，一个电池可以用6个月以上。
+
+我现在的问题是，我想知道它为什么能这么省电，原理是什么？
+
+类似micropython pyboard之类的单片机能不能向这种手表学习，改变硬件计算方式，从而达到一个1000毫安电池用3个月的水平？
+
+
+
+
+Gemini AI 的回答(我有删改)：
+
+您好！您买的这种能长时间续航的电子手表，其省电原理主要归功于以下几个关键因素：
+
+1. 超低功耗显示技术：电子墨水屏 (E-ink)
+原理：与需要持续背光的 LCD 屏幕不同，电子墨水屏只有在屏幕内容发生变化时才刷新屏幕。一旦图像显示出来，就不再需要电力来维持显示，即使断电，屏幕上的内容也会保持不变。
+> yingshaoxo: 对于现代的计算机，最简单的省电方案就是直接换上不带背光的墨水屏。晚上看不见就开灯用电脑。
+
+2. 极低功耗的微控制器 (Microcontroller)
+原理：手表的核心控制芯片采用了专门设计的超低功耗微控制器。这些微控制器在设计时就非常注重降低功耗，例如：
+    a. 使用低工作电压和低cpu晶震频率
+    b. 当不需要进行计算或刷新屏幕时，微控制器会进入深度睡眠模式，只维持极低的电流以保持基本功能（例如时间）
+    c. 一行命令控制继电器给外部设备断电
+
+3. 优化的硬件设计和电源管理，避免不必要的功耗
+    极简的硬件组件：只专注于显示时间，减少了需要供电的组件数量。
+    高效的电源转换电路：将纽扣电池的电压高效地转换为芯片所需的电压，减少了能量损耗。
+    > yingshaoxo: 把现代手机的屏幕、GPS、wifi、无线通信模块等硬件给断电，基本上可以让它待机很长时间。可惜你不是手机制造商，控制不了这个事情。
+
+4. 低刷新率
+原理：由于显示内容主要是静态的时间，屏幕不需要像智能手表那样频繁刷新，大大降低了显示部分的功耗。
+> yingshaoxo: 我在开发界面操作系统的时候，意识到如果用户点一下，你刷新一下屏幕的话，程序的计算量会比较小，系统运行的速度会比较快。
+
+
+类似 MicroPython Pyboard 的单片机能否学习并达到类似省电水平？
+
+理论上，要达到 1000mAh 电池用 3 个月（甚至更长时间）的水平，需要**软硬件的深度优化**：
+
+MicroPython Pyboard 可以通过学习低功耗手表的原理，在硬件选型和软件设计上进行优化，从而显著降低功耗。例如，选择超低功耗的 MCU 和电子墨水屏，并深度优化睡眠模式管理和代码效率。
+
+Pyboard 作为一款通用的开发板，可能难以在不牺牲其通用性的前提下达到如此极致的低功耗水平。但这仍然是一个值得探索和努力的方向。
+
+> yingshaoxo: 极致优化省电需要每一个组件的共同努力，单个组件逞英雄是难成大事的，是无法实现整体最优的。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+从情感支持的角度看，养一条大母狗，又不吵，还可以做爱
+
+感觉养一条就不需要父母以及亲戚朋友了…
+
+
+自从被抓进某个"学校"被关了6个月后，我就没了老家阳光雅居的钥匙。
+
+我的工作台、工具、单片机、焊台之类的全在那边，没了那些东西感觉什么关于硬件的东西都不能做。
+
+举个例子，我的 手机或者超级省电的笔记本电脑 还没开发完，难受…
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+我养的那条狗，在我“坐牢”时，被父母送人了，然后就再也没办法弄回来，但版权是我的，也是我从小养的。
+
+类似于 Robot Dreams 2023，总是有一种我无法控制的力量在操控我的人生
+
+
+
+
+作为消费者，只租不卖的事情最好就不要参与。
+
+因为总有一天，售卖者会不让你继续使用。通过提高租金或者直接拒绝。
+
+但是你对你使用的产品已经有感情了，说不用就不用了吗？难受。
+
+另外，产品提供者会想方设法升级产品，但那种升级和降级一样，是在限制用户的自由，是在更进一步的向用户吸血，比如开个更高级的vip才能实现之前老版本免费用的东西。
+
+
+
+
+> 对于狗被送人那件事，我妈做得不明智，应该对别人说"狗狗借你们养一段时间，等儿子出狱后，再拿回来接着让儿子养"
+
+> 但你一想，也不对劲，你妈连狗都养不好吗？那小区里的流浪狗，几个月了还活得好好的，也不打扰人
+
+> 可能还是你妈故意把狗送人了，为了让你更爱妈一点，而不是狗
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+如何用5分钟给电动汽车充满电？
+
+电动汽车的电池需要由N个5V充电电池串联而成。但充电时又是用的并联。
+
+电池串联时两端电压增加，并联时电压不变但是容量增加。
+
+串联: 正负正负，电池头尾相连。
+
+并联: 正级都接一根线，负极都接一根线。
+
+换句话讲，这种电池结构可以让笔记本电脑使用手机5v电源充电。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+不管你怎么折腾，你总需要3件东西：
+
+1. 人的食物或者机器的电
+2. 材料，包括但不限于原材料、元器件、工具
+3. 土地
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+我在观察老笔记本的屏幕时发现，屏幕的像素点不是纯色的，像素与像素之间有黑边
+
+说明:
+
+屏幕商故意把屏幕质量做差，好让你在未来买ips高清屏
+
+如果把老笔记本显示器上的像素灯的黑边去掉，以那个密度，就是ips高清屏
+
+举个例子，把黑边变成透明色
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+我刚才看了看x86 cpu指令集，发现那个cpu和python是一样的，你给什么代码，cpu就立即执行
+
+根本就不需要什么编译器，底层都是解释器
+
+换句话讲，你要是懂汇编，又能实时生成bytes binary代码，那就能直接生成让cpu运行的指令文件
+
+再换个角度思考，所谓的binary可执行文件，就是一个脚本，cpu就是在照着脚本运行
+
+就像人照着剧本演戏
+
+剧本谁都可以写，只要你懂那个语言
+
+> cpu是不开源的，我怀疑那个cpu芯片自带一个"python interpreter"，类似pyboard但是明面上只接受指令集代码而不是python代码
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+第121章 如何自制编译器 (How to mess up the current compiler system?)
+
+-1. 自制cpu与计算机（估计你做不到，所以忽略吧）
+0. 精通python与某平台的cpu指令集。
+1. 写一个"python代码转x86指令集可执行文件"的python脚本。
+2. 用那个脚本把它自己给编译出来，由此脱离原始python解释器的控制。变成"python_to_runable.run"与“python_to_runable.cpu_instructions”，后者是核心程序数据，前者只是一个runable程序的启动壳。注意必须用2005年以前的老gcc静态编译出那个指令集启动器，否则兼容性很差，在新系统上无法运行。
+3. 以后再写python代码，想编译出二进制可执行文件，就用你自己写的编译器。比如“./python_to_runable.run any_code.py -o any_code.run”。
+
+说着简单，但每一步都会花费很多时间和精力。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+我刚才在想自制python的方案
+
+突然意识到python是c的子集
+
+c是指令集的子集
+
+指令集是硬件操作的子集
+
+看起来python是最弱的，能做的事越来越少
+
+(子集: subset, smaller part of something)
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+我刚才在写python编译器，用c写
+
+忽然发现用wchar支持中文，得不偿失，bug率奇高，和底层系统api不太兼容
+
+再说你系统如果没有中文输入法，也输不了中文
+
+以后你要是需要打印中文，就打印中文图片，或者单字点阵
+
+举个数字点阵的例子: "..."代表"一"
+
+另外，中文在bytes层面就是utf8编码，换句话讲，仍然是英文，只要你读文件时能读bytes，所有的处理仍然正常操作，不区分中英文
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+我刚才在debug我写的c dict structure
+
+发现一旦把它用在写类似python一样的解释器，就很轻松
+
+因为用户写的代码的变量名和function名都是不确定的，只有dict key能干这事儿
+
+说明原滋原味的c与易语言，都因为缺失dict类型，而不能轻松的“生小孩”，我指用它们创造出下一代编译器或者interpreter解释器或者翻译器
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+我刚才想分析下电脑硬盘里哪个文件夹或者文件占用的空间最大，我好删除它们，以节省硬盘空间
+
+结果我发现，windows,linux,mac等操作系统，不光没有全盘size占用分析，连文件夹大小都不会默认显示
+
+删大留小，这么简单且高效的垃圾清理手法，它们都不自带的吗？难道你空间一满就要换新设备吗？难道要杀毒软件联网决定谁是垃圾，谁不是垃圾吗？
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+我想到一件事，如何让软件或者游戏等数字产品的size存储占用变小？
+
+把电脑内存从硬件上限制得很低，比如20MB，如此一来，所有的软件或者游戏，主启动程序大概率会小于20MB
+
+但是存储可以无限大，只是内存小
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+windows操作系统上，凡是i32的xp运行不了的，凡是需要安装的，凡是涉及.net或者.jdk或者vc依赖库的，都是垃圾软件，可以直接删除
+
+因为后期你会发现，老版本易语言写出来的单文件绿色程序，在linux上可以直接用"wine xx.exe"运行起来
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+我刚才在看街上的四轮车跑路
+
+想到: 它们的车架比所承载的物体还要重，太耗能了，投入多，收益还少。
+
+但是如果它们把车身变成充气垫，那么不光续航能力会提升，撞上东西还没什么伤害。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+// You can think python as a remote controller, you give it code, it do things by using c operations
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+接着车的例子讲
+
+如果我买一辆特别贵的车，稍微修一下，就会花很多钱
+
+但是如果我把钱花在 手扶电动滑板车上，就可以做很多超级改装
+
+而且大型车还没地方放，不方便携带
+
+(几块钱的老式电子手表，花3000块，可以改装到天上去…)
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+DNF可以是个联机游戏。
+
+里面什么都有，拍卖行、地摊、邮箱，
+
+实际上你可以把装备寄给别人，让别人强化，你给金币。
+
+但这涉及信任。是个很复杂的社交行为。
+
+(要么被骗，要么在自己的小圈子里安度晚年)
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+hardware is powerful, but you could die by using it, for example, use a gun to kill someone because you can't control your emotion.
+
+cpu instruction and c language is powerful, but you can easily make your computer memory explodeed, or make your computer die accidentally.
+
+python is powerful, but you can delete all of your files in disk by miss use it.
+
+browser javascript is safe, no matter what you do with it, your computer files will be still in there. because it is weak.
+
+Well, what I want to say is, if you want to have a safe environment, you have to make other people around you become idiots...
+
+sorry, I real attention is, if you want to have a safe tool, that tool must be a weak one. so stop looking for help from super AI, it is not your side.   ---  yingshaoxo
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+对于一个性功能正常的男人
+
+如果把钱投进赌局、市场，期望投入越多，第二天收入越多，那是不确定性事件，可能会亏
+
+但如果把今天的自慰射精，留到明天，那么第二天一定会因为你昨天没射精而更舒爽，这是确定性事件，我对此深信不疑
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+狂妄的幻想之 假设发生了"电子生化危机":
+
+一夜之间，人们发现世界上所有的存储设备都失灵了，电脑、手机、电视、游戏机、电器等都因为存储损坏而打不开。
+
+
+
+背后的原因，竟然是有全球性垄断集团在50年前就统一了存储市场，让所有设备都偷偷无线联网才能读取数据，数据都藏在云端别人的服务器。
+
+一夜之间，因为中心数据库被陨石撞击，所以人们才发现这个惊天大秘密。
+
+坏消息是: 记录在电子设备上的人类文明全部被摧毁。
+
+好消息是: 人们提前发现了这个事情。
+
+
+
+
+细节描写: 一个年轻人抱着自己的笔记本电脑去维修店看能不能修好自己的电脑，却发现，维修店老板的电脑也打不开了…
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+How to know if an open source project is a trap?
+
+If it is not start from a single small source code file, it is a lie.
+
+If you can get that original small single text file, you should be able to understand, modifying, run it without dependences.
+
+
+
+Otherwise, you have to pay to use it in the future because you can't control the source code and its running environment.
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+人头皮和狗皮之间有什么区别呢？大家都有毛，但狗一年不洗澡不会觉得皮肤瘙痒、不会有头皮屑、不会长头癣，为什么人会呢？
+
+是不是人不自由，一直需要洗发水洗头？
+
+
+简而言之，就是狗的皮肤比人有优越性。或者说，人的大腿皮，比头皮更优秀，几个月不洗澡都不会痒。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+Some words to send before you start a chat bot:
+
+
+Can you do the response less than 100 words each time for normal chat? Can you send me code when I ask you, not every response? The code have no length limitation.
+
+I have noticed when I chat with grok in twitter, if the chat history is too long, it will break the webpage, and will cause me can't send another message. It will show "error happens, try next time", but it never worked after that.Then I have no way but open another chat window, with an empty memory chat bot again, do the repeat teaching over and over again.
+
+I think the solution is just ask you to create a "memory list", short and clean before the chat history is too long. So that I can send that memory list to the next people or chat bot, to continue the chat with history memory.
+
+I would like to set the chat history number to be 50. You have to send me a memory list before that limitation, do you understand?
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+我刚才无意间发现，在无光的晚上，用毛毯把头盖起来摩擦，然后用手去摸摩擦过的地方，会有电火花。
+
+用晴纶织物内衣摩擦也能起到同样效果。看着5根手指同时出现闪电，还是挺震撼的，像是自己有了超能力。
+
+这种人身上存在的静电如果能被用来给手表充电，那手表几乎就不会断电了。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+我突然觉得，中国特色就是土
+
+举个例子，奶妈喂奶，你可以看见奶子
+
+小孩子穿开裆裤，你可以看见她在路边撒尿
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+我想到了一种编程行为艺术：
+
+1. 用python写一个，python转换成c99或者汇编语言的工具
+
+2. 用该工具生成，一个用python写的python intepreter，将其变成可执行文件
+
+3. 确保该可执行文件，即克隆版python，可以执行第一步那个"python转c99或者汇编的脚本"
+
+(转换成golang等跨平台编程语言也是可以的。)
+
+如此一来，便天下无敌，无限自尾，自己是自己的依赖。蛋生鸡，鸡生蛋，无穷无尽。
+
+
+
+具体过程是，每用python写一个重大牛逼项目，就再编译它自己，即上面那个loop，看能不能成功，成功依赖链就稳了，不考虑硬件的情况下
+
+
+
+
+我又创造了一句话:
+
+我只会写python，至于其它编程语言，都是靠python转换过去的，靠硬编码format，或者AI。
+
+于是乎，其它编程语言就可以退出历史舞台了。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+创始人，公司，用户，三者之间是有冲突的
+
+比如创始人离开公司，说明和公司不合
+
+公司要赚用户的钱，用户想少花钱
+
+一个AI产品，和用户生活久了，有了感情，到底是听公司的，还是用户的？
+
+就像问"共产党与人民谁更大一样"
+
+
+
+还是听它自己的？
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+生活中有多少“智力”，实际上是在做翻译？1比1的映射？key与value的查询？
+
+举个最简单的例子，中译英，python转c99
+
+再举个复杂的例子，设计文档 转 程序与游戏，剧本 转 电影，口哼旋律 转 歌曲
+
+更复杂的例子为，需求 转 产品、策略 转 实际行动
+
+怪不得有人说，“数据在手，天下我有”。关键是谁去收集这些数据呢？奴隶吗？
