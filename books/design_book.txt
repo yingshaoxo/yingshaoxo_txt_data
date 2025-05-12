@@ -21,3 +21,31 @@ Keys:
 7. And don't forget to add a search function, so you can search a file or folder by using some keywords. For example, if you have a list of files ["hi_you_all.txt", "hi.txt"], if the search keywords is "hi all", you should only return ["hi_you_all.txt"].
 
 8. There also have manual sync or merge folders function, if you choose two folder and click merge button, if there has conflicts, it will let you choose for each conflict file, ask you "replace A by B or replace B by A?". When it ask you, you can see clearly about the two files size, and you can do a preview for each two file. (conflict happens only when two file have same path name but the content not equal)
+
+
+___
+
+
+Product: A social website that connects people
+
+Author: yingshaoxo
+
+Description: It has to allow people to post articles for thinking sharing, add friends, send email to chat with each other. The search engine will be easy to use.
+
+Keys:
+
+1. That website only used server_rendered technolegy, only used css for basic styling. So that you can visit that website after 30 years, it would be still useable at that time. (Not like websites that uses javascript who can't get displayed after 3 years.)
+
+2. We allow and welcome user to share anything more than pure text, including music, books, video, software and game, but all in external url. As a platform we do not check if the people upload those files is the original creator of those resources. We send that trouble to police.
+
+3. For each user, their url will have a random token, that representes them when they visit the website. And they can only look 120 posts per hour, beyound 120 looking, they will get banned that day. This is a simple strategy to anti web crawlers.
+
+4. At the beginning, it requires 1/10 yuan to post an article. After it scales to national level where has over 100000000 people online, it could be a free service that relies on National Tax Revenue. But that means people can only send a post per day.
+
+5. Let's add more details about that website: users can post article, edit article, add comments to an article, edit their comments in that article. users can add a nickname for their friends, users can set friend group to well-organize their friends. users can have a custom personal page where they can better disply themselves.
+
+6. The website allows user to export their own data. And when the website is about to get shutdown, it will open the whole website data for user to download.
+
+7. If user want their posts be able to get visit by others without login, for example, expose to search engine, they have to pay to buy visits number, let's say, 1 yuan for 1000 visits. But if a logined user visit their post, there would not spend the visits number.
+
+8. The social website owener should be strong enough to keep the service running for 30 years without too much censorship than normal repeating post deletion.
