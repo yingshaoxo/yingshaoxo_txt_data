@@ -221,6 +221,8 @@ def ask_yingshaoxo_ai(input_text):
     else:
         one_random_diary = choice(relative_diary_list)
 
+    if "temporary_memory" not in yingshaoxo_memory_dict:
+        yingshaoxo_memory_dict["temporary_memory"] = {}
     yingshaoxo_memory_dict["temporary_memory"]["current_person_say"] = input_text
     yingshaoxo_memory_dict["temporary_memory"]["relative_diary_list"] = relative_diary_list
     yingshaoxo_memory_dict["temporary_memory"]["one_random_diary"] = one_random_diary
