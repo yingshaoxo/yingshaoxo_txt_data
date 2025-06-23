@@ -211,7 +211,7 @@ print(str(yingshaoxo_memory_dict))
 
     return result.strip()
 
-def ask_yingshaoxo_ai(input_text):
+def ask_yingshaoxo_ai(input_text, no_debug_info=True):
     relative_diary_list = search_text_in_text_list(input_text, yingshaoxo_diary_list)
     one_random_diary = ""
     if len(relative_diary_list) == 0:
@@ -227,7 +227,7 @@ def ask_yingshaoxo_ai(input_text):
 
     try:
         one_random_relative_thinking_block = get_a_random_thinking_from_input(input_text)
-        result = run_a_piece_of_thinking(one_random_relative_thinking_block)
+        result = run_a_piece_of_thinking(one_random_relative_thinking_block, no_debug_info=no_debug_info)
 
         if result == None or result == "":
             return one_random_diary
@@ -244,7 +244,8 @@ def talk_with_yingshaoxo_ai():
     while True:
         print("\n\n\n------------\n\n\n")
         input_text = input("What you want to talk? (你想说什么) ")
-        response = ask_yingshaoxo_ai(input_text)
+        response = ask_yingshaoxo_ai(input_text, no_debug_info=False)
+        print("\n\n")
         print(response)
         save_yingshaoxo_memory()
 
