@@ -64,8 +64,6 @@ def get_title_version_of_thinking_list(a_thinking_list):
             new_list.append(lines[0])
         else:
             new_list.append("")
-    # to make sure it uses older thinking before young thinking
-    new_list.reverse()
     return new_list
 
 def save_dict_to_json(a_dict, filename="yingshaoxo_memory.json"):
