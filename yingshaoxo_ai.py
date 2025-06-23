@@ -5,11 +5,22 @@ from random import choice
 import json
 
 #from yingshaoxo_python import run_python_code
+if os.path.exists("./yingshaoxo_txt_data"):
+    sys.path.insert(1, "./yingshaoxo_txt_data")
 try:
     from auto_everything.terminal import Terminal
     terminal = Terminal()
 except Exception as e:
     print(e)
+    print("clone a folder to current folder: https://github.com/yingshaoxo/auto_everything/tree/dev/auto_everything")
+    print("It is a folder inside of that repository.")
+    print("""
+auto_everything/
+├── all.py
+├── http_.py
+├── ...
+├── terminal.py
+""")
     exit()
 
 def read_text_list_and_text_from_folder(the_folder_path):
@@ -185,6 +196,20 @@ def run_a_piece_of_thinking(a_piece_of_thinking, no_pre_process=False, no_debug_
 
     mixed_code = ""
     memory_line = "yingshaoxo_memory_dict = {}".format(str(yingshaoxo_memory_dict))
+
+    mixed_code += """
+# -*- coding: utf-8 -*-
+
+try:
+    import sys
+    import io
+    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
+    sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding='utf-8')
+except Exception as e:
+    print(e)
+
+"""
+
     mixed_code += memory_line + "\n"
 
     if no_debug_info == False:
@@ -249,7 +274,7 @@ def talk_with_yingshaoxo_ai():
     #yingshaoxo_memory_dict["temporary_memory"] = {}
     while True:
         print("\n\n\n------------\n\n\n")
-        input_text = input("What you want to talk? (你想说什么) ")
+        input_text = input("What you want to talk? ")
         response = ask_yingshaoxo_ai(input_text, no_debug_info=False)
         print("\n\n")
         print(response)
