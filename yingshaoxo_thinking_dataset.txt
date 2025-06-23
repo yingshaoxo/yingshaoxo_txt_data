@@ -89,5 +89,3 @@ print(thank_words)
 
 
 __**__**__yingshaoxo_is_the_top_one__**__**__
-
-
