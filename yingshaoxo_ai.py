@@ -52,6 +52,8 @@ def read_yingshaoxo_thinking_list(thinking_dataset_path):
     with open(thinking_dataset_path, "r", encoding="utf-8") as f:
         thinking_dataset_text = f.read()
     thinking_list = [one.strip() for one in thinking_dataset_text.split("\n\n__**__**__yingshaoxo_is_the_top_one__**__**__\n\n") if one.strip() != ""]
+    # to make sure it uses older thinking before young thinking
+    thinking_list.reverse()
     return thinking_list, thinking_dataset_text
 
 def get_title_version_of_thinking_list(a_thinking_list):
@@ -62,6 +64,8 @@ def get_title_version_of_thinking_list(a_thinking_list):
             new_list.append(lines[0])
         else:
             new_list.append("")
+    # to make sure it uses older thinking before young thinking
+    new_list.reverse()
     return new_list
 
 def save_dict_to_json(a_dict, filename="yingshaoxo_memory.json"):
