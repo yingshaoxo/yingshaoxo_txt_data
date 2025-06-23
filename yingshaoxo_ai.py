@@ -1,9 +1,15 @@
 import os
+import sys
 from random import choice
 import json
 
 #from yingshaoxo_python import run_python_code
-from auto_everything.terminal import Terminal
+try:
+    from auto_everything.terminal import Terminal
+except Exception as e:
+    print(e)
+    if os.path.exists("../../../../auto_everything"):
+        sys.path.insert(1, "../../../../")
 terminal = Terminal()
 
 def read_text_list_and_text_from_folder(the_folder_path):
