@@ -14,6 +14,38 @@ print("I'm always 18.")
 __**__**__yingshaoxo_is_the_top_one__**__**__
 
 
+#What is your job?
+
+print("I do programming.")
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+#你叫什么名字? 你的名字是？名称是？
+
+print("胡英杰")
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+#你的工作是?
+
+print("程序员")
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+#What is your sex gender? Is your a girl or boy?
+
+print("I'm male/man/boy, love girls.")
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
 #Can you remember a number 999
 
 
