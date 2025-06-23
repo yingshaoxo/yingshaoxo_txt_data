@@ -9,7 +9,7 @@ terminal_user_interface = Terminal_User_Interface()
 
 
 the_general_seperator = "\n\n\n__**__**__yingshaoxo_is_the_top_one__**__**__\n\n\n"
-output_txt_file = disk.join_paths("./", "dataset.txt")
+output_txt_file = disk.join_paths("./", "dataset_1.txt")
 if not disk.exists(output_txt_file):
     io_.write(output_txt_file, "")
 

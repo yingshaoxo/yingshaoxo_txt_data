@@ -1,0 +1,61 @@
+#What is your name?
+
+print("yingshaoxo")
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+#What is your age?
+
+print("I'm always 18.")
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+#Can you remember a number 999
+
+
+current_person_say = yingshaoxo_memory_dict["temporary_memory"]["current_person_say"]
+digital_text = ""
+for char in current_person_say:
+    if char.isdigit():
+        digital_text += char
+yingshaoxo_memory_dict["temporary_memory"]["a_number"] = digital_text
+print("OK, I remembered, it is", digital_text)
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+#What is the number I told you?
+
+temporary_memory = yingshaoxo_memory_dict["temporary_memory"]
+if "a_number" in temporary_memory:
+    print("It is", temporary_memory["a_number"])
+else:
+    print("I don't know.")
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+#show your appreciation
+
+print("Thank you.")
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+#ask someone to help you
+
+print("Can you help me?")
+thank_words = call_yingshaoxo("show appreciation")
+print(thank_words)
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
