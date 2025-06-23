@@ -127,9 +127,12 @@ def search_text_in_text_list_to_get_their_index_list(search_text, source_text_li
 
     return []
 
-yingshaoxo_diary_path = "./all_yingshaoxo_data_2023_11_13.txt"
-memory_dict_path = "./yingshaoxo_memory.json"
-thinking_dataset_path = "./yingshaoxo_thinking_dataset.txt"
+
+resource_basic_folder_path = os.path.dirname(os.path.abspath(__file__))
+yingshaoxo_diary_path = os.path.join(resource_basic_folder_path, "./all_yingshaoxo_data_2023_11_13.txt")
+memory_dict_path = os.path.join(resource_basic_folder_path, "./yingshaoxo_memory.json")
+thinking_dataset_path = os.path.join(resource_basic_folder_path, "./yingshaoxo_thinking_dataset.txt")
+
 yingshaoxo_diary_list, _ = read_text_list_from_yingshaoxo_diary(yingshaoxo_diary_path)
 yingshaoxo_memory_dict = load_dict_from_json(memory_dict_path)
 yingshaoxo_thinking_list, _ = read_yingshaoxo_thinking_list(thinking_dataset_path)
