@@ -118,6 +118,62 @@ def get_sub_sentence_list_from_end_to_begin_and_begin_to_end(input_text, no_sing
             result_list_2.append(one)
     return result_list_2
 
+def is_ascii(input_text):
+    if not isinstance(input_text, str):
+        return False
+    try:
+        input_text.encode('ascii')
+        return True
+    except UnicodeEncodeError:
+        return False
+
+def should_we_use_hard_search_method(input_text):
+    keyword_list = input_text.split(" ")
+    has_non_english_inside = False
+    for keyword in keyword_list:
+        if not is_ascii(keyword):
+            has_non_english_inside = True
+            break
+    if has_non_english_inside == True:
+        return True
+    else:
+        return False
+
+def split_string_by_characters(input_text, splitors):
+    result_list = [input_text]
+    for splitor in list(splitors):
+        new_result_list = []
+        for one in result_list:
+            new_result_list += one.split(splitor)
+        result_list = new_result_list
+    return result_list
+
+def hard_search_text_in_text_list(keyword_string_that_should_be_split_by_space, source_text_list):
+    keyword_string_that_should_be_split_by_space = keyword_string_that_should_be_split_by_space.strip()
+
+    if "|" in keyword_string_that_should_be_split_by_space:
+        keyword_list = keyword_string_that_should_be_split_by_space.split("|")
+    else:
+        if should_we_use_hard_search_method(keyword_string_that_should_be_split_by_space):
+            # chinese, we split by space
+            keyword_list = split_string_by_characters(keyword_string_that_should_be_split_by_space, " ,.?!;:，。？！\n")
+        else:
+            # english, we use all string
+            keyword_list = split_string_by_characters(keyword_string_that_should_be_split_by_space, ",.?!;:，。？！\n")
+
+    keyword_list = [one.strip() for one in keyword_list if one.strip() != ""]
+
+    result_list = []
+    for one in source_text_list:
+        ok = True
+        for keyword in keyword_list:
+            if keyword not in one:
+                ok = False
+                break
+        if ok == True:
+            result_list.append(one)
+    return result_list
+
 def search_text_in_text_list(search_text, source_text_list):
     longest_first_sub_sentence_list = get_sub_sentence_list_from_end_to_begin_and_begin_to_end(search_text)
     useful_source_text_list = []
@@ -191,6 +247,10 @@ def pre_process_piece_of_thinking(a_piece_of_thinking):
 def run_a_piece_of_thinking(a_piece_of_thinking, no_pre_process=False, no_debug_info=False):
     global yingshaoxo_memory_dict
 
+    result = ""
+    if a_piece_of_thinking == None:
+        return result
+
     if no_pre_process == False:
         a_piece_of_thinking = pre_process_piece_of_thinking(a_piece_of_thinking)
 
@@ -222,52 +282,73 @@ print("\\n")
 
     mixed_code += a_piece_of_thinking
     mixed_code += """
-print("\\n\\nTo system, memory updated:")
+print("\\n\\n|To system, memory updated:|")
 print(str(yingshaoxo_memory_dict))
 """
+
     result = terminal.run_python_code(code=mixed_code).strip()
 
     try:
         # try to save modified memory
-        a_list = result.split("\n")
+        a_list = result.split("|To system, memory updated:|")
+        result = a_list[0].strip()
         if len(a_list) >= 2:
-            if "To system, memory updated:" in a_list[-2]:
-                new_memory_dict = eval(a_list[-1])
-                #print(new_memory_dict)
-                yingshaoxo_memory_dict = new_memory_dict
-                result = "\n".join(a_list[:-2])
+            new_memory_dict = eval(a_list[1])
+            #print(new_memory_dict)
+            yingshaoxo_memory_dict = new_memory_dict
     except Exception as e:
-        print(e)
+        print("Error in run a_piece_of_thinking", e)
         pass
 
     return result.strip()
 
+def mixed_result(input_text, *response_list):
+    response_list = list(response_list)
+
+    hard_search_result_list = hard_search_text_in_text_list(input_text, yingshaoxo_diary_list)
+    if len(hard_search_result_list) != 0:
+        hard_search_result = choice(hard_search_result_list)
+    else:
+        hard_search_result = None
+
+    if (hard_search_result):
+        response_list = [hard_search_result] + response_list
+
+    new_response_list = []
+    for one in response_list:
+        one = one.strip()
+        if one not in new_response_list:
+            new_response_list.append(one)
+
+    return "\n\n\n-------\n\n\n".join(new_response_list)
+
 def ask_yingshaoxo_ai(input_text, no_debug_info=True):
     relative_diary_list = search_text_in_text_list(input_text, yingshaoxo_diary_list)
-    one_random_diary = ""
+    one_relative_random_diary = ""
     if len(relative_diary_list) == 0:
-        one_random_diary = ""
+        one_relative_random_diary = ""
     else:
-        one_random_diary = choice(relative_diary_list)
+        one_relative_random_diary = choice(relative_diary_list)
 
     if "temporary_memory" not in yingshaoxo_memory_dict:
         yingshaoxo_memory_dict["temporary_memory"] = {}
     yingshaoxo_memory_dict["temporary_memory"]["current_person_say"] = input_text
     yingshaoxo_memory_dict["temporary_memory"]["relative_diary_list"] = relative_diary_list
-    yingshaoxo_memory_dict["temporary_memory"]["one_random_diary"] = one_random_diary
+    yingshaoxo_memory_dict["temporary_memory"]["one_relative_random_diary"] = one_relative_random_diary
 
     try:
         one_random_relative_thinking_block = get_a_random_thinking_from_input(input_text)
         result = run_a_piece_of_thinking(one_random_relative_thinking_block, no_debug_info=no_debug_info)
 
-        if result == None or result == "":
-            return one_random_diary
+        if result == "":
+            return mixed_result(input_text, one_relative_random_diary)
 
         #save_yingshaoxo_memory()
-        return result
+        return mixed_result(input_text, result)
     except Exception as e:
-        print(e)
-        return one_random_diary
+        print("Error when run 'ask_yingshaoxo_ai'", e)
+        #return one_relative_random_diary
+        return mixed_result(input_text, one_relative_random_diary)
 
 def talk_with_yingshaoxo_ai():
     #global yingshaoxo_memory_dict
