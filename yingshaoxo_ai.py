@@ -74,14 +74,33 @@ def read_yingshaoxo_thinking_list(thinking_dataset_path):
     return thinking_list, thinking_dataset_text
 
 def get_title_version_of_thinking_list(a_thinking_list):
-    new_list = []
+    simple_list = []
     for one in a_thinking_list:
-        lines = one.strip().split("\n")
-        if len(lines) > 0:
-            new_list.append(lines[0])
+        if not (one.strip().startswith('"""')):
+            lines = one.strip().split("\n")
+            if len(lines) > 0:
+                a_line = lines[0]
+                if a_line.startswith("#"):
+                    a_line = a_line[1:]
+                simple_list.append(a_line)
+            else:
+                simple_list.append("")
         else:
-            new_list.append("")
-    return new_list
+            simple_list.append("")
+
+    complex_list = []
+    for one in a_thinking_list:
+        if (one.strip().startswith('"""')) and (one.count('"""') >= 2):
+            # read code inside """ """ as python code filter, or regex_similar python code, if that code return True, means it matchs this thinking piece.
+            the_filter_code = one.split('"""')[1]
+            if 'input_text = ""' in the_filter_code:
+                complex_list.append(the_filter_code)
+            else:
+                complex_list.append("")
+        else:
+            complex_list.append("")
+
+    return simple_list, complex_list
 
 def save_dict_to_json(a_dict, filename="yingshaoxo_memory.json"):
     text = json.dumps(a_dict, indent=4)
@@ -207,14 +226,48 @@ thinking_dataset_path = os.path.join(resource_basic_folder_path, "./yingshaoxo_t
 yingshaoxo_diary_list, _ = read_text_list_from_yingshaoxo_diary(yingshaoxo_diary_path)
 yingshaoxo_memory_dict = load_dict_from_json(memory_dict_path)
 yingshaoxo_thinking_list, _ = read_yingshaoxo_thinking_list(thinking_dataset_path)
-yingshaoxo_thinking_list_for_title = get_title_version_of_thinking_list(yingshaoxo_thinking_list)
+yingshaoxo_thinking_list_for_title, yingshaoxo_complex_thinking_list_for_title = get_title_version_of_thinking_list(yingshaoxo_thinking_list)
 
 def save_yingshaoxo_memory():
     #del yingshaoxo_memory_dict["temporary_memory"]
     save_dict_to_json(yingshaoxo_memory_dict, memory_dict_path)
     #print("yingshaoxo memory dict saved.")
 
+def get_complex_thinking_from_input(input_text):
+    def get_index_list_from_complex_thinking_title(a_input_text, the_python_code_list):
+        the_index_list = []
+        for index, python_code in enumerate(the_python_code_list):
+            if python_code.strip() == "":
+                continue
+            else:
+                lines = python_code.split("\n")
+                new_lines = []
+                for line in lines:
+                    if 'input_text = ""' in line:
+                        new_lines.append('input_text = ' + json.dumps(a_input_text))
+                    else:
+                        new_lines.append(line)
+                new_python_code = "\n".join(new_lines)
+                result = terminal.run_python_code(code=new_python_code).strip()
+                if "True" in result and "error" not in result.lower():
+                    the_index_list.append(index)
+        return the_index_list
+
+    sub_list_of_thinking_list_index = get_index_list_from_complex_thinking_title(input_text, yingshaoxo_complex_thinking_list_for_title)
+    if len(sub_list_of_thinking_list_index) == 0:
+        return None
+
+    sub_list_of_thinking_list = []
+    for index in sub_list_of_thinking_list_index:
+        sub_list_of_thinking_list.append(yingshaoxo_thinking_list[index])
+    one_random_thinking_block = choice(sub_list_of_thinking_list)
+    return one_random_thinking_block.strip()
+
 def get_a_random_thinking_from_input(input_text):
+    the_thinking = get_complex_thinking_from_input(input_text)
+    if the_thinking != None:
+        return the_thinking
+
     sub_list_of_thinking_list_index = search_text_in_text_list_to_get_their_index_list(input_text, yingshaoxo_thinking_list_for_title)
     sub_list_of_thinking_list = []
     for index in sub_list_of_thinking_list_index:

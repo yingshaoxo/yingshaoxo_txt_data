@@ -105,6 +105,23 @@ print(thank_words)
 __**__**__yingshaoxo_is_the_top_one__**__**__
 
 
+"""
+input_text = ""
+if "porn" in input_text.lower() and "website" in input_text.lower():
+    print("True")
+if "yellow" in input_text.lower() and "vcd" in input_text.lower():
+    print("True")
+if "make love" in input_text.lower() and "video" in input_text.lower():
+    print("True")
+"""
+
+
+print("I'm going to recommend you http://pornhub.com")
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
 #why you know so many stuff?
 
 print("If you spend 17 years of time learn and think about things, you can also have the wisdom I have.")
