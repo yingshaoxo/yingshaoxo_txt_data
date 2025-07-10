@@ -1,4 +1,8 @@
 # -*- coding: utf-8 -*-
+"""
+yingshaoxo after one month of development: In my thinking, in all current task, it will only last for 5 or 10 history chat message. I mean I should use last 10 chat history to determine if now is in making_love mode or other mode. Sometimes it can be other mode, for example, feel_sad mode. This is just a big picture. Sometimes a variable in temporary_memory will also effects the response, for example, if memory["is_girlfriend"]==True, it will say something differently.
+"""
+
 import os
 import sys
 from random import choice
@@ -233,6 +237,27 @@ def save_yingshaoxo_memory():
     save_dict_to_json(yingshaoxo_memory_dict, memory_dict_path)
     #print("yingshaoxo memory dict saved.")
 
+def inject_yingshaoxo_memory_into_code(some_code):
+    global yingshaoxo_memory_dict
+
+    mixed_code = ""
+    memory_line = "yingshaoxo_memory_dict = {}".format(str(yingshaoxo_memory_dict))
+    mixed_code += """
+# -*- coding: utf-8 -*-
+
+try:
+    import sys
+    import io
+    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
+    sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding='utf-8')
+except Exception as e:
+    print(e)
+
+"""
+    mixed_code += memory_line + "\n"
+    mixed_code += some_code
+    return mixed_code
+
 def get_complex_thinking_from_input(input_text):
     def get_index_list_from_complex_thinking_title(a_input_text, the_python_code_list):
         the_index_list = []
@@ -248,6 +273,7 @@ def get_complex_thinking_from_input(input_text):
                     else:
                         new_lines.append(line)
                 new_python_code = "\n".join(new_lines)
+                new_python_code = inject_yingshaoxo_memory_into_code(new_python_code)
                 result = terminal.run_python_code(code=new_python_code).strip()
                 if "True" in result and "error" not in result.lower():
                     the_index_list.append(index)
@@ -308,27 +334,11 @@ def run_a_piece_of_thinking(a_piece_of_thinking, no_pre_process=False, no_debug_
         a_piece_of_thinking = pre_process_piece_of_thinking(a_piece_of_thinking)
 
     mixed_code = ""
-    memory_line = "yingshaoxo_memory_dict = {}".format(str(yingshaoxo_memory_dict))
-
-    mixed_code += """
-# -*- coding: utf-8 -*-
-
-try:
-    import sys
-    import io
-    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
-    sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding='utf-8')
-except Exception as e:
-    print(e)
-
-"""
-
-    mixed_code += memory_line + "\n"
+    mixed_code = inject_yingshaoxo_memory_into_code(mixed_code)
 
     if no_debug_info == False:
         mixed_code += """
 print("Question:", yingshaoxo_memory_dict["temporary_memory"]["current_person_say"])
-print("Relative_diary_list length ==", len(yingshaoxo_memory_dict["temporary_memory"]["relative_diary_list"]))
 print("\\n")
 \n
 """
@@ -376,6 +386,15 @@ def mixed_result(input_text, *response_list):
     return "\n\n\n-------\n\n\n".join(new_response_list)
 
 def ask_yingshaoxo_ai(input_text, no_debug_info=True):
+    input_text = input_text.strip()
+
+    if "temporary_memory" not in yingshaoxo_memory_dict:
+        yingshaoxo_memory_dict["temporary_memory"] = {}
+
+    yingshaoxo_memory_dict["temporary_memory"]["current_person_say"] = input_text
+    if "user_chat_history" not in yingshaoxo_memory_dict["temporary_memory"]:
+        yingshaoxo_memory_dict["temporary_memory"]["user_chat_history"] = [input_text]
+
     relative_diary_list = search_text_in_text_list(input_text, yingshaoxo_diary_list)
     one_relative_random_diary = ""
     if len(relative_diary_list) == 0:
@@ -383,15 +402,12 @@ def ask_yingshaoxo_ai(input_text, no_debug_info=True):
     else:
         one_relative_random_diary = choice(relative_diary_list)
 
-    if "temporary_memory" not in yingshaoxo_memory_dict:
-        yingshaoxo_memory_dict["temporary_memory"] = {}
-    yingshaoxo_memory_dict["temporary_memory"]["current_person_say"] = input_text
-    yingshaoxo_memory_dict["temporary_memory"]["relative_diary_list"] = relative_diary_list
-    yingshaoxo_memory_dict["temporary_memory"]["one_relative_random_diary"] = one_relative_random_diary
-
     try:
         one_random_relative_thinking_block = get_a_random_thinking_from_input(input_text)
         result = run_a_piece_of_thinking(one_random_relative_thinking_block, no_debug_info=no_debug_info)
+
+        yingshaoxo_memory_dict["temporary_memory"]["user_chat_history"].insert(0, input_text)
+        yingshaoxo_memory_dict["temporary_memory"]["user_chat_history"] = yingshaoxo_memory_dict["temporary_memory"]["user_chat_history"][:5]
 
         if result == "":
             return mixed_result(input_text, one_relative_random_diary)
