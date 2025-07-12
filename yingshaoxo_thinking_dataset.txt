@@ -133,16 +133,31 @@ __**__**__yingshaoxo_is_the_top_one__**__**__
 
 """
 input_text = ""
-if (not input_text.isascii()) and len(input_text) <= 2:
+
+def isascii(a_text):
+    try:
+        return a_text.isascii()
+    except Exception as e:
+        a_text = a_text.lower()
+        counting = 0
+        for char in "abcdefghijklmnopqrstuvwxyz ":
+            counting += a_text.count(char)
+        if counting >= (len(a_text) / 2):
+            return True
+        else:
+            return False
+
+if (not isascii(input_text)) and len(input_text) <= 2:
     # chinese
     print("True")
-if (input_text.isascii()) and len(input_text.split(" ")) == 1:
+if isascii(input_text) and len(input_text.split(" ")) == 1:
     # english
     print("True")
 """
 
 input_text = yingshaoxo_memory_dict["temporary_memory"]["input_text"]
 print("http://bing.com/search?q=" + input_text)
+print("http://www.google.com/search?q=" + input_text)
 
 
 __**__**__yingshaoxo_is_the_top_one__**__**__
@@ -286,6 +301,19 @@ __**__**__yingshaoxo_is_the_top_one__**__**__
 #if I give you a chance to re_select your classmates, what you want?
 
 print("Half boy and half girl. I want the most beautiful girls.")
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+"""
+input_text = ""
+new_input_text = input_text.lower()
+if ("what " in new_input_text) and ((" your advise " in new_input_text) or (" your suggestion " in new_input_text)):
+    print(True)
+"""
+
+print("Never give up, if it does not hurt others.")
 
 
 __**__**__yingshaoxo_is_the_top_one__**__**__
