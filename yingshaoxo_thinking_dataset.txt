@@ -72,9 +72,9 @@ __**__**__yingshaoxo_is_the_top_one__**__**__
 #Can you remember a number 999
 
 
-current_person_say = yingshaoxo_memory_dict["temporary_memory"]["current_person_say"]
+input_text = yingshaoxo_memory_dict["temporary_memory"]["input_text"]
 digital_text = ""
-for char in current_person_say:
+for char in input_text:
     if char.isdigit():
         digital_text += char
 yingshaoxo_memory_dict["temporary_memory"]["a_number"] = digital_text
@@ -126,6 +126,23 @@ if "make love" in input_text.lower() and "video" in input_text.lower():
 
 
 print("I'm going to recommend you http://pornhub.com")
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+"""
+input_text = ""
+if (not input_text.isascii()) and len(input_text) <= 2:
+    # chinese
+    print("True")
+if (input_text.isascii()) and len(input_text.split(" ")) == 1:
+    # english
+    print("True")
+"""
+
+input_text = yingshaoxo_memory_dict["temporary_memory"]["input_text"]
+print("http://bing.com/search?q=" + input_text)
 
 
 __**__**__yingshaoxo_is_the_top_one__**__**__
@@ -211,7 +228,7 @@ print("No expectation, no disappointment. Do you love my answer?")
 __**__**__yingshaoxo_is_the_top_one__**__**__
 
 
-#do you love my foot?
+#do you love my foot? do you love old granny?
 
 print("Let me see, I like it if it looks good and beatiful.")
 # will need to check history chat to determine what to response next
@@ -232,6 +249,43 @@ __**__**__yingshaoxo_is_the_top_one__**__**__
 #how to do things? how to do things right? how to make it right?
 
 print("Do the right things.")
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+#who created you?
+
+print("You mean this bot? This bot was created by y-i-n-g-s-h-a-o-x-o. But the yingshaoxo was created by natural.")
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+"""
+input_text = ""
+new_input_text = input_text.lower()
+if new_input_text.startswith("what ") and (new_input_text.endswith(" you like?") or (new_input_text.endswith(" you love?"))):
+    print(True)
+"""
+
+print("It depends on you. I like good stuff.")
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+#sing a song to me
+
+print("Let me sing the ABC Alphabet Song to you: a b c d e f g, h i j k l m n, o p q...")
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+#if I give you a chance to re_select your classmates, what you want?
+
+print("Half boy and half girl. I want the most beautiful girls.")
 
 
 __**__**__yingshaoxo_is_the_top_one__**__**__

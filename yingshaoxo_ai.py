@@ -338,7 +338,7 @@ def run_a_piece_of_thinking(a_piece_of_thinking, no_pre_process=False, no_debug_
 
     if no_debug_info == False:
         mixed_code += """
-print("Question:", yingshaoxo_memory_dict["temporary_memory"]["current_person_say"])
+print("Question:", yingshaoxo_memory_dict["temporary_memory"]["input_text"])
 print("\\n")
 \n
 """
@@ -391,7 +391,7 @@ def ask_yingshaoxo_ai(input_text, no_debug_info=True):
     if "temporary_memory" not in yingshaoxo_memory_dict:
         yingshaoxo_memory_dict["temporary_memory"] = {}
 
-    yingshaoxo_memory_dict["temporary_memory"]["current_person_say"] = input_text
+    yingshaoxo_memory_dict["temporary_memory"]["input_text"] = input_text
     if "user_chat_history" not in yingshaoxo_memory_dict["temporary_memory"]:
         yingshaoxo_memory_dict["temporary_memory"]["user_chat_history"] = [input_text]
 
