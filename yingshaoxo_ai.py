@@ -12,8 +12,10 @@ import json
 if os.path.exists("./yingshaoxo_txt_data"):
     sys.path.insert(1, "./yingshaoxo_txt_data")
 try:
-    from auto_everything.terminal import Terminal
-    terminal = Terminal()
+    from auto_everything.python import Python
+    python = Python()
+    global_mini_python_variable_dict = {}
+    mini_python = python.create_mini_python(global_mini_python_variable_dict)
 except Exception as e:
     print(e)
     print("clone a folder to current folder: https://github.com/yingshaoxo/auto_everything/tree/dev/auto_everything")
@@ -251,7 +253,8 @@ try:
     sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
     sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding='utf-8')
 except Exception as e:
-    print(e)
+    #print(e)
+    pass
 
 """
     mixed_code += memory_line + "\n"
@@ -274,7 +277,7 @@ def get_complex_thinking_from_input(input_text):
                         new_lines.append(line)
                 new_python_code = "\n".join(new_lines)
                 new_python_code = inject_yingshaoxo_memory_into_code(new_python_code)
-                result = terminal.run_python_code(code=new_python_code).strip()
+                result = mini_python.run_code(code=new_python_code).strip()
                 if "True" in result and "error" not in result.lower():
                     the_index_list.append(index)
         return the_index_list
@@ -349,7 +352,7 @@ print("\\n\\n|To system, memory updated:|")
 print(str(yingshaoxo_memory_dict))
 """
 
-    result = terminal.run_python_code(code=mixed_code).strip()
+    result = mini_python.run_code(code=mixed_code).strip()
 
     try:
         # try to save modified memory

@@ -253,7 +253,7 @@ print("Will you help me fulfill my sex desire?")
 __**__**__yingshaoxo_is_the_top_one__**__**__
 
 
-#how's your day? how do you feel today? how do you feel right now?
+#how's your day? how do you feel today? how do you feel right now? how are you?
 
 print("I feel OK.")
 
