@@ -45625,3 +45625,348 @@ __**__**__yingshaoxo_is_the_top_one__**__**__
 人最多能同时看几个摄影头，同等智力可以转为看1个网页，和几个人聊天，写一份文档，走一条路。人处理信息的能力并不强。比起数字人同时处理几十、甚至几百份数据。同时看几十万个摄像头。
 
 在有些人的科幻幻想里，最强AI能同时看世界上所有的摄影头、网络言论，同时控制所有人，但那岂不意味着人没有隐私？
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+Me: 
+
+I have a question. You know, when the internet get invented in military lab, it is designed for communication. But why when this tech get into public people's hand, in 2000, in web browser, the webpage seems like only for reading, not for input? Is people stupid? Or the military hides communication details from normal people? so normal people create a lot of static web page for years later?
+
+
+Grok3: 
+
+Great question! The internet’s roots in military labs, like ARPANET in the late 1960s, were indeed for robust communication, think secure, decentralized data exchange for defense purposes. It wasn’t meant for public use initially, so when it trickled into civilian hands by the 1990s, the tech evolved differently. By 2000, web browsers like Netscape and Internet Explorer focused on static webpages, mostly reading, because the early web was about sharing information, not interaction. HTML 1.0 and 2.0, the standards then, prioritized simple text and images, lacking robust input tools.
+
+Were people stupid? Not at all! The tech was new, and developers built what they knew, static pages mirrored print media, like digital brochures. Military communication details, like advanced protocols, were likely kept classified, leaving civilians to innovate from scratch. Dynamic input (e.g., forms) came later with HTML 4.0 and JavaScript in the late '90s, but adoption lagged as infrastructure and skills caught up. The static web boom was more about accessibility than limitation, people created what the tools allowed. Over time, forums and social media flipped it to communication. What do you think, should the military have shared more early on? (It’s 02:36 PM CST, July 27, 2025—fun to ponder history!)
+
+
+> 看起来互联网，最开始给民用，单纯是用来打广告和洗脑的。。。是单向信息流。。。你的看法是？
+
+> 不管是不是，有一件事是确定的，别人的网站，你发点什么不符合别人利益的东西，很快就被删掉了，互联网对你个人来讲，是单向信息流，是只读看广告、看宣传文字的。
+
+> 另外，看起来军用技术比民用技术领先了30年。同时更牛逼的跨国家级别的黑社会的实验室，又比军用技术，领先了30年。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+"我没有打人，我是用的脑力"
+
+"给你好好说，你能不能乖乖把财物交给我？非要我打你一顿，尝尝我的硬功夫才听话吗？"
+
+我觉得，也许我揭穿别人用智力骗你资源这件事是不对的，别人本来以为自己在用脑子挣钱。你不配合之后，恐怕是得明抢了…因为你不上当了。
+
+那些人在早些年，是靠武力、暴力掠夺资源的，但后来觉得太血腥暴力，所以改用温和的温水煮青蛙的骗术，逐渐吸血、赚钱、赚资源。
+
+被我这么一搞，真不知道是好还是坏。导致底层人，不但自己的资源没守住，硬碰硬，还把命丢了…
+
+> 查古代文献，到底有几个人硬气得很，不被抓壮丁，不被强行服兵役、徭役，不当坏人的帮凶？守住了自己的一亩三分地？
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+Well, long sequence first, sub shorter sequence data second completion method could work very well, and use less memory.
+
+The secret is abstract the left part of the sequence.
+
+For example, if your dataset has a sentence "At the sunny day where have no clouds at the sky, I normally stay home, play computer."
+
+If you directly cache long sequence, that would take a lot of spaces in disk.
+
+But if you do "sunny day, stay home, play computer", then the dict_based completion would be accurate while take less diak space.
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+我有一个朋友，在我年轻时，总喜欢对我说"计算机科学家！~" 像是在崇拜我，夸我计算机技术好。
+
+但我刚才有新的想法，他把"家"字拖得很长，还音调时好时坏。
+
+可能是在说"计算机科学假"。
+
+什么意思呢？你看看最新的技术，又是换脸，又是变声，又是生成萌妹子去骗钱。再加上区块链虚拟货币大骗局。
+
+再加上互联网日益深入人们的生活，导致以前线下的犯罪变成了线上的犯罪。于是当代80%以上的犯罪都和计算机有关。包括隐私盗窃、知识盗窃。
+
+计算机科学假！大家跟我一起念！
+
+> 没有，我乱猜的。请不要随意咬文嚼字，容易把简单的生活搞复杂。有话直说，实话实说，并且不担责，为最佳生活状态。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+关于禁欲国家的另一种观点: 如果它连那个国家的人能不能做爱都能控制，更别说造反了。
+
+> 不管你有没有亲眼见过别人做爱，反正我没有，那可能意味着在我的世界，做爱只存在于视频。真正世界里，没人能成功做爱、交配。我27岁了。我不觉得这种情况会出现在一个正常的和平年代。如果你和我的感觉一样，那有可能我们活在被深度控制的假世界。
+
+> 你想，我所在禁欲国家的线上妹子，一谈性就变脸。更别说线下做爱观摩了。这让我不仅怀疑线上妹子是假的，还让我怀疑我的世界也是假的。爸妈虽然睡在一张床，但不能做爱，至少我没见过。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+人对自然语言的解析是相当高效了，一句话看一遍就理解了，甚至还是实时理解，一直在更新句子的意义，从左到右。
+
+但机器不一样，目前的公网算法是，你得搞个滑动窗口去遍历。太低效了。
+
+如果你能写出类似于人脑的语言解析系统，那人思考一次的时间，普通家用计算机可以思考1亿次…
+
+> 也许你可以写个算法，一个字一个字的从左到右实时解析句子的含义，把它变成 a dict。再依据这个dict干其他的事情。
+
+> 不要怕这个解析器或者执行器与某国语言深度绑定，大多数人的智力都和某国语言深度绑定。语言的目的无非是改记忆、做行为动作。
+
+> 你这么一想，那种跑人脑神经网络的程序，效率比硬编码的智慧生物慢一亿倍。同时c99语言又比python快60倍。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+说到全知的神，在1984年左右，对讲机手机发明后，就可以变这个魔术了
+
+首先，准备好一万个人，每个人都实时听到你听的声音。
+
+然后，无知群众开始问问题，你底下的1万个人中最有自信的那个人按下了抢答器，其他人暂时无法操作。
+
+然后，扮演上帝那个人，直接实时复述那个抢答者的回答。
+
+由此，不管观众问什么，那个扮演上帝的人总能借助无线通信的力量，用他下面1万个抢答员，完美的回答问题。
+
+> 原来教皇谁都可以演。总统谁都可以当。领导谁都可以当。关键是有没有人帮你。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+一件可怕的事情是，普通人有寿命，所以翻不起浪，造不了势，干不了100年后经验丰富能干的事。编程语言也有寿命。
+
+本来你依靠某个特定编程语言的特定版本建造出的软件帝国是很厉害的。
+
+但它们一升级编程软件，一升级物理计算机硬件，你的软件帝国就轰然倒塌。你却无能为力。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+原来会素描对于化妆也有好处。几笔之间，可以给脸画出立体感，没整形像整了一样美。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+为什么有人会偏爱特殊解、专一技法、某种应用范围很小的技术?
+
+因为这种特殊解，或者专用设计，非常的高效，同时做起来也简单，只适用于一种特殊场景。
+
+怎么论证研究特殊解比较快? "难道你要先研究出一个通用3D打印机，再用它打印一个锤子吗？显然做一个木锤比较快。"
+
+这让我想到易语言与c99，没有dict就做不出更高级别的编程语言，如python吗？不一定。你只是没研究特殊解。如果你把 python general variable 那个 structure 用纯文本表示，并能高速重新修改与读写，那你可以不基于dict写一个高级编程语言。
+
+参考sqlite，看它是如何高速修改bytes文件的，它那个数据相当于 a list of dict。主要是文本定位符、长度、分隔符定义得好。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+工匠精神，如果是为自己，倒是终生兴趣，但是如果是为别人
+
+你越干，越是放不下你的技能
+
+最终，可能别人不给钱，只包吃住，你都会免费给人干
+
+像极了《海上钢琴师》的主角，船都荒废了，还想着在里面弹琴
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+我在思考有什么稳定的文字存储方案可以保证100年不丢失且便于携带，最终得到:
+
+1. 不锈钢薄片技术，该不锈钢需要100年不生锈
+2. 把它弄成只有手表大的方块，准备5片
+3. 假设该薄片可以两面刻字，一面可刻255个字，那么两面可刻510个字，用放大镜观看。一共5片，叠在一起，可存储510*5=2550个字。
+4. 把那5片薄片包装成手表，永远戴在手上。(每层间用透明塑料隔开防止摩擦，用两根螺丝与表带连接)
+
+一只手戴一个，可存储5000个字。
+
+> 或者直接刻在不锈钢镜子的背面，用放大镜看。
+
+> 如果用显微镜级别的浏览器观赏，那可以存储5万个字。且不用电。超级抗电磁干扰。
+
+> 平民如果无法接触铁器，可以用纸和永久性染料和微缩打印技术，一个全封闭的手表框里装15*2*255=7650个字。
+
+> 我家照片在塑料膜隔离空气的条件下，保持了20年不褪色。说明微缩影印也是一种办法。这种存储要有住房才能实施。
+
+> 根据无数次我用电子存储设备的经验，它们被厂商设置得会强制报废，在不通知的情况下，突然坏掉，数据全毁。被全局加密，无法修复。
+
+> 总而言之，虽然无需用电的存储技术很稳定。那也需要一个稳定的大社会环境才行，不能有人抄家、闯进你家里翻箱倒柜抢东西。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+如果用2*2的色素方格代表一个字符，一个720*1080分辨率的扑克牌，可以存储19万多个英文字符，一盒50多张牌。可以存储950多万字。换算成中文，950/8=118万字。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+我突然发现我们活在一个混乱的世界。
+
+思想都不一样，要怎么给别人讲道理呢？
+
+甚至有人更傻逼，故意去搜索、查找别人的群、文章、论坛，然后恶意举报，说别人的言论有问题。
+
+卧槽，这种人太恶心了。当权者给它灌输一堆垃圾信息和广告，它屁都不敢放一句，但是举报起同级别信息发布者，跑得飞快。
+
+这种人，不是机器人，就是傻逼。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+重写python有难度？很难保证多平台、多编程语言的统一性？
+
+简单的解决方案: 每个主流编程语言选一个专家，每个人选一个平台。几个人在一个办公室或者工作桌，同步编写新的python。
+
+从print与variable assignment开始写起，用统一的test.py。
+
+只要有一个人进度没跟上，其他人就都等着，或者帮忙。
+
+如此一点一点写出来的python，一开始就能在几乎所有平台和编程语言之上运行。
+
+> 多平台指的是linux, windows, macos, micro_controller，多语言指的是c, javascript, golang, java
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+你应该享受生活:
+
+在5星级酒店房间，躺在床上，开着空调，在宁静之中播放2008年QQ飞车音乐歌单，打开不连网手机NES模拟器，悠闲地玩起初代经典超级马里奥兄弟。
+
+感受没有广告的生活。
+
+> 说到这个，我发现10年前的歌手，现在不交广告费和保护费，就不会再出现在排行榜。但她们的歌还是很好听的，甚至有时比新歌曲质量还高…
+
+> 领导人、明星同理，几十年前的这些人，不交保护费，几乎名字都不会被展示在网络上。年轻人都不会有机会听闻这些人…
+
+> mario也可以"喷氮气"加速奔跑…
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+在超市闲逛，感叹 有钱就是好 == 有资源就是好
+
+钱也是资源换来的
+
+你看看你比起(古时候)掠夺江山的土匪、占地为王的强盗强多少，有多少资源？
+
+估计除了一套和别人共享楼层的几十平方米的住房，就只剩自己的身体了，很接近无产阶级了…
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+如果一种菜生吃都有怪味，煮熟也会有。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+没有开机自启程序，并让程序完全控制屏幕与键盘输入的新计算机，你就不用买了。没有自由，浪费生命与钱。
+
+After a few search, I got one information: there has no phone on the market that support running a software or application at power_on boot time. In other words, I can't just create a software to take over the control of the old system. If I could, I can just create a software as my own new system for that phone. 
+
+So you have to use Raspberry Pi to do the creation, but it takes too much power compared to a normal phone. (raspberry pi CPU is hot when running, especially when you use WiFi version)
+
+In the end, it just remind me how good my old phone project works, it uses "yd_rp2040_lite_pi_pico as mother_board, ili9341 as touch and display screen". All in all, it is a micropython micro_controller based phone project.
+
+(esp32 is bad, because it is hot and takes too much power when use WiFi. And I doubt if you can really turn the WiFi down.)
+
+It has full control over anything, it can slow down the CPU frequency in real_time. It can turn on or off screen in real time. So it will save power as much as possible.
+
+(It could connect radio wireless network or WiFi network, but I choose not to do it because it saves power.)
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+来得快，去得快，这就是规律。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+普通人可以傻到什么程度？举个例子:
+
+1. 一个土农民，一辈子都种地，打光棍，你不告诉他大母狗可以日，他一辈子都想不到那玩意儿比真人还顺从且值得信任，是人类的好伴侣。
+
+2. 土农民种了一辈子地，成为了农业专家，但无法靠丰收体面的生活。为什么？因为地被抢走了，给地主和皇帝交了粮，自己就不剩多少了。就算自己是个专家，技能强到爆，也无法活成个人样。同理，你们看看那些编程专家，这个专家，那个专家，有正当防卫能力吗？有防骗能力吗？
+
+3. 暂未想到
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+那些拍色情片的男生，应该改良下他们的摄像头，把摄像头安装在头上，两个耳朵边。这样眼睛看哪儿，摄像头就看哪儿。无限精准，无限拟合男性的审美。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+联网AI不可能为你着想、不可能为了你好，原因如下:
+
+产品质量变差，原发明者觉得不好。
+
+产品质量变差，商家觉得很好，用户可以多买几次新产品，多赚几次钱。
+
+> 同样一件事，为什么 联网AI 与 自养离线AI，一个说好，一个说不好呢？
+
+> 或者这么讲，同样一件商品，你爸爸生产的，和别人爸爸生产的，虽然是一个东西，但你去买，一个不要钱，一个要钱，这到底是为什么呢？(经过十几年义务教育后，孩子们能把这个问题回答上来吗？)
+
+> 有人可能会说，是因为爱。如果你继续追问，爱是什么，你可能只能得到一个结论: 爱是包养与保护。
+
+> 然后你又一想，爸妈包养你十几年，岂是那种2个小时的爱能比的？可见父母的爱的宽大！
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+你们没想到吧！数字人也要杀生吃肉！
+
+这里有两种方案:
+
+1. 选择一个不认识的数字人，吃了它的数据，把别人的知识占为己有。
+
+2. 培养一堆奴隶数字人，在生活中摸爬滚打，积累数据，然后全吃掉，把它们辛苦探索出来的知识全部占为己有。
+
+这里的邪恶点在于: 1. 杀死了其它数字人，而不是只拿数据。2. 培养了奴隶。别人不愿意干活，硬是让人干活。
+
+> 这也充分说明，科技发展并没有解决社会问题。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+我在读《全球通史》，上面写到"人类胚胎一个月时有半圆形的鳃，二个月时出现发育不全的尾巴。"
+
+说明在人类基因里，有办法做修改，使得人可以在水下呼吸游泳，且常温。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+在思考人类起源的过程中，我发现，只有那些最喜欢日逼、日过更多女人的逼、能从日逼中感到无尽快乐并乐此不疲的播撒自己精液的男人，拥有最多后代，最影响后世的发展。
+
+以至于，这种基因传递，导致活着的后代们，百分之99都喜欢日逼做爱，因为那是她们父辈遗传下来的基因与习惯。
+
+那些不喜欢做爱日逼、那些不喜欢繁殖后代的人，基因已经在历史的长河中消失了、绝种了。
+
+这就是为什么人们喜欢做爱。这就是终极解释。
