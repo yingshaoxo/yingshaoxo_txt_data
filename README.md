@@ -66,7 +66,7 @@ Now you have seperated condition and actions database, you can make a loop to co
 
 This is how simple the strong AI algorithm is, it is all about good data.
 
-Creat a bot that replay human normal action is easy, the hard part is replay learning process. The action should contain some code that changes its own database. The bot has to learn what is good, what is bad. It has to learn from some experience and experiments.
+Create a bot that replay human normal action is easy, the hard part is replay learning process. The action should contain some code that changes its own database. The bot has to learn what is good, what is bad. It has to learn from some experience and experiments.
 
 For one condition, there could have multiple actions, choose one randomly.
 
@@ -117,3 +117,10 @@ When a input question starts with "what is...?", it has high chance that we shou
 When a input question starts with "how do you think...?", it has high chance that we should generate an viewpoint for something. In that way, the top high level thinking should redirect the input_question into corresponding lower level thinking dataset. For example, "value_kownledge.txt", which will talk about whether a thing is good or bad in yingshaoxo's mind. But normally, before we talk the value or thinking about an object, we need to introduce that object first. So, for that sentence, we first call "object_knowledge.txt", then call "value_knowledge.txt". In the end, we do a remix, which is add them sequently.
 
 Another good part about this deep thinking network architecture is: It will speed up the process speed by only searching the corresponding small thinking list.
+
+## How to do self_update?
+
+1. First you have to know what is good, what is bad.
+2. Then you copy good stuff.
+3. Or, by doing experiments to get good stuff.
+4. Add good stuff to your dataset.

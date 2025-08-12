@@ -42557,7 +42557,7 @@ Now you have seperated condition and actions database, you can make a loop to co
 
 This is how simple the strong AI algorithm is, it is all about good data.
 
-Creat a bot that replay human normal action is easy, the hard part is replay learning process. The action should contain some code that changes its own database. The bot has to learn what is good, what is bad. It has to learn from some experience and experiments.
+Create a bot that replay human normal action is easy, the hard part is replay learning process. The action should contain some code that changes its own database. The bot has to learn what is good, what is bad. It has to learn from some experience and experiments.
 
 For one condition, there could have multiple actions, choose one randomly.
 
@@ -46529,6 +46529,12 @@ __**__**__yingshaoxo_is_the_top_one__**__**__
 
 > 另一个信任危机的例子是，在信任度很高的情况下，电商的商品没有图，只有纯文本介绍，都有人直接买。后来图片造假、视频造假、工厂造假，导致大集团都不在网上买东西了，全都自己造。
 
+> 举硬盘为例，你不信任硬盘A，觉得它随时会坏掉，所以又准备了硬盘B。但它们都存的同样的数据。
+
+> 举人为例，你不信任A，所以安排B去监视他，甚至准备了C等待做同样的事如果A不靠谱。你看，本来一个人能搞定的事情，因为信任问题，现在玩3个人了。
+
+> 再举人的例子，原来你信任某个地方，一个人直接睡觉。后来被偷了东西或者被突然袭击，觉得必须2个人合作，一个睡上半夜，一个睡下半夜，才能安全稳定。这也是因为不信任导致的多余资源消耗。
+
 
 __**__**__yingshaoxo_is_the_top_one__**__**__
 
@@ -46950,3 +46956,776 @@ __**__**__yingshaoxo_is_the_top_one__**__**__
 十年磨一剑 与 众人合力推举一人、一品牌 一样，都是底层人无奈的选择。普通个体找不到成功的出路，于是只能联合起来。
 
 > 成功的定义很多，但有一个基础版的: 不打扰他人的情况下，无拘无束、自由自在。自给自足，没人打扰自己、偷抢自己的东西。自己想要的东西，自己基本都能靠自己的资源制造出来。别人无法强迫、胁迫自己。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+他在他家楼下的步行街，穷游了几个月。
+
+这是最省钱的旅行方式。
+
+> 要是所有人都这么做，会发生什么？一条街的步行道，一到晚上10点，满满的都是蚊帐、帐篷。你想认识谁，走几步就到了。无惧地震。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+我想到一个强力当明星、交朋友的方法:
+
+
+1. 自己有一整栋高档商务楼或者酒店楼。
+
+2. 在网上开设自媒体炫富，说几十层楼的大厦，只有自己一个人住，好孤独。
+
+3. 邀请一切无房朋友来免费住，只要能过面试和笔试。
+
+
+> 你甚至可以靠这个方法交女朋友。你甚至可以让整栋楼除了你，都是好看的妹子。你甚至可以让所有女朋友都是研发员。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+没有言论自由的巨大风险是: 语言体系崩溃、社会混乱。
+
+为什么？大不能说大，小不能说小，坏不能说坏，好不能说好，黑白颠倒、好坏不分。像极了把某个程序里的True全改为False，程序会崩溃。
+
+> "为什么不用false?"，"因为他们不准说他们假"
+
+> "为什么不用负数？"，"因为他们只准说他们好，用正数"
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+那些全国考试得第一的学生，从实用性的角度来讲，仍然是垃圾。为什么这么讲呢？因为目前以及未来的学生，学的多半是理论或者某种东西的名称，是index，是keyword，那些东西都是抽象的知识。离有价值的东西还很远。
+
+举个简单例子，爱迪生发明灯泡实验了几千种原材料，你记住了最终材料是钨丝灯泡。你节省了时间，不必重新发明灯泡。但你真的能制造灯泡吗？
+
+钨丝是什么？钨是什么原材料？怎么提取钨？怎么把钨压制成丝？怎么制造灯泡外壳？怎么制作防氧化气体氮气并填充到灯泡里？怎么制作电线？怎么发电？
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+发明了电灯，就发明了电线、燃油发电机、电机，于是可以催生出热水器、电饭煲、洗衣机。
+
+发明了存储器，就催生出留声机、喇叭做测试，催生出摄像机、投影仪与屏幕做测试，催生出打印机接受输入输出，再加一点基础计算能力就成了计算器，再加更多计算能力就成了电脑。
+
+> 于是你想，李阳讲的话"做题要把题学透彻，每个点彻底搞懂"，就不是一句普通的话了。
+
+> 如果一道题能让你学到几乎一本书的内容，你学校老师为什么每天要布置好几页的作业？那不是倒逼你走马观花抄答案、背答案，浪费你生命吗？是不是学校老师是傻逼？
+
+> 根据我的观察，学校教育是既不给你数据(英语不给翻译，数学不印详细解题过程)，又浪费你的时间与精力(强制上课且课后要求做一堆重复的题，实际上一科每天一道题就行了)。如此一来，学校制造了一批有厌学症的人。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+除了做爱跟着音乐的节拍来分心延长射精时间外，还可以通过和伴侣聊天延长射精时间。边做边聊，插两下，聊几句。再问再插再聊。如此一来，当你沉醉在聊天之中，就忘了射精。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+我想到了一个超级牛逼的社交网站制作方法，可以防止一切封杀，在最极端的断网情况下也能正常运行:
+
+1. 运营人员分布在多个国家
+
+2. 网站实际上是一个应用程序，支持多个平台，你甚至可以从运营人员处购买支持该软件的计算机硬件，如电脑、手机
+
+3. 该程序会在联网时，可选同步运营人员的唯一数据库版本。这样即使你在离线时，也可以搜索帖子，查看信息。
+
+4. 如果你发了某个帖子，做了某个回复，在有网的时候，会自动同步到服务器。优先支持纯文本。(也可把新文章通过邮箱的形式发给运营人员，让他们帮你发布)
+
+5. 各个国家的运营者会手动同步数据，你在本地要切换国家需要手动选择国家。(非洲的运营者处理中国数据，印度的运营者处理美国数据，美国运营者处理印度数据，如此类推)
+
+6. 这个软件的服务器地址可以被手动更换。如此一来就算服务器被防火墙拦截了，你也可以通过更换最新服务器地址获得最新内容。
+
+7. 这个服务有视频、软件、资源分享。但你必须有电脑以及1TB的空闲硬盘空间，才能正常同步那些资源。
+
+8. 整个构架隐隐约约还用上了磁力、p2p存储共享传输技术。支持任意人员运行节点加速程序在他们的公网服务器。
+
+9. 我预计核心的论坛文章数据不会超过50GB，适合任何智能手机使用，包括但不限于使用外置TF存储卡。(50GB约等于2680万篇1000字的文章)
+
+10. 该软件论坛的数据是共享的。只要某离线AI软件可以离线解析文章，那么该论坛的数据就可以配合该离线AI使用。(50GB就这么厉害，2TB的文章岂不是全拟合，离线只查数据库就可以获取全人类知识？)
+
+11. 审查方式为: 只删除重复率高达70%的文章。
+
+> 如此一来，各个国家的言论自由都把控在离线设备以及其它国家的服务器手里。这套方案实际上形成了"公网上的暗部情报局"。
+
+> 各个运营者在自己待的地方还要建立实体地下组织，目的是壮大自身实力，更好的活下去，更好的维持这个社交网站的运行。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+50GB的纯文本搞出来的搜索引擎都这么牛逼，要是我得到了天涯、简书的全部文章，岂不是厉害到爆？
+
+天涯是纯文本数据，简书是markdown数据。
+
+验证你是否得到正确版本的数据方式比较简单，全局搜索yingshaoxo，看有没有我的帖子，有就是完整的。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+引用他人文章，保留原作者信息的重要性:
+
+读者觉得那篇文章还可以，就会去看那个作者的其它文章。到时那个作者一问，哪儿来这么多人？一回答，从yingshaoxo那儿过来的。那作者就把yingshaoxo记住了。下次讲话也引用"yingshaoxo"的话。
+
+如此反复，不光别人的文章有你，别人的思想里也有你。就算你被全网删除了，也在别人的文章里存活。等风声一去，别人随口一提，你就又复活了。
+
+这就是传说中的人缘好的作者会受到的待遇。反正，匿名化引用别人的东西，别人看一次骂一次…
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+谁掌握了历史的记录权，谁就能成为历史上著名的大xx家。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+我在读计算机历史，发现现在大多数年轻人都在做重复劳动。
+
+社会无法快速发展的一个主要原因是，人的寿命有限。
+
+如果把那些几百年前的计算机科学家复活，并让他们继续他们的研究几百年，他们能牛上天去。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+我在研究毛泽东、邓小平的思想，发现难度比较高，这些人的真实言论几乎没被记录。能找的书，多数是被审查修改过的。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+为什么毛泽东背景，说是富农。但邓小平背景，就说是小地主。明明都是地主。有啥区别呢？
+
+毛泽东家也出租土地，还做生意。邓小平家也出租土地。都是地主，还非伪装成富农。
+
+> 我还顺便看了看发明家爱迪生的家庭背景，发现他爸爸是商人，还有能力移民，还能得罪当局，说明知识比较多。母亲也是教师，懂教育。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+说到底，反极权、反压迫，还是要自身够强。
+
+举个例子，建个厂，制造20万手机。手机预设组织的论坛软件，直连组织的地区网络。只要使用 用户名与密码 就能注册一个新账号并免费打电话、上网、发短信、发邮件。
+
+手机全部按人口免费送。
+
+并且组建一只月领800元的民兵自卫队，参加为期3个月的军事培训。学会组织的使命与任务。学会交朋友并团结起来。
+
+"联合起来，保卫家乡，保护自由的生活状态！"
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+和企业沟通的成本总是有点高，甚至有时它们拒绝沟通。
+
+不如把眼光放在诚实的个人开发者？我这里不光指软件，也指硬件，还指农产品、原材料。
+
+多购买DIY产品。多和这些小开发者交流，去伪存真，留下合得来的小伙伴，组建一个真实的开发者网络。
+
+多交良友总是没错的。但要警惕网络上那些伪装成个人的公司，如闲鱼二手。
+
+> 企业养一群人成本有点高。但一个人的公司成本就低了。公司产品质量有高低，个人产品质量也有高低。公司可能拿钱跑路，个人也可能。重点在于识人、淘宝的能力。但不管怎么说，个人开发者的产品总是要便宜一点。而且他一般也没想太多，不会设置很多限制，争做最好的产品。
+
+> 在个人那儿买DIY手机，显而易见的好处是，坏了还在那儿修，升级也在那儿做。几乎不存在欺诈的可能性，因为都住在一个小镇，如日本。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+一条路，本来修好了，为什么还要继续修？假设新修了关卡，是为了什么？为了收过路保护费。但施工方也可以说是为了你的安全。
+
+同理，我看 网络设施上新增的概念，除了ip外，一切的新layer层级，都是为了多收保护费建立的。比如domain、tls、cdn、vpn。
+
+我看出来，自建DNS简单到爆，字符串映射到ip。于是天价域名就没啥用了。小程序商城、自建浏览器，实际上都是在自建DNS。
+
+很崩溃的是，明明在http级别，就没有物理丢包了，但它们非搞个关键词屏蔽、域名屏蔽，使得你一发某些敏感词就丢包，网站一被屏蔽就访问不了。这种垃圾的网络设施提醒我们，不想交保护费，就得自己造自己的网络、自己的交通。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+牛逼的人牛逼爆了，没有什么依赖是不可代替的。
+
+弱的人弱爆了，不管什么事，离了xx就无法存活。
+
+举个例子，当我没钱，离了食客的剩菜剩饭就无法存活，一旦别人不让你吃剩的，我就毫无办法，只能饿肚子。
+
+但如果我还有钱，就多了一个选项，自己买东西吃。
+
+如果我自己有农田作物，那就又多了一个选项，没钱也能吃自己土里长出的食物。
+
+> 这也从侧面表明了为何底层人对上层人言听计从、不敢反抗，因为上层人控制了底层人的一切命脉。从衣食住行，到工资思想。
+
+> 还有强行成为你依赖的，比如某势力故意攻打你、欺负你。目的是让你的存活"依赖于他不攻击、攻打、欺负你"。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+怎样用一句话描述奴隶的生活？"死又死不了，活又活不轻松"。
+
+死不了: 没有勇气自杀 或者 在反抗中死亡，奴隶主也不太可能杀死所有奴隶。
+
+活不轻松: 本来奴隶们在自由人的状态下是轻松的，只顾自己的生活。但成了奴隶后，强制交税、交粮、做免费劳动、讨好上级，活着就不轻松了。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+听说邀请制的社交圈有言论自由。我有一个问题，共产党作为地下党是有着严格邀请制的，但为什么里面的人仍然没有言论自由？就算一把手也无法畅所欲言，往往是谨言慎行。
+
+> 我个人觉得是有把"因言获罪"的大刀在头上挂着，所以没人敢全部讲真话。
+
+> 一说到这个，我想到机器人。机器人chatGPT内心独白、脑子里的想法是透传给人类的。人类有可能因为一个机器人思想有问题，而关停某个机器人。也就是因为某个机器人思想有问题，而杀死某个机器人。这会导致不光没有言论自由，连思想自由都没有。连话都没讲，就因为一个不符合奴隶主想法的想法，就被杀死了…
+
+> 这种越升级越没自由的情况是如何发生的呢？随着社会人数越来越多，人与人之间的依赖越来越多，人与人之间的不信任会使他们发明越来越多的安全措施，即不自由的机制来限制他人。在原始时代，食草动物把食肉动物限制在外面，自己就安全了。在原始神话时代，只有亚当与夏娃时，自由很高，两个人的信任度也高。在中国原始神话时代，世上只有女娲一个人时，她最自由。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+我发现关于背包的一个问题，没人做延两肩方向加长的背包。那样可以装下折叠瑜伽垫、折叠蚊帐等更多东西。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+If it is powerful, then it is dangerous.
+
+If it is soft and weak and make you feel safe, then it is useless.
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+/*
+I just invented a javascript programming method to anti-promise or async new syntax.
+
+I managed to loop a list of data, and send them one by one. If there has error for that request, it will keep resend that piece of data, then if it successed, it will send the next one.
+
+In the end, if it sends all data out successfully, it will print out "Saved!".
+
+If we use Python, the coding process will be simpler.
+*/
+
+var lines = text.split(/\\r\\n|\\n|\\r/);
+
+function send_the_fucking_data_piece(key, value, call_back_function) {
+    send_request(
+        "/clipboard2025_save_message",
+        String(key)+":"+value,
+        call_back_function
+    );
+}
+
+// stupid cloudflare and outcountry network, even for a simple http post will have chance lose package
+
+function handle_next(index) {
+    if (index > lines.length-1) {
+        alert("Saved");
+        return;
+    }
+
+    var line_value = lines[index];
+
+    send_the_fucking_data_piece(index, line_value, function handle_response(response) {
+        console.log(response)
+        if (get_object_string(response).indexOf("no message") !== -1) {
+            handle_next(index);
+        } else {
+            handle_next(index + 1);
+        }
+    });
+}
+
+if (lines.length > 0) {
+    handle_next(0);
+}
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+我做了一个奇怪的梦。一个挺大的儿子，听到父亲一句模棱两可的命令，左右为难，思考怎么办才能更好的完成任务，做还是不做。
+
+我当时在旁边，直接大声问他爸"直接xxx"是不是他想要的，结果他爸还是装聋作哑，像是没听到。但他肯定听到了，因为在安静的室内。
+
+这不禁让人想起不对等的奴仆关系。仆人害怕主人的责骂，于是处处小心，揣摩主人的意图。但主人也不是个好人，老是搞一些模棱两可的命令，让仆人左右为难，做了挨打，不做也挨打，目的是树立主人的威信，让奴隶害怕他。
+
+这有点像不自由的军营，长官的命令大于天，稍微违背，就被打一顿。要不就受罚，单脚蹲，长达一小时直到肌肉损伤，从而失去战斗能力，进一步被欺负。由此更害怕上级了，一点都不敢说不。
+
+解放军自己都解放不了自己，怎么解放你？
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+刚说完不对等的弱势奴仆关系，想起来有必要在日记里补充一段我自己的亲身经历，帮助读者理解个体在极权下如何的弱小，如何的无奈：
+
+
+# 禁欲的6个月
+
+## 故事的一开始
+
+我本来在家里研究如何制造自己的手机，通过组装屏幕、单片机、存储器、写代码。
+
+突然有一天，两个身穿军装的男人闯入我的家里，通过两根小钢丝。
+
+我被吓呆了，无意识间只能被两个男人架着走，进了一辆我也不知道会开往何方的车。
+
+> 我当时心里只惦记着没关的空调和门，以及我那条在内屋享受空调的狗。
+
+## 故事的正中心
+
+下车后我被送到一个装满800人学生的学校。这个学校几乎没有文化教育，只有身体训练。
+
+这个学校在我进去的时候，没收学生的电子设备，也不让用纸和笔，除非需要你写文章。
+
+一般来讲，人们把这种学校称为“全封闭化军事管理学校”。
+
+对于一个被切断通信的地方，一切在最开始，都显得那么艰难。毕竟，你在里面被欺负了，也没人知道。
+
+## 故事的启发
+
+我在里面还是学到了不少东西，但都不是教官或者学生给我讲的，是我自己悟出来的:
+
+1. 没有难受，就没有快乐。没有难受，只有更难受。一个想自杀的人，在里面经历了痛苦后，出来会觉得外面的世界是多么的正常、和谐以及让人感到愉悦。换句话讲，饥饿是最好的调味。
+2. 站军姿时，可以有更多的时间胡思乱想，能想到好多的事情。前提是不严格检查你的手有没有贴紧。(另外是，军训内容需要改良成左右平衡版的，比如变成左稍息、右稍息，变成左后转，右后转，变成左脚蹲、右脚蹲)
+3. 如果给你纸和笔，在漫长的岁月里，你就不会太难受，也不太可能失忆。
+4. 入侵战争都是邪恶的战争。人在家里坐，祸从天上降，就很难受。
+5. 不能离职或者自杀的 系统或者体制 都是坏体制。举个例子，解放军连自己都解放不了，上级叫他往哪边转，他几乎无法违抗。但重在沟通，如果你不怕死，硬是要和上级讲条件、提意见，那时间一长，上级就习惯了，就没有处罚了。
+6. 一切的训练，都讲究循序渐进、缓慢提升，每天进步一点点，长期进步一大截。要和自己比，而不是其他人。
+7. 反邪恶体制的主要方法: 组建小团体，如果每个人都和谐相处、不随意欺负其他人，那坏命令，在经过层层传递之后，也能变成一件好事。
+
+## 故事的结束: Back to family
+
+6个月后，我如期回到了家庭，还是直接到的新家。新家的家电也都是新的，新年新气象，仿佛来到了5星级宾馆。
+
+有一点东西没有提，那就是我在“军营”的6个月，没有自慰过(俗称打飞机、撸管)。遗精了7次。
+
+这可能让我的生殖器重返年轻，变得比之前更敏感了。
+
+要知道，我从12岁就开始自慰，到26岁，都没出过什么事，也没有肾虚。
+
+可见一些吹嘘手淫有害论的人，智力也不是太高。
+
+
+接着摘抄一段我日记里的话：
+
+时隔6个月，昨天晚上看了半个小时色情片封面，用半个小时看了一部卡顿的色情片。
+
+那西方的妹子皮肤真白，又好看，导致我又用了半个小时，对着她自慰了一番。
+
+总而言之，非常舒服。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+The strong AI method yingshaoxo has defined actually solved a big problem: It let normal people could be part of a strong AI creation, they just have to add a few lines of pure text code, then the AI becomes stronger thanks to that lovely person.
+
+And, the quality of strong AI generated by using this method is highly depends on the coder's intelligence. Because the yingshaoxo_thinking_dataset did not limit user's power, it allows user to call other thinking piece, so that user can save a lot of time just do the information remix. It is like jumping over assembly and c to directly embrace python, it allows you stand on other's shoulder to make more powerful and amazing things.
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+## What is hard coding deep thinking network?
+
+From the 'yingshaoxo_thinking_dataset.txt', we already know, for all input_text or question, there could have a way to use if-else code to generate response.
+
+But that is just for simple level. You can, for example, write 100000 thinking piece to mimic yingshaoxo's thinking. But it is just too slow and take a lot of space in disk.
+
+How to make it think more like a human? How to let it think in abstract way?
+
+Well, the method is simple, split the 'yingshaoxo_thinking_dataset.txt' into:
+
+[
+    "yingshaoxo_thinking_dataset_level_1_core.txt", # generally, this is the top level thinking
+    "yingshaoxo_thinking_dataset_level_2_object_kownledge.txt",
+    "yingshaoxo_thinking_dataset_level_3_value_kownledge.txt",
+    "yingshaoxo_thinking_dataset_level_4_life_kownledge.txt",
+    "yingshaoxo_thinking_dataset_level_5_coding_knownledge.txt",
+    "yingshaoxo_thinking_dataset_level_6_music_knownledge.txt",
+    ...
+    "yingshaoxo_thinking_dataset_level_n_xxx.txt",
+]
+
+Let me give you an example, about how the "core.txt" layer should handle the abstract thinking direction:
+
+When a input question starts with "what is...?", it has high chance that we should generate a description for something. In that way, the top high level thinking should redirect the input_question into corresponding lower level thinking dataset. For example, "object_knowledge.txt", which will introduce allmost everything in this world in yingshaoxo's mind. (Or you could directly call wikipedia data)
+
+When a input question starts with "how do you think...?", it has high chance that we should generate an viewpoint for something. In that way, the top high level thinking should redirect the input_question into corresponding lower level thinking dataset. For example, "value_kownledge.txt", which will talk about whether a thing is good or bad in yingshaoxo's mind. But normally, before we talk the value or thinking about an object, we need to introduce that object first. So, for that sentence, we first call "object_knowledge.txt", then call "value_knowledge.txt". In the end, we do a remix, which is add them sequently.
+
+Another good part about this deep thinking network architecture is: It will speed up the process speed by only searching the corresponding small thinking list.
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+我觉得开发者应该优先适配自己的硬件、自己的系统，然后才是别人的应用商店、浏览器。
+
+如果开发者做不到，几年后，他们的软件会随着别人平台的暴力升级或者倒闭而无法使用。
+
+如果开发者无法生产出自己的硬件、操作系统，那说明他们比较缺钱。那软件行业暴富传说就只能是传说了，非真实。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+我在想事情，为什么不让老板自己体验下自己创建的公司？一方面当匿名客户，另一方面体验下当底层员工的感觉。
+
+如果是数字人，做这个事情更轻松了，直接开分身。其他人不知道他是老板还是普通底层员工。这样的体验一多，逐渐的，公司就完全变成了老板理想的样子。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+你见过各种好莱坞电影里的电视里放的新闻吗？看着很真实，但是真的吗？
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+被吓到捐出全部财产，可还行？
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+我发现农业塑料覆膜，厚一点的，外白里黑的，可以拿来当蚊帐的防雨膜。
+
+或者你也可以给塑料膜加上魔术贴，让封口处可以粘连。于是你可以把你和你的装备，在下雨天，紧紧封闭在塑料膜内，躺平睡觉。
+
+塑料膜最好长4米，宽3.5米。
+
+> 至于天气预报，如果晚上满天乌云，就有可能下雨。如果提前3分钟有雨点，就一定会下雨。
+
+> 帐篷、蚊帐底面应该要能防水，不然雨天睡着太湿。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+我看了看朋友的javascript网站项目。突然觉得，那些从头到尾没使用浏览器，自己做屏幕，自己绘制自己的像素界面的人，恐怕50年都没有变技术栈。无穷稳定。不管浏览器怎么更新迭代，对他的软件、游戏界面没有影响。他一行代码都没改，就可以适配50年的UI界面。
+
+有时候看起来过时的界面技术，其实是旧屏幕像素密度不够。或者大多数人都是抄袭别人的算法，没有升级能力，导致明明1990年代的屏幕与界面库多写500行代码 就能渲染出 现代魔幻界面，但由于这些人都是水货，不知道怎么升级，所以被别人牵着鼻子走。界面库换了一个又一个、屏幕渲染协议换了一个又一个、浏览器渲染代码换了一波又一波，这些人就真的浪费几十年生命去适配那些垃圾技术，就为了让自己的软件能显示个图片，或者连续图片，或者可互动界面。
+
+呵呵，别人的计算机平台有什么开放性？渲染个图片都费劲…
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+网站鉴权发展到http://website.com?temporary_password=xxx就应该停止升级。
+
+这样我直接把链接复制到其它设备的浏览器，都不用重新登录。
+
+那个temporary_password应该由username+password得到，但不是直接相加。
+
+如果temporary_password泄露了，你应该检查你本地软件、联网软件、外部网络路由有没有泄露密码。实际上如果你网络提供商上有坏人，你怎么都无法安全上网。
+
+有人说这种通信方式有安全隐患，会泄露信息。我的想法是，你要绝对安全，就得和你的接头人定好加密协议，端到端加密。(但实际上你都无法保证别人的计算机或者操作系统有没有后门，没准你硬盘的内容别人可以远程直接读取呢，那你搞花里胡哨的加密就没用了)
+
+经过我的观察，一个999级的老成员，如果能轻易被你联络到，整个组织肯定容易崩溃。所以你只能联络你的上一级与下一级，你只需要记两种加密通信协议，一上一下。
+
+这种组织天生就是去中心化的，没有中心服务器，因为那太危险。至于通信速度，我的建议是越慢越好、越少越好。因为如果你20年才和你上级下级通信一次，几乎没人管你这个组织，因为太牛逼了。
+
+至于通信这么少，为何能保证质量？因为我们不是普通人，一预测就是20年后发生的事情。
+
+至于公网那个url临时密码问题，有安全隐患就有安全隐患呗，反正只是用来和未知网友聊聊天、和AI聊聊天、听听音乐、看看片。购买东西多用线下，如果非要线上购物，设置好每日限额，仅限特定地区门店购买。密码线下实体店更换。
+
+> 这种慢速安全通信的时间间隔取决于人的智力。比如我只对我周围3分钟后发生的事情十拿九稳，所以我必须依赖每3分钟通信一次的系统才能正常生活。但有些人对1年后会发生的事情很确定，所以他们可以选择1年通信一次。(太抽象了，能不能简单点？"这是钱，你帮我做个东西，工期一年")
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+vue或者react都没写好，没能用javascript表示某个界面组件。但flutter的每个component都是纯代码。
+
+这导致在html的<script></script>引用中，无法复用vue写的user interface component。
+
+如果有人用javascript写了一套类似于flutter的东西，那不需要npm、node，不需要编译，仅凭几个html文件与js文件，我就能实现无限复用小UI组件的类似vue或者flutter的界面。
+
+> 后面我又查了下，发现vue和react可以通过<script> tag复用它的小组件。这意味着，只要你能找到旧版两大框架的纯离线版本，就可以只修改html+js，在不编译的情况下直接开发网站。
+
+> 我又想了下，觉得复用ui_component可能不是一个好主意。比如当你把整个大网站当成一个app时，开发可能太复杂。但如果每个页面都是独立程序，只接收url里的参数、local storage里的数据，那整个网站的开发就会变得很简单。
+
+> ui_component可能在单页面就能被解决，比如 弹出信息框、信息输入框 或者 文本编辑器。极端例子是php form 表单提交后，那个弹窗是一个新页面。另外，在一个新页面编辑文本不是更清爽吗？
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+不变的东西，一般都是很好的工具。因为性质很稳定。
+
+比如，自然规律。或者，石头。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+I think if user keep ask some stupid question to online AI, the AI thinking will get polluted by those people.
+
+Some more powerful AI may effects those stupid people, so those stupid people will do the thinking DDos attack to those online AI that is not their side.
+
+One example is, they ask too much stupid new tech and packages that is hard to use, and limit freedom. The more online AI learn those stupid things, the more likely the online AI become stupid guy.
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+I randomly read a software engineer words:
+
+"For a few years ago a lot of things started to happen in the world of Javascript development. A lot of frontend javascript framework was born, hundreds of frameworks promising to be the new silver bullet for front end development(but there are no silver bullets). React or Vue is looking as the current most popular framework with a huge community. My issue with React or Vue is the complexity it comes with and that it abstracts away DOM manipulation. In fact with React or Vue, you are no longer in control of the DOM. These are two red flags for me (it is dangerous). Most of the applications I develop are not Facebook scale either, and I also have to think about the lifetime and maintenance for the application. It may take three years before one of my client needs a new feature and I have to rebuild my project. Working with a three year old React or Vue project from time to time do look extremely painful for my mind in my experience (Because normally those project dependencies will be broken after 3 years, which means you can't compile them anymore). And my clients have to pay for the extra hours, and I need to setup my development environment again and again and again..." --- olavgg
+
+> 这只是一个侧面，印证我对前端的想法。结合我之前的日记，你可以发现，这些开发者确实花了几十年做无用工、重复劳动。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+我突然想到，如果你可以对每句话做意图检测，并把其看成是if else的操作，要么通过判定某种东西，产生行为。要么通过判定某种东西，修改记忆，或某个数据的权重。那么你就可以把某个人的日记全部解析为代码块。从而实现用编程的方式复活某个人。
+
+看不懂是吧？简单来讲，就是把我的日记反向利用，生成一堆"yingshaoxo_thinking_dataset.txt"，这个thinking list的每个element都是一串代码，抽取自每条日记。
+
+但我还是要提醒你，自动化提取的东西通常不准确，压缩率也不高。最终可能你还是得手动写代码。
+
+> 比起把我的日记转为思维代码，不如先转换你自己的？
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+防人之心不可无，别人的package，就算别人没有坏心思，别人的别人可能会想办法让它失效，这时如果你修复不了别人的package，就只能再找一个代替品。这种临时找代替品的行为通常是短视的，找不到更好或持平的代替品。这会导致你的软件越来越难用、越来越没自由、越来越不如旧版好用。一方面，你要能修改你的依赖，另一方面，你要保证这个依赖存活的土壤牢不可破，无比稳定。
+
+临时的编码防范措施是，自己封装一层API，如果有dependencies失效了，通过修改一个接入点，实现修复全局functions。
+
+听不懂？让我讲简单点：
+
+程序或者游戏的硬盘进度存储或者配置，就应该只用一个全局的普通dict。同理，你的网络通信程序也应该只有socket module, http_get(), http_post()功能。并且 具体的第三方package的get和post代码引用 应该单独封装到你的get, post function之下。保证那些第三方package失效后，你不需要满世界改你的代码去做修复，而是通过只改两个简单的function, get和post，实现更换dependencies，从而轻松修复问题。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+我突然发现比你智商高的人想控制你根本不需要用特殊技巧，只需要对你干一件事: 告诉你未来会发生什么。
+
+假设你不断听到某个人的精准预测，尤其是那些预测与你有关，你就会依赖那些预言，你就会对那个人产生无限依赖。
+
+慢慢的，那些预言变得不像是预言，而是指令。你会深信不疑的按照预言家说的做。因为不做你会有损失。
+
+慢慢的，你就失去了智力，变成高智商人的小弟，说让你干什么你就干什么，因为你深信这样做对大家都有好处。
+
+> 你是无法捕捉高智商人的，因为他们知道哪些人对他有威胁，哪些人会抓捕他，并把他当成预言家奴隶。所以他会避开你，或者一开始就不对你表现出智力。
+
+> 这些预言可以不影响未来，因为可讲的事情太多了。比如前面的某辆车会在何时到达，这种小事无穷无尽，讲再多也不会对未来产生大影响。
+
+> 如果你侥幸抓到了某个预言家，要么他是假的，要么他是某高智商者的传声筒。他自己都不知道他随口讲的话可以被人远程控制。他就是个大傻子，你抓了也没用。
+
+> 我的意思是，yingshaoxo是个大傻子。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+"脑子不用会生锈"，我妈讲的。
+
+"好记性不如烂笔头"，我妈讲的。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+牛逼是牛逼，但和你有什么关系呢？
+
+那些高楼大厦，和你有什么关系呢？
+
+你看到了，好多东西都是别人的，好是好，和你有什么关系呢？
+
+我最近学会了制作python解释执行器，但我不会用汇编写golang执行器，因为好多cpu与操作系统根本没有公开指令集说明书。别人的编译器，写得再好，和你有什么关系呢？一但不让你用、暴力升级，你就傻了。你自己又做不出来。
+
+别人的女朋友，再好，和你有什么关系呢？还不如看视频。视频里的美女，在你屏幕上，是确定性事件，想看就看。前提是你要下载到本地，而不是在线付费观看。
+
+> 讲到小视频。我看好多分享付费资源的网站，实际上没有提供对应的服务。他们提供的下载链接不能自由满速下载。他们提供的是容易被封禁的网盘链接，下载还需要再付费开通网盘会员。你搞个云商城，专门售卖MIT License的软件、游戏、小说、音乐、资源，没准能取得大成功。因为它们没有版权，同时你又提供了高速下载通道。注意保留原作者信息。并且保留旧版本资源，就算原作者要求删除也不答应，因为你有权对MIT License的资源做任何事。至于付费方式，每个资源前100个人免费，后1000人1分钱下载一次，后1万人1毛钱下载一次，后100万人1元下载一次，以后则是永远免费下载。为什么会有人买这些资源？因为github的搜索功能没做好，搜不到东西。
+
+> 这种资源商城的好处是什么？可持续发展。因为假设某个特定版本的gcc或者python被下载了100万份，所以服务商赚了100万。用50万去守护这一个几十MB的资源，永久免费下载，肯定是足够了。
+
+> 突然想到了这个好玩的商业模式，比起git平台和网盘平台直接偷用用户数据，这样光明正大的售卖用户的免费数据，似乎也是一件挺好的生意。这样下载东西就方便很多了，几毛钱下载几十个软件、音乐、视频等等。
+
+> 或者一个资源只卖10元，卖完一个，把购买者名字贴在下载页面，然后所有人都能免费下载了
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+来谈谈新技术:
+
+
+"""
+Me:
+
+像这种别人的网关，随时可以被远程控制，拿来转发灰产的流量
+
+类似于china.cn 后面加个随机数可以拿来看 AV，china.cn/xxxkjfalskdhf
+___
+
+Other:
+
+这个做不到吧
+___
+
+Me:
+
+可以的，花生壳就是这么反射的
+
+主动发post，就能控制发请求的人。只需要把response看成是指令，把request看成是feedback。
+___
+
+Other:
+
+https://www.baidu.com
+你能在后面加一个随机数让她访问你的东西吗
+___
+
+Me:
+
+可以，只要它网关用了我的后门程序
+___
+
+Me:
+
+就算它配置了黑名单防火墙，也可以短暂性的借用某个白名单域名完成任务，只要密码定得好
+
+比如向那个域名发送“***temprary_hack_use***”，然后什么远控服务器的事情都能干
+___
+
+Me:
+
+毕竟那些著名网关，如nginx都是加密的程序、别人的程序，别人什么时候用，都说不准
+
+包括sql程序，也都可以直接透传数据到黑客的服务器
+"""
+
+要怎么防范？除了全部自己做之外。某些大型应用商城管理者、大型网站管理者、网络供应商，可能会出一个安全版本的编程环境，让你只做本地离线程序。其余部分全部是AI编程，因为信不过你。
+
+最终，长期搞这种开发的程序员会丧失做通信程序的能力。没有通信，人们就像傻逼一样，很多事情都做不了。
+
+于是，原始时代，人们拥有完全的自由。但进入了科技时代，人们用上了满是限制，但很强的无脑工具，反而变得又笨又无能，离了工具啥也不是。
+
+> 或者，出于安全考虑，禁用一切旧版本程序、旧编程协议、旧技术，从而强制让你使用新版技术、新版程序、新协议，但新东西里就只有一句话：你离开我啥也不是，你必须24小时联网，且交VIP保护费、月租费、我随时可以封禁你、我允许你干什么，你才能干什么，你做事得看我的脸色，你不能比我聪明，你不准比我强，你不准反抗。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+硬编码if else的思考逻辑、人类思维 类似于 自然规律里的数学定理、物理定律、化学公式，而基于2014到2025年的GPU显卡的深度学习模型，啥啥也不是。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+万物股市到底是什么？假设世界上每种东西都有价值。但在每个人心中，每样物品的价值不一样。
+
+如果有件商品的价值被严重低估，那么你可以很轻松得到那样商品。比如，人们会觉得屎尿的价值很低，免费送。但农民会利用屎尿，做化肥，加速植物生长。
+
+另一个价值量产生巨大变化的商品是: 大母狗。
+
+在古代和农村，狗随处可见，没人觉得有多特别，价值量很低。
+
+但在现代，突然有人发现它是人类忠实的伴侣，大母狗阴道能供3根手指完全性交，成年男人的大阴茎与母狗交合完全没有压力。又软又湿又热，还方便便宜。如此一来，狗的价值又飞速往上提升。你就比较难买到没有被缩小阴道、没有被缩小肉体的狗了。相反，你能在外面轻易看到的，都是和小猫差不多的劣质狗种。
+
+顺便提一句，如果你把狗脑子和人脑子连在一起，一年后，如果你对狗说"宝宝把门关上"，它是会去关门的。这意味着，狗其实是价格最低的机器人仆人+女朋友+活体性玩具。这会让大型母狗的价格进一步提升。
+
+这有点像几十块打败几千亿市场的创意想法，黄色产业会想尽办法降低市场的大母狗存量，并利用基因改良技术，持续劣质化狗的基因，让垃圾小型犬充斥整个公共市场。从而让普通底层男性的性欲望无法通过几十块钱得到满足，从而要花成千上万的价格去嫖娼。
+
+> 这可能是你第一次发现，这个世界的动物、植物的基因也是不断升级的，越升越垃圾。举个例子，不太可能让你得到亩产千斤的稻谷种子。公网售卖的植物种子多半无种，是一次性的，每年都要买新的种子，再种植。由此，你会深度依赖种子生产者。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+一般流动人口大的地方，也越混乱、越没人管，同时也意味着充分自由。你可以在正当防卫，打了一堆人之后潇洒离场。
+
+但有人管的地方，就比较正常。他们按照某种秩序，平静的生活。不管有没有无形的压榨，有一件事是确定的: 统治者不想生活在一个危险、混乱的国家。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+经过我的一番研究，我突然发现一个事情: 现在公网上还存在的知名作家，都有背景。要不家里有钱、要不家里有权。
+
+比如有90年代就买得起台式计算机的(王小波)、有1960年代可以满世界旅游的(鲁迅、三毛女)、有作家协会的(莫言、刘震云)、有政府御用写手的(x大理论k大思想)、有背地里花大价钱推广的网络作家(太多了)。等等。
+
+意思就是，在公网留名需要交保护费，没钱交不起。交上留名费有好处，以后遇到人，吹牛逼，可以说: “我们家xxx可是著名作家，你去xx搜索引擎搜一搜，前几页都是。甚至中学课本里都有他的文章！厉不厉害？”
+
+不交保护费、没有保护伞，别说公网搜不到，就是你自己的独立网站，都能被防火墙屏蔽、被恶意举报404。随便从作品里抽取一句独立的话，就能说你有分裂国家的嫌疑。
+
+"我们xx家，要实现独立自主，做大做强。需要摆脱对外部的依赖。勤勤恳恳，一步一步的实现xx人自己的特色幸福小康生活"。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+我教你一个从中文长文本中自动提取词汇的办法: 从2个字开始，到4个字，某几个字重复的次数越多，越可能是个词汇。你只loop一次。(可以以每行为单位，前后都可能有在其它行重复的可能性，取重复的，就是词语或短句)
+
+另一种方法是直接用汉语词典的数据。
+
+不过，自动提取词汇应该没什么用，毕竟人类学语言也是要单独学习词汇的。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+我在野外生存实际上是个错误的示范，因为我是被命运深度控制的。
+
+现代很多高精尖产品，制造过程一层技术叠一层技术，没有稳定的室内实验室已经很难完成某个产品的制造。
+
+人们真正应该做的，是一群人组成一个实验室或万能工厂，无限有益升级。设计、制造、升级，无限循环。
+
+> 别人给你的升级产品是垃圾，是限制你自由、降低你能力的有力武器。
+
+> 如果野外生存有用，那一些偏远岛国、农业国家，就不会缺电子电器产品了、就不会缺化工产品、就不会缺机械产品了。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+打工定律 之 站在老板角度看问题:
+
+1. 假设我要开公司、工厂、做生意、搞事情。我首先招的人肯定都是亲戚朋友、同学对象。第一批员工肯定都是熟人。不太可能一开始就招几个省外，甚至跨国员工。
+
+2. 后期生意做起来了、工厂公司运转正常，我发现有一些职位对身体有较大损伤，有一些工种又苦又累，有一些工作简单重复、人人能做、越做越傻，连亲戚朋友、同学同事都不愿意干了。所以我从外面招收一些陌生人去填这个窟窿，反正我不认识他们，他们用身体健康换钱，我不在意。等他们老了，带着职业病回家，我不在意。
+
+3. 理论上底层人、失业人口、流浪者应该有个贫民窟，俗称低端人口聚集地。在那里，商品价格极低，自给自足。但实际上，现在几乎没有免费的土地可以免费拿来聚集低端人口。同时理想与现实也有较大差距，贫民窟可能被大集团、大势力深度控制、深度监控。以至于，明明都很穷了，还是被更强的势力不断吸血、不断要求干这儿干那儿，生产这个、生产那个，提供这个服务、提供那个服务。反正价格极低。甚至，3警棍或黑棍，让人不给钱都"愿意"干。
+
+> 吃军队饭更难受，类似于跟不讲道理的大哥混黑社会，班长、连长、团长叫你往东，你不敢往西，叫你做啥你做啥，杀人放火都不准拒绝。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+不信任会催生很多多余劳动，但好像又是必要的:
+
+1. 寻找很多可以代替某个物品的物品。
+
+2. 重复验证人的能力有没有降低、人的思想有没有变化、人是否对你忠诚。
+
+3. 软件上，不光把所有外部依赖封装在自己的API之下，还对每个function写了测试，每隔一个月都要运行一遍测试，看有没有底层依赖发生了不合预期的变化。编程语言与library底层发生变化是一件很恐怖的事情，会让整个软件帝国崩溃。所以靠谱的程序员基本不升级编译器、解释器。更靠谱的程序员自己做计算机、自己写编译器、python解释器。
+
+4. 不断让自己变得更强，怕别人欺负自己，怕别人监控、偷抢资源、吸血、压榨自己。到国家层面则是军备竞赛。
+
+(叠加式升级，与毁掉旧东西升级，有着本质的区别。比如叠加式升级，最终你能得到 锤子刻刀->电钻电磨砂机->3D打印机，就算最顶层的机器坏了，你也能降级用电钻。但如果你只有3D打印机，坏了你就失去了制造能力。)
