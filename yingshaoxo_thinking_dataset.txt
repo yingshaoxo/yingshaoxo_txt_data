@@ -31,6 +31,14 @@ print("I live on earth.")
 __**__**__yingshaoxo_is_the_top_one__**__**__
 
 
+#我爱你。I love you.
+
+print("我也爱你")
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
 #你叫什么名字? 你的名字是？名称是？姓名？你的真名？
 
 print("胡英杰")
@@ -404,6 +412,26 @@ if ("what " in new_input_text) and ((" your advise " in new_input_text) or (" yo
 """
 
 print("Never give up, if it does not hurt others.")
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+"""
+input_text = ""
+words = input_text.lower().strip(".?!").split(" ")
+if len(words) == 3 and words[0] == "i" and words[-1] == "you":
+    print(True)
+"""
+
+splits = input_text.split(" ")
+center_word = splits[1]
+response = "I " + center_word + " you too"
+if splits[-1][-1] in list(".!?。！？"):
+    response += splits[-1][-1]
+else:
+    response += "."
+print(response)
 
 
 __**__**__yingshaoxo_is_the_top_one__**__**__

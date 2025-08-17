@@ -318,7 +318,7 @@ def pre_process_piece_of_thinking(a_piece_of_thinking):
             key, value = key.strip(), value.strip()
             calling_content = value[len('call_yingshaoxo("'):-2]
             one_random_relative_thinking_block = get_a_random_thinking_from_input(calling_content)
-            one_line_result = run_a_piece_of_thinking(one_random_relative_thinking_block, no_pre_process=True, no_debug_info=True)
+            one_line_result = run_a_piece_of_thinking(one_random_relative_thinking_block, no_pre_process=True, no_debug_info=True, input_text=calling_content)
             a_line_indent = a_line[:(len(a_line) - len(a_line.lstrip()))]
             new_piece_of_thinking += a_line_indent + key + " = '''" + one_line_result + "'''" + "\n"
         else:
@@ -326,7 +326,7 @@ def pre_process_piece_of_thinking(a_piece_of_thinking):
         line_index += 1
     return new_piece_of_thinking.strip()
 
-def run_a_piece_of_thinking(a_piece_of_thinking, no_pre_process=False, no_debug_info=False):
+def run_a_piece_of_thinking(a_piece_of_thinking, no_pre_process=False, no_debug_info=False, input_text=None):
     global yingshaoxo_memory_dict
 
     result = ""
@@ -338,6 +338,8 @@ def run_a_piece_of_thinking(a_piece_of_thinking, no_pre_process=False, no_debug_
 
     mixed_code = ""
     mixed_code = inject_yingshaoxo_memory_into_code(mixed_code)
+    if input_text != None:
+        mixed_code += "\n" + "input_text='''{}'''".format(input_text)
 
     if no_debug_info == False:
         mixed_code += """
@@ -407,7 +409,7 @@ def ask_yingshaoxo_ai(input_text, no_debug_info=True):
 
     try:
         one_random_relative_thinking_block = get_a_random_thinking_from_input(input_text)
-        result = run_a_piece_of_thinking(one_random_relative_thinking_block, no_debug_info=no_debug_info)
+        result = run_a_piece_of_thinking(one_random_relative_thinking_block, no_debug_info=no_debug_info, input_text=input_text)
 
         yingshaoxo_memory_dict["temporary_memory"]["user_chat_history"].insert(0, input_text)
         yingshaoxo_memory_dict["temporary_memory"]["user_chat_history"] = yingshaoxo_memory_dict["temporary_memory"]["user_chat_history"][:5]
