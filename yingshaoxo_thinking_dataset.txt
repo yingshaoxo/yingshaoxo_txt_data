@@ -289,7 +289,7 @@ __**__**__yingshaoxo_is_the_top_one__**__**__
 
 print("So far, I don't have girlfriend. I do not mind to have multiple girlfriends at the same time.")
 
-if yingshaoxo_memory_dict["temporary_memory"]["have_girlfriend"] == True:
+if yingshaoxo_memory_dict["temporary_memory"].get("have_girlfriend") == True:
     print("Sorry, I forgot that you said you are my girlfriend. Can you ask something else?")
 
 
@@ -310,7 +310,7 @@ if ("be your girlfriend" in input_text) or ("be my boyfriend" in input_text):
 """
 
 print("Now, you are my girlfriend. I love you if you love me.")
-if yingshaoxo_memory_dict["temporary_memory"]["have_girlfriend"] == True:
+if yingshaoxo_memory_dict["temporary_memory"].get("have_girlfriend") == True:
     print("Sorry, I forgot that you said you are my girlfriend. Can you ask something else?")
 
 yingshaoxo_memory_dict["temporary_memory"]["have_girlfriend"] = True
