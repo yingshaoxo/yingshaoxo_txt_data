@@ -19,6 +19,43 @@ from io import BytesIO
 import tempfile
 from fnmatch import fnmatch
 
+def os_copytree(src, dst):
+    """Recursive directory copy using only os module"""
+    if not os.path.exists(src):
+        raise OSError("Source path '{}' does not exist".format(src))
+
+    if not os.path.exists(dst):
+        os.makedirs(dst)
+
+    for item in os.listdir(src):
+        src_path = os.path.join(src, item)
+        dst_path = os.path.join(dst, item)
+
+        try:
+            if os.path.isdir(src_path):
+                os_copytree(src_path, dst_path)
+            else:
+                # Handle existing files
+                if os.path.exists(dst_path):
+                    try:
+                        os.chmod(dst_path, 0o777)  # Try making writable
+                    except:
+                        pass
+
+                # Basic file copy
+                with open(src_path, 'rb') as src_file:
+                    with open(dst_path, 'wb') as dst_file:
+                        dst_file.write(src_file.read())
+
+                # Optional timestamp preservation
+                try:
+                    src_stat = os.stat(src_path)
+                    os.utime(dst_path, (src_stat.st_atime, src_stat.st_mtime))
+                except:
+                    pass
+        except OSError as e:
+            print("Failed to copy {} to {}: {}".format(src_path, dst_path, str(e)))
+
 import glob
 if sys.version_info[0] == 3 and sys.version_info[1] <= 2:
     class Path(object):
@@ -512,15 +549,36 @@ class Disk:
     def _parse_gitignore_text_to_list(self, gitignore_text):
         #(self, gitignore_text: str) -> list[str]:
         ignore_pattern_list = [line for line in gitignore_text.strip().split("\n") if line.strip() != ""]
+        if "__pycache__/" not in ignore_pattern_list:
+            ignore_pattern_list.append("__pycache__/")
         new_ignore_pattern_list = []
         for pattern in ignore_pattern_list:
             if pattern.startswith("#"):
                 continue
+
+            new_ignore_pattern_list.append(pattern)
+
+            if pattern.startswith("/"):
+                pattern = pattern[1:]
             if pattern.endswith("/"):
-                new_ignore_pattern_list.append(remove_suffix(pattern, "/"))
-                new_ignore_pattern_list.append(pattern + "*")
-            else:
+                # such as 'a_folder/', it now becomes ["a_folder/", "a_folder/*"]
                 new_ignore_pattern_list.append(pattern)
+                new_ignore_pattern_list.append(pattern + "*")
+            elif ("." not in pattern) and (not pattern.endswith("/")):
+                # such as 'a_folder', it now becomes ["a_folder/", "a_folder/*"]
+                new_ignore_pattern_list.append(pattern + "/")
+                new_ignore_pattern_list.append(pattern + "/*")
+            elif pattern.startswith("."):
+                # such as '.a_folder', it now becomes [".a_folder/", ".a_folder/*"]
+                new_ignore_pattern_list.append(pattern + "/")
+                new_ignore_pattern_list.append(pattern + "/*")
+
+            if pattern.endswith("/"):
+                new_ignore_pattern_list.append(pattern[:-1])
+            new_ignore_pattern_list.append(pattern)
+
+        new_ignore_pattern_list = list(set(new_ignore_pattern_list))
+        new_ignore_pattern_list.sort()
         return new_ignore_pattern_list
 
     def _file_match_the_gitignore_rule_list(self, start_folder, file_path, ignore_pattern_list):
@@ -534,14 +592,23 @@ class Disk:
             file_path = file_path[2:]
 
         match = False
+        path_a = remove_prefix(file_path, start_folder)
         for pattern in ignore_pattern_list:
-            path_a = remove_prefix(file_path, start_folder)
             patten_b = remove_prefix(pattern, "./")
             if fnmatch(path_a, patten_b):
                 #print(path_a + " | " + patten_b)
                 match = True
                 break
 
+            # why the direct name match is actually works better? if "file_or_folder_name" == "file_or_folder_name"
+            if path_a == pattern:
+                match = True
+                break
+
+        #if (".gradle" in path_a):
+        #    print(ignore_pattern_list)
+        #print(path_a)
+        #print(file_path, match)
         return match
 
     def get_gitignore_folders_and_files(self, folder, also_return_dot_git_folder=False):
@@ -565,7 +632,7 @@ class Disk:
                 else:
                     git_folder_list.append(a_git_folder)
 
-                result = t.run_command("git ls-files --other --directory", cwd=a_git_folder).strip()
+                result = t.run_command("git ls-files --other --ignored --exclude-standard --directory", cwd=a_git_folder).strip()
                 if len(result) != 0:
                     if result.lower().startswith("fatal"):
                         continue
@@ -1793,7 +1860,8 @@ class Disk:
             return
 
         try:
-            shutil.copytree(source_folder_path, target_folder_path, dirs_exist_ok=True)
+            #shutil.copytree(source_folder_path, target_folder_path, dirs_exist_ok=True)
+            os_copytree(source_folder_path, target_folder_path)
         except OSError as exc: # python >2.5
             try:
                 shutil.copy(source_folder_path, target_folder_path)

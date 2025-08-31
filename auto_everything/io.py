@@ -547,6 +547,8 @@ try:
             Can you let the following code support "a b c d e f g ..." sub_folder split? So the search speed of key will increase, and will bypass the max_files number a folder can save problem.
 
             Can you create your own hash method than using hashlib or zlib? the python hashlib is not stable according to my experience.
+
+            I suggest do not use pickle, but json, because pure text uses less space.
         """
         __slots__ = ('_path', '_depth')
 

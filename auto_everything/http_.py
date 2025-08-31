@@ -257,15 +257,17 @@ Access-Control-Allow-Headers: *\r\n\r\ndone
                 text_type = "text/plain"
             else:
                 text_type = "text/html"
+            #the_raw_response_bytes_length = len(raw_response.encode(_The_Text_Encoding_Lower_, errors="ignore")) # this cause bug in xp chrome 49
+            the_raw_response_bytes_length = len(raw_response)
             response = """
 {response_first_line}\r
 Content-Type: {text_type}; charset={_The_Text_Encoding_}{response_header_text}\r
 Content-Length: {message_length}\r
 Access-Control-Allow-Origin: *\r\n\r\n{raw_response}
-""".format(response_first_line=response_first_line, text_type=text_type, _The_Text_Encoding_=_The_Text_Encoding_, response_header_text=response_header_text, raw_response=raw_response, message_length=len(raw_response)).strip()
+""".format(response_first_line=response_first_line, text_type=text_type, _The_Text_Encoding_=_The_Text_Encoding_, response_header_text=response_header_text, raw_response=raw_response, message_length=the_raw_response_bytes_length).strip()
         elif type(raw_response) == dict:
             raw_response = json.dumps(raw_response, indent=4)
-            json_length = len(raw_response)
+            json_length = len(raw_response.encode(_The_Text_Encoding_Lower_, errors="ignore"))
             response = """
 {response_first_line}\r
 Content-Type: application/json; charset={_The_Text_Encoding_}\r
@@ -623,6 +625,15 @@ class Yingshaoxo_Http_Client():
     """
     author: yingshaoxo
     description: This application going to implement a broswer by using socket module to implement a http1.1 client. And may also implement a socket vpn along the way.
+
+    The html page can be N levels, the higher level, the diffucult to set up:
+        1. only pure text, split content by space and new line, input data by url such as: 'http://xx.com?key=value'
+        2. only pure text + basic css, can be rendered in windows xp IE6 or older 1998 year browser.
+        3. only html text + basic css + basic javascript, can be rendered in windows xp IE6.
+        4. only html text + css + javascript, can be rendered in 2014 year browser.
+        5. html + css + javascript + vue2.7_imported_by_script_tag(other reactive framework is also fine), can be rendered in 2014 year browser (such as windows xp chrome 49).
+        6. html + css + javascript + npm_compiled_stuff, can be rendered in 2014 year browser.
+        7. html + css + javascript + npm_compiled_stuff + new_latest_packages, can only be rendered in your current year browser, in other way, it do not support old browsers. And you can't change your website content unless you have network to use npm online packages. Those dependencies can easily get broken.
     """
     def __init__(self, remote_proxy_ip_with_port=None, remote_proxy_http_address=None, remote_proxy_https_address=None, password="5201314"):
         """

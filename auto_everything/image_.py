@@ -270,73 +270,73 @@ def get_simplified_image_in_an_accurate_way(self, level=2, extreme_color_number=
     better use a simple resize to get main_color_list, for example, extreme_color_number == 9, then we have to resize the image to 3x3 to get 9 main colors.
     """
     new_image = self.copy()
-
-    main_color_set = set()
-
-    def get_main_color_for_a_sub_window(pixel_list):
-        counting_dict = {}
-        a_list = []
-        for color in pixel_list:
-            color = [str(one) for one in color]
-            color = ",".join(color)
-            if color in counting_dict.keys():
-                counting_dict[color] += 1
-            else:
-                counting_dict[color] = 1
-        sort_items = list(counting_dict.items())
-        sort_items.sort(key=lambda x: -x[1])
-        color_list_length = len(sort_items)
-
-        target = None
-        index = 0
-        while True:
-            color, counting = sort_items[index]
-            if color in main_color_set:
-                pass
-            else:
-                main_color_set.add(color)
-                target = color
-                break
-            index += 1
-            if index >= color_list_length:
-                break
-        return target
-
-    def get_main_color_list_from_set():
-        main_color_list = [[int(each) for each in one.split(",")] for one in main_color_set]
-        return main_color_list
-
     height, width = new_image.get_shape()
-    #kernel_number = 30
-    kernel_number = int((64/1920) * width)
-    sub_image_pixel_numbers = kernel_number * kernel_number
-    height_step_number = int(height/kernel_number)
-    width_step_number = int(width/kernel_number)
-    for y_ in range(height_step_number):
-        y_start = y_ * kernel_number
-        y_end = y_start + kernel_number
-        if y_end >= height:
-            y_end = height - 1
-        for x_ in range(width_step_number):
-            x_start = x_ * kernel_number
-            x_end = x_start + kernel_number
-            if x_end >= width:
-                x_end = width - 1
-            index_list = [None] * sub_image_pixel_numbers
-            real_pixel_list = [None] * sub_image_pixel_numbers
-            counting = 0
-            for y_index in range(y_start, y_end):
-                for x_index in range(x_start, x_end):
-                    pixel = new_image.raw_data[y_index][x_index]
-                    index_list[counting] = [y_index, x_index]
-                    real_pixel_list[counting] = pixel
-                    counting += 1
-            real_sub_image_pixel_numbers = counting
-            index_list = [one for one in index_list if one != None]
-            real_pixel_list = [one for one in real_pixel_list if one != None]
-            get_main_color_for_a_sub_window(real_pixel_list)
 
     if predefined_color_list == None:
+        main_color_set = set()
+
+        def get_main_color_for_a_sub_window(pixel_list):
+            counting_dict = {}
+            a_list = []
+            for color in pixel_list:
+                color = [str(one) for one in color]
+                color = ",".join(color)
+                if color in counting_dict.keys():
+                    counting_dict[color] += 1
+                else:
+                    counting_dict[color] = 1
+            sort_items = list(counting_dict.items())
+            sort_items.sort(key=lambda x: -x[1])
+            color_list_length = len(sort_items)
+
+            target = None
+            index = 0
+            while True:
+                color, counting = sort_items[index]
+                if color in main_color_set:
+                    pass
+                else:
+                    main_color_set.add(color)
+                    target = color
+                    break
+                index += 1
+                if index >= color_list_length:
+                    break
+            return target
+
+        def get_main_color_list_from_set():
+            main_color_list = [[int(each) for each in one.split(",")] for one in main_color_set]
+            return main_color_list
+
+        #kernel_number = 30
+        kernel_number = int((64/1920) * width)
+        sub_image_pixel_numbers = kernel_number * kernel_number
+        height_step_number = int(height/kernel_number)
+        width_step_number = int(width/kernel_number)
+        for y_ in range(height_step_number):
+            y_start = y_ * kernel_number
+            y_end = y_start + kernel_number
+            if y_end >= height:
+                y_end = height - 1
+            for x_ in range(width_step_number):
+                x_start = x_ * kernel_number
+                x_end = x_start + kernel_number
+                if x_end >= width:
+                    x_end = width - 1
+                index_list = [None] * sub_image_pixel_numbers
+                real_pixel_list = [None] * sub_image_pixel_numbers
+                counting = 0
+                for y_index in range(y_start, y_end):
+                    for x_index in range(x_start, x_end):
+                        pixel = new_image.raw_data[y_index][x_index]
+                        index_list[counting] = [y_index, x_index]
+                        real_pixel_list[counting] = pixel
+                        counting += 1
+                real_sub_image_pixel_numbers = counting
+                index_list = [one for one in index_list if one != None]
+                real_pixel_list = [one for one in real_pixel_list if one != None]
+                get_main_color_for_a_sub_window(real_pixel_list)
+
         main_color_list = get_main_color_list_from_set()
         if extreme_color_number != None:
             from functools import cmp_to_key
@@ -371,7 +371,7 @@ def get_simplified_image_in_an_accurate_way(self, level=2, extreme_color_number=
             if pixel_string in new_pixel_dict:
                 new_pixel = new_pixel_dict[pixel_string]
             else:
-                new_pixel = pixel
+                new_pixel = old_pixel
                 minimum_distance = 99999
                 for safe_color in main_color_list:
                     #difference = ((old_pixel[0] - safe_color[0])**2 + (old_pixel[1] - safe_color[1])**2 + (old_pixel[2] - safe_color[2])**2 + (old_pixel[3] - safe_color[3])**2) ** 0.5
@@ -383,6 +383,30 @@ def get_simplified_image_in_an_accurate_way(self, level=2, extreme_color_number=
             new_image.raw_data[y][x] = new_pixel
 
     return new_image
+
+def get_simplified_image_by_using_edge_line_around_color(a_image, max_color_number=98):
+    # This function works better than get_simplified_image() because it will always output the same image with constant process speed
+    edge_image = a_image.to_edge_line(downscale_ratio=1, gaussian_blur=True, gaussian_kernel=1, min_color_distance=15)
+    height, width = a_image.get_shape()
+    color_set = set()
+    for y in range(height):
+        for x in range(width):
+            edge_pixel = edge_image.raw_data[y][x]
+            if edge_pixel[3] == 255:
+                point_list = [[y,x-1], [y,x+2]]
+                for point in point_list:
+                    if (point[0] >= 0 and point[0] < height) and (point[1] >= 0 and point[1] < width):
+                        pixel = tuple(a_image.raw_data[point[0]][point[1]])
+                        color_set.add(pixel)
+    predefined_color_list = list(color_set)
+
+    from functools import cmp_to_key
+    def compare_color(color1, color2):
+        difference = (abs(color1[0] - color2[0]) + abs(color1[1] - color2[1]) + abs(color1[2] - color2[2]) + abs(color1[3] - color2[3])) / 4
+        return difference
+    predefined_color_list = list(sorted(predefined_color_list, key=cmp_to_key(compare_color)))[-max_color_number:]
+
+    return get_simplified_image_in_an_accurate_way(a_image, predefined_color_list=predefined_color_list)
 
 def get_simplified_image_in_a_quick_way(self, level=25):
     """
@@ -567,11 +591,17 @@ def single_pixel_to_6_main_type_color(pixel, free_mode=False, animation_mode=Fal
         a = 255
     new_color = [0, 0, 0, 0]
     h,s,v = single_pixel_rgb_to_hsv(r, g, b)
+
     black_gate = 30
     white_gate = 18
     if animation_mode == True:
         black_gate = 0
         white_gate = 0
+    if free_mode == True and animation_mode == False and greyscale_mode == False:
+        # keep more color than white and black
+        black_gate = 25
+        white_gate = 12
+
     if v < (black_gate/100) * 255:
         # black
         new_color = [0,0,0,255]
@@ -649,18 +679,30 @@ def rgb_to_black_and_white(image, threshold=127):
             new_image.raw_data[y][x] = new_pixel
     return new_image
 
-def get_edge_lines_of_a_image_by_using_yingshaoxo_method(a_image, min_color_distance=15, downscale_ratio=3, gaussian_blur=False):
+def _get_color_difference_distance(color1, color2, mode="rgb"):
+    if mode == "rgb":
+        return (abs(color1[0]-color2[0]) + abs(color1[1]-color2[1]) + abs(color1[2]-color2[2]))/3
+    elif mode == "hsv_only_h":
+        color1 = single_pixel_rgb_to_hsv(color1[0], color1[1], color1[2])
+        color2 = single_pixel_rgb_to_hsv(color2[0], color2[1], color2[2])
+        return abs(color1[0]-color2[0])
+    elif mode == "hsv_only_h_s":
+        color1 = single_pixel_rgb_to_hsv(color1[0], color1[1], color1[2])
+        color2 = single_pixel_rgb_to_hsv(color2[0], color2[1], color2[2])
+        return (abs(color1[0]-color2[0]) + abs(color1[1]-color2[1]))/2
+
+def get_edge_lines_of_a_image_by_using_yingshaoxo_method(a_image, min_color_distance=15, downscale_ratio=3, gaussian_blur=False, gaussian_kernel=2):
     """
     yingshaoxo: You can use Canny method, but I think it is hard to understand and implement.
 
-    Need a erosion algorithm in here.
+    the 'min_color_distance' paramater is really important for this to work well
     """
     a_image = a_image.copy()
     original_height, original_width = a_image.get_shape()
 
     a_image = a_image.resize(int(original_height/downscale_ratio), int(original_width/downscale_ratio))
-    if gaussian_blur == True:
-        a_image = a_image.get_gaussian_blur_image(2, bug_version=False)
+    if gaussian_blur != False:
+        a_image = a_image.get_gaussian_blur_image(gaussian_kernel, bug_version=False)
 
     old_height, old_width = a_image.get_shape()
     new_image = a_image.create_an_image(old_height, old_width, [0,0,0,0])
@@ -689,10 +731,18 @@ def get_edge_lines_of_a_image_by_using_yingshaoxo_method(a_image, min_color_dist
     new_image.resize(original_height, original_width)
     return new_image
 
-def get_simplified_image_by_using_mean_square_and_edge_line(a_image, downscale_ratio=1, fill_transparent=False, pre_process=False):
+def get_simplified_image_by_using_mean_square_and_edge_line(a_image, downscale_ratio=1, fill_transparent=False, pre_process=False, gaussian_blur=False, max_kernel=50, edge_line_image=None, min_color_distance=15):
     """
     You could do the mean for each pixel by using "scale up until edge line", but that speed is very slow.
     You can also use circle than square, it is more accurate.
+    """
+    """
+    #1. get many sub_image, from big kernel to small kernel, check if it has edge line, if so, ignore it
+    #2. do not handle area repeatedly by using a cache image
+    """
+    """
+    The quality of this function highly related to the edge line detection function, but my version is not that good
+    todo: merge multiple around squares (2D boxs). I think the sliding_window tech is a way to do this. we can even ignore the edge, directly do 5x5 kernel sub_image merge if they have similar average color. left_to_right and up_to_down.
     """
     a_image = a_image.copy()
     old_height, old_width = a_image.get_shape()
@@ -706,12 +756,17 @@ def get_simplified_image_by_using_mean_square_and_edge_line(a_image, downscale_r
         a_image = a_image.get_gaussian_blur_image(2, bug_version=False)
         a_image = a_image.get_balanced_image()
 
-    if pre_process == True:
-        edge_image = a_image.to_edge_line(downscale_ratio=2)
+    if edge_line_image == None:
+        if pre_process == True:
+            edge_image = a_image.to_edge_line(downscale_ratio=2, gaussian_blur=gaussian_blur, gaussian_kernel=1, min_color_distance=min_color_distance)
+        else:
+            edge_image = a_image.to_edge_line(downscale_ratio=1, gaussian_blur=gaussian_blur, gaussian_kernel=1, min_color_distance=min_color_distance)
     else:
-        edge_image = a_image.to_edge_line(downscale_ratio=1)
+        edge_image = edge_line_image
 
-    for kernel in [1, 2, 3, 4, 5, 6, 8, 10, 15, 20, 25, 50, 100]:
+    #kernel_list = [1, 2, 3, 4, 5, 6, 8, 9, 10, 11, 12, 15, 20, 25, 50, 100]
+    kernel_list = list(reversed(list(range(1, max_kernel))))
+    for kernel in kernel_list:
         step_height = int(height/kernel)
         step_width = int(width/kernel)
         for y in range(step_height):
@@ -732,6 +787,19 @@ def get_simplified_image_by_using_mean_square_and_edge_line(a_image, downscale_r
                         break
 
                 if ok_for_mean == True:
+                    already_processed = False
+                    temp_sub_image = new_image.get_inner_image(start_y, end_y, start_x, end_x)
+                    for row in temp_sub_image.raw_data:
+                        for r,g,b,a in row:
+                            if a == 255:
+                                # todo: may have a bug here
+                                already_processed = True
+                                break
+                        if already_processed == True:
+                            break
+                    if already_processed == True:
+                        continue
+
                     sub_image = a_image.get_inner_image(start_y, end_y, start_x, end_x)
                     all_r, all_g, all_b, _ = 0,0,0,0
                     counting = 0
@@ -757,7 +825,153 @@ def get_simplified_image_by_using_mean_square_and_edge_line(a_image, downscale_r
                             new_image.raw_data[y1][x1] = [r,g,b,a_image.raw_data[y1][x1][3]]
 
     if fill_transparent == True:
-        kernel = 5
+        for y, row in enumerate(new_image.raw_data):
+            for x, color in enumerate(row):
+                if color[3] == 0:
+                    new_image.raw_data[y][x] = a_image.raw_data[y][x]
+
+    new_image.resize(old_height, old_width)
+    return new_image
+
+def simplify_color_by_merge_sub_image(input_image, kernel=3, similarity_gate=0.6, deep_mode=False, edge_line_image=None):
+    # maybe implementing a sliding-window algorithm for pixel level move and smooth would be better
+    # maybe you need a dataset of sub_images, so you can determine if a sub_image is the same with another or not. It is a 1 and 0 question.
+    # kernel=2, similarity_gate=0.3 is also fine for compression
+    def real_process(the_input_image):
+        height, width = the_input_image.get_shape()
+        the_output_image = the_input_image.copy()
+
+        step_height = int(height/kernel)
+        step_width = int(width/kernel)
+        for x_moving in range(kernel):
+            for y in range(step_height):
+                previous_sub_image = None
+                previous_sub_image_average_color = None
+                previous_sub_image_position = None
+                for x in range(step_width):
+                    start_y = y * kernel
+                    end_y = start_y + kernel
+                    start_x = x * kernel + x_moving
+                    end_x = start_x + kernel
+
+                    if edge_line_image != None:
+                        edge_sub_image = edge_line_image.get_inner_image(start_y, end_y, start_x, end_x)
+                        ok_for_mean = True
+                        for row in edge_sub_image.raw_data:
+                            for r,g,b,a in row:
+                                if a == 255:
+                                    ok_for_mean = False
+                                    break
+                            if ok_for_mean == False:
+                                break
+                        if ok_for_mean == False:
+                            continue
+
+                    temp_sub_image = the_input_image.get_inner_image(start_y, end_y, start_x, end_x)
+
+                    handled = False
+                    if previous_sub_image != None:
+                        similarity = previous_sub_image.compare(temp_sub_image)
+                        if similarity >= similarity_gate:
+                            handled = True
+                            sub_image_position_list = [
+                                [start_y, end_y, start_x, end_x],
+                                previous_sub_image_position,
+                            ]
+                            for start_y, end_y, start_x, end_x in sub_image_position_list:
+                                for y1 in range(start_y, end_y):
+                                    for x1 in range(start_x, end_x):
+                                        if y1 < 0 or y1 >= height or x1 < 0 or x1 >= width:
+                                            continue
+                                        if the_output_image.raw_data[y1][x1][3] == 255:
+                                            the_output_image.raw_data[y1][x1] = previous_sub_image_average_color
+
+                    if handled == False:
+                        previous_sub_image = temp_sub_image
+                        previous_sub_image_average_color = previous_sub_image.get_average_color()
+                        previous_sub_image_position = [start_y, end_y, start_x, end_x]
+
+        return the_output_image
+
+    output_image = real_process(input_image)
+
+    if deep_mode == True:
+        output_image.rotate()
+        output_image = real_process(output_image)
+        output_image.rotate()
+        output_image = real_process(output_image)
+        output_image.rotate()
+        output_image = real_process(output_image)
+        output_image.rotate()
+        output_image = real_process(output_image)
+
+    return output_image
+
+def simplify_color_by_merge_sub_image_using_sliding_window(input_image, kernel=3, similarity_gate=0.9, deep_mode=False):
+    def real_process(the_input_image):
+        height, width = the_input_image.get_shape()
+        the_output_image = the_input_image.copy()
+
+        for y in range(height):
+            previous_sub_image = None
+            previous_sub_image_average_color = None
+            previous_sub_image_position = None
+            for x in range(width):
+                start_y = y
+                end_y = start_y + kernel
+                start_x = x
+                end_x = start_x + kernel
+
+                temp_sub_image = the_input_image.get_inner_image(start_y, end_y, start_x, end_x)
+
+                handled = False
+                if previous_sub_image != None:
+                    similarity = previous_sub_image.compare(temp_sub_image)
+                    if similarity >= similarity_gate:
+                        handled = True
+                        sub_image_position_list = [
+                            [start_y, end_y, start_x, end_x],
+                            previous_sub_image_position,
+                        ]
+                        for start_y, end_y, start_x, end_x in sub_image_position_list:
+                            for y1 in range(start_y, end_y):
+                                for x1 in range(start_x, end_x):
+                                    if y1 < 0 or y1 >= height or x1 < 0 or x1 >= width:
+                                        continue
+                                    if the_output_image.raw_data[y1][x1][3] == 255:
+                                        the_output_image.raw_data[y1][x1] = previous_sub_image_average_color
+
+                if handled == False:
+                    previous_sub_image = temp_sub_image
+                    previous_sub_image_average_color = previous_sub_image.get_average_color()
+                    previous_sub_image_position = [start_y, end_y, start_x, end_x]
+
+        return the_output_image
+
+    output_image = real_process(input_image)
+
+    if deep_mode == True:
+        output_image.rotate()
+        output_image = real_process(output_image)
+        output_image.rotate()
+        output_image = real_process(output_image)
+        output_image.rotate()
+        output_image = real_process(output_image)
+        output_image.rotate()
+        output_image = real_process(output_image)
+
+    return output_image
+
+def optimal_blur(input_image, kernel=8, similarity_gate=0.1):
+    # You just have to loop 2x2 kernel and 3x3 kernel, if the 4 pixel are similar to a threshold, then make them become the most frequent pixel among the 4 pixels. 3x3 is the same. We do not handle all square, only handle those who has similar colors. So it will not become gaussian_blur.
+    a_image = input_image.copy()
+    height, width = a_image.get_shape()
+
+    new_image = input_image.copy() #a_image.create_an_image(height, width, [0,0,0,0])
+    difference_gate = 1 - similarity_gate
+
+    kernel_list = [kernel]
+    for kernel in kernel_list:
         step_height = int(height/kernel)
         step_width = int(width/kernel)
         for y in range(step_height):
@@ -767,33 +981,32 @@ def get_simplified_image_by_using_mean_square_and_edge_line(a_image, downscale_r
                 start_x = x * kernel
                 end_x = start_x + kernel
 
-                sub_image = new_image.get_inner_image(start_y, end_y, start_x, end_x)
-                all_r, all_g, all_b, _ = 0,0,0,0
-                counting = 0
+                ok_for_mean = True
+                sub_image = a_image.get_inner_image(start_y, end_y, start_x, end_x)
+                first_color = sub_image.raw_data[0][0]
                 for row in sub_image.raw_data:
-                    for pixel in row:
-                        r,g,b,a = pixel
-                        if a != 0:
-                            all_r += r
-                            all_g += g
-                            all_b += b
-                            counting += 1
-                if counting != 0:
-                    r = min(max(round(all_r/counting),0),255)
-                    g = min(max(round(all_g/counting),0),255)
-                    b = min(max(round(all_b/counting),0),255)
-                else:
-                    r,g,b,_ = a_image.raw_data[y][x]
+                    if ok_for_mean == False:
+                        break
+                    for r,g,b,a in row:
+                        if a == 0:
+                            ok_for_mean = False
+                            break
+                        difference = (abs(first_color[0]-r) + abs(first_color[1]-g) + abs(first_color[2]-b)) / 3
+                        difference = difference / 255
+                        if difference < difference_gate:
+                            ok_for_mean = True
+                        else:
+                            ok_for_mean = False
+                            break
 
-                for y1 in range(start_y, end_y):
-                    for x1 in range(start_x, end_x):
-                        if y1 < 0 or y1 >= height or x1 < 0 or x1 >= width:
-                            continue
-                        if new_image.raw_data[y1][x1][3] != 0:
-                            continue
-                        new_image.raw_data[y1][x1] = [r,g,b,255]
+                if ok_for_mean == True:
+                    for y1 in range(start_y, end_y):
+                        for x1 in range(start_x, end_x):
+                            if y1 < 0 or y1 >= height or x1 < 0 or x1 >= width:
+                                continue
+                            r,g,b,a = first_color
+                            new_image.raw_data[y1][x1] = [r,g,b,a_image.raw_data[y1][x1][3]]
 
-    new_image.resize(old_height, old_width)
     return new_image
 
 def make_a_line_between_two_points(point_a, point_b):
@@ -1142,6 +1355,25 @@ class Image:
 
         return similarity
 
+    def get_average_color(self):
+        # return a rgba pixel: [r,g,b,a]
+        counting = 0
+        r,g,b,a = 0,0,0,0
+        for row in self.raw_data:
+            for pixel in row:
+                if pixel[3] == 255:
+                    counting += 1
+                    r += pixel[0]
+                    g += pixel[1]
+                    b += pixel[2]
+        if counting > 0:
+            r = int(r/counting)
+            g = int(g/counting)
+            b = int(b/counting)
+            return [r,g,b,255]
+        else:
+            return [255,255,255,0]
+
     def to_hsv(self):
         self = rgb_to_hsv(self)
         return self
@@ -1150,8 +1382,8 @@ class Image:
         self = hsv_to_rgb(self)
         return self
 
-    def to_edge_line(self, min_color_distance=15, downscale_ratio=2, gaussian_blur=False):
-        return get_edge_lines_of_a_image_by_using_yingshaoxo_method(self, min_color_distance=min_color_distance, downscale_ratio=downscale_ratio, gaussian_blur=gaussian_blur)
+    def to_edge_line(self, min_color_distance=15, downscale_ratio=2, gaussian_blur=False, gaussian_kernel=2):
+        return get_edge_lines_of_a_image_by_using_yingshaoxo_method(self, min_color_distance=min_color_distance, downscale_ratio=downscale_ratio, gaussian_blur=gaussian_blur, gaussian_kernel=gaussian_kernel)
 
     def to_greyscale(self):
         return self.get_6_color_simplified_image(balance=True, free_mode=True, animation_mode=True, greyscale_mode=True)
@@ -1238,6 +1470,10 @@ class Image:
         return a_image
 
     def get_6_color_simplified_image(self, balance=False, free_mode=False, animation_mode=False, greyscale_mode=False, accurate_mode=False, kernel=11):
+        """
+        (free_mode=True, animation_mode=True) normally gives better result for animation
+        (free_mode=True, kernel=11) normally gives better result for normal image
+        """
         a_image = self.copy()
         backup_image = a_image.copy()
 
@@ -1255,8 +1491,40 @@ class Image:
 
         return a_image
 
-    def get_simplified_image_based_on_mean_square_and_edge_line(self, downscale_ratio=1, fill_transparent=False):
-        return get_simplified_image_by_using_mean_square_and_edge_line(self, downscale_ratio=downscale_ratio, fill_transparent=fill_transparent)
+    def get_simplified_image_based_on_mean_square_and_edge_line(self, downscale_ratio=1, fill_transparent=True, gaussian_blur=True, max_kernel=50, edge_line_image=None, min_color_distance=15):
+        """
+        the higher the max_kernel, the smaller size the final image would be
+        the smaller the min_color_distance, the better quality the final image would be
+
+        # normally if you use this function 2 times for a picture, you will get a good picture
+        """
+        return get_simplified_image_by_using_mean_square_and_edge_line(self, downscale_ratio=downscale_ratio, fill_transparent=fill_transparent, gaussian_blur=gaussian_blur, max_kernel=max_kernel, edge_line_image=edge_line_image, min_color_distance=min_color_distance)
+
+    def get_simplified_image_based_on_edge_and_average_color(self, max_kernel=100, min_color_distance=12):
+        # think this as an upgrade of 'mean_square_and_edge_line' usage
+        edge_line = self.to_edge_line(downscale_ratio=1, gaussian_blur=True, gaussian_kernel=1, min_color_distance=min_color_distance)
+        result_image = self.get_6_color_simplified_image(free_mode=True, kernel=11).get_simplified_image_based_on_mean_square_and_edge_line(max_kernel=max_kernel, edge_line_image=edge_line)
+        return result_image
+
+    def get_simplified_image_by_merge_sub_image(self, kernel=1, similarity_gate=0.6, extreme_mode=False, extreme_mode2=False, edge_line_image=None):
+        # normally this will compress png picture to 7 times smaller in a way that you can't see
+        # you can use 'kernel=1, similarity_gate=0.01' to get 30 times smaller size image, but human can see the image without problem
+        # 'extreme_mode=True' will give you an animation image, and that mode will give different image each time, not stable but looks good
+        if extreme_mode2 == True:
+            return simplify_color_by_merge_sub_image(self, kernel=kernel, similarity_gate=similarity_gate).get_6_color_simplified_image(free_mode=True, animation_mode=True)
+        elif extreme_mode == True:
+            output_image = self.get_simplified_image()
+            output_image = simplify_color_by_merge_sub_image(output_image, kernel=1, similarity_gate=0.7, edge_line_image=edge_line_image).get_simplified_image().get_6_color_simplified_image(free_mode=True, kernel=30).get_6_color_simplified_image(free_mode=True, animation_mode=True, kernel=30)
+            return output_image
+        else:
+            return simplify_color_by_merge_sub_image(self, kernel=kernel, similarity_gate=similarity_gate, edge_line_image=edge_line_image)
+
+    def get_simplified_image_by_merge_sub_image_using_sliding_window(self, kernel=3, similarity_gate=0.9, extreme_mode=False):
+        # this method is slow, kernel == 3 or 5 is fine, but beyound that, slow
+        if extreme_mode == True:
+            return simplify_color_by_merge_sub_image_using_sliding_window(self, kernel=kernel, similarity_gate=similarity_gate).get_6_color_simplified_image(free_mode=True, kernel=30)
+        else:
+            return simplify_color_by_merge_sub_image_using_sliding_window(self, kernel=kernel, similarity_gate=similarity_gate)
 
     def get_simplified_image_in_a_slow_way(self, ratio=0.7):
         """
@@ -1300,12 +1568,16 @@ class Image:
         return get_simplified_image_in_an_accurate_way(self, level, extreme_color_number, predefined_color_list)
 
     def get_simplified_image_in_a_quick_way(self, level=25):
+        """
+        level: int
+            The lower, the more simplified. better >= 3
+        """
         return get_simplified_image_in_a_quick_way(self, level)
 
     def get_simplified_image_in_a_extreme_quick_way(self, level=15, raw=False):
         """
         level: int
-            The higher, the more simplified
+            The lower, the more simplified. better >= 2
 
         We know rgb value is in (0,255), but we don't need that many color to represent things. So we use [0,5] range values for rgb. So all color we could get is 5x5x5x6=750. 750 colors is good enough. --- author: yingshaoxo
         """
@@ -1343,6 +1615,10 @@ class Image:
         It removes ratio big pixels for each 8x8 sub_image, for example ratio=0.6 means remove 60% noise pixels from 8x8 sub_image
         """
         return to_mosaic(self, ratio, kernel_number)
+
+    def blur(self, kernel=8):
+        # if kernel bigger, mosaic bigger. This method produce less size image than normal mosaic. Better just use it to process background, leave human picture layer unchanged.
+        return optimal_blur(self, kernel=kernel)
 
     def change_image_style(self, target_image, simple_mode=False, random_mode=False, random_numbers=None):
         """
