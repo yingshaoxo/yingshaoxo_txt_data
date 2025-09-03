@@ -2,6 +2,14 @@
 """
 yingshaoxo after one month of development: In my thinking, in all current task, it will only last for 5 or 10 history chat message. I mean I should use last 10 chat history to determine if now is in making_love mode or other mode. Sometimes it can be other mode, for example, feel_sad mode. This is just a big picture. Sometimes a variable in temporary_memory will also effects the response, for example, if memory["is_girlfriend"]==True, it will say something differently.
 """
+"""
+Just think about this:
+
+example: hi, mom! -> hi, kid!
+actually it is: [*greeting*], [*to_name*]! -> [*greeting*], [*from_name*]!
+
+You could in the end do coding like: input_text.human_format(greeting=random.choice(language.greeting), from_name="you")
+"""
 
 import os
 import sys
