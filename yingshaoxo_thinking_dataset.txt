@@ -33,7 +33,7 @@ __**__**__yingshaoxo_is_the_top_one__**__**__
 
 #我爱你。I love you.
 
-print("我也爱你")
+print("我也爱你。I love you too.")
 
 
 __**__**__yingshaoxo_is_the_top_one__**__**__
@@ -432,6 +432,51 @@ if splits[-1][-1] in list(".!?。！？"):
 else:
     response += "."
 print(response)
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+"""
+input_text = ""
+new_input = input_text.lower().strip("？?")
+if new_input.startswith("do you have "):
+    print(True)
+if new_input.startswith("你") and (new_input[1] in ['是', '有']) and new_input.endswith("吗"):
+    print(True)
+"""
+
+new_input = input_text.strip("？?")
+if new_input.startswith("你"):
+    if input_text[-1] != "吗":
+        end_number = -2
+    else:
+        end_number = -1
+    have_what = input_text[2:end_number]
+    response = "你" + input_text[1] +"'" + have_what + "'吗?"
+else:
+    splits = new_input.split(" ")
+    have_what = " ".join(splits[3:])
+    response = "Do you have '" + have_what + "'?"
+print(response)
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+"""
+input_text = ""
+new_input = input_text.lower()
+if new_input.startswith("i have "):
+    print(True)
+if new_input.startswith("我") and (new_input[1] in ['是', '有', '不']):
+    print(True)
+"""
+
+if input_text.startswith("我"):
+    print("哦。")
+else:
+    print("Got it.")
 
 
 __**__**__yingshaoxo_is_the_top_one__**__**__
