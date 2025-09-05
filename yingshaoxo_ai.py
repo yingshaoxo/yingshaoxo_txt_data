@@ -359,6 +359,10 @@ print("Question:", yingshaoxo_memory_dict["temporary_memory"]["input_text"])
 print("\\n")
 \n
 """
+    else:
+        mixed_code += """
+\n
+"""
 
     mixed_code += a_piece_of_thinking
     mixed_code += """
@@ -442,7 +446,7 @@ def talk_with_yingshaoxo_ai():
     while True:
         print("\n\n\n------------\n\n\n")
         input_text = input("What you want to talk? ")
-        response = ask_yingshaoxo_ai(input_text, no_debug_info=False)
+        response = ask_yingshaoxo_ai(input_text, no_debug_info=True)
         print("\n\n")
         print(response)
         save_yingshaoxo_memory()
