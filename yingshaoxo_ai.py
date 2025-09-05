@@ -130,17 +130,21 @@ def load_dict_from_json(filename="yingshaoxo_memory.json"):
     json_dict = json.loads(text)
     return json_dict
 
-def get_sub_sentence_list_from_end_to_begin_and_begin_to_end(input_text, no_single_char=True):
+def get_sub_sentence_list_from_end_to_begin_and_begin_to_end(input_text, no_single_char=True, char_limit=True):
     input_text = input_text.strip()
     full_length = len(input_text)
+    if char_limit == True:
+        char_limit_number = int(full_length / 2)
+    else:
+        char_limit_number = 1
     result_list = []
     for i in range(full_length):
         end_to_begin_sub_string = input_text[i:]
         begin_to_end_sub_string = input_text[:-i]
         if no_single_char == True:
-            if len(end_to_begin_sub_string) > 1:
+            if len(end_to_begin_sub_string) > char_limit_number:
                 result_list.append(end_to_begin_sub_string)
-            if len(begin_to_end_sub_string) > 1:
+            if len(begin_to_end_sub_string) > char_limit_number:
                 result_list.append(begin_to_end_sub_string)
         else:
             result_list.append(end_to_begin_sub_string)

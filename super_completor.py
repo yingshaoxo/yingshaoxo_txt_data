@@ -84,8 +84,31 @@ class Yingshaoxo_Text_Completor():
 
         return response
 
-    def _is_punctuation(self, string, more_punctuation="跟讲在有要地的着和便等就让了说想被到是只给几买干从个为以然问没回对先者出也之能上下么儿很会"):
+    def _is_punctuation(self, string, more_punctuation="跟讲在有要地的着和便等就让了说想被到是只给几买干从个为以然问没回对先者出也之能上下么儿很会还这"):
         return string in (",.!?;:，。；：!？ \n-=_+()*&^%$#@!`~{}|[]'/<>" + more_punctuation)
+
+    def _get_keywords(self, string, more_punctuation=""):
+        # not accurate for chinese, unless you split keyword by using space
+        if " " in string:
+            string += " "
+            keyword_list = []
+            temp_word = ""
+            for char in string:
+                if self._is_punctuation(char, more_punctuation=more_punctuation):
+                    keyword_list.append(temp_word)
+                    temp_word = ""
+                else:
+                    temp_word += char
+            return keyword_list
+        else:
+            try:
+                import jieba
+                jieba.setLogLevel(20)
+                keywords = list(jieba.cut_for_search(input_text))
+            except Exception as e:
+                print(e)
+                keywords = list(input_text)
+            return keywords
 
     def _is_ascii(self, string):
         return string.strip(''' \n1234567890-=_+()*&^%$#@!`~qwertyuiop{}|[]\asdfghjk;':"zxcvbnm,./<>?QWERTYUIOPASDFGHJKLZXCVBNM''') == ""
@@ -94,7 +117,6 @@ class Yingshaoxo_Text_Completor():
         return string.strip('''abcdefghijklmnopqrstuvwxyzQWERTYUIOPASDFGHJKLZXCVBNM''') == ""
 
     def _leave_first_sub_string(self, string):
-        # abandand: english until not_alphabet, chinese next character
         # it should complete until [,.!?;:，。；：!？space \n]
         if len(string) > 1:
             first_char = string[0]
@@ -110,13 +132,92 @@ class Yingshaoxo_Text_Completor():
                 return temp_string
         return string
 
-    def get_next_text_by_pure_text(self, source_text, input_text, how_many_character_you_want=2000, level=64, complete_how_many_character_for_each_time=None):
+    def search_long_background_context_by_using_keywords(self, source_text, input_text, keyword_list=None, source_text_splitor=None):
+        # for each 20 lines, if it got all keywords in input_text, we return it
+        # but we can scale down to 10 lines to search it again
+        # but we can scale down to 5 lines to search it again
+        # but we can scale down to 2 lines to search it again
+        # but we can scale down to 1 lines to search it again
+        """
+        This method is going to be super useful in pure_text based robot memory search.
+        And it can also be used to char level sub_string search
+
+        It think by using jieba word list, you can get better result.
+        Now you should know how they made the context window. You can easily create a 100k long context.
+
+        You can also use this tech in sqlite to get smaller text for AI to read.
+        """
+        if keyword_list != None:
+            keywords = keyword_list
+        else:
+            keywords = self._get_keywords(input_text, more_punctuation="")
+
+        def handle_it(source_text):
+            lines = source_text.split("\n")
+
+            def get_related_text(start_index, end_index, range_length=100):
+                if range_length == 0:
+                    return "", start_index, end_index
+
+                index = start_index
+                while index < end_index:
+                    temp_lines = lines[index:index+range_length]
+                    temp_text = "\n".join(temp_lines)
+                    ok = True
+                    for key in keywords:
+                        if key not in temp_text:
+                            ok = False
+                            break
+                    if ok == True:
+                        new_start_index = index
+                        new_end_index = index + range_length
+
+                        if range_length <= 12:
+                            new_result, temp_new_start_index, temp_new_end_index = get_related_text(new_start_index, new_end_index, range_length=range_length-1)
+                        else:
+                            new_result, temp_new_start_index, temp_new_end_index = get_related_text(new_start_index, new_end_index, range_length=int(range_length/2))
+
+                        if new_result != "":
+                            return new_result, temp_new_start_index, temp_new_end_index
+                        else:
+                            return temp_text, new_start_index, new_end_index
+                    index += 1
+
+                return "", start_index, end_index
+
+            result, start_index, end_index = get_related_text(0, len(lines))
+            if result == "":
+                return ""
+            else:
+                bias = 2
+                start_index = start_index - 2
+                end_index = end_index + 2
+                if start_index < 0:
+                    start_index = 0
+                return "\n".join(lines[start_index: end_index])
+
+        if source_text_splitor != None:
+            source_text_list = source_text.split(source_text_splitor)
+            for one in source_text_list:
+                result = handle_it(one)
+                if result != "":
+                    return result
+            return ""
+        else:
+            return handle_it(source_text)
+
+    def get_next_text_by_pure_text(self, source_text, input_text, how_many_character_you_want=2000, level=64, complete_how_many_character_for_each_time=None, complete_by_word=False, use_background=False):
         """
         This method is the best so far, if you have big memory.
         It will only return what it got in database. We respect original author content.
+
+        I think those super_AI actually uses database data, then use abstract_language_tree to represent the old data in a new way, similar to language style change.
         """
         if complete_how_many_character_for_each_time == None:
             complete_how_many_character_for_each_time = level
+
+        if use_background == True:
+            source_text = self.search_long_background_context_by_using_keywords(source_text, input_text)
 
         end_string = "[*|end|*]"
 
@@ -132,6 +233,8 @@ class Yingshaoxo_Text_Completor():
                 if the_length_of_splits >= 2:
                     index = random.randint(1, the_length_of_splits-1)
                     target_text = the_splits[index][:complete_how_many_character_for_each_time]
+                    if complete_by_word == True:
+                        target_text = self._leave_first_sub_string(target_text)
                     return target_text
                 else:
                     pass
@@ -148,7 +251,53 @@ class Yingshaoxo_Text_Completor():
                 response = response[:-len(end_string)]
                 break
 
-        return response
+        if use_background == False:
+            return response
+        else:
+            return response + "\n\nFrefrence:\n" + source_text.strip()[:512]
+
+    def search_long_background_context_by_using_multiprocess(self, source_text, input_text, keyword_list=None, source_text_splitor=None, return_text=True):
+        # super quick
+        import multiprocessing
+
+        if keyword_list == None:
+            keyword_list = self._get_keywords(input_text, more_punctuation="")
+
+        the_100MB_length = 3495253#3
+        the_full_length = len(source_text)
+
+        self.source_text_list = []
+        part_number = int(the_full_length / the_100MB_length)
+
+        pool = multiprocessing.Pool()
+        results = []
+
+        for part_index in range(0, part_number + 1):
+            start_index = part_index * the_100MB_length
+            if start_index >= the_full_length:
+                break
+            end_index = start_index + the_100MB_length
+            sub_source_text = source_text[start_index: end_index]
+
+            result = pool.apply_async(
+                self.search_long_background_context_by_using_keywords,
+                args=(sub_source_text, input_text, keyword_list, source_text_splitor)
+            )
+            results.append(result)
+
+        pool.close()
+        pool.join()
+
+        final_results = []
+        for result in results:
+            sub_result = result.get()
+            if sub_result != "":
+                final_results.append(sub_result)
+
+        if return_text == False:
+            return final_results
+        else:
+            return "\n\n-------\n\n".join(final_results)
 
     def get_next_most_frequent_text_by_pure_text(self, source_text, input_text, how_many_character_you_want=2000, level=64, complete_how_many_character_for_each_time=None, debug_stream_print=False, get_only_one_word=False):
         """
@@ -446,16 +595,27 @@ class Yingshaoxo_Text_Completor():
             self.source_text_list.append(sub_source_text)
 
     def get_next_text_from_big_txt_string(self, the_input_text, level=64, how_many_character_you_want=64, debug_stream_print=False, creatively=False):
-        end_string = "[*|end|*]"
+        import multiprocessing
 
-        new_source_text = ""
+        pool = multiprocessing.Pool()
+        results = []
         for source_text in self.source_text_list:
-            temp_result = self.get_next_text_by_pure_text(source_text, the_input_text, how_many_character_you_want=how_many_character_you_want*30, level=level, complete_how_many_character_for_each_time=how_many_character_you_want*30)
-            temp_result = the_input_text + temp_result
-            new_source_text += temp_result + "\n\n\n\n" + end_string
-            #print("************")
-            #print(temp_result)
-            #print("************")
+            result = pool.apply_async(
+                self.get_next_text_by_pure_text,
+                args=(source_text, the_input_text, how_many_character_you_want*30, level, how_many_character_you_want*30)
+            )
+            results.append(result)
+        pool.close()
+        pool.join()
+
+        end_string = "[*|end|*]"
+        new_source_text = ""
+        final_results = []
+        for result in results:
+            temp_result = result.get()
+            if temp_result != "":
+                temp_result = the_input_text + temp_result
+                new_source_text += temp_result + "\n\n\n\n" + end_string
 
         if creatively == False:
             response = self.get_next_most_frequent_text_by_pure_text(new_source_text, the_input_text, how_many_character_you_want=how_many_character_you_want, level=level, complete_how_many_character_for_each_time=None, debug_stream_print=debug_stream_print)
@@ -550,41 +710,42 @@ class Yingshaoxo_Text_Completor():
         # You need to help to complete this greate function that mimic human brain with just cpu. No other third party library, just pure python without pip.
         pass
 
+    def accurate_and_slow_completion(self, source_text, input_text, how_many_character_you_want=200):
+        """
+        1. first you do context search to get a list of data
+        2. then you search all text followed by 'previous word'
+        3. you get most frequent next word
+        4. you use that word as 'previous word'
+        5. search until you can't find two result from context search
+        """
+        pass
+
+    def directly_search_next_string_in_disk_file(self, file_path, input_text):
+        # just think the disk as 100MB_text_bytes + the_input_text, you search context in 100MB, and full match the_input_text.
+        pass
+
 
 if __name__ == "__main__":
     yingshaoxo_text_completor = Yingshaoxo_Text_Completor()
 
     #folder = "/home/yingshaoxo/Disk/Sync_Folder/Yingshaoxo_Data/Core/Small_Core/My_Code_Mini"
-    folder = "/home/yingshaoxo/CS/yingshaoxo_txt_data"
+    #folder = "/home/yingshaoxo/CS/yingshaoxo_txt_data"
     #folder = "/home/yingshaoxo/Disk/Sync_Folder/Yingshaoxo_Data/Additional/Ebooks/Chinese/chinese_sex_novels"
+    folder = "/home/yingshaoxo/Downloads/doing/16.百科词典研究"
+
     source_text = yingshaoxo_text_completor.get_all_files_txt_under_a_folder(folder)
     #source_text = source_text.replace("\n", "").replace(" ", "").replace("　","")
 
     #yingshaoxo_text_completor.load_super_big_txt_string(source_text)
 
-    abstraction_dict, converted_text, complete_function = yingshaoxo_text_completor.get_deep_abstract_language_thinking_tree_dict_and_converted_text_and_complete_function_1(source_text[:30000])
-    pprint(abstraction_dict)
-    print(converted_text[:500])
     while True:
         try:
             input_text = input("What you want to say: ")
-            response = complete_function(abstraction_dict, input_text)
-            if response:
-                print("\n\nComputer: \n" + input_text + response)
-                print("\n\n")
-        except KeyboardInterrupt:
-            print("\n")
-            continue
-    exit()
-
-    while True:
-        try:
-            input_text = input("What you want to say: ")
-            #response = yingshaoxo_text_completor.get_next_text_by_pure_text(source_text, input_text, how_many_character_you_want=300, level=64, complete_how_many_character_for_each_time=None)
+            response = yingshaoxo_text_completor.get_next_text_by_pure_text(source_text, input_text, how_many_character_you_want=300, level=64, complete_how_many_character_for_each_time=None, complete_by_word=False, use_background=False)
+            #response = yingshaoxo_text_completor.search_long_background_context_by_using_multiprocess(source_text, input_text, source_text_splitor=None)
             #response = yingshaoxo_text_completor.get_next_most_frequent_text_by_pure_text(source_text, input_text, how_many_character_you_want=300, level=64, complete_how_many_character_for_each_time=None, debug_stream_print=True)
-            #response = yingshaoxo_text_completor.get_next_text_creatively_by_pure_text(source_text, input_text, how_many_character_you_want=300, level=64, use_background_context_window=False, complete_how_many_character_for_each_time=None, debug_stream_print=True)
+            #response = yingshaoxo_text_completor.get_next_text_creatively_by_pure_text(source_text, input_text, how_many_character_you_want=300, level=64, use_background_context_window=False, complete_how_many_character_for_each_time=1, debug_stream_print=True)
             #response = yingshaoxo_text_completor.get_next_text_from_big_txt_string(input_text, how_many_character_you_want=256, level=64, debug_stream_print=True, creatively=True)
-            #response = yingshaoxo_text_completor.get_next_text_by_using_dict(source_text_dict, input_text, how_many_character_you_want=300)
             if response:
                 response = response.split("__**__**__yingshaoxo_is_the_top_one__**__**__")[0]
                 print("\n\nComputer: \n" + input_text + response)
