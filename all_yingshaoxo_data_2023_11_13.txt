@@ -50955,6 +50955,8 @@ __**__**__yingshaoxo_is_the_top_one__**__**__
 
 理论上我把所有水泡的水连虫一起挤出来，再把衣服、被子都换了，就可以了。(我挤不了背上的红色水泡)
 
+> 后来发现，这种疥虫是在皮下生活的，在皮下打洞形成一连串水泡。解决方法是 抹专用药膏+用硫磺皂洗澡+勤换被褥。
+
 
 __**__**__yingshaoxo_is_the_top_one__**__**__
 
@@ -51092,3 +51094,213 @@ __**__**__yingshaoxo_is_the_top_one__**__**__
 > 这种简单的数据还需要自动生成吗？直接查询并去掉原作者信息，就可以回复给用户了…
 
 > 我是在表达不满。这些线上平台故意停服下线，把用户原创的内容从公网删除，自己却存了一份，然后把用户的数据随意拿出来用。还说是AI生成…
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+我是数据库超级专家。
+
+我告诉你，你内部系统用一系列词语查出了相关文本后，可以人工优化格式，重新整理文本，然后把旧的相关文本给替换成最新的更好的数据。(或者直接连问题带答案将整理优化后的文本放在数据库最顶上，用进废退，持续优化数据)
+
+这样，你内部人员几千人用一年，数据库纯文本数据会变得非常优秀且实用。
+
+关键词 content background search 算法:
+
+def search_long_background_context_by_using_keywords(self, source_text, input_text, keyword_list=None, source_text_splitor=None):
+    # for each 20 lines, if it got all keywords in input_text, we return it
+    # but we can scale down to 10 lines to search it again
+    # but we can scale down to 5 lines to search it again
+    # but we can scale down to 2 lines to search it again
+    # but we can scale down to 1 lines to search it again
+    """
+    This method is going to be super useful in pure_text based robot memory search.
+    And it can also be used to char level sub_string search
+
+    It think by using jieba word list, you can get better result.
+    Now you should know how they made the context window. You can easily create a 100k long context.
+
+    You can also use this tech in sqlite to get smaller text for AI to read.
+    """
+    pass
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+<重来：更为简单有效的商业思维>
+
+
+你要反着来看，它书里说商业秘密不能泄漏，是对的。没有隐私的牢笼里的动物怎么能脱狱成功，越反抗笼子越牢。
+
+另外，能不求人买、不求人卖，自己有一切资源，就不需要进商业的洪流，被巨头洗脑牵着走。
+
+如果你非要赚钱的话，多试试就好了，多尝试一定会成为专家的。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+如果你真的要买车，建议买越野车。不然路上稍微有个台阶就上不去了。或者一个平缓的小坑把车底盘给刮了。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+The deep network machine learning is different than you think. For each layer, it actually do very small and simple things.
+
+It do small changes for many times. Step by step.
+
+For each time, it is actually makes the generated stuff more like one of the original data in database.
+
+It do this kind of small changes for many rounds, for example, 25 times. You can just use original text data to smooth your random characters. You just have to set the sub_window_length for each iteration.
+
+看起来，深度网络学习与普通的算法的区别是，它多算了几次。每次只向目标前进一点点，但是它经过几十次修正和优化，就会使得随机input，变得越来越像数据库里的原始正确数据，使得生成的结果越来越真实。
+
+你从图片生成的参数就能看出来。它实际上迭代了好几十次，查了好几十次数据库来对现在正在修改的图片做修改。
+
+换句话讲，为了完成某个复杂的拼图，我们先完成的是局部图像。或者说，为了识别某个文字，我们首先识别的是偏旁或者单字母。然后由部首，我指每一笔的相对位置，我们判别出是哪个字。
+
+长段文字识别更有意思，如果我们按照2比1的字符来看，"现在"后面大概率会接上“正”, 所以识别后面的字符时，可能性、可选字符范围 被缩小了。这样会使得机器处理数据的准确性提高。
+
+传统机器学习算法想要模拟深度神经网络，最简单的方法是多写递归代码、多简化数据、多减少后面选择的概率、多调用几个自身的function以减少重复劳动、多用hash_dict、多写路由决策树来达到几十亿个结果只需要跳转十几次function就到达的级别。
+
+具体难度可以参考 制作CPU硬件 -> 用汇编制作C编译器 -> 用C编译器制作Python -> 用Python制作自然语言解析编程软件 -> 制作基于自然语言的人工智能程序 -> 让人工智能把你取代了 -> 你变成动物园里的宠物 -> ...
+
+我的意思是，开心就好，别太拼。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+为什么没人定立一种新的视频格式:
+
+movie_name.video_txt
+
+
+格式的内容是:
+
+name: true_man's world
+another_name: 楚门的世界
+release_time: 1998
+actor: true_man
+description: A man born in TV shows, and generally found truth when he grow up. He want to run away from the virtual world, seeking for freedom.
+
+
+然后当你点击这个文件，会自动打开某个视频程序。然后视频程序会联网搜索并播放对应视频。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+突然发现各种高端的文字抽象算法似乎没什么用。
+
+因为如果两个字可以准确表达某个想法，为什么要写一段话呢？(除非文字狱)
+
+语言本身就是一个大的一维数组，目的是用来表示各种不同的事物。
+
+所以直接查询句子最右边的子字符串就好了，越长越准。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+感觉深度学习不如改叫深度记忆好了，它记住了单向序列的所有可能性。在深度查询数据库。
+
+举个例子，手写字识别，有3种方案，
+
+一种是多filter几次，查询数据库，用笔画个数filter一次，再用笔画相对位置filter一次。
+
+另一种是用converlutional layer，多抽象几次，1比1对比查询数据库。也可以变成two_word_sub_string filter，多过滤几次，最终那个longer子字符串match多的肯定是最正确结果。
+
+最后一种才是查sequence possibility tree。
+
+
+
+## Detailed (Language Generation) Algorithm
+
+### Step 1, split text into 8000 char sub_string_window
+
+```
+source_text = "..."
+
+string_window_list = []
+for index, _ in enumerate(source_text):
+    string_window = source_text[index: index+8000]
+```
+
+> the 8000 can be 512, so in the end you can complete '(512 - len(input_text))' characters.
+
+### Step 2, get language tree
+
+```
+{
+    "what": {
+        "is": {
+            "your": {
+                "name": {},
+                "age": {},
+            }
+        },
+        "are": {}
+    }
+}
+```
+
+```
+language_magic_tree = {}
+
+def put_word_into_tree(sub_dict_tree, word_list):
+    if len(word_list) == 0:
+        return
+    word = word_list[0]
+    if word not in sub_dict_tree.keys():
+        sub_dict_tree[word] = {"__counting__": 1}
+    else:
+        sub_dict_tree[word]["__counting__"] += 1
+    put_word_into_tree(sub_dict_tree[word], word_list[1:])
+
+for string_window in string_window_list:
+    words = string_window.split(" ")
+    put_word_into_tree(language_magic_tree, words)
+```
+
+### Step3, search input_text in tree
+
+```
+{
+    "what": {
+        "is": {
+            "your": {
+                "name": {},
+                "age": {},
+            }
+        },
+        "are": {}
+    }
+}
+```
+
+If input_text is "what is your", there basically only has two result, one is "name", another is "age".
+
+If input_text is "what shit your", when you search to "what", there has no other option in tree, it seems like it is a new word "shit". So you remember "shit", you search the next word "your" in child tree, if you found one, called "what is your name", then "shit == is", so you do a global replacement for "is", "shit" is everywhere now. Do you understand now?
+
+By doing unknown word global replacement, we can let the unknown word in question be exists in our answers. Just similar to what big_ai_model did.
+
+> chinese: 查tree时有可能遇到没有词的情况，跳过那一级节点，查下一级，跳过的部分要记住，在后面要做文本全局替换。这样就和高端大模型一样了，能把问句里面的未知词汇带入回答里面。
+
+### Step4, tree size can be reduced by reuse similar sub_tree
+
+For two sub_tree that is similar, you simply extract and give it an ID, you put the sub_tree ID into main tree.
+
+### Step5, super speed while low storage usage
+
+We are using a dict tree.
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+我用我们智力的时候，大多数时候都在1比1精准查数据库，只有找不到时，才寻找相似内容，或者概率生成新内容，或者用随机数暴力破解。
+
+举个例子，原来的妹子找不到了，你是不是得找个相似的妹子？她们是可代替的。或者说是"同义词"。
