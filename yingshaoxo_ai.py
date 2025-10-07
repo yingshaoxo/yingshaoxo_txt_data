@@ -24,6 +24,9 @@ try:
     python = Python()
     global_mini_python_variable_dict = {}
     mini_python = python.create_mini_python(global_mini_python_variable_dict)
+
+    from auto_everything.string_ import String
+    string = String()
 except Exception as e:
     print(e)
     print("clone a folder to current folder: https://github.com/yingshaoxo/auto_everything/tree/dev/auto_everything")
@@ -333,6 +336,20 @@ def pre_process_piece_of_thinking(a_piece_of_thinking):
             one_line_result = run_a_piece_of_thinking(one_random_relative_thinking_block, no_pre_process=True, no_debug_info=True, input_text=calling_content)
             a_line_indent = a_line[:(len(a_line) - len(a_line.lstrip()))]
             new_piece_of_thinking += a_line_indent + key + " = '''" + one_line_result + "'''" + "\n"
+        elif (" = " in a_line_pure) and ('search_yingshaoxo_diary(' in a_line_pure) and (a_line_pure.endswith(')')):
+            # this method still has problem, it should get running in runtime than pre_process
+            key, value = a_line_pure.split(" = ")
+            key, value = key.strip(), value.strip()
+            search_content = value[len('search_yingshaoxo_diary('):-1]
+            search_content = eval(search_content)
+            result_content = "I don't know."
+            for one_diary in yingshaoxo_diary_list:
+                temp_result_list = string.hard_core_string_pattern_search(one_diary, search_content, end_mark="__**__**__")
+                if len(temp_result_list) != 0:
+                    result_content = temp_result_list[0]
+                    break
+            a_line_indent = a_line[:(len(a_line) - len(a_line.lstrip()))]
+            new_piece_of_thinking += a_line_indent + key + " = '''" + result_content + "'''" + "\n"
         else:
             new_piece_of_thinking += a_line + "\n"
         line_index += 1

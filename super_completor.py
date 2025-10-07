@@ -1338,24 +1338,26 @@ class Yingshaoxo_Text_Completor():
         # pattern: "xxx mother is xxx."
         from auto_everything.string_ import String
         string = String()
+        if "xxx" not in input_text:
+            input_text = input_text.replace(" ", "xxx")
         return "\n\n\n\n".join(list(set(string.hard_core_string_pattern_search(source_text, input_text))))
 
 
 if __name__ == "__main__":
     yingshaoxo_text_completor = Yingshaoxo_Text_Completor()
 
-    folder = "/home/yingshaoxo/CS/yingshaoxo_txt_data"
+    #folder = "/home/yingshaoxo/CS/yingshaoxo_txt_data"
     #folder = "/home/yingshaoxo/Disk/Sync_Folder/Yingshaoxo_Data/Core/Small_Core/My_Code_Mini"
     #folder = "/home/yingshaoxo/Disk/Sync_Folder/Yingshaoxo_Data/Additional/Ebooks/Chinese/chinese_sex_novels"
-    #folder = "/home/yingshaoxo/Downloads/doing/16.百科词典研究"
+    folder = "/home/yingshaoxo/Downloads/doing/16.百科词典研究"
 
+    #store_dict = dict()
     source_text = yingshaoxo_text_completor.get_all_files_txt_under_a_folder(folder)
     #source_text = source_text.replace("\n", "").replace(" ", "").replace("　","")
     text_list = source_text.split("__**__**__yingshaoxo_is_the_top_one__**__**__")
     #yingshaoxo_text_completor.get_simplified_magic_language_tree_dict_from_text_list(text_list, "test_dict")
     #yingshaoxo_text_completor.crazy_get_simplified_magic_language_tree_dict_from_text_list(text_list, "test_dict")
     #exit()
-    store_dict = dict()
 
     while True:
         try:
