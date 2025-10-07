@@ -3,13 +3,59 @@
 
 from auto_everything.disk import Disk
 disk = Disk()
-
 import random
 
 
 class String:
     def __init__(self):
         pass
+
+    def hard_core_string_pattern_search(self, source_text, pattern, unknown_symbol="xxx", end_mark="\n"):
+        """
+        pattern:
+            This is a xxx story.
+            xxx mother is xxx.
+            The tree is located in xxx
+        If the start and end if not xxx, then that will be the return string start and end characters.
+
+        yingshaoxo: Just think if you search 10KB string from a 1TB sqlite database, then use this function to do things like "What is human? xxx.".
+        """
+        should_exists_pattern_part_sequence = pattern.split(unknown_symbol)
+        should_exists_pattern_part_sequence = [one for one in should_exists_pattern_part_sequence if one != ""]
+
+        part_list = source_text.split(end_mark)
+        result_list = []
+        for part in part_list:
+            # if pattern matchs the part, it will return that part by adding it to result_list
+            # Do not use regex expression. We want to use pure python.
+            ok = True
+            for one in should_exists_pattern_part_sequence:
+                if one not in part:
+                    ok = False
+                    break
+            if ok == False:
+                continue
+            if ok == True:
+                ok = True
+                # we have to check the order of the should_exists_pattern_sequence, the order OK, it is OK
+                last_index = -1
+                for one in should_exists_pattern_part_sequence:
+                    index = part.find(one)
+                    if index <= last_index:
+                        ok = False
+                        break
+                    last_index = index
+                if ok == False:
+                    continue
+                if ok == True:
+                    if not pattern.startswith(unknown_symbol):
+                        beginning = should_exists_pattern_part_sequence[0]
+                        part = beginning + beginning.join(part.split(beginning)[1:])
+                    if not pattern.endswith(unknown_symbol):
+                        end = should_exists_pattern_part_sequence[-1]
+                        part = end.join(part.split(end)[:-1]) + end
+                    result_list.append(part)
+        return result_list
 
     def capitalize_the_first_character_of_a_string(self, text):
     #(self, text: str) -> str:
@@ -530,6 +576,8 @@ class String:
         """
         text_list = ["How are you A.", "How are you B."]
         It returns ["How are you"]
+
+        todo: this function has bug in tail extract, it will not resort the source_list by using tail string.
         """
         def get_common_beginning(a_list):
         #(a_list: list[str]) -> str:
@@ -612,6 +660,70 @@ class String:
             del global_dict[""]
 
         return global_dict
+
+    def get_all_level_1_meaning_group_dict_in_text_list(self, text_list):
+        text_list_copy = text_list.copy()
+
+        sub_string_dict = {}
+
+        def add_sub_string_to_dict(sub_string):
+            length_string = str(len(sub_string))
+            if length_string not in sub_string_dict:
+                sub_string_dict[length_string] = dict({sub_string: 1})
+            else:
+                if sub_string not in sub_string_dict[length_string]:
+                    sub_string_dict[length_string][sub_string] = 1
+                else:
+                    sub_string_dict[length_string][sub_string] += 1
+
+        cache_string = ""
+
+        while True:
+            text_list_copy.sort(key=lambda a_string: a_string)
+            temp_sub_string_dict = self.get_meaning_group_dict_in_text_list(text_list_copy, get_less=True)
+            sub_string_list = list(temp_sub_string_dict.keys())
+
+            text_list_copy.sort(key=lambda a_string: a_string[::-1])
+            temp_sub_string_dict_2 = self.get_meaning_group_dict_in_text_list(text_list_copy, get_less=True)
+            sub_string_list_2 = list(temp_sub_string_dict_2.keys())
+
+            sub_string_list = list(set(sub_string_list + sub_string_list_2))
+
+            if len(sub_string_list) == 0:
+                break
+            _cache_string = str(sub_string_list)
+            if _cache_string == cache_string:
+                # meet the end, no new words
+                for sub_string in sub_string_list:
+                    add_sub_string_to_dict(sub_string)
+                for sub_string in text_list_copy:
+                    add_sub_string_to_dict(sub_string)
+                break
+            else:
+                cache_string = _cache_string
+
+            for sub_string in sub_string_list:
+                add_sub_string_to_dict(sub_string)
+
+            new_text_list = []
+            for line in text_list:
+                length = len(line)
+                for sub_line_length in range(1, length+1):
+                    sub_line = line[:sub_line_length]
+                    temp_word_dict_for_specific_length = sub_string_dict.get(str(sub_line_length))
+                    if temp_word_dict_for_specific_length == None:
+                        continue
+                    else:
+                        if sub_line not in temp_word_dict_for_specific_length.keys():
+                            continue
+                        else:
+                            line = line[len(sub_line):]
+                            break
+                new_text_list.append(line)
+
+            text_list_copy = new_text_list
+
+        return sub_string_dict
 
     def compress_text_by_using_yingshaoxo_method(self, text, common_part_list=[]):
     #(self, text, common_part_list=[]) -> str:

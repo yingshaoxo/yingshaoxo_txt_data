@@ -162,7 +162,9 @@ class IO():
         For a byte or ascii number in range of [0,255], the binary_string should have 8 chracters, similar to 01100100
         """
         try:
-            return format(a_number, "b")
+            binary_string = format(a_number, "b")
+            heading_zero = (8 - len(binary_string)) * '0'
+            return heading_zero + binary_string
         except Exception as e:
             # yingshaoxo method of Hexadecimal conversion
             half_number_list = [[0,128], [0,64], [0,32], [0,16], [0,8], [0,4], [0,2], [0,1]]
@@ -529,111 +531,213 @@ class Yingshaoxo_Dict():
             return a_dict.has_key(key)
 
 
-try:
-    import os
-    import pickle
-    #import tempfile
+class Yingshaoxo_Pure_String_Dict():
+    def __init__(self):
+        self.raw_string = ""
+        self._init_splitor()
 
-    class Disk_Dict():
-        """
-        # author: baidu deepseek v3
+    def _init_splitor(self, splitor1=".#line#.", splitor2="|#colon#|"):
+        self.splitor1 = splitor1
+        self.splitor2 = splitor2
 
-        # needs: yingshaoxo
+    def set_value_by_key(self, key, value):
+        if self.has_key(key):
+            # modifying
+            search_string = self.splitor1 + key + self.splitor2
+            index1 = self.raw_string.find(search_string)
+            if index1 == -1:
+                return
+            self.raw_string = self.raw_string[:index1] + value + self.raw_string[index1+len(value):]
+        else:
+            # add new
+            self.raw_string += self.splitor1 + key + self.splitor2 + value
 
-            Is there a disk_dict in python that can the place of dict, allow using dict on the hard drive to reduce memory usage?
+    def has_key(self, key):
+        if (self.splitor1 + key + self.splitor2) in self.raw_string:
+            return True
+        else:
+            return False
 
-            I looked at some packages, but they all have dependencies, which is unreliable. I need a single-file, no-dependency python file. I don't need type annotations; Can this thing take up almost 0 memory? My data keys are also super large, so nothing can be in memory; everything must rely on the disk.
+    def get_value_by_key(self, key):
+        search_string = self.splitor1 + key + self.splitor2
+        index1 = self.raw_string.find(search_string)
+        if index1 == -1:
+            return None
+        rest_string = self.raw_string[index1 + len(search_string):]
+        index2 = rest_string.find(self.splitor1)
+        if index2 == -1:
+            return rest_string
+        else:
+            return rest_string[:index2]
 
-            Can you let the following code support "a b c d e f g ..." sub_folder split? So the search speed of key will increase, and will bypass the max_files number a folder can save problem.
+    def delete_a_key(self, key):
+        search_string = self.splitor1 + key + self.splitor2
+        index1 = self.raw_string.find(search_string)
+        if index1 == -1:
+            return
 
-            Can you create your own hash method than using hashlib or zlib? the python hashlib is not stable according to my experience.
+        rest_string = self.raw_string[index1 + len(search_string):]
+        index2 = rest_string.find(self.splitor1)
+        if index2 == -1:
+            self.raw_string = self.raw_string[:index1]
+        else:
+            self.raw_string = self.raw_string[:index1] + rest_string[index2:]
 
-            I suggest do not use pickle, but json, because pure text uses less space.
-        """
-        __slots__ = ('_path', '_depth')
+    def get_keys(self):
+        lines = self.raw_string.split(self.splitor1)
+        elements = []
+        for line in lines[1:]:
+            a_key = line.split(self.splitor2)[0]
+            elements.append(a_key)
+        return elements
 
-        def __init__(self, path, depth=2):
-            #self._path = path or tempfile.mkdtemp(prefix='diskdict_')
-            self._path = path
-            self._depth = depth
-            os.makedirs(self._path, exist_ok=True)
+    def get_keys_and_values(self):
+        lines = self.raw_string.split(self.splitor1)
+        elements = []
+        for line in lines[1:]:
+            elements.append(line.split(self.splitor2))
+        return elements
 
-        def _custom_hash(self, data):
-            """Custom hash function using basic byte operations"""
-            if isinstance(data, str):
-                data = data.encode('utf-8')
-            elif not isinstance(data, bytes):
-                data = pickle.dumps(data)
+    def dumps(self):
+        return self.raw_string
 
-            # Simple hash algorithm using XOR and shifts
-            hash_val = 0x811c9dc5  # FNV offset basis
-            for byte in data:
-                hash_val ^= byte
-                hash_val = (hash_val * 0x01000193) & 0xffffffff  # FNV prime
+    def loads(self, a_string):
+        self.raw_string = a_string
 
-            # Convert to hex string
-            return '{:08x}'.format(hash_val)
 
-        def _get_subfolder_path(self, key_hash):
-            path = self._path
-            for i in range(self._depth):
-                path = os.path.join(path, key_hash[i*2:(i+1)*2])
-            return path
+class Redis_Style_Disk_String_Dict():
+    """
+    # author: baidu deepseek v3
 
-        def _key_path(self, key):
-            key_hash = self._custom_hash(key)
-            base_path = self._get_subfolder_path(key_hash)
-            os.makedirs(base_path, exist_ok=True)
-            return os.path.join(base_path, key_hash)
+    # needs: yingshaoxo
 
-        def __setitem__(self, key, value):
-            base_path = self._key_path(key)
-            with open(base_path + '.key', 'wb') as f:
-                pickle.dump(key, f)
-            with open(base_path + '.val', 'wb') as f:
-                pickle.dump(value, f)
+        Is there a disk_dict in python that can the place of dict, allow using dict on the hard drive to reduce memory usage?
 
-        def __getitem__(self, key):
-            base_path = self._key_path(key)
-            try:
-                with open(base_path + '.key', 'rb') as f:
-                    disk_key = pickle.load(f)
-                if disk_key != key:
-                    raise KeyError(key)
-                with open(base_path + '.val', 'rb') as f:
-                    return pickle.load(f)
-            except FileNotFoundError:
+        I looked at some packages, but they all have dependencies, which is unreliable. I need a single-file, no-dependency python file. I don't need type annotations; Can this thing take up almost 0 memory? My data keys are also super large, so nothing can be in memory; everything must rely on the disk.
+
+        Can you let the following code support "a b c d e f g ..." sub_folder split? So the search speed of key will increase, and will bypass the max_files number a folder can save problem.
+
+        Can you create your own hash method than using hashlib or zlib? the python hashlib is not stable according to my experience.
+
+        Can you make the whole class not rely on pickle? Can you just save and read pure string? We also do not need json. You can assume all stuff we save is str type, you can also use str() to force do a conversion if you like.
+
+        We actually need a disk dict that supports putting another dict in dict. It is like the value can be a value or key_list.
+    """
+    __slots__ = ('_path', '_depth')
+
+    def __init__(self, path, depth=8):
+        self._path = path
+        self._depth = depth
+        os.makedirs(self._path, exist_ok=True)
+
+    def _custom_hash(self, data):
+        """FNV-1a hash implementation using format()"""
+        if not isinstance(data, str):
+            data = str(data)
+        data = data.encode('utf-8')
+
+        fnv_prime = 0x01000193
+        hash_val = 0x811c9dc5
+
+        for byte in data:
+            hash_val ^= byte
+            hash_val = (hash_val * fnv_prime) & 0xffffffff
+
+        return '{0:08x}'.format(hash_val)
+
+    def _get_subfolder_path(self, key_hash):
+        """Build nested folder structure"""
+        path = self._path
+        for i in range(self._depth):
+            path = os.path.join(path, key_hash[i*2:(i+1)*2])
+        return path
+
+    def _key_path(self, key):
+        """Generate complete filesystem path"""
+        key_hash = self._custom_hash(key)
+        base_path = self._get_subfolder_path(key_hash)
+        os.makedirs(base_path, exist_ok=True)
+        return os.path.join(base_path, key_hash)
+
+    def __setitem__(self, key, value):
+        """Store key-value pair"""
+        if not isinstance(key, str):
+            key = str(key)
+        if not isinstance(value, str):
+            value = str(value)
+
+        base_path = self._key_path(key)
+        temp_path = '{0}.tmp'.format(base_path)
+        final_key_path = '{0}.key'.format(base_path)
+        final_val_path = '{0}.val'.format(base_path)
+
+        try:
+            with open(temp_path, 'w', encoding='utf-8') as f:
+                f.write(key)
+            os.replace(temp_path, final_key_path)
+
+            with open(temp_path, 'w', encoding='utf-8') as f:
+                f.write(value)
+            os.replace(temp_path, final_val_path)
+        except Exception:
+            try: os.remove(temp_path)
+            except: pass
+            raise
+
+    def __getitem__(self, key):
+        """Retrieve value by key"""
+        if not isinstance(key, str):
+            key = str(key)
+
+        base_path = self._key_path(key)
+        try:
+            with open('{0}.key'.format(base_path), 'r', encoding='utf-8') as f:
+                disk_key = f.read()
+            if disk_key != key:
                 raise KeyError(key)
 
-        def __delitem__(self, key):
-            base_path = self._key_path(key)
-            try:
-                os.remove(base_path + '.key')
-                os.remove(base_path + '.val')
-            except FileNotFoundError:
-                raise KeyError(key)
+            with open('{0}.val'.format(base_path), 'r', encoding='utf-8') as f:
+                return f.read()
+        except FileNotFoundError:
+            raise KeyError(key)
 
-        def __contains__(self, key):
-            try:
-                self[key]
-                return True
-            except KeyError:
-                return False
+    def __delitem__(self, key):
+        """Delete key-value pair"""
+        if not isinstance(key, str):
+            key = str(key)
 
-        def clear(self):
-            for root, _, files in os.walk(self._path):
-                for fname in files:
-                    if fname.endswith(('.key', '.val')):
-                        os.remove(os.path.join(root, fname))
+        base_path = self._key_path(key)
+        try:
+            os.remove('{0}.key'.format(base_path))
+            os.remove('{0}.val'.format(base_path))
+        except FileNotFoundError:
+            raise KeyError(key)
 
-        def __iter__(self):
-            for root, _, files in os.walk(self._path):
-                for fname in files:
-                    if fname.endswith('.key'):
-                        with open(os.path.join(root, fname), 'rb') as f:
-                            yield pickle.load(f)
-except Exception as e:
-    print(e)
+    def __contains__(self, key):
+        """Check if key exists"""
+        try:
+            self[key]
+            return True
+        except KeyError:
+            return False
+
+    def clear(self):
+        """Remove all stored items"""
+        for root, _, files in os.walk(self._path):
+            for fname in files:
+                if fname.endswith(('.key', '.val')):
+                    os.remove(os.path.join(root, fname))
+
+    def __iter__(self):
+        """Iterate through all keys"""
+        for root, _, files in os.walk(self._path):
+            for fname in files:
+                if fname.endswith('.key'):
+                    try:
+                        with open(os.path.join(root, fname), 'r', encoding='utf-8') as f:
+                            yield f.read()
+                    except UnicodeDecodeError:
+                        continue
 
 
 class MyIO():
