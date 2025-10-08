@@ -1093,6 +1093,8 @@ class Yingshaoxo_Text_Completor():
         5. if you feel complex, try to use "divide by 2" thinking to get many sub_string but not all sub_string to reduce data.
 
         When you search, search longest string dict first.
+
+        Memory dict has size error, takes too much space. But you can try save 25 chars tree, then search for 24 chars sub_string to complete one char.
         """
         from auto_everything.ml import Yingshaoxo_Text_Preprocessor
         yingshaoxo_text_preprocessor = Yingshaoxo_Text_Preprocessor()
@@ -1342,7 +1344,16 @@ class Yingshaoxo_Text_Completor():
             input_text = input_text.replace(" ", "xxx")
         return "\n\n\n\n".join(list(set(string.hard_core_string_pattern_search(source_text, input_text))))
 
-    def get_disk_simplified_magic_language_tree_dict_from_text_list(self, source_text_list, target_dict_folder_path, window_length=32):
+    def get_disk_simplified_magic_language_tree_dict_from_text_list(self, source_text_list, target_dict_folder_path, window_length=32, no_sliding_window=False):
+        """
+        You can try save 25 chars tree, then search for 24 chars sub_string to complete one char. In other words, generate dict by using 25 window_length, use dict by using 48 window_length, because 48/2 == 24.
+
+        I think smooth character window tree may not a good idea for very big dataset, because most of the time I will give the start sub string of a sentence. For example: how to xxx
+        So if we directly pass data into another program without sliding_window, it will be better in disk size. For example, a class as a 'sentence', a function as a 'sentence'.
+
+        For chat, it can be a simple problem by using two dict, one is for "user_a: xxx\nuser_b:the_first_segment_of_sentence", another is for "the_first_segment_of_sentence -> rest_sentence"
+        For question_and_answer, it can be two dict, one is for generating template based on question, another is for generating whole data based on template, template can be: "How to do xxx? -> what is xxx; xxx can be done by xxx; the good part of doing xxx is xxx.". Then use single sentence generation dict to complete the template.
+        """
         from auto_everything.io import Disk_Dict
         import sys
         sys.setrecursionlimit(99999)
@@ -1360,11 +1371,17 @@ class Yingshaoxo_Text_Completor():
 
         # character_level dict
         root_disk_dict = Disk_Dict(target_dict_folder_path)
-        for a_text in source_text_list:
-            a_text = a_text.strip()
-            for char_index in range(0, len(a_text)-window_length):
-                char_window_list = a_text[char_index: char_index + window_length]
-                add_sub_string_to_dict(root_disk_dict, char_window_list)
+        if no_sliding_window == False:
+            for a_text in source_text_list:
+                a_text = a_text.strip()
+                for char_index in range(0, len(a_text)-window_length):
+                    char_window_list = a_text[char_index: char_index + window_length]
+                    add_sub_string_to_dict(root_disk_dict, char_window_list)
+        else:
+            for a_text in source_text_list:
+                a_text = a_text.strip()
+                char_list = list(a_text)
+                add_sub_string_to_dict(root_disk_dict, char_list)
 
         print("character tree process done")
 
