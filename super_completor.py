@@ -1342,21 +1342,148 @@ class Yingshaoxo_Text_Completor():
             input_text = input_text.replace(" ", "xxx")
         return "\n\n\n\n".join(list(set(string.hard_core_string_pattern_search(source_text, input_text))))
 
+    def get_disk_simplified_magic_language_tree_dict_from_text_list(self, source_text_list, target_dict_folder_path, window_length=32):
+        from auto_everything.io import Disk_Dict
+        import sys
+        sys.setrecursionlimit(99999)
+
+        def add_sub_string_to_dict(the_dict, the_list):
+            index = 0
+            length = len(the_list)
+            temp_dict = the_dict
+            while index < length:
+                element = the_list[index]
+                if element not in temp_dict:
+                    temp_dict[element] = dict()
+                temp_dict = temp_dict[element]
+                index += 1
+
+        # character_level dict
+        root_disk_dict = Disk_Dict(target_dict_folder_path)
+        for a_text in source_text_list:
+            a_text = a_text.strip()
+            for char_index in range(0, len(a_text)-window_length):
+                char_window_list = a_text[char_index: char_index + window_length]
+                add_sub_string_to_dict(root_disk_dict, char_window_list)
+
+        print("character tree process done")
+
+    def use_disk_simplified_magic_language_tree_dict_to_get_next_text(self, target_dict_folder_path, input_text, how_many_character_you_want=512, window_length=32):
+        from auto_everything.io import Disk_Dict
+        import sys
+        import random
+        sys.setrecursionlimit(99999)
+        root_disk_dict = Disk_Dict(target_dict_folder_path)
+
+        def real_use_dict_to_get_next(input_text):
+            def trace_words_to_get_sub_dict(the_dict, word_list):
+                if len(word_list) == 0:
+                    return the_dict
+                else:
+                    element = word_list[0]
+                    if element in the_dict:
+                        return trace_words_to_get_sub_dict(the_dict[element], word_list[1:])
+                    else:
+                        return None
+
+            def get_next_words(the_dict):
+                result_string = ""
+
+                all_child_keys = list(the_dict.keys())
+                target_list = all_child_keys
+                if len(target_list) == 0:
+                    return result_string
+                else:
+                    one = random.choice(target_list)
+                    the_value = the_dict.get(one)
+                    if the_value:
+                        return result_string + one + get_next_words(the_dict[one])
+                    else:
+                        return result_string
+
+                return result_text
+
+            response = ""
+            while len(response) < how_many_character_you_want:
+                segments = input_text[-int(window_length/2):] # get right half as input
+                segments = list(segments)
+
+                temp_a_dict = trace_words_to_get_sub_dict(root_disk_dict, segments)
+                while temp_a_dict == None:
+                    segments = segments[1:] # try less words right half if it is not in tree
+                    if len(segments) == 0:
+                        temp_a_dict = None
+                        break
+                    temp_a_dict = trace_words_to_get_sub_dict(root_disk_dict, segments)
+                if temp_a_dict == None:
+                    break
+                else:
+                    temp_response = get_next_words(temp_a_dict)
+                    if temp_response == None:
+                        break
+                    if temp_response == "":
+                        break
+
+                time.sleep(0.1)
+                response += temp_response
+                input_text += temp_response
+
+            return response
+
+        temp_response = real_use_dict_to_get_next(input_text)
+        return temp_response
+
 
 if __name__ == "__main__":
     yingshaoxo_text_completor = Yingshaoxo_Text_Completor()
 
-    #folder = "/home/yingshaoxo/CS/yingshaoxo_txt_data"
+    folder = "/home/yingshaoxo/CS/yingshaoxo_txt_data"
     #folder = "/home/yingshaoxo/Disk/Sync_Folder/Yingshaoxo_Data/Core/Small_Core/My_Code_Mini"
     #folder = "/home/yingshaoxo/Disk/Sync_Folder/Yingshaoxo_Data/Additional/Ebooks/Chinese/chinese_sex_novels"
-    folder = "/home/yingshaoxo/Downloads/doing/16.百科词典研究"
+    #folder = "/home/yingshaoxo/Downloads/doing/16.百科词典研究"
 
     #store_dict = dict()
-    source_text = yingshaoxo_text_completor.get_all_files_txt_under_a_folder(folder)
+    #source_text = yingshaoxo_text_completor.get_all_files_txt_under_a_folder(folder)
     #source_text = source_text.replace("\n", "").replace(" ", "").replace("　","")
-    text_list = source_text.split("__**__**__yingshaoxo_is_the_top_one__**__**__")
+    #text_list = source_text.split("__**__**__yingshaoxo_is_the_top_one__**__**__")
     #yingshaoxo_text_completor.get_simplified_magic_language_tree_dict_from_text_list(text_list, "test_dict")
     #yingshaoxo_text_completor.crazy_get_simplified_magic_language_tree_dict_from_text_list(text_list, "test_dict")
+    text_list = [
+"""
+hi you, dear.
+
+my name is yingshaoxo.
+
+yingshaoxo is god.
+
+hi logic!
+
+hi world!
+
+hi girl!
+
+hi hi!
+
+hi boy!
+
+hi everybody!
+
+hi every day!
+
+hi dog!
+
+hi language!
+
+hi program!
+
+hi nice day!
+"""
+]
+    #yingshaoxo_text_completor.get_disk_simplified_magic_language_tree_dict_from_text_list(text_list, "./test_dict")
+    #exit()
+    #from auto_everything.io import Disk_Dict
+    #root_disk_dict = Disk_Dict("./test_dict")
+    #print(root_disk_dict.keys())
     #exit()
 
     while True:
@@ -1369,7 +1496,8 @@ if __name__ == "__main__":
 
             #response = yingshaoxo_text_completor.search_long_background_context_by_using_multiprocess(source_text, input_text, source_text_splitor=None)
             #response = yingshaoxo_text_completor.use_simplified_magic_language_tree_dict_to_get_next_text(store_dict, "test_dict", input_text)
-            response = yingshaoxo_text_completor.pattern_looking(source_text, input_text+"xxx")
+            #response = yingshaoxo_text_completor.pattern_looking(source_text, input_text+"xxx")
+            response = yingshaoxo_text_completor.use_disk_simplified_magic_language_tree_dict_to_get_next_text("./test_dict", input_text, how_many_character_you_want=64)
             if response:
                 response = response.split("__**__**__yingshaoxo_is_the_top_one__**__**__")[0]
                 #print("\n\nComputer: \n" + input_text + response)
