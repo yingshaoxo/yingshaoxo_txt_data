@@ -817,8 +817,6 @@ class Yingshaoxo_Text_Completor():
 
         Memory dict has size error, takes too much space. But you can try save 25 chars tree, then search for 24 chars sub_string to complete one char.
         """
-        from auto_everything.ml import Yingshaoxo_Text_Preprocessor
-        yingshaoxo_text_preprocessor = Yingshaoxo_Text_Preprocessor()
         from auto_everything.disk import Disk
         disk = Disk()
         import json
@@ -877,6 +875,8 @@ class Yingshaoxo_Text_Completor():
     def use_simplified_magic_language_tree_dict_to_get_next_text(self, store_dict, target_dict_folder_path, input_text, how_many_character_you_want=1024, window_length=11, no_sleep=False):
         """
         yingshaoxo: super useful one, I recommand this. If you use disk_dict and change window_length into 256. It would be super accurate as deepseek or openai chat gpt3.
+
+        But normally, we use sqlite to get 1MB data with keywords filter from 2TB text first, then use tree to do the cache and generation.
         """
         import json
         import sys
@@ -1612,6 +1612,12 @@ if __name__ == "__main__":
         text_list = [source_text]
         #source_text = source_text.replace("\n", "").replace(" ", "").replace("　","")
         text_list = source_text.split("__**__**__yingshaoxo_is_the_top_one__**__**__")
+
+        from auto_everything.ml import Yingshaoxo_Text_Preprocessor
+        yingshaoxo_text_preprocessor = Yingshaoxo_Text_Preprocessor()
+        #segments = yingshaoxo_text_preprocessor.split_string_into_list_by_punctuations(a_text)
+        #one["language"]: "punctuation",
+        #segments = [one["text"] for one in segments]
 
         #source_text = yingshaoxo_text_completor.use_abstract_dict_to_compress_text(store_dict, "/media/yingshaoxo/disk2_data/1.pure_abstract_dict", input_text=source_text).split("_")
 

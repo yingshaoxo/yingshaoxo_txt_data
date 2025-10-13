@@ -9,14 +9,49 @@ def is_it_related_to_me(input_text, id_):
 def is_it_a_sentence_that_talks_user_itself(input_text, id_):
     pass
 
-def remember(input_text, notes):
+def remember(input_text, notes, id_):
+    pass
+
+def get_memory(notes, id_):
     pass
 
 def is_it_a_true_thing(input_text, id_):
     pass
 
+def get_useful_part_of_text(input_text):
+    input_text = input_text.lower()
+    patterns = [
+        "what xxx? xxx.",
+        "xxx is xxx.",
+        "xxx can be used for xxx.",
+        "xxx can be get from xxx.",
+        "xxx is composed by xxx.",
+        "you can make xxx by xxx.",
+        "the alternative of xxx is xxx.",
+        "i think xxx\n",
+
+        "why xxx? because xxx\n",
+        "xxx that is why xxx.",
+        "the reason of xxx is xxx.",
+        "the deep reason of xxx is xxx.",
+        "the good part of xxx is xxx.",
+        "the bad part of xxx is xxx.",
+
+        "how to do xxx? xxx\n",
+        "to xxx, you must xxx.",
+        "if you want xxx, you have to xxx\n",
+        "xxx requires xxx steps xxx\n",
+        "the xxx step for xxx is xxx.",
+    ]
+    result_list = sentence_pattern_match(patterns, input_text)
+    return result_list
+
 def does_it_has_values(input_text):
-    pass
+    result_list = get_useful_part_of_text(input_text)
+    if len(result_list) != 0:
+        return True
+    else:
+        return False
 
 def ask_question(input_text):
     if is_it_related_to_me(input_text, id_):
@@ -29,7 +64,7 @@ def ask_question(input_text):
 
 def a_normal_sentence(input_text, id_):
     if is_it_related_to_me(input_text, id_):
-        remember(input_text, "the feeling that guy talks. it is about me.")
+        remember(input_text, "the feeling that guy talks. it is about me.", id_)
     else:
         # it_is_a_sentence_that_talks_others
         if is_it_a_sentence_that_talks_user_itself(input_text, id_):
@@ -41,7 +76,9 @@ def a_normal_sentence(input_text, id_):
             # talk other object
             if is_it_a_true_thing(input_text, id_):
                 if does_it_has_values(input_text):
-                    remember_the_sentence(input_text)
+                    key_knowledge_list = get_useful_part_of_text(input_text)
+                    for one in key_knowledge_list:
+                        remember(one, id_)
             else:
                 # it is false
                 return "I think it is not right."
