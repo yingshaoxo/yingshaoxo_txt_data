@@ -552,7 +552,6 @@ class Yingshaoxo_Text_Completor():
 
         > But if you just want to create digital person, this method will only copy yourself. You have to be a teacher, and teach your students. So that they could have sex gender. Just simplifying yourself to child level, then teach them from basics.
         """
-        # todo: maybe I should do some improvement to let it save those most frequent two values for each key sub_string.
         def the_real_function(the_input_text, the_level):
             while the_level >= 1:
                 right_side_sub_string = the_input_text[-the_level:]
@@ -972,6 +971,7 @@ class Yingshaoxo_Text_Completor():
                     break
                 if temp_response == "":
                     break
+                #temp_response = temp_response.replace(":","")
                 print(temp_response, end="", flush=True)
                 if no_sleep == False:
                     time.sleep(0.01)
@@ -1561,8 +1561,72 @@ class Yingshaoxo_Text_Completor():
 
         return text
 
+    def get_feature_based_dict_for_completion(self, source_text_list, max_traning_loop=3):
+        # you can feed the final data as "{key}{value}" into the char tree, it would be very accurate
+        final_dict = {}
+        for i in range(1, 20): # complete value should has length from 1 to 20
+            complete_value_length = i
+            window_length = complete_value_length
+            root_dict = {}
+            copy_root_dict = {}
+            waiting_for_next_loop_value_set = set()
+            while True:
+                for text in source_text_list:
+                    for char_index in range(len(text)):
+                        sub_string = text[char_index:char_index + window_length + complete_value_length]
+                        if len(sub_string) == window_length + complete_value_length:
+                            previous_string = sub_string[:window_length]
+                            next_string = sub_string[window_length:]
+
+                            if next_string in waiting_for_next_loop_value_set:
+                                continue
+
+                            if next_string in copy_root_dict.keys():
+                                continue
+
+                            if next_string not in root_dict.keys():
+                                root_dict[next_string] = previous_string
+                            else:
+                                if root_dict[next_string] != previous_string:
+                                    # why for same next_string, the previous_string is different? 1+1 can only be 2, so in previous text, there must have some feature that we did not catch. So previous_string length should get add by 1.
+                                    #print(root_dict[next_string], "|", previous_string, "|", next_string)
+                                    waiting_for_next_loop_value_set.add(next_string)
+                                    del root_dict[next_string]
+                for key,value in root_dict.items():
+                    copy_root_dict[key] = value
+                window_length += 1
+                print("current_window_length: ", window_length)
+                waiting_for_next_loop_value_set = set()
+                root_dict = {}
+                if window_length >= max_traning_loop:
+                    break
+            final_dict.update({value:key for key,value in copy_root_dict.items()})
+        return final_dict
+
+    def use_feature_based_dict_to_get_next_text(self, root_dict, input_text, how_many_character_you_want=64, max_previous_char_number=256):
+        def the_real_function(the_input_text, the_level):
+            while the_level >= 1:
+                right_side_sub_string = the_input_text[-the_level:]
+                the_next_value = root_dict.get(right_side_sub_string)
+                if the_next_value != None:
+                    return the_next_value
+                the_level -= 1
+            return None
+
+        response = ""
+        while len(response) < how_many_character_you_want:
+            temp_response = the_real_function(input_text, max_previous_char_number)
+            if temp_response == None:
+                break
+            response += temp_response
+            input_text += temp_response
+
+        return response
 
 if __name__ == "__main__":
+    import jieba
+    jieba.setLogLevel(20)
+
     #train = True
     train = False
 
@@ -1609,21 +1673,20 @@ if __name__ == "__main__":
         hi nice day!
         """
         ]
-        text_list = [source_text]
+        text_list = [list(jieba.cut(source_text, cut_all=False))]
         #source_text = source_text.replace("\n", "").replace(" ", "").replace("　","")
-        text_list = source_text.split("__**__**__yingshaoxo_is_the_top_one__**__**__")
+        #text_list = source_text.split("__**__**__yingshaoxo_is_the_top_one__**__**__")
 
-        from auto_everything.ml import Yingshaoxo_Text_Preprocessor
-        yingshaoxo_text_preprocessor = Yingshaoxo_Text_Preprocessor()
+        #from auto_everything.ml import Yingshaoxo_Text_Preprocessor
+        #yingshaoxo_text_preprocessor = Yingshaoxo_Text_Preprocessor()
         #segments = yingshaoxo_text_preprocessor.split_string_into_list_by_punctuations(a_text)
         #one["language"]: "punctuation",
         #segments = [one["text"] for one in segments]
 
         #source_text = yingshaoxo_text_completor.use_abstract_dict_to_compress_text(store_dict, "/media/yingshaoxo/disk2_data/1.pure_abstract_dict", input_text=source_text).split("_")
 
-        yingshaoxo_text_completor.get_simplified_magic_language_tree_dict_from_text_list(store_dict, "/media/yingshaoxo/disk2_data/3.simple_tree", text_list)
+        yingshaoxo_text_completor.get_simplified_magic_language_tree_dict_from_text_list(store_dict, "/media/yingshaoxo/disk2_data/3.simple_tree", text_list, window_length=11)
         exit()
-
 
     while True:
         try:
@@ -1632,8 +1695,13 @@ if __name__ == "__main__":
             #response = yingshaoxo_text_completor.pattern_looking(source_text, input_text+"xxx")
 
             #input_text = yingshaoxo_text_completor.use_abstract_dict_to_compress_text(store_dict, "/media/yingshaoxo/disk2_data/1.pure_abstract_dict", input_text=input_text).split("_")
-            response = yingshaoxo_text_completor.use_simplified_magic_language_tree_dict_to_get_next_text(store_dict, "/media/yingshaoxo/disk2_data/3.simple_tree", input_text, how_many_character_you_want=256, no_sleep=False)
+
+            input_text = list(jieba.cut(input_text, cut_all=False))
+            response = yingshaoxo_text_completor.use_simplified_magic_language_tree_dict_to_get_next_text(store_dict, "/media/yingshaoxo/disk2_data/3.simple_tree", input_text, how_many_character_you_want=256, no_sleep=False, window_length=11)
+            response = "".join(response)
             #response = yingshaoxo_text_completor.use_abstract_dict_to_decompress_text(store_dict, "/media/yingshaoxo/disk2_data/1.pure_abstract_dict", input_text="_".join(response))
+
+            #response = yingshaoxo_text_completor.use_feature_based_dict_to_get_next_text(a_dict, input_text=input_text)
 
             if response:
                 response = response.split("__**__**__yingshaoxo_is_the_top_one__**__**__")[0]
