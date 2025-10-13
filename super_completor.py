@@ -810,9 +810,13 @@ class Yingshaoxo_Text_Completor():
         """
         yingshaoxo: super useful one, I recommand this. If you use disk_dict and change window_length into 256. It would be super accurate as deepseek or openai chat gpt3.
 
+        Use jieba word spliting pre_processor would also increase accuracy.
+
+
         source_text_list can be [source_text], but you have to set window_length.
 
         window_length can be None, so the it will use full_length of source_text_list.
+
 
         Memory dict has size error, takes too much space. But you can try save 25 chars tree, then search for 24 chars sub_string to complete one char.
         """
@@ -874,6 +878,8 @@ class Yingshaoxo_Text_Completor():
     def use_simplified_magic_language_tree_dict_to_get_next_text(self, store_dict, target_dict_folder_path, input_text, how_many_character_you_want=1024, window_length=11, no_sleep=False):
         """
         yingshaoxo: super useful one, I recommand this. If you use disk_dict and change window_length into 256. It would be super accurate as deepseek or openai chat gpt3.
+
+        Use jieba word spliting pre_processor would also increase accuracy.
 
         But normally, we use sqlite to get 1MB data with keywords filter from 2TB text first, then use tree to do the cache and generation.
         """
