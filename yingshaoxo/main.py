@@ -1,5 +1,11 @@
 import os
 
+def get_words_length(input_text):
+    if is_it_english(input_text):
+        return len(get_words_list_from_english(input_text))
+    elif is_it_chinese(input_text):
+        return len(get_words_list_from_chinese(input_text))
+
 def is_it_a_question(input_text):
     pass
 
@@ -7,6 +13,9 @@ def is_it_related_to_me(input_text, id_):
     pass
 
 def is_it_a_sentence_that_talks_user_itself(input_text, id_):
+    pass
+
+def summarize(input_text):
     pass
 
 def remember(input_text, notes, id_):
@@ -57,19 +66,26 @@ def ask_question(input_text):
     if is_it_related_to_me(input_text, id_):
         return ask_me_question(input_text, id_)
     else:
-        if is_it_a_sure_thing_exists_in_this_world(input_text):
-            return ask_wiki_cyclopedia(input_text)
-        elif is_it_a_virtual_thing_that_has_no_sure_answer(input_text):
-            return ask_zhihu_question_and_answer_database(input_text)
+        if get_words_length(input_text) == 1:
+            return ask_language_single_word_dict(input_text)
+        else:
+            if is_it_a_sure_thing_exists_in_this_world(input_text):
+                return ask_wiki_cyclopedia(input_text)
+            elif is_it_a_virtual_thing_that_has_no_sure_answer(input_text):
+                return ask_zhihu_question_and_answer_database(input_text)
 
 def a_normal_sentence(input_text, id_):
     if is_it_related_to_me(input_text, id_):
-        remember(input_text, "the feeling that guy talks. it is about me.", id_)
+        summary = summarize(input_text)
+        remember(summary, "the feeling that guy talks. it is about me.", id_)
+        return "OK, I got your meaning:\n" + summary
     else:
         # it_is_a_sentence_that_talks_others
         if is_it_a_sentence_that_talks_user_itself(input_text, id_):
             if is_it_a_true_thing(input_text, id_):
-                remember(input_text, "the feeling that guy talks. it is about itself.", id_)
+                summary = summarize(input_text)
+                remember(summary, "the feeling that guy talks. it is about itself.", id_)
+                return "Got it, you said:\n" + summary
             else:
                 return "I think it is not true."
         else:
@@ -79,6 +95,9 @@ def a_normal_sentence(input_text, id_):
                     key_knowledge_list = get_useful_part_of_text(input_text)
                     for one in key_knowledge_list:
                         remember(one, id_)
+                    return "The thing you mentioned can be splited into following:\n" + "\n".join(["* "+one for one in key_knowledge_list])
+                else:
+                    return "I'm not interested in what you said."
             else:
                 # it is false
                 return "I think it is not right."
