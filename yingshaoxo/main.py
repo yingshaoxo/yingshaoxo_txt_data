@@ -12,6 +12,18 @@ def is_it_a_question(input_text):
 def is_it_related_to_me(input_text, id_):
     pass
 
+def ask_me_question(input_text, id_):
+    if this_person_is_important_to_me(id_):
+        return answer_anything_that_related_to_me(input_text, id_)
+    else:
+        return answer_some_basic_information_that_related_to_me(input_text, id_)
+
+def ask_zhihu_question_and_answer_database(input_text):
+    if is_it_exists_in_zhihu_question_and_answer_database(input_text):
+        return get_answer_by_looking_for_zhihu_question_and_answer_database(input_text)
+    else:
+        return "Why you do not know it?\nHave your teacher told you that?\nWhy you can't learn it by doing exploring in real world?"
+
 def is_it_a_sentence_that_talks_user_itself(input_text, id_):
     pass
 
@@ -101,7 +113,7 @@ def a_normal_sentence(input_text, id_):
             else:
                 # it is false
                 return "I think it is not right."
-            return "OK"
+    return "..."
 
 def call_yingshaoxo(input_text, id_="unknown"):
     response = ""

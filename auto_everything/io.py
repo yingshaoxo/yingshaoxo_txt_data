@@ -625,7 +625,7 @@ class Redis_Style_Disk_String_Dict():
     """
     __slots__ = ('_path', '_depth')
 
-    def __init__(self, path, depth=8):
+    def __init__(self, path, depth=2):
         self._path = path
         self._depth = depth
         os.makedirs(self._path, exist_ok=True)
@@ -747,7 +747,8 @@ class Redis_Style_Disk_String_Dict():
 
 
 class Disk_Dict():
-    def __init__(self, folder_path, id_="0"):
+    # author: yingshaoxo
+    def __init__(self, folder_path, id_="0", depth=1):
         self.folder_path = folder_path
         self.dict_register_folder = os.path.join(folder_path, "dict_register_folder")
         self.dict_data_folder = os.path.join(folder_path, "dict_data_folder")
@@ -757,8 +758,10 @@ class Disk_Dict():
         os.makedirs(self.dict_register_folder, exist_ok=True)
         os.makedirs(self.dict_data_folder, exist_ok=True)
 
-        self.register_dict = Redis_Style_Disk_String_Dict(self.dict_register_folder, 1)
-        self.data_dict = Redis_Style_Disk_String_Dict(self.dict_data_folder, 1)
+        if depth > 4:
+            depth = 4
+        self.register_dict = Redis_Style_Disk_String_Dict(self.dict_register_folder, depth)
+        self.data_dict = Redis_Style_Disk_String_Dict(self.dict_data_folder, depth)
 
         register_increasing_id = self.register_dict.get("register_increasing_id")
         if register_increasing_id == None:
@@ -767,10 +770,17 @@ class Disk_Dict():
         if self.id_ not in self.register_dict:
             self.register_dict[self.id_] = ""
 
-    #def clear_all_data_for_all_dict_including_parent_dict(self):
-    #    import shutil
-    #    shutil.rmtree(self.folder_path)
-    #    self.__init__(self.folder_path, id_="0")
+    def _safe_string(self, input_text):
+        # the space may also be a dangerous one, because it can get removed by strip()
+        return input_text.replace(",", "/comma")
+
+    def _unsafe_string(self, input_text):
+        return input_text.replace("/comma", ",")
+
+    def clear_all_data_for_all_dict_including_parent_dict(self):
+        import shutil
+        shutil.rmtree(self.folder_path)
+        self.__init__(self.folder_path, id_="0")
 
     def create_a_new_dict(self):
         register_increasing_id = self.register_dict.get("register_increasing_id")
@@ -780,72 +790,186 @@ class Disk_Dict():
         return new_dict
 
     def __setitem__(self, key, value):
+        key = self._safe_string(key)
         value_copy = value
         if type(value) == str:
+            # v: is a value
             value = "v:" + value
         elif type(value) == Disk_Dict:
+            # a: is a reference for another dict
             value = "a:" + value.id_
         elif type(value) == dict:
             a_dict = self.create_a_new_dict()
             value = "a:" + a_dict.id_
+            # a: is a reference for another dict
             for key_, value_ in value_copy.items():
                 a_dict[key_] = value_
 
         new_key = self.id_ + ":" + key
         self.data_dict[new_key] = value
 
-        new_key_list = ""
+        # the following may slow down the setting speed when the key is a lot in a dict
+        new_key_list_string = ""
         if self.id_ in self.register_dict:
-            new_key_list = self.register_dict[self.id_]
+            new_key_list_string = self.register_dict[self.id_]
 
-        new_key_list += "," + new_key
-        self.register_dict[self.id_] = new_key_list
+        if ","+new_key in new_key_list_string:
+            # it already in there
+            return None
+
+        new_key_list_string += "," + new_key
+        if new_key_list_string.startswith(",,"):
+            new_key_list_string = new_key_list_string[1:]
+        self.register_dict[self.id_] = new_key_list_string
 
     def __getitem__(self, key):
+        key = self._safe_string(key)
         new_key = self.id_ + ":" + key
         value = self.data_dict.get(new_key)
         if value == None:
             return None
 
         if value.startswith("v:"):
+            # v: is a value
             return value[2:]
         elif value.startswith("a:"):
+            # a: is a reference for another dict
             id_ = value[2:]
             return Disk_Dict(self.folder_path, id_=id_)
 
     def get(self, key):
+        key = self._safe_string(key)
         try:
             return self.__getitem__(key)
         except Exception as e:
             return None
 
     def __delitem__(self, key):
-        new_key = self.id_ + ":" + key
-        self.data_dict.__delitem__(new_key)
+        key = self._safe_string(key)
+        try:
+            # clear child dict first if that item is a dict
+            the_value_that_should_be_deleted = self.__getitem__(key)
+            if type(the_value_that_should_be_deleted) == Disk_Dict:
+                the_value_that_should_be_deleted.clear()
 
-        new_key_list = self.register_dict[self.id_]
-        real_new_key_list = new_key_list.split(",")
-        real_new_key_list = [one for one in real_new_key_list if one != new_key]
-        new_key_list = ",".join(real_new_key_list)
-        self.register_dict[id_] = "," + new_key_list
+            new_key = self.id_ + ":" + key
+            self.data_dict.__delitem__(new_key)
+
+            new_key_list_string = self.register_dict[self.id_]
+            self.register_dict[self.id_] = new_key_list_string.replace(","+new_key, "")
+        except Exception as e:
+            pass
 
     def __contains__(self, key):
+        key = self._safe_string(key)
         new_key = self.id_ + ":" + key
         return self.data_dict.__contains__(new_key)
 
     def __iter__(self):
         # not work
-        new_key_list = self.register_dict[self.id_]
-        real_new_key_list = [one for one in new_key_list.split(",") if one != ""]
+        new_key_list_string = self.register_dict[self.id_]
+        new_key_list_string = new_key_list_string.strip(",")
+        real_new_key_list = [one for one in new_key_list_string.split(",") if one != ""]
         pre_length = len(self.id_+":")
         for new_key in real_new_key_list[1:]:
             yield new_key[pre_length:]
 
     def keys(self):
-        new_key_list = self.register_dict[self.id_]
-        real_new_key_list = new_key_list.split(",")
+        new_key_list_string = self.register_dict[self.id_]
+        new_key_list_string = new_key_list_string.strip(",")
+        real_new_key_list = new_key_list_string.split(",")
         pre_length = len(self.id_+":")
-        return [one[pre_length:] for one in real_new_key_list[1:]]
+        return [self._unsafe_string(one[pre_length:]) for one in real_new_key_list]
+
+    def clear(self):
+        a_key_list = self.keys()
+        for key in a_key_list:
+            self.__delitem__(key)
+
+
+"""
+class Disk_Saver_Dict():
+    # This class will 100% have bugs, will not working right.
+    # Currently, the method for doing the same thing is: 1.split word and put it into word_dict first in another file, 2.save id number directly in Disk_Dict() class.
+
+    # Our disk dict is different than others, we can save space by reuse dict_data_folder's data
+    # If you use this class to save tree data, it will reuse node value, so in the end, the whole tree will be reuse all node value as address reference. That is why it saves disk sapce.
+    def __init__(self, folder_path):
+        self.folder_path = folder_path
+        self.register_increasing_id_dict_folder = os.path.join(folder_path, "register_increasing_id_dict_folder")
+        self.base_element_to_id_dict_folder = os.path.join(folder_path, "base_element_to_id_dict_folder")
+        self.id_to_base_element_dict_folder = os.path.join(folder_path, "id_to_base_element_dict_folder")
+        self.tree_dict_folder = os.path.join(folder_path, "tree_dict_folder")
+
+        os.makedirs(folder_path, exist_ok=True)
+        os.makedirs(self.register_increasing_id_dict_folder, exist_ok=True)
+        os.makedirs(self.base_element_to_id_dict_folder, exist_ok=True)
+        os.makedirs(self.id_to_base_element_dict_folder, exist_ok=True)
+        os.makedirs(self.tree_dict_folder, exist_ok=True)
+
+        self.register_increasing_id_dict = Redis_Style_Disk_String_Dict(self.register_increasing_id_dict_folder, 1)
+        self.base_element_to_id_dict = Redis_Style_Disk_String_Dict(self.base_element_to_id_dict_folder, 3)
+        self.id_to_base_element_dict = Redis_Style_Disk_String_Dict(self.id_to_base_element_dict_folder, 3)
+        self.tree_dict = Disk_Dict(self.tree_dict_folder)
+
+        if "id" not in self.register_increasing_id_dict["id"]:
+            self.register_increasing_id_dict["id"] = "0"
+
+    def _set_base_element(self, key_or_value):
+        # return element_id_string
+        id_string = self.base_element_to_id_dict.get(key_or_value)
+        if id_string == None:
+            # need to add a new id
+            new_id = str(int(self.register_increasing_id_dict["id"]) + 1)
+            self.id_to_base_element_dict[new_id] = key_or_value
+            self.base_element_to_id_dict[key_or_value] = new_id
+            self.register_increasing_id_dict["id"] = new_id
+        else:
+            return id_string
+
+    def _get_base_element(self, element_id_string):
+        # could be None, return raw_string
+        raw_string = self.id_to_base_element_dict.get(element_id_string)
+        if raw_string == None:
+            return ""
+        else:
+            return raw_string
+
+    def clear_all_data_for_all_dict_including_parent_dict(self):
+        self.tree_dict.clear_all_data_for_all_dict_including_parent_dict()
+        self.register_increasing_id_dict_folder.clear()
+        self.base_element_to_id_dict.clear()
+        self.id_to_base_element_dict.clear()
+
+    def __setitem__(self, key, value):
+        key_id = self._set_base_element(key)
+        value_id = self._set_base_element(value)
+        self.tree_dict.__setitem__(key_id, value_id)
+
+    def __getitem__(self, key):
+        key_id = self._set_base_element(key)
+        result = self.tree_dict.__getitem__(key_id)
+        if result == None:
+            return result
+        else:
+            result = self._get_base_element(result)
+            return result
+
+    def get(self, key):
+        return self.__getitem__(key)
+
+    def __delitem__(self, key):
+        key_id = self._set_base_element(key)
+        return self.tree_dict.__delitem__(key_id)
+
+    def __contains__(self, key):
+        key_id = self._set_base_element(key)
+        return self.tree_dict.__contains__(key_id)
+
+    def keys(self):
+        the_keys = self.tree_dict.keys()
+        return [self._get_base_element(one) for one in the_keys]
+"""
 
 
 class MyIO():
