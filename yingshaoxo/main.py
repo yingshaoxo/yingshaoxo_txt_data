@@ -5,9 +5,48 @@ import random
 from small_functions import *
 from ask_other_ai_help import ask_llama
 
-yingshaoxo_diary_file_path = "../all_yingshaoxo_data_2023_11_13.txt"
+yingshaoxo_diary_file_path = os.path.abspath("../all_yingshaoxo_data_2023_11_13.txt")
 magic_splitor = "\n\n__**__**__yingshaoxo_is_the_top_one__**__**__\n\n"
-temporary_memory_file_path = "./temporary_memory.txt"
+temporary_memory_file_path = os.path.abspath("./temporary_memory.txt")
+with open(temporary_memory_file_path, "a", encoding="utf-8") as f:
+    f.write("")
+
+def get_memory_piece_list_from_txt_file(a_txt_path, input_text, accurate=True):
+    if accurate == True:
+        get_more = False
+    else:
+        get_more = True
+    #print(a_txt_path)
+    memory_list = yingshaoxo_text_completor.search_long_background_context_from_disk_txt_file_by_using_multiprocess(a_txt_path, input_text, return_text=False, get_more=get_more)
+    return memory_list
+
+def get_memory_as_pure_string(input_text, include_diary=False):
+    memory_piece_list = get_memory_piece_list_from_txt_file(yingshaoxo_diary_file_path, input_text)
+    if len(memory_piece_list) == 0:
+        new_input_text = question_sentence_to_normal_sentence(input_text)
+        memory_piece_list = get_memory_piece_list_from_txt_file(yingshaoxo_diary_file_path, new_input_text)
+    if len(memory_piece_list) > 0:
+        one_diary_memory_piece = random.choice(memory_piece_list)
+    else:
+        one_diary_memory_piece = 'None'
+
+    memory_piece_list = get_memory_piece_list_from_txt_file(temporary_memory_file_path, input_text, accurate=False)
+    if len(memory_piece_list) == 0:
+        new_input_text = question_sentence_to_normal_sentence(input_text)
+        memory_piece_list = get_memory_piece_list_from_txt_file(temporary_memory_file_path, new_input_text)
+    if len(memory_piece_list) > 0:
+        one_normal_memory_piece = random.choice(memory_piece_list)
+    else:
+        one_normal_memory_piece = 'None'
+
+    if include_diary == True:
+        final_memory = "In my diary:" + one_diary_memory_piece.strip() + "\n\n" + "In my recent memory:" + one_normal_memory_piece.strip()
+    else:
+        final_memory = "In my recent memory:" + one_normal_memory_piece.strip()
+
+    final_memory = final_memory.replace(magic_splitor, "")
+    #print("memory 哦！\n" + final_memory)
+    return final_memory
 
 def ask_other_ai(input_text):
     input_text = input_text.strip()
@@ -26,13 +65,8 @@ def ask_other_ai(input_text):
         response = "\n".join(response)
         return response
     except Exception as e:
-        new_input_text = question_sentence_to_normal_sentence(input_text)
-        memory_piece_list = yingshaoxo_text_completor.find_next_string_in_disk_txt_file(temporary_memory_file_path, new_input_text, max_possibility_number=10, get_previous_text=True)
-        if len(memory_piece_list) <= 9:
-            memory_piece_list = yingshaoxo_text_completor.find_next_string_in_disk_txt_file(yingshaoxo_diary_file_path, new_input_text, max_possibility_number=10, get_previous_text=True)
-        if len(memory_piece_list) > 0:
-            return random.choice(memory_piece_list)
-        return "I don't know."
+        response = get_memory_as_pure_string(input_text, include_diary=True)
+        return response + "\n\n" + "I don't know."
 
 def summarize(input_text):
     input_text = input_text.strip()
@@ -48,42 +82,31 @@ def summarize(input_text):
         else:
             return response
 
+global_temporary_comment_memory = ""
 def comment(input_text):
+    global global_temporary_comment_memory
     input_text = input_text.strip()
     if input_text == "":
         return ""
     function_name = inspect.currentframe().f_code.co_name
-    response = ask_other_ai(function_name + ":\n" + "```" + input_text + "```").lower()
+
+    last_reply = global_temporary_comment_memory.strip()
+    if last_reply == "":
+        last_reply = '```None```'
+    else:
+        last_reply = "```" + last_reply + "```"
+
+    temp_memory = get_memory_as_pure_string(input_text, include_diary=True)
+    request = """memory:\n```\n{}\n```""".format(temp_memory).strip() + "\n\n"
+    request += "chat_history: " + last_reply + "\n\n"
+    request += function_name + ":\n" + "```" + input_text + "```"
+
+    response = ask_other_ai(request).lower()
     if response.startswith("error:"):
         return ""
     else:
+        global_temporary_comment_memory = response
         return response
-
-def answer_anything_that_related_to_me(input_text, id_, use_diary_data=True):
-    if use_diary_data == True:
-        memory_piece_list = yingshaoxo_text_completor.search_relative_data_from_disk_txt_file_by_using_keywords(yingshaoxo_diary_file_path, input_text, keyword_list=None, file_encoding="utf-8", return_list=True)
-        if len(memory_piece_list) == 0:
-            new_input_text = question_sentence_to_normal_sentence(input_text)
-            memory_piece_list = yingshaoxo_text_completor.search_relative_data_from_disk_txt_file_by_using_keywords(yingshaoxo_diary_file_path, new_input_text, keyword_list=None, file_encoding="utf-8", return_list=True)
-            if len(memory_piece_list) > 0:
-                one = random.choice(memory_piece_list)
-                two = random.choice(memory_piece_list)
-                injected_old_memory = magic_splitor.join(list(set([one, two])))
-            else:
-                injected_old_memory = ""
-        else:
-            one = random.choice(memory_piece_list)
-            two = random.choice(memory_piece_list)
-            injected_old_memory = magic_splitor.join(list(set([one, two])))
-    else:
-        injected_old_memory = ""
-    return get_memory(input_text, id_, injected_old_memory)
-
-def ask_me_question(input_text, id_):
-    if this_person_is_important_to_me(id_):
-        return answer_anything_that_related_to_me(input_text, id_, use_diary_data=True)
-    else:
-        return answer_anything_that_related_to_me(input_text, id_, use_diary_data=False)
 
 def remember(input_text, notes, id_):
     if input_text == "":
@@ -96,32 +119,37 @@ def remember(input_text, notes, id_):
     print("the new memory:", temporary_memory)
     print("\n\n***************************")
 
-def get_memory(input_text, id_, injected_old_memory=""):
-    with open(temporary_memory_file_path, "a", encoding="utf-8") as f:
-        f.write("")
+def get_memory(input_text, id_, should_it_inject_old_diary_memory=False):
     with open(temporary_memory_file_path, "r", encoding="utf-8") as f:
         temporary_memory = f.read()
-
     recent_temporary_memory = temporary_memory[-500:].strip()
-    old_temporary_memory = temporary_memory[:-500].strip()
-    if old_temporary_memory != "":
-        normal_sentence = question_sentence_to_normal_sentence(input_text)
-        memory_piece_list = yingshaoxo_text_completor.search_relative_data_from_disk_txt_file_by_using_keywords(temporary_memory_file_path, normal_sentence, keyword_list=None, file_encoding="utf-8", return_list=True)
-        old_memory = magic_splitor.join(memory_piece_list)
-    else:
-        old_memory = ""
-    new_memory = injected_old_memory.strip() + old_memory.strip() + recent_temporary_memory.strip()
-    new_memory = new_memory.replace(magic_splitor.strip(), "\n").strip()
 
-    task_description = """
-memory:
-```
-{}
-```
-    """.format(new_memory).strip()
+    if should_it_inject_old_diary_memory == True:
+        temp_memory = get_memory_as_pure_string(input_text, include_diary=True)
+    else:
+        temp_memory = get_memory_as_pure_string(input_text, include_diary=False)
+
+    task_description = """memory:\n```\n{}\n```""".format(temp_memory).strip()
     task_description += "\n\nquestion: " + input_text
+
     response = ask_other_ai(task_description).lower()
+
+    remember(input_text + "\n\n" + "me: " + response.strip(), "save my own answer", id_=id_)
+
     return response
+
+def answer_anything_that_related_to_me(input_text, id_, use_diary_data=True):
+    if use_diary_data == True:
+        should_it_inject_old_diary_memory = True
+    else:
+        should_it_inject_old_diary_memory = False
+    return get_memory(input_text, id_, should_it_inject_old_diary_memory=should_it_inject_old_diary_memory)
+
+def ask_me_question(input_text, id_):
+    if this_person_is_important_to_me(id_):
+        return answer_anything_that_related_to_me(input_text, id_, use_diary_data=True)
+    else:
+        return answer_anything_that_related_to_me(input_text, id_, use_diary_data=False)
 
 def is_it_a_true_thing(input_text, id_):
     # this is a very important function
@@ -218,7 +246,8 @@ def ask_question(input_text, id_):
         if get_words_length(input_text) == 1:
             return ask_language_single_word_dict(input_text)
         else:
-            return get_memory(input_text, id_)
+            return ask_me_question(input_text, id_)
+            #return get_memory(input_text, id_)
             # we only do the memory test now
             if is_it_a_sure_thing_exists_in_this_world(input_text):
                 return ask_wiki_cyclopedia(input_text)
@@ -259,13 +288,14 @@ def a_normal_sentence(input_text, id_):
                             remember(one, "knowledge.", id_)
                         return "The thing you mentioned can be splited into following:\n" + "\n".join(["* "+one for one in key_knowledge_list])
                     else:
-                        return "I'm not interested in what you said."
+                        a_comment = comment(input_text)
+                        return "I'm not interested in what you said." + "\n\n" + a_comment
                 else:
                     # it is false
                     return "I think it is not right."
         return "..."
 
-def call_yingshaoxo(input_text, id_="unknown"):
+def call_yingshaoxo(input_text, id_="user"):
     response = ""
     if is_it_a_question(input_text):
         response = ask_question(input_text, id_)

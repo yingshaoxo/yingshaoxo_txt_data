@@ -182,16 +182,22 @@ def question_sentence_to_normal_sentence(input_text):
         return False
     input_text = input_text.lower()
 
+    begin_half = input_text[:int(len(input_text)/2)]
+    end_half = input_text[-int(len(input_text)/2):]
+    if "什么" in begin_half:
+        input_text = begin_half
+    elif "什么" in end_half:
+        input_text = end_half
+
     input_text = input_text.replace("?", "")
     input_text = input_text.replace("？", "")
     input_text = input_text.replace("吗", "")
     input_text = input_text.replace("吧", "")
     input_text = input_text.replace("呢", "")
-    input_text = input_text.replace("什么", "")
     input_text = input_text.replace("谁", "")
     input_text = input_text.replace("哪", "")
+    input_text = input_text.replace("什么", "")
     input_text = input_text.replace("哪儿", "")
-    input_text = input_text[-int(len(input_text)/2):]
 
     #input_text = input_text.replace("?", "")
     #input_text = input_text.replace("what ", "")
@@ -201,11 +207,6 @@ def question_sentence_to_normal_sentence(input_text):
     #input_text = input_text.replace("should ", "")
     #input_text = input_text.replace("would ", "")
 
-    #if "？" in input_text or "吗" in input_text:
-    #    input_text = input_text.replace("？", "")
-    #    input_text = input_text.replace("吗", "")
-    #    input_text = input_text[-int(len(input_text)/2):]
-
     return input_text
 
 def ask_zhihu_question_and_answer_database(input_text):
@@ -213,4 +214,3 @@ def ask_zhihu_question_and_answer_database(input_text):
         return get_answer_by_looking_for_zhihu_question_and_answer_database(input_text)
     else:
         return "Why you do not know it?\nHave your teacher told you that?\nWhy you can't learn it by doing exploring in real world?"
-
