@@ -5,23 +5,39 @@ import random
 from small_functions import *
 from ask_other_ai_help import ask_llama
 
+debug = 1
 yingshaoxo_diary_file_path = os.path.abspath("../all_yingshaoxo_data_2023_11_13.txt")
 magic_splitor = "\n\n__**__**__yingshaoxo_is_the_top_one__**__**__\n\n"
 temporary_memory_file_path = os.path.abspath("./temporary_memory.txt")
 with open(temporary_memory_file_path, "a", encoding="utf-8") as f:
     f.write("")
+chat_history_list = []
 
 def get_memory_piece_list_from_txt_file(a_txt_path, input_text, accurate=True):
     if accurate == True:
         get_more = False
     else:
         get_more = True
-    #print(a_txt_path)
-    memory_list = yingshaoxo_text_completor.search_long_background_context_from_disk_txt_file_by_using_multiprocess(a_txt_path, input_text, return_text=False, get_more=get_more)
+
+    size = yingshaoxo_disk.get_file_size(a_txt_path, level="MB", bytes_size=None)
+    if size > 10:
+        memory_list = yingshaoxo_text_completor.search_long_background_context_from_disk_txt_file_by_using_multiprocess(a_txt_path, input_text, return_text=False, get_more=get_more)
+    else:
+        with open(a_txt_path, "r", encoding="utf-8") as f:
+            source_text = f.read()
+        text_list = source_text.split(magic_splitor)
+        matched_list = []
+        #keyword_list = yingshaoxo_string.split_string_into_n_char_parts(input_text, 2)
+        keyword_list = list(input_text)
+        for text in text_list:
+            if yingshaoxo_string.check_if_string_is_inside_string(text, keyword_list, wrong_limit_ratio=0.7, near_distance=20):
+                matched_list.append(text)
+        memory_list = matched_list
+
     return memory_list
 
 def get_memory_as_pure_string(input_text, include_diary=False):
-    memory_piece_list = get_memory_piece_list_from_txt_file(yingshaoxo_diary_file_path, input_text)
+    memory_piece_list = get_memory_piece_list_from_txt_file(yingshaoxo_diary_file_path, input_text, accurate=False)
     if len(memory_piece_list) == 0:
         new_input_text = question_sentence_to_normal_sentence(input_text)
         memory_piece_list = get_memory_piece_list_from_txt_file(yingshaoxo_diary_file_path, new_input_text)
@@ -33,20 +49,43 @@ def get_memory_as_pure_string(input_text, include_diary=False):
     memory_piece_list = get_memory_piece_list_from_txt_file(temporary_memory_file_path, input_text, accurate=False)
     if len(memory_piece_list) == 0:
         new_input_text = question_sentence_to_normal_sentence(input_text)
-        memory_piece_list = get_memory_piece_list_from_txt_file(temporary_memory_file_path, new_input_text)
+        memory_piece_list = get_memory_piece_list_from_txt_file(temporary_memory_file_path, new_input_text, accurate=False)
     if len(memory_piece_list) > 0:
         one_normal_memory_piece = random.choice(memory_piece_list)
     else:
         one_normal_memory_piece = 'None'
 
     if include_diary == True:
-        final_memory = "In my diary:" + one_diary_memory_piece.strip() + "\n\n" + "In my recent memory:" + one_normal_memory_piece.strip()
+        final_memory = "In yingshaoxo diary:" + one_diary_memory_piece.strip() + "\n\n" + "In my recent memory:" + one_normal_memory_piece.strip()
     else:
         final_memory = "In my recent memory:" + one_normal_memory_piece.strip()
 
     final_memory = final_memory.replace(magic_splitor, "")
     #print("memory 哦！\n" + final_memory)
     return final_memory
+
+def is_it_in_memory(input_text, id_):
+    if input_text == None:
+        return False
+    if len(input_text) == "":
+        return False
+    memory_piece_list = get_memory_piece_list_from_txt_file(temporary_memory_file_path, input_text, accurate=True)
+    if len(memory_piece_list) == 0:
+        return False
+    else:
+        return True
+
+def get_last_chat_message(id_=None):
+    global chat_history_list
+    if len(chat_history_list) == 0:
+        return ""
+    return chat_history_list[-1]
+
+def add_last_chat_message(input_text, id_=None):
+    global chat_history_list
+    chat_history_list.append(input_text.strip())
+    if len(chat_history_list) > 500:
+        chat_history_list = chat_history_list[-500:]
 
 def ask_other_ai(input_text):
     input_text = input_text.strip()
@@ -55,13 +94,14 @@ def ask_other_ai(input_text):
     else:
         #input_text += "\n" + "#no other explain needed, just return the new data"
         pass
-    print("ask other ai:\n")
-    print(input_text)
-    print("***************************")
+    if debug == 1:
+        print("    ask other ai:\n")
+        print("\n".join(["    "+one for one in input_text.split("\n")]))
+        print("    ***************************")
     try:
         response = ask_llama(input_text)
         response = response.split("\n")
-        response = response[:3]
+        response = response[:6]
         response = "\n".join(response)
         return response
     except Exception as e:
@@ -82,42 +122,51 @@ def summarize(input_text):
         else:
             return response
 
-global_temporary_comment_memory = ""
 def comment(input_text):
-    global global_temporary_comment_memory
     input_text = input_text.strip()
     if input_text == "":
         return ""
     function_name = inspect.currentframe().f_code.co_name
 
-    last_reply = global_temporary_comment_memory.strip()
+    last_reply = get_last_chat_message()
     if last_reply == "":
         last_reply = '```None```'
     else:
-        last_reply = "```" + last_reply + "```"
+        if "me: " in last_reply:
+            last_reply = ""
+        else:
+            last_reply = "```" + last_reply + "```"
 
     temp_memory = get_memory_as_pure_string(input_text, include_diary=True)
     request = """memory:\n```\n{}\n```""".format(temp_memory).strip() + "\n\n"
-    request += "chat_history: " + last_reply + "\n\n"
+    #request += "chat_history: " + last_reply + "\n\n"
     request += function_name + ":\n" + "```" + input_text + "```"
 
     response = ask_other_ai(request).lower()
     if response.startswith("error:"):
         return ""
     else:
-        global_temporary_comment_memory = response
+        sentence_and_comment = input_text + "\n\n" + "me: " + response.strip()
+        add_last_chat_message(sentence_and_comment)
         return response
 
 def remember(input_text, notes, id_):
     if input_text == "":
         return
+    if len(input_text.strip()) < 5:
+        return
 
     temporary_memory = magic_splitor + "#" + id_ + ": \n" + input_text
+    if is_it_in_memory(temporary_memory, id_) == True:
+        return
+
     with open(temporary_memory_file_path, "a", encoding="utf-8") as f:
         f.write(temporary_memory)
 
-    print("the new memory:", temporary_memory)
-    print("\n\n***************************")
+    if debug == 1:
+        print("    the new memory:\n")
+        print("\n".join(["    "+one for one in temporary_memory.split("\n")]))
+        print("\n\n    ***************************")
 
 def get_memory(input_text, id_, should_it_inject_old_diary_memory=False):
     with open(temporary_memory_file_path, "r", encoding="utf-8") as f:
@@ -134,7 +183,8 @@ def get_memory(input_text, id_, should_it_inject_old_diary_memory=False):
 
     response = ask_other_ai(task_description).lower()
 
-    remember(input_text + "\n\n" + "me: " + response.strip(), "save my own answer", id_=id_)
+    question_and_answer_string = input_text + "\n\n" + "me: " + response.strip()
+    add_last_chat_message(question_and_answer_string)
 
     return response
 
@@ -255,45 +305,44 @@ def ask_question(input_text, id_):
                 return ask_zhihu_question_and_answer_database(input_text)
 
 def a_normal_sentence(input_text, id_):
-    if is_it_ask_me_to_do_something(input_text):
-        return "No, do it yourself."
-    else:
-        if is_it_related_to_me(input_text, id_):
-            summary = summarize(input_text)
+    if is_it_an_agree_sentence(input_text):
+        last_chat_message = get_last_chat_message(id_)
+        if is_it_in_memory(last_chat_message, id_) == False:
+            remember(last_chat_message, "save my last chat message as knowledge because the user think it is right", id_=id_)
+
+    if is_it_related_to_me(input_text, id_):
+        summary = summarize(input_text)
+
+        if does_it_has_values(summary):
             remember(summary, "the feeling that guy talks. it is about me.", id_)
-            if input_text == summary:
-                a_comment = comment(summary)
-            else:
-                a_comment = ""
-            return "OK, I got your meaning:\n" + summary + "\n\n" + a_comment
-        else:
-            # it_is_a_sentence_that_talks_others
-            if is_it_a_sentence_that_talks_user_itself(input_text, id_):
-                if is_it_a_true_thing(input_text, id_):
-                    summary = summarize(input_text)
+
+        a_comment = comment(summary)
+        return "OK, I got your meaning:\n" + summary + "\n\n" + a_comment
+    else:
+        # it_is_a_sentence_that_talks_others
+        if is_it_a_sentence_that_talks_user_itself(input_text, id_):
+            if is_it_a_true_thing(input_text, id_):
+                summary = summarize(input_text)
+                if does_it_has_values(summary):
                     remember(summary, "the feeling that guy talks. it is about itself.", id_)
-                    if input_text == summary:
-                        a_comment = comment(summary)
-                    else:
-                        a_comment = ""
-                    return "Got it, you said:\n" + summary + "\n\n" + a_comment
-                else:
-                    return "I think it is not true."
+                a_comment = comment(summary)
+                return "Got it, you said:\n" + summary + "\n\n" + a_comment
             else:
-                # talk other object
-                if is_it_a_true_thing(input_text, id_):
-                    if does_it_has_values(input_text):
-                        key_knowledge_list = get_useful_part_of_text(input_text)
-                        for one in key_knowledge_list:
-                            remember(one, "knowledge.", id_)
-                        return "The thing you mentioned can be splited into following:\n" + "\n".join(["* "+one for one in key_knowledge_list])
-                    else:
-                        a_comment = comment(input_text)
-                        return "I'm not interested in what you said." + "\n\n" + a_comment
+                return "I think it is not true."
+        else:
+            # talk other object
+            if is_it_a_true_thing(input_text, id_):
+                if does_it_has_values(input_text):
+                    key_knowledge_list = get_useful_part_of_text(input_text)
+                    for one in key_knowledge_list:
+                        remember(one, "knowledge.", id_)
+                    return "The thing you mentioned can be splited into following:\n" + "\n".join(["* "+one for one in key_knowledge_list])
                 else:
-                    # it is false
-                    return "I think it is not right."
-        return "..."
+                    a_comment = comment(input_text)
+                    return "I'm not interested in what you said." + "\n\n" + a_comment
+            else:
+                # it is false
+                return "I think it is not right."
 
 def call_yingshaoxo(input_text, id_="user"):
     response = ""
@@ -304,7 +353,7 @@ def call_yingshaoxo(input_text, id_="user"):
     return response
 
 os.system("clear")
-print(call_yingshaoxo("say hi to everyone"))
+#print(call_yingshaoxo("say hi to everyone"))
 print("OK! No syntax error!\n\n")
 
 while True:

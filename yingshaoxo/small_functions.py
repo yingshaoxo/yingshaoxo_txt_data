@@ -1,4 +1,8 @@
 from auto_everything.ml import Yingshaoxo_Text_Completor
+from auto_everything.string_ import String
+from auto_everything.disk import Disk
+yingshaoxo_string = String()
+yingshaoxo_disk = Disk()
 yingshaoxo_text_completor = Yingshaoxo_Text_Completor()
 
 def is_it_english(input_text):
@@ -214,3 +218,44 @@ def ask_zhihu_question_and_answer_database(input_text):
         return get_answer_by_looking_for_zhihu_question_and_answer_database(input_text)
     else:
         return "Why you do not know it?\nHave your teacher told you that?\nWhy you can't learn it by doing exploring in real world?"
+
+def is_it_an_agree_sentence(input_text):
+    if len(input_text) == 0:
+        return False
+    input_text = input_text.lower()
+
+    word_list = [
+        "yes ",
+        " yes ",
+        " yes ",
+        "right ",
+        " right ",
+        "ok ",
+        " ok ",
+        "good ",
+        " good ",
+        "fine ",
+        " fine ",
+        "no problem",
+    ]
+    for word in word_list:
+        if word in input_text:
+            return True
+
+    word_list = [
+        "是的",
+        "可以",
+        "正确",
+        "对了",
+        "很好",
+        "还行",
+        "正解",
+        "行了",
+        "行吧",
+        "没问题",
+    ]
+    for word in word_list:
+        if word in input_text:
+            return True
+
+    return False
