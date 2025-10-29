@@ -180,6 +180,8 @@ def is_it_a_sure_thing_exists_in_this_world(input_text):
     return True
 
 def question_sentence_to_normal_sentence(input_text):
+    # todo: a very important function for database search
+
     # for example: "what is desk?" -> "desk is"
     # for example: "what is age your age?" -> "my age is"
     if len(input_text) == 0:

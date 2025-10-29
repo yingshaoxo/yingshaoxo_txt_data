@@ -116,7 +116,7 @@ def ask_other_ai(input_text):
         #input_text += "\n" + "#no other explain needed, just return the new data"
         pass
     if debug == 1:
-        print(make_indents_before_every_lines("Ask other ai:\n" + input_text + "\n*************************", 8, as_code_block=True))
+        print(make_indents_before_every_lines("Ask other ai:\n" + make_indents_before_every_lines(input_text, 4, as_code_block=True), 4, as_code_block=True))
     try:
         response = ask_llama(input_text)
         response = response.split("\n")
@@ -141,23 +141,6 @@ def summarize(input_text):
         else:
             return response
 
-def comment(input_text):
-    input_text = input_text.strip()
-    if input_text == "":
-        return ""
-
-    temp_memory = get_memory_as_pure_string(input_text, include_diary=True)
-    request = """memory:\n{}""".format(make_indents_before_every_lines(temp_memory, 4, as_code_block=True)).strip() + "\n\n"
-    request += "Please make a comment on user newest message" + ":\n" + make_indents_before_every_lines(input_text, 4, as_code_block=True)
-
-    response = ask_other_ai(request).lower()
-    if response.startswith("error:"):
-        return ""
-    else:
-        sentence_and_comment = "user: " + input_text + "\n\n" + "me: " + response.strip()
-        add_last_chat_message(sentence_and_comment)
-        return response
-
 def remember(input_text, notes, id_):
     if input_text == "":
         return
@@ -172,7 +155,30 @@ def remember(input_text, notes, id_):
         f.write(temporary_memory)
 
     if debug == 1:
-        print(make_indents_before_every_lines("The new memory:\n" + temporary_memory + "\n*************************", 8, as_code_block=True))
+        print(make_indents_before_every_lines("The new memory:\n" + make_indents_before_every_lines(temporary_memory, 4, as_code_block=True), 4, as_code_block=True))
+
+def comment(input_text):
+    input_text = input_text.strip()
+    if input_text == "":
+        return ""
+
+    core_request = "Please make a comment on user newest message" + ":\n" + make_indents_before_every_lines(input_text, 4, as_code_block=True)
+
+    request = ""
+    request += core_request + "\n\n"
+
+    temp_memory = get_memory_as_pure_string(input_text, include_diary=True)
+    request += """memory:\n{}""".format(make_indents_before_every_lines(temp_memory, 4, as_code_block=True)).strip() + "\n\n"
+
+    request += core_request
+
+    response = ask_other_ai(request).lower()
+    if response.startswith("error:"):
+        return ""
+    else:
+        sentence_and_comment = "user: " + input_text + "\n\n" + "me: " + response.strip()
+        add_last_chat_message(sentence_and_comment)
+        return response
 
 def get_memory(input_text, id_, should_it_inject_old_diary_memory=False):
     with open(temporary_memory_file_path, "r", encoding="utf-8") as f:
@@ -184,11 +190,14 @@ def get_memory(input_text, id_, should_it_inject_old_diary_memory=False):
     else:
         temp_memory = get_memory_as_pure_string(input_text, include_diary=False)
 
-    task_description = """memory:\n{}""".format(make_indents_before_every_lines(temp_memory, 4, as_code_block=True)).strip()
-    task_description += "\n\nPlease make a answer on user newest question:\n" + make_indents_before_every_lines(input_text, 4, as_code_block=True)
+    core_request = "Please make a answer on user newest question:\n" + make_indents_before_every_lines(input_text, 4, as_code_block=True)
+
+    task_description = ""
+    task_description += core_request + "\n\n"
+    task_description += """memory:\n{}""".format(make_indents_before_every_lines(temp_memory, 4, as_code_block=True)).strip() + "\n\n"
+    task_description += core_request
 
     response = ask_other_ai(task_description).lower()
-
     question_and_answer_string = "user: " + input_text + "\n\n" + "me: " + response.strip()
     add_last_chat_message(question_and_answer_string)
 
@@ -266,6 +275,7 @@ def get_useful_part_of_text(input_text):
         "知道xxx吗？xxx",
         "我xxx想到xxx",
         "我xxx发现xxx",
+        "看起来xxx",
         "xxx想出了xxx",
         "xxx发明了xxx",
         "xxx创造了xxx",
@@ -283,6 +293,8 @@ def get_useful_part_of_text(input_text):
         "xxx个秘密xxx",
     ]
     result_list = sentence_pattern_match(patterns, input_text)
+    result_list = [one for one in result_list if not one.endswith("?")]
+    result_list = [one for one in result_list if not one.endswith("？")]
     return result_list
 
 def does_it_has_values(input_text):
