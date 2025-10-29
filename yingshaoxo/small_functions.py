@@ -203,13 +203,12 @@ def question_sentence_to_normal_sentence(input_text):
     input_text = input_text.replace("什么", "")
     input_text = input_text.replace("哪儿", "")
 
-    #input_text = input_text.replace("?", "")
-    #input_text = input_text.replace("what ", "")
-    #input_text = input_text.replace("how ", "")
-    #input_text = input_text.replace("where ", "")
-    #input_text = input_text.replace("can ", "")
-    #input_text = input_text.replace("should ", "")
-    #input_text = input_text.replace("would ", "")
+    input_text = input_text.replace("what ", "")
+    input_text = input_text.replace("how ", "")
+    input_text = input_text.replace("where ", "")
+    input_text = input_text.replace("can ", "")
+    input_text = input_text.replace("should ", "")
+    input_text = input_text.replace("would ", "")
 
     return input_text
 
@@ -225,27 +224,16 @@ def is_it_an_agree_sentence(input_text):
     input_text = input_text.lower()
 
     word_list = [
-        "yes ",
-        " yes ",
-        " yes ",
-        "right ",
-        " right ",
-        "ok ",
-        " ok ",
-        "good ",
-        " good ",
-        "fine ",
-        " fine ",
+        "yes",
+        "right",
+        "ok",
+        "good",
+        "fine",
         "no problem",
-    ]
-    for word in word_list:
-        if word in input_text:
-            return True
-
-    word_list = [
         "是的",
         "可以",
         "正确",
+        "对的",
         "对了",
         "很好",
         "还行",
@@ -254,8 +242,32 @@ def is_it_an_agree_sentence(input_text):
         "行吧",
         "没问题",
     ]
+    ok_inside = False
     for word in word_list:
         if word in input_text:
-            return True
+            ok_inside = True
+            break
+
+    word_list = [
+        "not",
+        "不",
+        "非",
+    ]
+    not_inside = False
+    for word in word_list:
+        if word in input_text:
+            not_inside = True
+            break
+
+    if ok_inside == True and not_inside == False:
+        return True
 
     return False
+
+def make_indents_before_every_lines(input_text, indent=4, as_code_block=False):
+    if as_code_block == True:
+        input_text = "```\n" + input_text + "\n````"
+    lines = input_text.split("\n")
+    for index in range(len(lines)):
+        lines[index] = " "*indent + lines[index]
+    return "\n".join(lines)

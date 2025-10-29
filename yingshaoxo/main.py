@@ -26,27 +26,44 @@ def get_memory_piece_list_from_txt_file(a_txt_path, input_text, accurate=True):
         with open(a_txt_path, "r", encoding="utf-8") as f:
             source_text = f.read()
         text_list = source_text.split(magic_splitor)
-        matched_list = []
-        #keyword_list = yingshaoxo_string.split_string_into_n_char_parts(input_text, 2)
-        keyword_list = list(input_text)
-        for text in text_list:
-            if yingshaoxo_string.check_if_string_is_inside_string(text, keyword_list, wrong_limit_ratio=0.7, near_distance=20):
-                matched_list.append(text)
+        if input_text.isascii():
+            keyword_list = yingshaoxo_string.split_string_into_n_char_parts(input_text, 4)
+        else:
+            keyword_list = list(input_text)
+
+        if get_more == False:
+            matched_list = []
+            for text in text_list:
+                if yingshaoxo_string.check_if_string_is_inside_string(text, keyword_list, wrong_limit_ratio=0.2, near_distance=20):
+                    matched_list.append(text)
+        else:
+            dynamic_control_number = 2
+            matched_list = []
+            ratio_kernel = 0.05
+            ratio = 0.1
+            for _ in range(16):
+                matched_list = []
+                for text in text_list:
+                    if yingshaoxo_string.check_if_string_is_inside_string(text, keyword_list, wrong_limit_ratio=ratio, near_distance=20):
+                        matched_list.append(text)
+                if len(matched_list) >= dynamic_control_number:
+                    break
+                ratio = ratio + ratio_kernel
         memory_list = matched_list
 
     return memory_list
 
 def get_memory_as_pure_string(input_text, include_diary=False):
-    memory_piece_list = get_memory_piece_list_from_txt_file(yingshaoxo_diary_file_path, input_text, accurate=False)
+    memory_piece_list = get_memory_piece_list_from_txt_file(yingshaoxo_diary_file_path, input_text, accurate=True)
     if len(memory_piece_list) == 0:
         new_input_text = question_sentence_to_normal_sentence(input_text)
-        memory_piece_list = get_memory_piece_list_from_txt_file(yingshaoxo_diary_file_path, new_input_text)
+        memory_piece_list = get_memory_piece_list_from_txt_file(yingshaoxo_diary_file_path, new_input_text, accurate=False)
     if len(memory_piece_list) > 0:
         one_diary_memory_piece = random.choice(memory_piece_list)
     else:
         one_diary_memory_piece = 'None'
 
-    memory_piece_list = get_memory_piece_list_from_txt_file(temporary_memory_file_path, input_text, accurate=False)
+    memory_piece_list = get_memory_piece_list_from_txt_file(temporary_memory_file_path, input_text, accurate=True)
     if len(memory_piece_list) == 0:
         new_input_text = question_sentence_to_normal_sentence(input_text)
         memory_piece_list = get_memory_piece_list_from_txt_file(temporary_memory_file_path, new_input_text, accurate=False)
@@ -56,12 +73,16 @@ def get_memory_as_pure_string(input_text, include_diary=False):
         one_normal_memory_piece = 'None'
 
     if include_diary == True:
-        final_memory = "In yingshaoxo diary:" + one_diary_memory_piece.strip() + "\n\n" + "In my recent memory:" + one_normal_memory_piece.strip()
+        final_memory = "In yingshaoxo diary (yingshaoxo is a teacher, we use it as knowledge base):\n" + make_indents_before_every_lines(one_diary_memory_piece.strip(), 4, as_code_block=True) + "\n\n" + "In my recent memory:\n" + make_indents_before_every_lines(one_normal_memory_piece.strip(), 4, as_code_block=True)
     else:
-        final_memory = "In my recent memory:" + one_normal_memory_piece.strip()
+        final_memory = "In recent memory:\n" + make_indents_before_every_lines(one_normal_memory_piece.strip(), 4, as_code_block=True)
+
+    last_message = get_last_chat_message()
+    if last_message == "":
+        last_message = "None"
+    final_memory += "\n\n" + "Last chat message:\n" + make_indents_before_every_lines(last_message, 4, as_code_block=True)
 
     final_memory = final_memory.replace(magic_splitor, "")
-    #print("memory 哦！\n" + final_memory)
     return final_memory
 
 def is_it_in_memory(input_text, id_):
@@ -95,9 +116,7 @@ def ask_other_ai(input_text):
         #input_text += "\n" + "#no other explain needed, just return the new data"
         pass
     if debug == 1:
-        print("    ask other ai:\n")
-        print("\n".join(["    "+one for one in input_text.split("\n")]))
-        print("    ***************************")
+        print(make_indents_before_every_lines("Ask other ai:\n" + input_text + "\n*************************", 8, as_code_block=True))
     try:
         response = ask_llama(input_text)
         response = response.split("\n")
@@ -116,7 +135,7 @@ def summarize(input_text):
         return input_text
     else:
         function_name = inspect.currentframe().f_code.co_name
-        response = ask_other_ai(function_name + ":\n" + "```" + input_text + "```").lower()
+        response = ask_other_ai(function_name + ":\n" + make_indents_before_every_lines(input_text, 4, as_code_block=True)).lower()
         if response.startswith("error:"):
             return input_text
         else:
@@ -126,27 +145,16 @@ def comment(input_text):
     input_text = input_text.strip()
     if input_text == "":
         return ""
-    function_name = inspect.currentframe().f_code.co_name
-
-    last_reply = get_last_chat_message()
-    if last_reply == "":
-        last_reply = '```None```'
-    else:
-        if "me: " in last_reply:
-            last_reply = ""
-        else:
-            last_reply = "```" + last_reply + "```"
 
     temp_memory = get_memory_as_pure_string(input_text, include_diary=True)
-    request = """memory:\n```\n{}\n```""".format(temp_memory).strip() + "\n\n"
-    #request += "chat_history: " + last_reply + "\n\n"
-    request += function_name + ":\n" + "```" + input_text + "```"
+    request = """memory:\n{}""".format(make_indents_before_every_lines(temp_memory, 4, as_code_block=True)).strip() + "\n\n"
+    request += "Please make a comment on user newest message" + ":\n" + make_indents_before_every_lines(input_text, 4, as_code_block=True)
 
     response = ask_other_ai(request).lower()
     if response.startswith("error:"):
         return ""
     else:
-        sentence_and_comment = input_text + "\n\n" + "me: " + response.strip()
+        sentence_and_comment = "user: " + input_text + "\n\n" + "me: " + response.strip()
         add_last_chat_message(sentence_and_comment)
         return response
 
@@ -164,9 +172,7 @@ def remember(input_text, notes, id_):
         f.write(temporary_memory)
 
     if debug == 1:
-        print("    the new memory:\n")
-        print("\n".join(["    "+one for one in temporary_memory.split("\n")]))
-        print("\n\n    ***************************")
+        print(make_indents_before_every_lines("The new memory:\n" + temporary_memory + "\n*************************", 8, as_code_block=True))
 
 def get_memory(input_text, id_, should_it_inject_old_diary_memory=False):
     with open(temporary_memory_file_path, "r", encoding="utf-8") as f:
@@ -178,12 +184,12 @@ def get_memory(input_text, id_, should_it_inject_old_diary_memory=False):
     else:
         temp_memory = get_memory_as_pure_string(input_text, include_diary=False)
 
-    task_description = """memory:\n```\n{}\n```""".format(temp_memory).strip()
-    task_description += "\n\nquestion: " + input_text
+    task_description = """memory:\n{}""".format(make_indents_before_every_lines(temp_memory, 4, as_code_block=True)).strip()
+    task_description += "\n\nPlease make a answer on user newest question:\n" + make_indents_before_every_lines(input_text, 4, as_code_block=True)
 
     response = ask_other_ai(task_description).lower()
 
-    question_and_answer_string = input_text + "\n\n" + "me: " + response.strip()
+    question_and_answer_string = "user: " + input_text + "\n\n" + "me: " + response.strip()
     add_last_chat_message(question_and_answer_string)
 
     return response
