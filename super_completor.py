@@ -2298,9 +2298,9 @@ if __name__ == "__main__":
             #response = "\n\n__________\n\n".join(response[:10])
             #response = yingshaoxo_text_completor.use_simplified_magic_language_tree_dict_to_get_next_text(store_dict, "./test_dict/2.simple_tree", list(input_text_list), how_many_character_you_want=2, no_sleep=True, window_length=4)
 
-            #source_text_path = "/home/yingshaoxo/Disk/Sync_Folder/Yingshaoxo_Data/Additional/Ebooks/wiki_articles/baidu_wiki_2012.txt"
+            source_text_path = "/home/yingshaoxo/Disk/Sync_Folder/Yingshaoxo_Data/Additional/Ebooks/wiki_articles/baidu_wiki_2012.txt"
             #source_text_path = "/home/yingshaoxo/Disk/Sync_Folder/Yingshaoxo_Data/Core/Big_Core/General_Book/wiki_encyclopedia/simplified_zh_wiki_2022.txt"
-            source_text_path = "/home/yingshaoxo/Disk/Sync_Folder/Yingshaoxo_Data/Core/Big_Core/General_Book/wiki_encyclopedia/primary_student_article_15000.txt"
+            #source_text_path = "/home/yingshaoxo/Disk/Sync_Folder/Yingshaoxo_Data/Core/Big_Core/General_Book/wiki_encyclopedia/primary_student_article_15000.txt"
             #source_text_path = "/home/yingshaoxo/CS/yingshaoxo_txt_data/all_yingshaoxo_data_2023_11_13.txt"
             #source_text_path = "/home/yingshaoxo/CS/yingshaoxo_txt_data/yingshaoxo/temporary_memory.txt"
             response = yingshaoxo_text_completor.search_long_background_context_from_disk_txt_file_by_using_multiprocess(source_text_path, input_text, return_text=True, get_more=False)
