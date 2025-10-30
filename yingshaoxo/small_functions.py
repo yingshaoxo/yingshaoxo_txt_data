@@ -243,6 +243,8 @@ def is_it_an_agree_sentence(input_text):
         "行了",
         "行吧",
         "没问题",
+        "爱你",
+        "好啊",
     ]
     ok_inside = False
     for word in word_list:
@@ -254,6 +256,7 @@ def is_it_an_agree_sentence(input_text):
         "not",
         "不",
         "非",
+        "好看",
     ]
     not_inside = False
     for word in word_list:

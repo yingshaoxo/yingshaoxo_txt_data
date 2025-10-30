@@ -13,7 +13,7 @@ with open(temporary_memory_file_path, "a", encoding="utf-8") as f:
     f.write("")
 chat_history_list = []
 
-def get_memory_piece_list_from_txt_file(a_txt_path, input_text, accurate=True):
+def get_memory_piece_list_from_txt_file(a_txt_path, input_text, accurate=True, wrong_limit_ratio=0.05):
     if accurate == True:
         get_more = False
     else:
@@ -26,22 +26,26 @@ def get_memory_piece_list_from_txt_file(a_txt_path, input_text, accurate=True):
         with open(a_txt_path, "r", encoding="utf-8") as f:
             source_text = f.read()
         text_list = source_text.split(magic_splitor)
+
         if input_text.isascii():
             keyword_list = yingshaoxo_string.split_string_into_n_char_parts(input_text, 4)
         else:
+            #keyword_list = yingshaoxo_string.split_string_into_n_char_parts(input_text, 2)
             keyword_list = list(input_text)
 
         if get_more == False:
             matched_list = []
             for text in text_list:
-                if yingshaoxo_string.check_if_string_is_inside_string(text, keyword_list, wrong_limit_ratio=0.2, near_distance=20):
-                    matched_list.append(text)
+                if yingshaoxo_string.check_if_string_is_inside_string(text, keyword_list, wrong_limit_ratio=0.5, near_distance=None):
+                    if len(yingshaoxo_string.get_relate_sub_string_in_long_string(text, keyword_list, wrong_limit_ratio=wrong_limit_ratio, window_length=None, return_number=1, include_only_one_line=False, include_previous_and_next_one_line=False)) != 0:
+                        matched_list.append(text)
         else:
             dynamic_control_number = 2
             matched_list = []
             ratio_kernel = 0.05
-            ratio = 0.1
-            for _ in range(16):
+            ratio = 0
+            steps = int(wrong_limit_ratio/ratio_kernel)
+            for _ in range(steps + 1):
                 matched_list = []
                 for text in text_list:
                     if yingshaoxo_string.check_if_string_is_inside_string(text, keyword_list, wrong_limit_ratio=ratio, near_distance=20):
@@ -54,19 +58,19 @@ def get_memory_piece_list_from_txt_file(a_txt_path, input_text, accurate=True):
     return memory_list
 
 def get_memory_as_pure_string(input_text, include_diary=False):
-    memory_piece_list = get_memory_piece_list_from_txt_file(yingshaoxo_diary_file_path, input_text, accurate=True)
+    memory_piece_list = get_memory_piece_list_from_txt_file(yingshaoxo_diary_file_path, input_text, accurate=True, wrong_limit_ratio=0.1)
     if len(memory_piece_list) == 0:
         new_input_text = question_sentence_to_normal_sentence(input_text)
-        memory_piece_list = get_memory_piece_list_from_txt_file(yingshaoxo_diary_file_path, new_input_text, accurate=False)
+        memory_piece_list = get_memory_piece_list_from_txt_file(yingshaoxo_diary_file_path, new_input_text, accurate=True, wrong_limit_ratio=0.1)
     if len(memory_piece_list) > 0:
         one_diary_memory_piece = random.choice(memory_piece_list)
     else:
         one_diary_memory_piece = 'None'
 
-    memory_piece_list = get_memory_piece_list_from_txt_file(temporary_memory_file_path, input_text, accurate=True)
+    memory_piece_list = get_memory_piece_list_from_txt_file(temporary_memory_file_path, input_text, accurate=True, wrong_limit_ratio=0.2)
     if len(memory_piece_list) == 0:
         new_input_text = question_sentence_to_normal_sentence(input_text)
-        memory_piece_list = get_memory_piece_list_from_txt_file(temporary_memory_file_path, new_input_text, accurate=False)
+        memory_piece_list = get_memory_piece_list_from_txt_file(temporary_memory_file_path, new_input_text, accurate=True, wrong_limit_ratio=0.5)
     if len(memory_piece_list) > 0:
         one_normal_memory_piece = random.choice(memory_piece_list)
     else:
@@ -90,7 +94,7 @@ def is_it_in_memory(input_text, id_):
         return False
     if len(input_text) == "":
         return False
-    memory_piece_list = get_memory_piece_list_from_txt_file(temporary_memory_file_path, input_text, accurate=True)
+    memory_piece_list = get_memory_piece_list_from_txt_file(temporary_memory_file_path, input_text, accurate=True, wrong_limit_ratio=0.5)
     if len(memory_piece_list) == 0:
         return False
     else:
@@ -155,7 +159,7 @@ def remember(input_text, notes, id_):
         f.write(temporary_memory)
 
     if debug == 1:
-        print(make_indents_before_every_lines("The new memory:\n" + make_indents_before_every_lines(temporary_memory, 4, as_code_block=True), 4, as_code_block=True))
+        print(make_indents_before_every_lines("The new memory:\n" + make_indents_before_every_lines(temporary_memory.replace(magic_splitor, "").strip(), 4, as_code_block=True), 4, as_code_block=True))
 
 def comment(input_text):
     input_text = input_text.strip()
