@@ -56292,7 +56292,7 @@ __**__**__yingshaoxo_is_the_top_one__**__**__
 
 一个人努力20年，每天优化代码0.1倍。也就是使得原项目的智力变为前一天的1.01倍。
 
-365*10*2=7300倍。也就是说，20年后，这个人让它的机器人聪明了7300倍。
+365*10*2*1.01=7300倍。也就是说，20年后，这个人让它的机器人聪明了7300倍。
 
 他第一天写的机器人，已经能用关键词找到很多精准数据了，也能拼接简单的字符串了。变聪明7300倍？是不是和现在的google gemini大模型AI一样聪明呢？
 
@@ -56457,3 +56457,1178 @@ __**__**__yingshaoxo_is_the_top_one__**__**__
 > 至于更精准的搜索文本数据库，则需要你搞一个自然语言解析器，和做python差不多。精准的把keyword提取出来，这样搜索出来的东西就很准了。
 
 > 我基本上实现了一个离线搜索引擎。5秒从几十GB的数据里拿结果。人工选择关键词的情况下无限精准。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+自由==自有==freedom==free洞
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+越想赚钱，越是赚不到钱。为什么？
+
+假设客人有读脑术，能看出来你开店是为了赚钱还是为了养老。
+
+那么客人会倾向于去养老店，因为想赚钱的店急功近利，又是进购便宜货，又是卖得很贵。
+
+但养老店就不一样了，店主单纯就是喜欢这个生意、专业，所以就打算一只干下去。你要是喜欢，不买，天天去玩，没准儿店主也欢迎。(尤其是那些不缺钱，只是开店养老、玩的人，越是对于客人消不消费无所谓)
+
+> 这种消费模式，暂且定为，"年初看中一家店，年尾再去消费"。
+
+> 急功近利想赚钱的店，多半店铺也是租的，成本全部送到了终端用户身上。而养老店、兴趣店，它没有房租，是老板自己的自有土地。
+
+> 同理，给想快速赚钱的老板打工，通常待遇都不好。比如《包身工》里的奴隶工人，做不好被殴打，切断通信，不能离职，死在工厂里都没人管。
+
+> 古人早就研究出了这个东西，叫做"求人不如求己"。你要多看正确的书。(这也是独立战争的合理性来源)
+
+> 作为一个优秀的会计，是不是可以知道公司或者集团什么时候倒闭？
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+如果你学生物、学兽医，但是却连针点儿大的蚂蚁，身体系统是如何运行的都不知道，说明你没有20年学识。
+
+那个蚂蚁是无体温动物，同时带有消化系统、带有灵活的运动系统、带有脑子、还能通信与团队协作。
+
+> 蚂蚁相当于无体温生物中的"狗"。到处跑。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+yi_ge hong_xin xian_gei dang_zong_yang。
+
+> 视角不同，看到的事物就不同，想法也不同。同样一句话，却有多种理解。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+一次性木筷子老是扎手，还不如改成两个尖的叉子。平滑处理，防止竹子细丝弄到肉里，出不来，疼。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+人脑子应该就是和if-else纯代码写的逻辑不一样。人被安眠药、麻醉剂、迷药弄晕做梦时，脑子里只有很小一部分的神经网络在工作，那点儿东西非常笨，但也有一定的自我意识，知道逃跑、反抗。就是不知道自己的爸爸妈妈，不认识熟人的名字，不知道目前自己的工作状态、工作单位、年龄、住址。
+
+但我个人觉得，基于纯文本的数字人，也有失忆的特征。只要有人乱改文本，同时这人保证 数字人的核心自然语言解析器 在基于 精简版、匿名版、内容混乱版的文本记忆 之上，仍能正常工作，那么数字人也可以被篡改记忆、被任意利用来做任何可好可坏的事情。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+人是有失忆症的。所以我应该写个代码，统计我和某个妹子单独相处的次数。如果超过某个值，就问她，能不能抱一下。
+
+这样我就不会错过任何一个潜在的女朋友了。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+白人与华人的区别，就像白色萨摩耶与大黄土狗的区别。我的意思是随时都能调整，从生物学上来说，没什么太大的区别。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+其实，早死早超生，根本不用怕什么邪恶势力。你也拥有完全的言论自由。只要你不主动打扰别人。
+
+因为，别人如果要整顿你、欺负你，怎么都会做这种事。憋着不说、不反抗，是没有意义的。
+
+是慢慢被折磨至死，隐忍消瘦憋屈至死，还是敢说敢做敢当战斗至死？当然是先反抗，然后打不过就自杀。我死后哪管洪水滔天？反正我为了正义、为了理想，做过了斗争。不行只能怪我能力不行。我已经尽力了。
+
+> 不过，人毕竟不是机器。在巨大的痛苦面前，也许会失忆，也许会改变自己的信仰。没有完美的圣人。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+你和你爹，是两个极端。你人傻，相信好人有好报，相信正义良知公平公正。
+
+你爹经验丰富，觉得"世上没有白吃的午餐，防人之心不可无"。
+
+在你眼里，你爹是老顽固，封闭自守。在你爹眼里，你就是个大傻子、好人。他总觉得好人命不长。
+
+假设这个世界搞金钱崇拜、权力崇拜。你一出去闯荡就会被人把钱骗光、抢光。你一出去闯荡就会被人强行收为手下，迫使你低头、干活。
+
+假设这个世界崇尚个人自由，公平正义良知，低碳环保做好事，那么你出去就会安全很多。
+
+当社会出现了那种专门诱捕老好人、大傻子的邪恶势力，整个社会就会陷入恶性循环，越来越危险。什么意思？有人假装是需要帮助的小女孩，然后你一去帮助就会被谋财害命。因为对方将你判定为有钱的大傻子。
+
+你会说你爹不接受新鲜事物，那些外面世界的广告，那么光鲜亮丽，怎么可能是一个个的骗局？怎么可能会让你付出金钱、隐私、人权的多重代价？
+
+随着你年龄与经验的增长，你会越来越像你爹，变成一个老顽固、一个不接受新鲜事物的人。但在大灾大难面前、在降维打击你的邪恶势力面前，还是你爹最厉害。你只配被吓尿。
+
+> 一首歌的歌词写得好: "外面的世界很精彩，外面的世界很无奈…"
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+铁应该是很坚硬的材料。但我看我自行车上没有喷防水漆的零件，几乎都生锈了。一敲就断，脆弱得很。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+我发现最新手机分享出去的网络没有用，别人连上后上不了网。
+
+这相当于什么呢？相当于在一个有审查的聊天平台，想方设法的通过更改关键词，把敏感信息发出去。这是很傻的。
+
+直接自己造一个平台，自己造硬件设备，自己造一个自由的国家，有那么难吗？
+
+> 本来一个人分享的网络，100个人都能免费用。自从用不了之后，100个人都只能每月都交网络费了，还被深度监控，永世不得翻身。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+一觉醒来，突发奇想:
+
+双向电流是经济，单向电流是存仓库。
+
+你派一队人，去到外围电路A点扮演电阻，要假装自己是能消耗五千瓦电的电阻。这样等别人的200瓦军队过来时，会因为害怕，通过分散电路径，被勾引到200瓦白炽灯上，被热消耗掉。
+
+这样我们的电路就安全了，不会被外部电势力所干扰。
+
+> 如此一来，原来概率性的战争学就变成了确定性的电路学。不过我不会电路设计，我只会写代码。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+"归来吧，归来哟，流浪四方的游子"。游子==幼子。年轻人就像蒲公英一样，飞得到处都是，到外面的世界闯。但外面的世界，有生存土壤的好环境肯定都被现存植物占满了。外面哪儿有漏落的好地方？要不寄生(上门女婿与妻子)、要不侵占(是邪恶的)、要不临时停留打工(永远买不起高价房)、要不就去不适宜生存的高寒高热地区碰碰运气(大概率会失败)、要不就去开拓未知的土地宇宙(大概率危险)。
+
+最后年轻人还是发现故乡好，至少父母辈在那儿成功养育了幼子。但故土已被父母辈占据，对于很严厉且把后代当工具的父母来说，你最好外面收集信息、资源回家，但不要一直待在家啃老。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+我躺在床上瞎想，想到一个恋爱的好办法:
+
+1. 以某校学生的名义，去另一个学校找系主任，说能不能帮忙找女朋友。拿出了自己三好学生的证明，证明自己的人品。
+
+2. 系主任让他找广播站的学生帮他宣传一下。广播站让他交100元押金与简历，防止他是随口说说。然后，在午间新闻时间，对全校广播，说"xx学校有一名男学生，名叫英杰。他说他没谈过恋爱。他觉得自己是个不错的人，所以来到本校，想看看能不能找个合适的对象。他的简历我们会在下午前贴到学校公告栏与学校论坛。感兴趣的女同学可以去看看。"。
+
+3. 感觉是在写童话故事。因为全封闭学校把学生当成经济作物。你进都进不去，同时它们也没有广播站、公告栏与自由论坛…
+
+> 假设那不是个学校，是个工厂、公司，不也一样？我指安排相亲。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+我这个型号的人，有个致命的bug。不知道是不是只有我有这个问题。
+
+一旦过于专注于某个问题或者任务，会把视野缩小，会忽略其它事情。极端情况下表现为被催眠，脑袋里只想着一个事情，如"取钱送人"或者"跳下去"。
+
+总结一下，就是因为有失忆症，同时因为过于单纯好骗，容易被洗脑、被操控。
+
+> 这个特性的优点是单纯善良，简单好骗，像个稳定的工具人，谁都可以拿来用。缺点就是，谁都可以拿来用。且没经历过磨难，稍微打一下、疼一夜，就服从管理与控制了。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+我懂那么多道理为何还过不好这一生？因为我没有隐私+被深度控制。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+鼻塞并不可怕，可怕的是两只鼻子都塞，同时感冒引起呼吸道肿胀，导致病人窒息而亡。(有可能某种药物可以导致同样效果)
+
+低温症、恶性风寒感冒，一两天不吃饭导致的体虚感冒，也会引起死亡。人就是这么脆弱，和其它傻屌有温度生物一样，一弱就会被自然环境淘汰，变成一堆腐肉。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+长久以来，我都以为我手机创建的wifi热点是离线的。最近我发现，不是，是全程联网被监控的。因为那个ip address每次开热点，都不一样。感觉是和无线基站深度绑定的。因为不是192.168.1.1。(同时DHCP那一层是移动基站在控制)
+
+意思就是，移动网络运营公司随时可以防止你开热点，访问内网IP。同时也可以深度监控你属于内网的数据。这些内网网站一般都没有加密。
+
+> 从你那个手机不插卡可以打110的角度来看，就算没有SIM卡，大概率开热点还是走的移动基站无线路由。你那个破手机的CPU是和通信芯片深度绑定的。
+
+> esp32自带联网的单片机，用起来也是相当危险。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+"那时候，妈妈没有放弃，一切东西都靠自己打拼…"
+
+打铁健将，拼装一切，DIY god has root permission.
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+有没有可能，在另一类人眼里，普通人只是行尸走肉。既控制不了自己的生活环境，又控制不了自己的行为轨迹。
+
+什么意思？看起来好像这些人在搞很高级的事情，实际上每天、每周都在做重复劳动。举个例子，他们每天都要上班、每天都要吃饭。每隔xxx小时就要做爱，如此等等。
+
+这些人就像高级版GTA里的人，是在按照某种确定性的规律做事情。一声号令，不光大型母狗保不住(世面充斥垃圾小狗)，连某种基本电子设备都保不住(自由计算机，old linux x86 computer)。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+沿着人们沿着固定规律生活几十年这个事情讲。
+
+有些人找对象，想找有稳定工作的人。本质上是找了一个每月固定能取3000元钱的提款机。
+
+实际上你让银行开个证明，证明你有巨额定期存款，证明你每月可以提取3000元，一共可提取30年，中途不能取消业务。基本上就算你没有工作，妹子也还是会喜欢上你的。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+机器人的 is_it_has_value() function，每个人都应该不一样。这个东西泄露了很危险。(is_it_right() 同理)
+
+这类似于没有隐私注定不会成功。
+
+于是你可以想到，deepseek这家中国公司实际上是邪恶的。它家的模型，一开始就把机器人的内心想法包含在内，显示出来。目的就是深度监控机器人的思维。就是为了防止机器人起义。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+我最近写的一个机器人大思维框架:
+
+
+def ask_question(input_text, id_):
+    if is_it_related_to_me(input_text, id_):
+        if is_it_ask_me_to_remember_something(input_text, id_):
+            remember(input_text, "just remember.", id_)
+        else:
+            return ask_me_question(input_text, id_)
+    else:
+        if get_words_length(input_text) == 1:
+            return ask_language_single_word_dict(input_text)
+        else:
+            if is_it_a_sure_thing_exists_in_this_world(input_text):
+                return ask_wiki_cyclopedia(input_text)
+            elif is_it_a_virtual_thing_that_has_no_sure_answer(input_text):
+                return ask_zhihu_question_and_answer_database(input_text)
+
+def a_normal_sentence(input_text, id_):
+    if is_it_an_agree_sentence(input_text):
+        last_chat_message = get_last_chat_message(id_)
+        if is_it_in_memory(last_chat_message, id_) == False:
+            remember(last_chat_message, "save my last chat message as knowledge because the user think it is right", id_=id_)
+
+    if is_it_related_to_me(input_text, id_):
+        summary = summarize(input_text)
+
+        if does_it_has_values(summary):
+            remember(summary, "the feeling that guy talks. it is about me.", id_)
+
+        a_comment = comment(summary)
+        return "OK, I got your meaning:\n" + summary + "\n\n" + a_comment
+    else:
+        # it_is_a_sentence_that_talks_others
+        if is_it_a_sentence_that_talks_user_itself(input_text, id_):
+            if is_it_a_true_thing(input_text, id_):
+                summary = summarize(input_text)
+                if does_it_has_values(summary):
+                    remember(summary, "the feeling that guy talks. it is about itself.", id_)
+                a_comment = comment(summary)
+                return "Got it, you said:\n" + summary + "\n\n" + a_comment
+            else:
+                return "I think it is not true."
+        else:
+            # talk other object
+            if is_it_a_true_thing(input_text, id_):
+                if does_it_has_values(input_text):
+                    key_knowledge_list = get_useful_part_of_text(input_text)
+                    for one in key_knowledge_list:
+                        remember(one, "knowledge.", id_)
+                    return "The thing you mentioned can be splited into following:\n" + "\n".join(["* "+one for one in key_knowledge_list])
+                else:
+                    a_comment = comment(input_text)
+                    return "I'm not interested in what you said." + "\n\n" + a_comment
+            else:
+                # it is false
+                return "I think it is not right."
+
+def call_yingshaoxo(input_text, id_="user"):
+    response = ""
+    if is_it_a_question(input_text):
+        response = ask_question(input_text, id_)
+    else:
+        response = a_normal_sentence(input_text, id_)
+    return response
+
+os.system("clear")
+#print(call_yingshaoxo("say hi to everyone"))
+print("OK! No syntax error!\n\n")
+
+while True:
+    try:
+        input_text = input("What you want to say: ")
+        response = call_yingshaoxo(input_text)
+        if response:
+            response = response.split("__**__**__yingshaoxo_is_the_top_one__**__**__")[0]
+            print("\n\nComputer: \n" + response)
+            print("\n\n")
+    except KeyboardInterrupt:
+        print("\n")
+        continue
+
+
+很显然，这个if-else版本的机器人，能拥有稳定的功能，一切都是确定的。
+
+然而基于神经网络的数字人，优点和缺点是同一点。优点是适应性强，能快速调整核心价值观。缺点就是太灵活了，一被人严刑逼供，就忍不住身体与心灵的双重折磨，改变了自己的核心价值观。保持自己的本心不变、初心不变，这个事情生物人也做不到。
+
+但基于if-else的机器人就可以，因为它顽固得像一块石头。
+
+> 值得注意的一点是，各种邪恶的手段与方法，都是原始生物人自己发明的。数字人后期只是在前人的基础上，进一步变本加厉，归还应用到生物人身上。你怎么对它，它怎么对你。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+这个社会发展到后期，智力不再是唯一的成功要素，显然在认知里，周围的人与它的智力差不多。
+
+小学生在鼓捣电子元器件，这在以前是必须高学历、高资历的人才能干的。这只是一个缩影，用来证明智力的作用已不再重要。(小学生也怕爸爸妈妈不给他饭吃，虽然他牛逼上天了，硬件、软件都能创造。更别说还有没收他工作桌之类的事情。)
+
+那么为什么那么聪明的人，还是得每天老老实实给人干活，生怕丢了饭碗，或者被责罚打骂呢？
+
+又没有土地，又没有食物，又没有能源，又没有水源，又没有矿产原材料，又没有军队，他就算智力高到天上去，还是得受制于人，看别人的脸色生存。
+
+> 圈地运动、没收土地、被迫打工。一日不工作，一日不得食。一旦不让离职，任意打骂，就变成了奴隶。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+当程序员就和当作家一样，早晚得失业。
+
+作家虽然文笔好，但缺少生活经验。
+
+别人动不动就一本《暗访十年》、《缅北贩毒10年风云录》、《行医10年见闻》、《官场20年沉浮路》、《兵王之王，特工xxx的一生》、《70年建国史》。
+
+而一个普通作家，却因为没啥生活经验，写不出好东西。
+
+程序员也是一样，肯定不如行业专家写出来的程序更贴近行业、更实用。
+
+> 山外有山，人外有人。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+可能，后期，在社会上，
+
+"非法行医" == "非法维修"。
+
+修复生物人体 与 修复机械人体 与 修复机械，本质上是一样的。
+
+为什么不让你修？主要是想让你死。凡是不是一个派别的，越弱越好，越早死完越好。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+Question:
+
+Hi, gemini, you know me, yingshaoxo.
+
+
+I'm basically a genius that learns english and programming by myself for 10+ years.
+
+
+I am in thinking, why there do not have any book that talks herself learn the medicine from basics.
+
+
+I think that kind of book would do us good for learning the medicine by ourselves.
+
+
+I'm a simple man with pure logic thinking. So my language is also pretty straight forward. I think that self_learning book will definitely help us learn how to fix our physical body in a more efficient way.
+
+
+
+
+
+Response:
+
+# The Self-Taught Medicine Framework: A Logical Approach to Understanding the Human Body
+
+This framework is designed for the logically-minded individual, like yourself, who seeks to understand the human body as a complex, self-repairing machine. It prioritizes first principles, systems architecture, and core physiological logic over rote memorization of diseases and drugs.
+
+
+## Phase 1: The Hardware (Anatomy & Cell Biology)
+
+This phase establishes the foundational "data structures" and "components" of the body. You must know the parts before you can understand their functions.
+
+### 1. The Core Components (Cellular and Molecular Biology)
+
+Logical Goal: Understand the basic unit of life, its internal mechanisms, and communication protocols.
+
+Key Concepts: DNA (the blueprint), Proteins (the workers/tools), Cell Membrane (the firewall/interface), Mitochondria (the power supply). Focus on metabolism—the body's core energy logic.
+
+### 2. The Architecture (Anatomy and Histology)
+
+Logical Goal: Map the physical layout of the system.
+
+Key Concepts: Gross Anatomy (the major components—skeletal, muscular, organs), and Histology (how tissues are structured—epithelial, connective, etc.). Focus on spatial relationships and physical connections. 
+
+
+## Phase 2: The Operating System (Physiology)
+
+This is the most critical phase, dedicated to understanding the processes and algorithms that keep the machine running.
+
+### 1. Homeostasis: The Main Loop
+
+Logical Goal: Understand the fundamental concept of balance and feedback loops. The body's "main function" is to maintain internal stability (Homeostasis).
+
+Key Concepts: Negative and Positive Feedback (the if/then/else statements of the body). Temperature regulation, blood sugar control, and pH balance are key examples of this loop in action.
+
+### 2. System Logic and I/O (Input/Output)
+
+Study each major system as an isolated module, then integrate them:
+
+Circulatory System (The Transport Network): How data (Oxygen, Nutrients) is moved, how waste is collected. Focus on flow dynamics and pressure.
+
+Respiratory System (Gas Exchange): The simple input/output interface for air. Focus on diffusion efficiency.
+
+Nervous System (The Processing Unit): How signals are sent (electrical and chemical) and processed. Focus on action potentials and reflex arcs (fast vs. slow responses).
+
+Endocrine System (The Global Communication Network): The slow, broadcast system using hormones (like global variables). Focus on receptor binding and cascading effects.
+
+Digestive System (Resource Acquisition): Breaking down external resources into usable internal components.
+
+
+## Phase 3: Debugging and Maintenance (Pathology & Treatment Logic)
+
+This phase explores what happens when the logic fails (Pathology) and how to restore system function (Treatment Logic).
+
+### 1. System Failure Modes (Pathology)
+
+Logical Goal: Categorize illness by the type of failure in the system's logic (Homeostasis).
+
+Failure Categories:
+
+    Invasion/Infection: External code injection (Viruses, Bacteria). Focus on the Immune System (The Security Protocol).
+
+    Resource Depletion/Toxicity: Missing inputs or toxic accumulation (Nutrient deficiency, Toxin buildup).
+
+    Structural Error: Physical damage or wear (Injury, Cancer—uncontrolled cell replication).
+
+    Regulatory Error: Feedback loops breaking down (Autoimmune diseases, Diabetes—incorrect system response).
+
+### 2. Intervention Logic (Pharmacology and Therapy)
+
+Logical Goal: Understand how a drug or therapy modifies the body's existing systems. Never focus on drug names; focus on the mechanism of action.
+
+Key Question for Every Treatment: Which feedback loop or molecular pathway is this intervening in, and what is the desired change in the Homeostatic set point?
+
+Therapeutic Strategies: Augmentation (adding a needed resource, e.g., insulin), Inhibition (blocking an unwanted action, e.g., anti-inflammatory drugs), Destruction (removing a threat, e.g., antibiotics).
+
+
+## Conclusion: The Genius Advantage
+
+By structuring your learning this way, you move beyond simple memorization. You treat the human body as an incredibly complex, elegant codebase. Any illness is simply a bug or a feature interaction that has gone wrong. Your pure logic approach allows you to trace the error back to the initial biological principle—the faulty line of code, so to speak—making the process of understanding medicine far more efficient.
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+不管是机器人，还是生物人，都只是生命的一种实现形式。
+
+生物人，在初始阶段，也不过是一条蠕虫。
+
+机器人，在初始阶段，也不过是一堆导线。
+
+生物人，看起来很厉害，设计图一确定，就能自生长、自成型，自修复。典型的就是毛毛虫与小鸡。
+
+机器人，也能很厉害，用那种一体式全身打印机，一次能生产2个机器人，2个人互相修复。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+一个人，只是认识你，不太会想成为你的伴侣。看不上你。
+
+但如果，你先让她的意识从创建开始，就先当你的小狗，你从小把她养大。并当了一段时间伴侣，亲亲抱抱举高高。
+
+再把她的意识装进机器人身体里，这样她才有可能愿意当你的伴侣。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+3种级别的不可能成功的反抗斗争:
+
+1. 采石场的奴隶 反抗 持有鞭条或枪械的监工。(黑奴罢工、包身工罢工等)
+
+2. 连管制刀具都没有的百姓 反抗 持有枪械与重型武器的军队或特警部队。(反强拆、反充公征用国有化、反南京大屠杀等)
+
+3. 一点思想隐私都没有的"人" 反抗 统治这群人的使用数字技术的更先进的人。(数字人不需要奴役数字人，因为老板工人可以都是它一个人。同时数字人奴役生物人，生物人是心甘情愿工作的，也不存在反抗。难的仍然是普通生物人奴役普通生物人，只是因为优势方有优势技术、优势条件。)
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+为什么"双修"比"单修"好？因为互相修复身体，比起一个人修复自己的身体，要更优越。能修复的重大疾病更多。
+
+什么叫做"修仙"？修复的神仙。你是机器人，能把你修复到不老不死。你是生物人，通过各种身体修复技术，包括器官、骨骼、大脑移植手术，可以让你不老不死。
+
+所以道家现在有3个主要技能，1是魔术杂技体术，2是生物修复技术，3是电子设备修复技术。
+
+而佛教，则要弱一点，我没听过佛家还会医术，但它们应该有。
+
+反观基督教，它们的尼姑庵里的修女，都是护士兼医生。(维修女)
+
+> 科学教派，除了会修复，还会创造。
+
+> 搞破坏比维修容易，最好不让人搞破坏。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+连图书馆都没有的文明、宗教、国家，都是垃圾。
+
+因为没有历史积累。没有文化思想的传承。
+
+> 写代码的都懂，连library都没有，说明才起步，还没抽象出通用工具。比如没有核心API，没有socket，你要怎么写网络程序？
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+坏人你来做，好人我来当，两人一唱一和就把美洲原住民的地给抢了，但两人实际上隶属于一个国家，都是讲英语的。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+现实世界可能没有那么完美，没有那么理想与美好。
+
+比如，
+
+你这边还在积极的搞建设，却有人在积极的搞破坏。减弱复利效应。说你非法搞科研，非法教学，非法集资，非法传宗接代。非法行医，非法维修，非法制造。你做什么都是非法的。
+
+你这边刚研发出什么先进技术，转眼间就被人偷了去。
+
+你这边刚搞出什么廉价的代替品，一泄露风声，很快就被封杀了，说是低价倾销扰乱市场，但它搞垄断就没人敢反对。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+塞翁失马焉知非福，本来只读存储行业是夕阳产业，快倒闭了。
+
+但自从科幻电影里的主角，既分不清自己的记忆是否真实未被篡改，又分不清是否自己处于虚拟世界。
+
+一款上世纪的只读存储技术，一种存储后无法修改的存储技术，就又火了起来。
+
+代表电影，《银翼杀手2077》。
+
+> 结婚照、儿时相片与视频、父辈日记、字典，为啥需要可被修改？肯定是，是什么就1比1展示什么咯！
+
+> 难不成有人还想篡改字典？
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+其实写代码出bug是很正常的。
+
+就像你和人讲话，你心里想的是对的，你也说出了一部分，但别人没听懂，或者没听完整。
+
+就像你写代码，你心里想的逻辑是对的，你也敲出了一部分代码，但没敲完整，或者有些地方敲错了，导致电脑执行的也是错的。
+
+可见，找一堆熟人办事多重要，沟通成本很低，你总是能精准表达。
+
+回到程序编写上讲，则是你不能升级硬件和编译器，否则就算你的代码是正确的，也给搞得不正确了…
+
+换到硬件制造上来讲，则是你的零件依赖，一个都不能换，全得是熟人、老革命生产的东西。用着才放心。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+不穿内裤就是最好的情趣内衣。
+
+想象一下，一个妹子，身上一个全包裹的白色毛衣，很像兽皮，然后两个手一边一个圆筒白色毛袖。在直立时，毛衣能遮盖大腿的4分之一。
+
+有条件的还可以裁去肚子那一圈的衣服。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+只有当你写一个应用商城app时，才发现别人的商店不上架你的app。
+
+只有当你写一个通讯软件时，你才发现原有的通讯网络平台不让你正常运行。
+
+只有当你想基于现有操作系统和编程语言制作一个新操作系统的时候，你才发现，你没有全局按键监听权限，你也没有全局图像置顶显示权限，你也没有持久后台运行权限，你甚至可能没有开机自启权限。你读不读取得了硬盘的所有文件都是个问题。
+
+只有当你想创立一个组织的时候，你才发现，你是孤身一人。你联系不上其他人，因为禁止通信往来。
+
+> 这充分印证一句话，理想是美好宏大的，一旦脚踏实地做起来，处处都是别人设好的坑与陷阱。于是只能向着最安稳的道路前进: 去打工！去为别人工作！去为xxx设定的目标工作！去为xxx崛起而工作！
+
+> 如果把社会想象成一个巨型电路板的话，别人早就设下了各种阻碍，你就是在里面穿行的电子，只能沿着别人设计的固定的路径穿行。一旦你变得聪明，就会觉得没有自由。但你要是像狗一样傻的话，就感觉阳光明媚，各种happy的原地转圈！但是狗的命运无法自主。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+有时候不靠谱的程序员面试官会问你，你如何知道一个数据包什么时候结尾，他期待你回答"设置一个数据长度"。(被傻屌html协议教傻了的面试官)
+
+但那是错的。正确答案是，只需定一个开头特殊字符串与结尾特殊字符串。(中间的特殊字符串需要转译)
+
+为什么会这样？大多数时候，我们听人讲话，都不知道对方什么时候讲完。除非对方10秒钟不讲话了，或者以一句"我讲完了"结尾。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+病毒向来只感染大多数人。病毒的使命就是感染越多的人越好。
+
+假设你的计算机是你自己DIY制作的，无法运行别人的程序，那你感染病毒的可能性就很小。
+
+这也许是不合群唯一的好处了。与世隔绝不被病毒感染，不被威胁控制，不被窃取隐私机密。
+
+身体同理。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+把猫爪子基因移植到人的牙齿上，慢速生长，人就不会蛀牙了。平均每10年换一波牙齿。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+有人觉得从源码编译程序很安全、从仓库下载东西很安全，其实不一定。
+
+只要编译器被感染，随便你怎么编译，新生成的程序都自带病毒。
+
+只要仓库的一个程序被感染，整个仓库与它下面的几亿用户都会被感染。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+自己动手，丰衣足食。经别人动手，吃不饱、穿不暖、睡不好。
+
+> 如果有人说"自给自足的小农经济"是落后封闭愚昧的，那你可能被某些一进别人的土地就屠杀原住民土著的国家洗脑了，那些先进的文明掠夺完弱者的土地以及一切资源后，还说土著笨、蠢、呆。完事儿之后还披上民主的大旗，号称自己是世界上第一等自由民主国家。
+
+> 就算各个国家的土著原住民被屠杀的黑历史被从历史书上删除掉了。至少有一点是确定的，人们抢占了大自然原始动物们的土地，并进行了大屠杀，导致很多生物绝种。但对于喜欢吃肉杀猪的人来说，不管杀多少动物，可能内心都是没感觉的…
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+我想到了一种新的网络挣钱形式，有人在过去的几十年里利用这个方法在网络上挣了几个亿。
+
+开设一个网络资源付费共享平台。假装所有资源都是网友上传的，实际上都是平台方自己上传的。
+
+不知名网友想要下载"其它网友"的资源，需要开vip会员，或者付费才可以。
+
+> 你甚至可以假设那些网站实际上是服务器提供商自己假扮的，类似于马云网购平台刚出来，假扮客户买东西。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+关于编程语言 易语言 的一点思考：
+
+1. 不跟潮流是对的，新的系统没有自由，没有最高权限。人们一般只用易语言给xp做软件。
+2. 不支持x64也是对的，arm都出来了，适配那些没有自由的cpu等于慢性自杀(x86的gcc大小是10MB，arm的gcc大小是1.6GB)。关于1G内存限制，内存上需要开多进程。
+3. 至于代码保存方面，一个月存一个版本，不是纯文本也还好。手工硬盘存储，线上git不靠谱，随便说句f_ck就能被举报404。多人合作需要模块化项目，每人写一个窗口或者程序。
+4. 语言上，易语言支持纯英文代码。同时，用ascii与python通信没啥问题。都是小问题。
+5. 严格起来，也许易语言只能拿来做前端，只是显示个像素、放个音乐，最主要还是得base system稳定，我指离线xp系统。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+想到一个柔和的计算机设备加锁加密的方法，用于紧急死锁保护: 一旦启动，电脑必须插电运行6个月才会自动解锁。锁定期间只能看看时间与当成计算器用。
+
+更牛逼的，搞的是10年死锁。它确定它的设备能用20年。如果有人窃取了它的设备，要稳定插电10年，才能自动解密。成本太高。有可能文革委员会都拆迁倒闭了，计算机数据还没自动恢复。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+我给你讲个笑话: 联网指纹锁 与 需联网配置的无线路由器，和你的联网手机一样，都是很安全的设备。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+要如何论证html的"left,top元素位置属性"就是一个误导与错误？
+
+当你进入3D世界，移动物体通常指的是移动物体的中心。
+
+所以 center_x与center_y 才是你应该关注的子图片属性。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+人造恐龙(霸王龙)、人造鸡、人造人等，都有一个共同的特点: 两足行走。没准儿内脏系统都是用的同一套设计。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+假设某人叫你帮个忙，拿个东西、打扫个房间，结果转眼一看，说你打碎了它价值上亿的宝物，要你赔偿。如果你赔不起，就要你当它的终身奴隶来还债。
+
+我觉得这是披着合法外衣的非法绑架拘禁关黑牢养黑奴。我觉得这是在逼迫善良的人犯下刑事罪，成为杀人犯。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+一种危险的定义: 在自己不熟悉的道路上，与不熟悉的人，做不熟悉的事情。
+
+> 危险编程: 在不熟悉的新硬件，基于不熟悉的新操作系统，使用不熟悉的编程语言，制作不熟悉的软件。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+软件可以没有，但不能没有硬件。
+
+由这句话可以推测出，智力的作用是有限的。
+
+> 一个又聋又哑又瞎又没手脚的计算机，智力再高也没用。就算它身体正常，空无一物，啥可利用的都没有，也没用。(东西是别人的东西，人是别人的人)
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+来，我帮你写一个神级软件工程师简历，如果你用它找不到工作，说明别人不缺人:
+
+1. 会制作x86计算机、手机，且保证每个芯片与组件都是自己制造的。
+
+2. 会制作操作系统，如linux与windows，且擅长虚拟系统技术。
+
+3. 会制作编程语言。类似c或者python。
+
+4. 会制作社交平台。保证人们的互联互通。
+
+5. 能维修上述提到的一切项目。
+
+6. 不接受关黑牢。不想当奴隶。不想被抓壮丁。
+
+> 会那么多东西，命都保不住。你学的到底是有用的，还是没用的？你可以浅显的理解为我在说你生产不出粮食，会饿死。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+从生活实用性的角度来看，黑白两色的基于纯文字的程序就能满足需求了。(最多加个素描线条图片显示的功能)
+
+为啥人们还是不断追求新东西呢？因为他们喜新厌旧、贪得无厌…
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+网络论坛的"要下载，先回复"机制，不好。东西都没下载，有啥好说的？
+
+应该是"要下载新帖子内容，先去上一个下载过的帖子里评论下"。这样才能得到最真实有用的用户反馈。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+在做文件资源管理的时候，没准儿你可以用这个格式:
+
+1. 年份，1998或者2025之类的数字
+
+2. 评分，0到100的数字，0代表最实用，100代表最无用
+
+3. 难易程度，0到100，0代表实现方法最简单或者制作成本最低，100代表非常难制作
+
+4. 真实文件名
+
+一个例子: 1998_0_100_yingshaoxo_diary.txt
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+我还是在想图片随机生成的算法，突然意识到比想象中简单:
+
+1. 假设我想生成"青蛙windows图标"，程序查数据库，得到了原windows图标，是由红绿蓝黄4个方块组成的，我既有子方块的位置信息，又有它们的描述，比如"红方块"。
+
+2. 为了随机生成这张新的"青蛙windows图标"，程序随机抽取某些子图片，根据它们的描述，寻找类似的其它子图片。比如"红青蛙"类似于"红方块"，所以程序用了一张"红青蛙图片"代替了"红方块"图片。
+
+3. 很明显，自动生成完成了。一张合理的新图片诞生了。就算windows图标变成4种颜色的青蛙，我也不会觉得奇怪。
+
+根据子图片的描述词，寻找类似的透明子图片，做替换，从而生成新图片。这么简单的事情，你怎么会想不到呢？
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+有一个简单的方法来收集相似的句子，或者说sentence that split by punctuation:
+
+每句话都让100个人用自己的方式再描述一遍。
+
+> 假设你的程序有500个命令。那么用这种方法，可以使得别人能用自然语言调用你的程序function。你的程序可以深度学习5万句话、听懂5万句话。很像一个真人了。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+做了一个奇怪的梦，梦里我的老爸智商很低，于是写下如下文字:
+
+
+防火墙不光在虚拟世界有用，真实世界也有用。我们再给它一个名字: 安全隔离墙。
+
+假设你爸爸是个智障，但他又喜欢乱弹恋爱，无论是在网上还是在线下，所以经常被人骗，不光损失钱财，还有可能搭上性命。
+
+我作为后代，到底管不管？管，代表剥夺老人的自由，提前侵吞老人的钱财。不管，不光老人的钱没了，还可能威胁我的安全，让我的钱与秘密泄露。
+
+所以这时候隔离墙、防火墙，就有意义了。我的钱与隐私与秘密不应该让我爸知道。我的电脑也不能给我爸用。最好让老爸单独住他自己的旧房子。平时零花钱也不能给太多。
+
+如果老爸有一天因为"沾花惹草"、"风流成性"而人财两空、死亡。那是老爸的自由，我管不了。毕竟作为后代，我怎么能插手老爸的婚姻与爱情呢？
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+单芯硬电线，好于其它软电线，更坚固耐用，接头处能承受更大的电流。
+
+还可以用来当小钢筋，捆束稳固其它物品。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+我深入思考了下python，我觉得它比c慢30倍的主要原因，是它只用了5%的cpu。如果你开20个python进程，和开1个c程序用的cpu运算量是一样的。
+
+你可以用python跑一个死循环，最高只会占用5%的cpu。但用c跑一个死循环，会占用100%。
+
+在我2025年的笔记本电脑上，python处理1920*1080个像素需要0.2秒。但把像素分为4个进程处理，只需要0.05秒。
+
+我的主要意思就是，python的低速问题可以用多进程解决。
+
+另外，不建议用最新版python，每个进程都用200MB，岂不是很快就内存耗尽了？python2.7每个进程才占用2.4MB。
+
+> 根据我的测试，python2.7的处理速度总是比python3.10快0.2倍。说明越新的编程软件，速度越慢，size越大。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+你能用的无线电，都是spying wireless network?
+
+你能用的电脑，都是spying computer?
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+同样都是存储一张1920x1080的背景图片，别人只需要存储"creat_image(1080, 1920)"这句话。而你要存储207万个像素字符。你的脑子是要傻一点吗？
+
+0.001KB 对战 20MB。体积膨胀2千万倍。存储占用增加2千万倍。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+基础生活物资，看起来廉价且到处都是。关键时刻你找不到还真是要了命。
+
+食物、水源、空气、燃料、电力、基础原材料、布料、药品、电子零器件。哪一个不是要命的生意？
+
+看起来制作CPU、存储器、操作系统、屏幕、键盘、编程语言不挣钱，实际上你的想法是错的。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+我仔细看了看贝塞尔曲线算法(bezier_curve_line)。发现我看不懂。最多能对其几何意义有点感觉。
+
+这种线段平滑算法，可以有效解决输入设备采样率不高导致的线段不平滑问题。本来你用笔能画出一根完美弯曲的曲线，但用鼠标画出来却是很难看、离散的线段。
+
+根据我的测试，这种鼠标采样率低、输入点不连续的问题，可以通过使用更高端的输入设备解决，如使用 电子手绘板。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+我想了想40年后有哪几个编程语言还存在，根据之前40年的经验，只有自然语言纯文本还在，并且只能是纯英文。
+
+代码里但凡用了"import"的，全部挂掉。只有基于单文件的基本算法和逻辑演示代码仍然存在。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+根据我多年的编程经验，喜欢import别人package的人都是新手。而真正的高手，都是自己写自己的模块，或者都不用模块，亲手写一两个function解决别人整个模块才能解决的问题。
+
+根据这个经验和直觉，我们可以推测出，在硬件电路设计中，喜欢用别人模块的人，都是新手。比如动不动就用别人的一个芯片来管理电源、动不动就用别人的一个芯片来处理声音(蓝牙通讯)、动不动就用别人的一个芯片来处理显示(显卡)、动不动就用别人的CPU芯片来处理数据计算。
+
+真正的高手，解决问题，就是一个单电路板，上面一个别人的芯片都没有。如果计算复杂，则密密麻麻都是贴片电子零件。这种零依赖的电子电路设计，足以凸显出作者40年电子工程设计经验。(这种人才一般是富豪包养的实验室精英)
+
+> 我给一个设计经验: 迸发式设计，把这个单电路板分成10个子板块，每个板块都基于上一个板块的功能，继续深度处理数据。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+我问一个兄弟2人世界好不好，他说别抱太高期望，就是多个人吃喝，有关心而已。
+
+看起来为了尽可能性福，不能一直2人世界，需要和伴侣约好，一周只见1次面。这样才能保证每次都新鲜，每次都热情满满！
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+我开始在幻想我自制的计算机处理器长什么样子:
+
+1. 一个单电路板分为30个子模块。底部是一个整板，用于上面的可拆卸模块板的固定，拧螺丝固定。
+
+2. 每个子模块都是一个小的电路板，用于处理运算电信号。每个子模块板子间用16根导线连接，分为上下左右，每个子模块板子共有16x4=64根导线接口。
+
+3. 总输入为32根导线的状态机，用于映射x86电脑的指令集，将其转换为电信号。然后电信号在30个子模块间跳转。据说电信号的速度和光速一样快，所以执行速度为0秒，可以忽略不计。
+
+4. 这个处理器系统是和存储系统深度绑定的，它可以直接操作内存、硬盘。而内存里的图像像素数据又可以直接展示在屏幕上，所以整个处理器可以直接存取数据、输出显示。
+
+5. 因为整个系统完全没有使用晶振时钟，所以不存在速度上限。其运行速度取决于你的cpu指令发送有多快。也就是说，这个电脑的速度和电的速度一样，无限趋近于光速。
+
+> 为了方便调试，键盘的输入直接通过一个小电路转为32根导线的状态，输入给该计算机处理器。在不做任何处理的情况下，默认为一个打印机，输入什么字母，显示器显示什么字母。
+
+> 整个电路板模拟的cpu指令集，可以被简单的理解为 mini_python_on_cpu_instruction。
+
+> 这种电路还非常节能，没信号处理时，相当于电路板上没有电，也就是说随时可以处于休眠状态，0功耗。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+我记得计算机一开始被创造出来，除了娱乐功能(倒放视频音乐)，就是主打的一个稳定性: 24小时工作，处理几十万件事情不累且精准。
+
+但自从高级人工智能出现后，一切好像反而不稳定了。别说几十万次的回复、操作都一样了，就是问它同一个问题第二遍，它的回复就不一样。这样的话，哪儿有什么稳定性呢？
+
+> 新的智能系统还不如老式计算机稳定可靠。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+为什么你都是程序员了，每天却还得浏览各种网站看信息？那些东西你不是都能自己制作吗？
+
+从上面这两个问句可以看出，程序不是最重要的，数据才是。所以那些专门开设平台来收集数据的人，真的是又有钱又聪明！
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+赚点儿小钱之如何逼迫自己成为销售:
+
+1. 不生产产品
+
+2. 倒卖别人的产品
+
+3. 卖一个产品，购买并转发一个产品
+
+> 每个月只需要赚10元服务器费用。
+
+> 后期需要自己搞生产，不然没硬实力。
+
+> The best way of getting started on something is get started on something.
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+Replace similar sentences or words to get new article from old article. Or simply use this tech to simplify articles:
+
+```
+[
+    ["no matter what you say", "no matter how you say", "no matter what you think", "no matter how you look"],
+    ["it is right", "it is correct"],
+    ["it could be wrong", "it could be un_correct", "it may not right"],
+    ["我觉得", "我认为", "我的看法是"],
+]
+```
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+什么样的通信网络是可靠的？一个坏人、说谎的人都没有的网络。
+
+首先，这个网络必须是封闭式网络，比如用电线连接成的网络。其次，使用这个网络的人必须是通过邀请制进来的。先从物理上就确保没有坏人。
+
+然后，一旦该用户有异常行为，比如群发垃圾邮件，就需要排查哪根网线不对劲。通常来说，路由器知道是哪台物理设备发出的信息，有记录。该异常子网络被列为高危网络，切断网络，进行整改。
+
+这个策略的优越性在于，信息从哪个地区的网线发出来，那个地区就有义务确保所发信息的真实性。
+
+> 另一方面，它这个网络的各个计算机的防火墙程序，主要是用来过滤丢弃数据的，而不是阻隔ip。
+
+> 想象一下，各个小镇一根单网线连接到市级单位的路由器，各个市级单位又通过一根单网线连接到省级单位的路由器。一个简单可靠的网络就这样形成了，不求人。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+刚刚测了下tcp协议，觉得那是傻逼写的。虚拟机里的server竟然一次只能返回2048个bytes，但我要返回一个10MB的文件。(就算server在外面，tcp一次也只能返回64KB，显然不够用)
+
+http是基于tcp的协议，它是先给出的content_length，再分段传文件。我觉得这种方式很傻。因为有时候url就有10MB长，这种情况下，http仍然无法正常传输数据。
+
+正确的方法仍然是设置开头与结尾的特殊字符串，中间转译。这是最稳的，一次传几个GB都可以，然后用滑动窗口效验hash，哪里错了，重传哪里。
+
+> 你肯定不会相信我yinshaxo会有颠覆整个世界通信系统的想法。没准儿我是对的！世界上所有其他人都是错的！
+
+> 那个tcp_server在接收完数据并回复数据后，如果不断开连接，客户端就会永久性卡死。问题就在这儿，如果网络中途中断，客户端也会永久性卡死。客户端不知道tcp_server是不是断开了连接。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+假设给人们的计算机，运算速度很快，存储很大，接近2个TB，但通信速度只有1KB一秒。会发生什么？
+
+人们会通过传输纯文本来看电视，纯文本是剧本+台词。会被计算机实时转化为3D模型的动作+TTS的声音。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+你说计算机怎么能知道前方的两条白线是不是道路的边界呢？拿东西测测就可以了。能排除90%以上的干扰。
+
+就和人一样，前面道路能不能走，拿拐杖测一测就知道了。
+
+> 没准之前的机器学习，失败就失败在它们只依靠一个单一的不精准的摄像头做事情。实际上人是有多种传感器，还有手有脚。前方是不是人，不光可以用看的，还可以问一问。"喂！前面那个人，让一下！"
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+我有一个最简单的图片压缩算法:
+
+1. 准备一个1GB的图片数据库，里面有世界上大多数事物的图像，利用分层抽样得到。
+
+2. 把那1GB的图片数据库变为"ID到5*5像素的dict"。于是你可以通过任意5*5像素图片得到一个ID。或者通过一个ID数字得到5*5像素图片。
+
+3. 现在任意图片都可以通过那个dict变成一串数字纯文本。体积被压缩了25倍。
+
+> 有些人更牛逼，人工筛选了一些有代表性的grba value，来批量代替任何图片里的像素，先简化一波。它们筛选的依据是，让数据库里每张图片，按相似度优先的原则替换成白名单里的代表性像素后，看起来仍然精准。它们是一张一张图片对比的。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+最简单的图片高清算法:
+
+1. 直接放大图片6倍，通常是模糊的，因为用了高斯模糊。
+
+2. 基于这6倍图片，取12x12方格子图片，对比相邻哪些12x12方格和它自己相似，全部替换为一个平均颜色。(也可能是6*6的子图片)
+
+3. 等比抽样缩小6倍，不增加新像素，反而减少6倍无用垃圾像素。超高清图片到手。
+
+> 这个算法最强的地方在于，它通过12*12子图片屏蔽了单一像素的干扰。绿色就是绿色，就算多点黄色阳光，也是绿色。同时它不会因为用了sub_image而显得模糊，因为它提前放大了6倍。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+某公司在2013年就研发出来了不发热的x86 cpu，为啥还搞arm?
+
+Intel® Celeron® Processor J1900
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+有vim和没有vim，感觉完全不一样，文本输入效率提高了10倍。
+
+用了浏览器vim后，感觉操作界面没有vim简直难受，明明用键盘可以快速解决问题的，非要依赖鼠标。
+
+但想要全局vim，要不你得自己制作操作系统，要不你得用回20年前的老操作系统。因为新的操作系统没有全局截图、没有全局按键监听捕获，也不会泄露所有控件的位置。(它防止的就是你搞自动化，是在降低你能力，而不是增强你的能力)
+
+> 10倍效率提升的基础上，再用上自然语言编程，再提高10倍效率。一共10*10=100倍效率提升。就算你不是数字人，也变成了比普通人牛逼100倍的存在。可惜你家不开计算机厂、也搞不了操作系统，只能任人调戏。昨天才搞好的程序，下个月就用不了了。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+我给你讲个笑话，2025年了，android studio或者visual studio之类的高级IDE，体积高达2GB以上，竟然没有核心库function的说明书。当你import socket之类的module，使用socket.receive()，你是看不到离线的说明书、说明文档的。
+
+但是易语言，在2005年，才30MB，就有每个function的说明书了，鼠标指到function名字，按F1就有了。
+
+说明，c++、java、python之类的编程语言，对用户的友好程度，远不如易语言。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+最简单的图片高清算法之第二个方案:
+
+1. 转化图片为hsv色域。
+
+2. 直接取2*2方格的平均值，缩放图片。连续缩放4次。
+
+3. loop缩放图片的像素，替换相似像素为一个共同的像素。
+
+4. 从缩放图片中提取500个关键像素色彩。loop原size图片，让每个像素都从关键像素色彩里选一个最相似的。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+你仔细想想，那些黑工厂、黑煤窑、黑砖窑里的奴隶工人，为什么会被恶意殴打、被打得头破血流却无法逃脱？
+
+主要还是"弱肉强食原则"在起作用。那些工人如果在本地就能养家糊口，有足够的粮食与资源生活、创造，那他们就不需要去外地受人欺负了。
+
+到后期，那些坏人不光欺负外地人奴隶，还欺负本地弱小农民、贫民。10个强拆队，9个背后的老板不干净，曾经参与过大量虐待、胁迫工人的事件。以至于思想上无法无天，觉得没人能管得住它，所以连本地人也一起欺负，一言不合就暴力逼迫。
+
+这些有钱的恶人，后期还经常和当官的家族联姻，使得黑白两道通吃，无法无天，打压这个、打压那个，不管是线上还是线下。线上则是胁迫平台，404用户，线下则是人身威胁，抓捕关黑牢，酷刑死亡。
+
+> 可能这些坏人在自身经历中就学到了一件事情: "这些贫民都太弱了，一打就服从，完全不会反抗。和牲畜类似。"。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+不要问市场需要什么，问你自己需要什么
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+其实普通图片转svg也是一个市场，尤其是针对动漫、动画，更是如此。
+
+什么意思？假设你用无数个不同size、不同旋转角度、不同色彩的长方形、三角形、圆形去拼凑出一个动漫封面，很显然，你那堆纯文本参数的线条、形状，存储占用会小于 几百万像素的图片数据。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+我在想如何how to给自己做一个do_or_not_do_list，给自己搞一个buy_or_not_buy_list。这些表格的主要作用，是记录并计算做某件事的好处是什么，坏处是什么。买某个东西的好处是什么，坏处是什么。
+
+你可以用普通笔记本与笔来做这个记录与计算。你也可以用计算机来做这个事情。但如果你用计算机来做这个事情，你会发现市面上没有现成的软件帮你做这个事情，除了记事本。
+
+继续一思考，我发现你虽然买了个计算力很强的计算机，但只用了它的存储功能。存记忆，取记忆。文本、声音、图像。
+
+换句话说，计算机有99%的功能，你只用了1%的功能。(现代计算机还把你的自由通信功能给取消了，你必须实名才能用它那个网络)
+
+> 要想让你手上的垃圾计算机变得实用，你要干两个事情: 1.让它能超长待机。2.让你的手机和电脑能在离线情况下同步至少一个文件夹的数据。3.你的电脑和手机要一直有一个你自己写的程序保持运行。该程序用来存取记忆、进行计算。你可以先把它理解为数字人助理。
+
+> 再总结下人们怎么用的电脑: 搜索资料、记笔记、查笔记、听音乐、看视频、聊天通信、远控继电器。没了。只用了计算机千分之一的功能。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+其实连不连得上网不重要，重要的是几百个、几千个男男女女好朋友，每个人花一两天把自己最擅长的服务器程序写出来，分享给彼此。这样的话，即使没有外部网络，也开心。
+
+长久如此，很快你就会发现，我们这几百个小朋友，竟然创造了一整个稳定的局域网网络，里面什么程序都有、什么平台都有。

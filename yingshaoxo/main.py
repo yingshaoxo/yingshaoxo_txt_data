@@ -318,9 +318,6 @@ def ask_question(input_text, id_):
         if get_words_length(input_text) == 1:
             return ask_language_single_word_dict(input_text)
         else:
-            return ask_me_question(input_text, id_)
-            #return get_memory(input_text, id_)
-            # we only do the memory test now
             if is_it_a_sure_thing_exists_in_this_world(input_text):
                 return ask_wiki_cyclopedia(input_text)
             elif is_it_a_virtual_thing_that_has_no_sure_answer(input_text):
@@ -389,3 +386,5 @@ while True:
     except KeyboardInterrupt:
         print("\n")
         continue
+
+# todo: add "search it again"
