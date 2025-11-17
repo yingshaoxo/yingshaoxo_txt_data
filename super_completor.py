@@ -33,7 +33,7 @@ class Yingshaoxo_Text_Completor():
         while len(input_text) > 0:
             parts = source_text.split(input_text)
             if len(parts) >= 2:
-                return parts[1][:how_many_character_you_want]
+                return input_text.join(parts[1:])[:how_many_character_you_want]
             else:
                 input_text = input_text[1:]
         return ""

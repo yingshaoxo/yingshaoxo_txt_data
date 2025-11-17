@@ -140,50 +140,54 @@ def ask_other_ai(input_text):
 
 def what_is_the_task(input_text, id_):
     input_text = input_text.lower()
+    all_in_all = str(input_text)
+    for input_text in all_in_all.split("\n"):
+        input_text = input_text.strip()
+        if len(input_text) == 0:
+            continue
+        if ("你" in input_text) and ("？" in input_text):
+            found_index = input_text.find("你")
+            found_index2 = input_text.find("？", found_index)
+            related_to_me = input_text[found_index:found_index2+1]
+            input_text = related_to_me
+            input_text = question_sentence_to_normal_sentence(input_text)
+            return "get memory", input_text.strip()
 
-    if ("你" in input_text) and ("？" in input_text):
-        found_index = input_text.find("你")
-        found_index2 = input_text.find("？", found_index)
-        related_to_me = input_text[found_index:found_index2+1]
-        input_text = related_to_me
-        input_text = question_sentence_to_normal_sentence(input_text)
-        return "get memory", input_text.strip()
+        if ("you" in input_text) and ("?" in input_text):
+            found_index = input_text.find("you")
+            found_index2 = input_text.find("?", found_index)
+            related_to_me = input_text[found_index:found_index2+1]
+            input_text = related_to_me
+            input_text = question_sentence_to_normal_sentence(input_text)
+            return "get memory", input_text.strip()
 
-    if ("you" in input_text) and ("?" in input_text):
-        found_index = input_text.find("you")
-        found_index2 = input_text.find("?", found_index)
-        related_to_me = input_text[found_index:found_index2+1]
-        input_text = related_to_me
-        input_text = question_sentence_to_normal_sentence(input_text)
-        return "get memory", input_text.strip()
+        if ("what " in input_text) and ("?" in input_text):
+            found_index = input_text.find("what ")
+            found_index2 = input_text.find("?", found_index)
+            the_question = input_text[found_index:found_index2+1]
+            input_text = question_sentence_to_normal_sentence(input_text)
+            return "get memory", input_text.strip()
 
-    if ("what " in input_text) and ("?" in input_text):
-        found_index = input_text.find("what ")
-        found_index2 = input_text.find("?", found_index)
-        the_question = input_text[found_index:found_index2+1]
-        input_text = question_sentence_to_normal_sentence(input_text)
-        return "get memory", input_text.strip()
-
-    if ("你" in input_text) and ("。" in input_text):
-        found_index = input_text.find("你")
-        found_index2 = input_text.find("。", found_index)
-        related_to_me = input_text[found_index:found_index2+1]
-        input_text = related_to_me
-        return "remember a thing", input_text.strip()
-
-    if (("you " in input_text) or "your " in input_text) and ("." in input_text):
-        if "you " in input_text:
-            found_index = input_text.find("you ")
-            found_index2 = input_text.find(".", found_index)
+        if ("你" in input_text) and ("。" in input_text):
+            found_index = input_text.find("你")
+            found_index2 = input_text.find("。", found_index)
             related_to_me = input_text[found_index:found_index2+1]
             input_text = related_to_me
             return "remember a thing", input_text.strip()
-        if "your " in input_text:
-            found_index = input_text.find("your ")
-            found_index2 = input_text.find(".", found_index)
-            related_to_me = input_text[found_index:found_index2+1]
-            input_text = related_to_me
-            return "remember a thing", input_text.strip()
+
+        if (("you " in input_text) or "your " in input_text) and ("." in input_text):
+            if "you " in input_text:
+                found_index = input_text.find("you ")
+                found_index2 = input_text.find(".", found_index)
+                related_to_me = input_text[found_index:found_index2+1]
+                input_text = related_to_me
+                return "remember a thing", input_text.strip()
+            if "your " in input_text:
+                found_index = input_text.find("your ")
+                found_index2 = input_text.find(".", found_index)
+                related_to_me = input_text[found_index:found_index2+1]
+                input_text = related_to_me
+                return "remember a thing", input_text.strip()
 
     return "unknown", input_text
 
@@ -208,8 +212,12 @@ def finish_a_task(task_name, input_text, id_):
         print(make_indents_before_every_lines("task name: " + task_name + "\n" + "input_text: " + input_text, 4, as_code_block=True))
 
     if task_name == "remember a thing":
-        remember(input_text, "just remember.", id_)
-        return "remembered: " + replace_your_to_my(input_text)
+        old_memory = get_memory_as_pure_string(input_text, include_diary=False)
+        if input_text not in old_memory:
+            remember(input_text, "just remember.", id_, force=True)
+            return "remembered: " + replace_your_to_my(input_text)
+        else:
+            return "not remembered because I have it in memory: " + replace_your_to_my(input_text)
     elif task_name == "get memory":
         response = get_memory_as_pure_string(input_text, include_diary=True)
         one_sentence = yingshaoxo_text_completor.get_next_text_by_pure_text(response, input_text).strip().split("\n")[0].strip()
@@ -241,15 +249,17 @@ def summarize(input_text):
         else:
             return response
 
-def remember(input_text, notes, id_):
+def remember(input_text, notes, id_, force=False):
     if input_text == "":
         return
-    if len(input_text.strip()) < 5:
-        return
+    #if len(input_text.strip()) < 5:
+    #    return
 
     temporary_memory = magic_splitor + "#" + id_ + ": \n" + input_text
-    if is_it_in_memory(temporary_memory, id_) == True:
-        return
+
+    if force == False:
+        if is_it_in_memory(temporary_memory, id_) == True:
+            return
 
     with open(temporary_memory_file_path, "a", encoding="utf-8") as f:
         f.write(temporary_memory)
