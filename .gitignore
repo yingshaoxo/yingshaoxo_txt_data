@@ -1,4 +1,4 @@
-test_dict/*
+test_dict/
 
 *.swp
 __pycache__/

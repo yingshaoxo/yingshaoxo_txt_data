@@ -180,7 +180,7 @@ def comment(input_text):
     if response.startswith("error:"):
         return ""
     else:
-        sentence_and_comment = "user: " + input_text + "\n\n" + "me: " + response.strip()
+        sentence_and_comment = "user: " + input_text + "\n\n" + "bot: " + response.strip()
         add_last_chat_message(sentence_and_comment)
         return response
 
@@ -202,7 +202,7 @@ def get_memory(input_text, id_, should_it_inject_old_diary_memory=False):
     task_description += core_request
 
     response = ask_other_ai(task_description).lower()
-    question_and_answer_string = "user: " + input_text + "\n\n" + "me: " + response.strip()
+    question_and_answer_string = "user: " + input_text + "\n\n" + "bot: " + response.strip()
     add_last_chat_message(question_and_answer_string)
 
     return response
@@ -315,6 +315,7 @@ def ask_question(input_text, id_):
         else:
             return ask_me_question(input_text, id_)
     else:
+        return ask_me_question(input_text, id_)
         if get_words_length(input_text) == 1:
             return ask_language_single_word_dict(input_text)
         else:
