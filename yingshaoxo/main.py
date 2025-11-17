@@ -1,3 +1,4 @@
+# todo: need to find out why it will stuck at some times
 import os
 import inspect
 import random
@@ -64,6 +65,7 @@ def get_memory_as_pure_string(input_text, include_diary=False):
         memory_piece_list = get_memory_piece_list_from_txt_file(yingshaoxo_diary_file_path, new_input_text, accurate=True, wrong_limit_ratio=0.1)
     if len(memory_piece_list) > 0:
         one_diary_memory_piece = random.choice(memory_piece_list)
+        one_diary_memory_piece = one_diary_memory_piece[:1024]
     else:
         one_diary_memory_piece = 'None'
 
@@ -76,15 +78,17 @@ def get_memory_as_pure_string(input_text, include_diary=False):
     else:
         one_normal_memory_piece = 'None'
 
-    if include_diary == True:
-        final_memory = "In yingshaoxo diary (yingshaoxo is a teacher, we use it as knowledge base):\n" + make_indents_before_every_lines(one_diary_memory_piece.strip(), 4, as_code_block=True) + "\n\n" + "In my recent memory:\n" + make_indents_before_every_lines(one_normal_memory_piece.strip(), 4, as_code_block=True)
-    else:
-        final_memory = "In recent memory:\n" + make_indents_before_every_lines(one_normal_memory_piece.strip(), 4, as_code_block=True)
+    final_memory = ""
+
+    final_memory += "In recent memory:\n" + make_indents_before_every_lines(one_normal_memory_piece.strip(), 4, as_code_block=True)
 
     last_message = get_last_chat_message()
     if last_message == "":
         last_message = "None"
     final_memory += "\n\n" + "Last chat message:\n" + make_indents_before_every_lines(last_message, 4, as_code_block=True)
+
+    if include_diary == True:
+        final_memory += "\n\n" + "In yingshaoxo diary (yingshaoxo is a teacher, we use it as knowledge base):\n" + make_indents_before_every_lines(one_diary_memory_piece.strip(), 4, as_code_block=True)
 
     final_memory = final_memory.replace(magic_splitor, "")
     return final_memory
@@ -137,35 +141,49 @@ def ask_other_ai(input_text):
 def what_is_the_task(input_text, id_):
     input_text = input_text.lower()
 
-    if ("记住你的" in input_text) and ("？" not in input_text):
-        found_index = input_text.find("记住你的")
-        property_ = input_text[found_index + len("记住你的"):]
-        property_ = input_text.split("\n")[0]
-        input_text = "我的" + property_
-        return "remember a thing", "我的" + input_text.strip()
-
-    if ("你的" in input_text) and ("？" in input_text):
-        found_index = input_text.find("你的")
+    if ("你" in input_text) and ("？" in input_text):
+        found_index = input_text.find("你")
         found_index2 = input_text.find("？", found_index)
-        property_ = input_text[found_index + len("你的"):]
-        property_ = property_[:found_index2-found_index]
-        input_text = "我的" + property_
+        related_to_me = input_text[found_index:found_index2+1]
+        input_text = related_to_me
+        input_text = question_sentence_to_normal_sentence(input_text)
         return "get memory", input_text.strip()
 
-    if ("remember " in input_text) and ("?" not in input_text):
-        found_index = input_text.find("remember ")
-        input_text = input_text[found_index + len("remember "):]
-        input_text = input_text.split("\n")[0]
-        input_text = replace_your_to_my(input_text)
-        return "remember a thing", input_text.strip()
+    if ("you" in input_text) and ("?" in input_text):
+        found_index = input_text.find("you")
+        found_index2 = input_text.find("?", found_index)
+        related_to_me = input_text[found_index:found_index2+1]
+        input_text = related_to_me
+        input_text = question_sentence_to_normal_sentence(input_text)
+        return "get memory", input_text.strip()
 
     if ("what " in input_text) and ("?" in input_text):
         found_index = input_text.find("what ")
         found_index2 = input_text.find("?", found_index)
         the_question = input_text[found_index:found_index2+1]
-        input_text = replace_your_to_my(the_question)
         input_text = question_sentence_to_normal_sentence(input_text)
         return "get memory", input_text.strip()
+
+    if ("你" in input_text) and ("。" in input_text):
+        found_index = input_text.find("你")
+        found_index2 = input_text.find("。", found_index)
+        related_to_me = input_text[found_index:found_index2+1]
+        input_text = related_to_me
+        return "remember a thing", input_text.strip()
+
+    if (("you " in input_text) or "your " in input_text) and ("." in input_text):
+        if "you " in input_text:
+            found_index = input_text.find("you ")
+            found_index2 = input_text.find(".", found_index)
+            related_to_me = input_text[found_index:found_index2+1]
+            input_text = related_to_me
+            return "remember a thing", input_text.strip()
+        if "your " in input_text:
+            found_index = input_text.find("your ")
+            found_index2 = input_text.find(".", found_index)
+            related_to_me = input_text[found_index:found_index2+1]
+            input_text = related_to_me
+            return "remember a thing", input_text.strip()
 
     return "unknown", input_text
 
@@ -178,10 +196,24 @@ def finish_a_task(task_name, input_text, id_):
 
     if task_name == "remember a thing":
         remember(input_text, "just remember.", id_)
-        return "remembered: " + input_text
+        return "remembered: " + replace_your_to_my(input_text)
+    elif task_name == "get memory":
+        response = get_memory_
+
+def finish_a_task(task_name, input_text, id_):
+    if len(input_text) == 0:
+        return "I don't know."
+
+    if debug == 1:
+        print(make_indents_before_every_lines("task name: " + task_name + "\n" + "input_text: " + input_text, 4, as_code_block=True))
+
+    if task_name == "remember a thing":
+        remember(input_text, "just remember.", id_)
+        return "remembered: " + replace_your_to_my(input_text)
     elif task_name == "get memory":
         response = get_memory_as_pure_string(input_text, include_diary=True)
-        return response
+        one_sentence = yingshaoxo_text_completor.get_next_text_by_pure_text(response, input_text).strip().split("\n")[0].strip()
+        return one_sentence + "\n\n\n" + response
     elif task_name == "unknown":
         response = "I don't know what you said."
         response += "\n\n" + get_memory_as_pure_string(input_text, include_diary=True)
@@ -401,7 +433,7 @@ def a_normal_sentence(input_text, id_):
             remember(summary, "the feeling that guy talks. it is about me.", id_)
 
         a_comment = comment(summary)
-        return "OK, I got your meaning:\n" + summary + "\n\n" + a_comment
+        return "OK, I got your meaning:\n" + replace_your_to_my(summary) + "\n\n" + a_comment
     else:
         # it_is_a_sentence_that_talks_others
         if is_it_a_sentence_that_talks_user_itself(input_text, id_):
@@ -410,7 +442,7 @@ def a_normal_sentence(input_text, id_):
                 if does_it_has_values(summary):
                     remember(summary, "the feeling that guy talks. it is about itself.", id_)
                 a_comment = comment(summary)
-                return "Got it, you said:\n" + summary + "\n\n" + a_comment
+                return "Got it, you said:\n" + replace_your_to_my(summary) + "\n\n" + a_comment
             else:
                 return "I think it is not true."
         else:

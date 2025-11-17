@@ -280,4 +280,14 @@ def make_indents_before_every_lines(input_text, indent=4, as_code_block=False):
 def replace_your_to_my(input_text):
     input_text = input_text.replace("your", "my")
     input_text = input_text.replace("you", "i")
+    input_text = input_text.replace("你", "我")
     return input_text
+
+def get_next_string(source_text, input_text):
+    while len(input_text) > 0:
+        parts = source_text.split(input_text)
+        if len(parts) >= 2:
+            return parts[1]
+        else:
+            input_text = input_text[1:]
+    return ""
