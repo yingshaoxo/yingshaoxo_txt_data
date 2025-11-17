@@ -276,3 +276,8 @@ def make_indents_before_every_lines(input_text, indent=4, as_code_block=False):
     for index in range(len(lines)):
         lines[index] = " "*indent + lines[index]
     return "\n".join(lines)
+
+def replace_your_to_my(input_text):
+    input_text = input_text.replace("your", "my")
+    input_text = input_text.replace("you", "i")
+    return input_text

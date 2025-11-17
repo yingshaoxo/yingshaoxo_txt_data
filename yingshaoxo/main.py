@@ -119,17 +119,81 @@ def ask_other_ai(input_text):
     else:
         #input_text += "\n" + "#no other explain needed, just return the new data"
         pass
-    if debug == 1:
-        print(make_indents_before_every_lines("Ask other ai:\n" + make_indents_before_every_lines(input_text, 4, as_code_block=True), 4, as_code_block=True))
     try:
         response = ask_llama(input_text)
         response = response.split("\n")
         response = response[:6]
         response = "\n".join(response)
+
+        if debug == 1:
+            print(make_indents_before_every_lines("Ask other ai:\n" + make_indents_before_every_lines(input_text, 4, as_code_block=True), 4, as_code_block=True))
+
         return response
     except Exception as e:
+        return ask_yingshaoxo_ai(input_text)
+        #response = get_memory_as_pure_string(input_text, include_diary=True)
+        #return response + "\n\n" + "I don't know."
+
+def what_is_the_task(input_text, id_):
+    input_text = input_text.lower()
+
+    if ("记住你的" in input_text) and ("？" not in input_text):
+        found_index = input_text.find("记住你的")
+        property_ = input_text[found_index + len("记住你的"):]
+        property_ = input_text.split("\n")[0]
+        input_text = "我的" + property_
+        return "remember a thing", "我的" + input_text.strip()
+
+    if ("你的" in input_text) and ("？" in input_text):
+        found_index = input_text.find("你的")
+        found_index2 = input_text.find("？", found_index)
+        property_ = input_text[found_index + len("你的"):]
+        property_ = property_[:found_index2-found_index]
+        input_text = "我的" + property_
+        return "get memory", input_text.strip()
+
+    if ("remember " in input_text) and ("?" not in input_text):
+        found_index = input_text.find("remember ")
+        input_text = input_text[found_index + len("remember "):]
+        input_text = input_text.split("\n")[0]
+        input_text = replace_your_to_my(input_text)
+        return "remember a thing", input_text.strip()
+
+    if ("what " in input_text) and ("?" in input_text):
+        found_index = input_text.find("what ")
+        found_index2 = input_text.find("?", found_index)
+        the_question = input_text[found_index:found_index2+1]
+        input_text = replace_your_to_my(the_question)
+        input_text = question_sentence_to_normal_sentence(input_text)
+        return "get memory", input_text.strip()
+
+    return "unknown", input_text
+
+def finish_a_task(task_name, input_text, id_):
+    if len(input_text) == 0:
+        return "I don't know."
+
+    if debug == 1:
+        print(make_indents_before_every_lines("task name: " + task_name + "\n" + "input_text: " + input_text, 4, as_code_block=True))
+
+    if task_name == "remember a thing":
+        remember(input_text, "just remember.", id_)
+        return "remembered: " + input_text
+    elif task_name == "get memory":
         response = get_memory_as_pure_string(input_text, include_diary=True)
-        return response + "\n\n" + "I don't know."
+        return response
+    elif task_name == "unknown":
+        response = "I don't know what you said."
+        response += "\n\n" + get_memory_as_pure_string(input_text, include_diary=True)
+        return response
+
+def ask_yingshaoxo_ai(input_text, id_="user"):
+    if debug == 1:
+        print(make_indents_before_every_lines("Ask yingshaoxo ai:\n" + make_indents_before_every_lines(input_text, 4, as_code_block=True), 4, as_code_block=True))
+
+    the_task, input_text = what_is_the_task(input_text, id_=id_)
+    result = finish_a_task(the_task, input_text, id_=id_)
+    return result
 
 def summarize(input_text):
     input_text = input_text.strip()
