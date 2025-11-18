@@ -188,12 +188,12 @@ def question_sentence_to_normal_sentence(input_text):
         return False
     input_text = input_text.lower()
 
-    begin_half = input_text[:int(len(input_text)/2)]
-    end_half = input_text[-int(len(input_text)/2):]
-    if "什么" in begin_half:
-        input_text = begin_half
-    elif "什么" in end_half:
-        input_text = end_half
+    #begin_half = input_text[:int(len(input_text)/2)]
+    #end_half = input_text[-int(len(input_text)/2):]
+    #if "什么" in begin_half:
+    #    input_text = end_half
+    #elif "什么" in end_half:
+    #    input_text = begin_half
 
     input_text = input_text.replace("?", "")
     input_text = input_text.replace("？", "")

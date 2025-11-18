@@ -14,6 +14,14 @@ with open(temporary_memory_file_path, "a", encoding="utf-8") as f:
     f.write("")
 chat_history_list = []
 
+def get_keywords_list(input_text):
+    if input_text.isascii():
+        keyword_list = yingshaoxo_string.split_string_into_n_char_parts(input_text, 4)
+    else:
+        #keyword_list = yingshaoxo_string.split_string_into_n_char_parts(input_text, 2)
+        keyword_list = list(input_text)
+    return keyword_list
+
 def get_memory_piece_list_from_txt_file(a_txt_path, input_text, accurate=True, wrong_limit_ratio=0.05):
     if accurate == True:
         get_more = False
@@ -28,11 +36,7 @@ def get_memory_piece_list_from_txt_file(a_txt_path, input_text, accurate=True, w
             source_text = f.read()
         text_list = source_text.split(magic_splitor)
 
-        if input_text.isascii():
-            keyword_list = yingshaoxo_string.split_string_into_n_char_parts(input_text, 4)
-        else:
-            #keyword_list = yingshaoxo_string.split_string_into_n_char_parts(input_text, 2)
-            keyword_list = list(input_text)
+        keyword_list = get_keywords_list(input_text)
 
         if get_more == False:
             matched_list = []
@@ -168,6 +172,10 @@ def what_is_the_task(input_text, id_):
             input_text = question_sentence_to_normal_sentence(input_text)
             return "get memory", input_text.strip()
 
+        if (input_text.endswith("?") or input_text.endswith("？")):
+            input_text = question_sentence_to_normal_sentence(input_text)
+            return "get memory", input_text.strip()
+
         if ("你" in input_text) and ("。" in input_text):
             found_index = input_text.find("你")
             found_index2 = input_text.find("。", found_index)
@@ -199,19 +207,6 @@ def finish_a_task(task_name, input_text, id_):
         print(make_indents_before_every_lines("task name: " + task_name + "\n" + "input_text: " + input_text, 4, as_code_block=True))
 
     if task_name == "remember a thing":
-        remember(input_text, "just remember.", id_)
-        return "remembered: " + replace_your_to_my(input_text)
-    elif task_name == "get memory":
-        response = get_memory_
-
-def finish_a_task(task_name, input_text, id_):
-    if len(input_text) == 0:
-        return "I don't know."
-
-    if debug == 1:
-        print(make_indents_before_every_lines("task name: " + task_name + "\n" + "input_text: " + input_text, 4, as_code_block=True))
-
-    if task_name == "remember a thing":
         old_memory = get_memory_as_pure_string(input_text, include_diary=False)
         if input_text not in old_memory:
             remember(input_text, "just remember.", id_, force=True)
@@ -220,8 +215,14 @@ def finish_a_task(task_name, input_text, id_):
             return "not remembered because I have it in memory: " + replace_your_to_my(input_text)
     elif task_name == "get memory":
         response = get_memory_as_pure_string(input_text, include_diary=True)
-        one_sentence = yingshaoxo_text_completor.get_next_text_by_pure_text(response, input_text).strip().split("\n")[0].strip()
-        return one_sentence + "\n\n\n" + response
+        keyword_list = get_keywords_list(input_text)
+        relative_line_list = yingshaoxo_string.get_relate_sub_string_in_long_string(response, keyword_list, wrong_limit_ratio=0.4, window_length=int(len(input_text) * 2), return_number=1, include_only_one_line=False, include_previous_and_next_one_line=False, only_return_one_sentence=True)
+        if len(relative_line_list) != 0:# and len(relative_line_list[0]) >= len(input_text):
+            # find a way to look for before and after 
+            one_sentence = relative_line_list[0].strip()
+        else:
+            one_sentence = yingshaoxo_text_completor.get_next_text_by_pure_text(response, input_text).strip().split("\n")[0].strip()
+        return replace_your_to_my(one_sentence)
     elif task_name == "unknown":
         response = "I don't know what you said."
         response += "\n\n" + get_memory_as_pure_string(input_text, include_diary=True)
@@ -345,6 +346,8 @@ def sentence_pattern_match(pattens, input_text):
 def get_useful_part_of_text(input_text):
     input_text = input_text.lower()
     patterns = [
+        "my xxx.",
+        "you xxx.",
         "what xxx? xxx.",
         "xxx is xxx.",
         "xxx can be used for xxx.",
@@ -368,7 +371,10 @@ def get_useful_part_of_text(input_text):
         "the xxx step for xxx is xxx.",
         "to success in xxx you have to xxx",
 
+        "我xxx",
+        "你xxx",
         "xxx是xxx",
+        "xxx有xxx",
         "因为xxx所以xxx",
         "如果xxx就会xxx",
         "如果xxx就能xxx",
@@ -461,7 +467,10 @@ def a_normal_sentence(input_text, id_):
                 if does_it_has_values(input_text):
                     key_knowledge_list = get_useful_part_of_text(input_text)
                     for one in key_knowledge_list:
-                        remember(one, "knowledge.", id_)
+                        #remember(one, "knowledge.", id_) # not working for unknown reason
+                        old_memory = get_memory_as_pure_string(one, include_diary=False)
+                        if one not in old_memory:
+                            remember(one, "just remember.", id_, force=True)
                     return "The thing you mentioned can be splited into following:\n" + "\n".join(["* "+one for one in key_knowledge_list])
                 else:
                     a_comment = comment(input_text)

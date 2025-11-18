@@ -1673,6 +1673,11 @@ class Yingshaoxo_Text_Completor():
         return text
 
     def get_feature_based_dict_for_completion(self, source_text_list, max_traning_loop=3):
+        """
+        1. key and value pair in dicts. with the stupid method, it simply remembers all data. take a lot of storage but accurate.
+        2. if key is the same, but value is different, it means the key is not enough for get accurate value, we need a longer key.
+        3. it is always good to simplify the key and value first before we process.
+        """
         # you can feed the final data as "{key}{value}" into the char tree, it would be very accurate
         final_dict = {}
         for i in range(1, 20): # complete value should has length from 1 to 20
@@ -2028,184 +2033,10 @@ class Yingshaoxo_Text_Completor():
             'used_percent': round(usage_percent, 2)
         }
 
-    def get_core_difference_dict(self, text_list, target_folder):
-        # useless
-
-        # what is the core difference for two previous_text -> same next char?
-        # they have same chars with same order in previous_text
-        # for example: ["mother, morning", "father, morning"] -> "morning!"
-        # I did it wrong, I should use this tech to help to filter some previous context
-        # previous_6_char -> [["background_common_keyword_in_previous_64_chars", next_1_char], ...]
-        import json
-        from auto_everything.disk import Disk
-        disk = Disk()
-
-        def get_common_char_string(string_1, string_2):
-            if len(string_1) < len(string_2):
-                string_a = string_1
-                string_b = string_2
-            else:
-                string_a = string_2
-                string_b = string_1
-            common_char_string = ""
-            for char in string_a:
-                if char in string_b:
-                    common_char_string += char
-            if len(common_char_string) == 0:
-                return None
-            else:
-                return common_char_string
-
-        the_dict = {}
-        counting = 0
-        for text_part in text_list:
-            try:
-                counting += 1
-                print(counting)
-                length = len(text_part)
-                for temp_level in [1,2,3,4]:
-                    index = 0
-                    while index+temp_level < length:
-                        key_string = text_part[index:index+temp_level]
-                        value_string = text_part[index+temp_level:index+temp_level+temp_level]
-                        if temp_level == 1:
-                            previous_string = text_part[index+temp_level-3:index+temp_level]
-                        elif temp_level == 2:
-                            previous_string = text_part[index+temp_level-9:index+temp_level]
-                        elif temp_level == 3:
-                            previous_string = text_part[index+temp_level-18:index+temp_level]
-                        elif temp_level == 4:
-                            previous_string = text_part[index+temp_level-64:index+temp_level]
-
-                        if key_string not in the_dict:
-                            the_dict[key_string] = [[previous_string, value_string]]
-                        else:
-                            did_changes = False
-                            temp_list = the_dict[key_string]
-                            for temp_index_1, one_list in enumerate(temp_list):
-                                temp_background_common_keywords, next_1_char = one_list
-                                if next_1_char == value_string:
-                                    temp_result = get_common_char_string(previous_string, temp_background_common_keywords)
-                                    if temp_result != None:
-                                        the_dict[key_string][temp_index_1][0] = temp_result
-                                        did_changes = True
-                            if did_changes == False:
-                                exists_in_list = False
-                                for one_list in temp_list:
-                                    _, next_1_char = one_list
-                                    if next_1_char == value_string:
-                                        exists_in_list = True
-                                        break
-                                if exists_in_list == False:
-                                    the_dict[key_string].append([previous_string, value_string])
-                        index += 1
-            except KeyboardInterrupt:
-                break
-
-        print("in data saving...")
-        disk.create_a_folder(target_folder)
-        with open(disk.join_paths(target_folder, "core_difference_dict.json"), "w") as f:
-            f.write(json.dumps(the_dict, indent=4, ensure_ascii=False))
-        print("core_difference_dict generated.")
-
-    def use_core_difference_dict_to_get_next_text(self, store_dict, core_difference_dict_folder, input_text, how_many_character_you_want=256, window_length=64, previous_text_length=2):
-        # useless
-        if len(input_text) == 0:
-            return ""
-
-        if "core_difference_dict" in store_dict:
-            core_difference_dict = store_dict["core_difference_dict"]
-        else:
-            from auto_everything.disk import Disk
-            disk = Disk()
-            import json
-            with open(disk.join_paths(core_difference_dict_folder, "core_difference_dict.json"), "r") as f:
-                temp_text = f.read()
-            core_difference_dict = json.loads(temp_text)
-            store_dict["core_difference_dict"] = core_difference_dict
-
-        def check_if_the_char_order_matchs(need_to_check_string, order_string):
-            if len(need_to_check_string) == 0:
-                return False
-            if len(order_string) == 0:
-                return False
-            last_index = 0
-            for char in order_string:
-                index = need_to_check_string.find(char, last_index)
-                if index == -1:
-                    return False
-                if index < last_index:
-                    return False
-                last_index = index
-            return True
-
-        response = ""
-        while len(response) < how_many_character_you_want:
-            temp_response = None
-
-            global_found = False
-            for previous_text_length in [4,3,2,1]:
-                temp_input = input_text[-previous_text_length:]
-
-                the_current_background_text = ""
-                if previous_text_length == 1:
-                    the_current_background_text = input_text[-3:]
-                elif previous_text_length == 2:
-                    the_current_background_text = input_text[-9:]
-                elif previous_text_length == 3:
-                    the_current_background_text = input_text[-18:]
-                elif previous_text_length == 4:
-                    the_current_background_text = input_text[-64:]
-
-                if the_current_background_text != "":
-                    temp_set_1 = set(list(the_current_background_text))
-                else:
-                    temp_set_1 = set()
-
-                possibility_list = core_difference_dict.get(temp_input)
-                if possibility_list == None:
-                    continue
-
-                found = False
-                max_score = -1
-                random_list = []
-                for one_list in possibility_list:
-                    temp_background_common_keywords, next_1_char = one_list
-                    if temp_background_common_keywords == "":
-                        random_list.append(next_1_char)
-                        continue
-                    temp_set_2 = set(list(temp_background_common_keywords))
-                    common_set = temp_set_1.intersection(temp_set_2)
-                    if len(common_set) > 0:
-                        if list(common_set)[0] != "":
-                            if check_if_the_char_order_matchs(the_current_background_text, temp_background_common_keywords):
-                                if len(common_set) > max_score:
-                                    found = True
-                                    temp_response = next_1_char
-                                    max_score = len(common_set)
-                                    global_found = True
-                                    print("not random")
-                if found == False and len(random_list) != 0:
-                    temp_response = random.choice(random_list)
-                    global_found = True
-                    print("random")
-                if temp_response == None:
-                    continue
-                if len(temp_response.strip()) == 0:
-                    continue
-
-                if global_found == True:
-                    break
-
-            if temp_response == None:
-                break
-            response += temp_response
-            input_text += temp_response
-
-        return response
 
 if __name__ == "__main__":
     import jieba
+    import json
     jieba.setLogLevel(20)
 
     #train = True
@@ -2222,6 +2053,7 @@ if __name__ == "__main__":
     #source_text = get_source_text_data("/home/yingshaoxo/Disk/Sync_Folder/Yingshaoxo_Data/Core/Big_Core/General_Book/wiki_encyclopedia/primary_student_article_15000.txt")
     #text_list = source_text.split("__**__**__yingshaoxo_is_the_top_one__**__**__")
     #yingshaoxo_text_completor.get_core_difference_dict(text_list, "./test_dict/4.core_difference_dict")
+    #yingshaoxo_text_completor.real_deep_learning_train("/home/yingshaoxo/Disk/Sync_Folder/Yingshaoxo_Data/Core/Big_Core/General_Book/wiki_encyclopedia/primary_student_article_15000.txt")
     #exit()
 
     #source_text = get_source_text_data("/home/yingshaoxo/Disk/Sync_Folder/Yingshaoxo_Data/Core/Big_Core/General_Book/wiki_encyclopedia/primary_student_article_15000.txt")
@@ -2260,21 +2092,23 @@ if __name__ == "__main__":
             #response = "\n\n__________\n\n".join(response[:10])
             #response = yingshaoxo_text_completor.use_simplified_magic_language_tree_dict_to_get_next_text(store_dict, "./test_dict/2.simple_tree", list(input_text_list), how_many_character_you_want=2, no_sleep=True, window_length=4)
 
-            #source_text_path = "/home/yingshaoxo/Disk/Sync_Folder/Yingshaoxo_Data/Additional/Ebooks/wiki_articles/baidu_wiki_2012.txt"
-            #source_text_path = "/home/yingshaoxo/Disk/Sync_Folder/Yingshaoxo_Data/Core/Big_Core/General_Book/wiki_encyclopedia/simplified_zh_wiki_2022.txt"
-            source_text_path = "/home/yingshaoxo/Disk/Sync_Folder/Yingshaoxo_Data/Core/Big_Core/General_Book/wiki_encyclopedia/primary_student_article_15000.txt"
-            #source_text_path = "/home/yingshaoxo/CS/yingshaoxo_txt_data/all_yingshaoxo_data_2023_11_13.txt"
-            #source_text_path = "/home/yingshaoxo/CS/yingshaoxo_txt_data/yingshaoxo/temporary_memory.txt"
-            response = yingshaoxo_text_completor.search_long_background_context_from_disk_txt_file_by_using_multiprocess(source_text_path, input_text, return_text=True, get_more=False)
-            print(response)
-            tree_dict = yingshaoxo_text_completor.get_magic_language_tree_dict_from_text(response[:50000])
-            response = yingshaoxo_text_completor.use_magic_language_tree_dict_to_generate_next_string(tree_dict, input_text, window_length=6)
-            print("Generated: ", response)
+            ##source_text_path = "/home/yingshaoxo/Disk/Sync_Folder/Yingshaoxo_Data/Additional/Ebooks/wiki_articles/baidu_wiki_2012.txt"
+            ##source_text_path = "/home/yingshaoxo/Disk/Sync_Folder/Yingshaoxo_Data/Core/Big_Core/General_Book/wiki_encyclopedia/simplified_zh_wiki_2022.txt"
+            #source_text_path = "/home/yingshaoxo/Disk/Sync_Folder/Yingshaoxo_Data/Core/Big_Core/General_Book/wiki_encyclopedia/primary_student_article_15000.txt"
+            ##source_text_path = "/home/yingshaoxo/CS/yingshaoxo_txt_data/all_yingshaoxo_data_2023_11_13.txt"
+            ##source_text_path = "/home/yingshaoxo/CS/yingshaoxo_txt_data/yingshaoxo/temporary_memory.txt"
+            #response = yingshaoxo_text_completor.search_long_background_context_from_disk_txt_file_by_using_multiprocess(source_text_path, input_text, return_text=True, get_more=False)
+            #print(response)
+            #tree_dict = yingshaoxo_text_completor.get_magic_language_tree_dict_from_text(response[:50000])
+            #response = yingshaoxo_text_completor.use_magic_language_tree_dict_to_generate_next_string(tree_dict, input_text, window_length=6)
+            #print("\n\n\nGenerated: ", response)
+
+            response = yingshaoxo_text_completor.real_deep_learning_predict(store_dict, "./test_dict/key_and_value_pair_dict.json", input_text, how_many_character_you_want=512)
 
             if response:
                 response = response.split("__**__**__yingshaoxo_is_the_top_one__**__**__")[0]
                 #print("\n\nComputer: \n" + input_text + response)
-                #print("\n\nComputer: \n" + response)
+                print("\n\nComputer: \n" + response)
                 print("\n\n")
         except KeyboardInterrupt:
             print("\n")
