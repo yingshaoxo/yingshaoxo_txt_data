@@ -35,6 +35,7 @@ def get_memory_piece_list_from_txt_file(a_txt_path, input_text, accurate=True, w
         with open(a_txt_path, "r", encoding="utf-8") as f:
             source_text = f.read()
         text_list = source_text.split(magic_splitor)
+        text_list.reverse()
 
         keyword_list = get_keywords_list(input_text)
 
