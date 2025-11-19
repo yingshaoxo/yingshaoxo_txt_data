@@ -6,6 +6,7 @@ diary_date_txt_path = "/home/yingshaoxo/CS/yingshaoxo_txt_data/date_for_all_ying
 
 auto_everything_folder_path = "/home/yingshaoxo/CS/auto_everything" # should convert folder file tree into pure text that starts with "# <path>\n\n<content>"
 yingshaoxo_file_path = "/home/yingshaoxo/CS/yingshaoxo_txt_data/yingshaoxo/main.py"
+yingshaoxo_file_path2 = "/home/yingshaoxo/CS/yingshaoxo_txt_data/yingshaoxo/small_functions.py"
 
 novel_1_path = "/home/yingshaoxo/CS/yingshaoxo_txt_data/books/a_typical_chinese_novel.txt"
 novel_2_path = "/home/yingshaoxo/CS/yingshaoxo_txt_data/yingshaoxo/life_simulator.py"
@@ -80,6 +81,10 @@ yingshaoxo_thinking_logic = ""
 with open(yingshaoxo_file_path, "r", encoding="utf-8") as f:
     yingshaoxo_thinking_logic = f.read()
 yingshaoxo_thinking_logic = "# " + "yingshaoxo_main.py\n\n" + yingshaoxo_thinking_logic + magic_splitor
+
+with open(yingshaoxo_file_path2, "r", encoding="utf-8") as f:
+    yingshaoxo_thinking_logic2 = f.read()
+yingshaoxo_thinking_logic += "# " + "small_functions.py\n\n" + yingshaoxo_thinking_logic2 + magic_splitor
 
 
 # handle novel_1
