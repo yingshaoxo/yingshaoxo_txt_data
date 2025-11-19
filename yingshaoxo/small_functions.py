@@ -180,7 +180,7 @@ def is_it_a_sure_thing_exists_in_this_world(input_text):
     return True
 
 def question_sentence_to_normal_sentence(input_text):
-    # todo: a very important function for database search
+    # author yingshaoxo: a very important function for database search
 
     # for example: "what is desk?" -> "desk is"
     # for example: "what is age your age?" -> "my age is"
@@ -188,12 +188,11 @@ def question_sentence_to_normal_sentence(input_text):
         return False
     input_text = input_text.lower()
 
-    #begin_half = input_text[:int(len(input_text)/2)]
-    #end_half = input_text[-int(len(input_text)/2):]
-    #if "什么" in begin_half:
-    #    input_text = end_half
-    #elif "什么" in end_half:
-    #    input_text = begin_half
+    for word in ["知道", "什么", "如何", "怎样", "怎么", "哪儿", " how ", " what ", " where ", " know ", " when "]:
+        index = input_text.find(word)
+        if index != -1:
+            input_text = input_text[index+len(word):]
+    input_text = input_text.strip()
 
     input_text = input_text.replace("?", "")
     input_text = input_text.replace("？", "")
@@ -211,6 +210,7 @@ def question_sentence_to_normal_sentence(input_text):
     input_text = input_text.replace("can ", "")
     input_text = input_text.replace("should ", "")
     input_text = input_text.replace("would ", "")
+    input_text = input_text.replace("when ", "")
 
     return input_text
 
