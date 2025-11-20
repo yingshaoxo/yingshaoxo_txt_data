@@ -38,6 +38,47 @@ class Yingshaoxo_Text_Completor():
                 input_text = input_text[1:]
         return ""
 
+    def find_next_string_in_disk_txt_file_by_using_relate_data(self, file_path, input_text, keyword_list=None, file_encoding="utf-8", return_list=False, start_seek_position=0, end_seek_position=None):
+        # quick and accurate and useful
+        # author: yingshaoxo
+        related_string_list = self.search_relate_data_from_disk_txt_file_by_using_keywords(file_path, input_text, keyword_list=keyword_list, file_encoding=file_encoding, return_list=True, start_seek_position=start_seek_position, end_seek_position=end_seek_position)
+        #print(related_string_list)
+
+        possible_list = []
+        done = False
+        while len(input_text) > 0:
+            for one_string in related_string_list:
+                parts = one_string.split(input_text)
+                if len(parts) >= 2:
+                    result = input_text.join(parts[1:])
+                    if len(result) > 0:
+                        end_distance = []
+                        for char in ".;!?。！～\n":
+                            index = result.find(char)
+                            if index != -1:
+                                end_distance.append(index)
+                        if len(end_distance) > 0:
+                            end_distance = min(end_distance)
+                            possible_list.append([end_distance, result])
+                    if len(possible_list) > 10:
+                        done = True
+                if done == True:
+                    break
+            input_text = input_text[:-1]
+            if done == True:
+                break
+
+        if len(possible_list) > 0:
+            possible_list.sort(key=lambda item: item[0])
+            result = possible_list[-1][1]
+            for one in related_string_list:
+                if result not in one:
+                    result += "\n\n-------\n\n" + one
+                    break
+            return result
+
+        return ""
+
     def find_next_string_in_disk_txt_file(self, file_path, input_text, how_many_characters_you_want=1024, max_input_number=64, max_possibility_number=50, file_encoding="utf-8", splitor="__**__**__yingshaoxo_is_the_top_one__**__**__", get_previous_text=False, start_seek_position=0, end_seek_position=None):
         # quick
         # author: yingshaoxo
@@ -2062,12 +2103,11 @@ if __name__ == "__main__":
 
     if train == True:
         #folder = "/home/yingshaoxo/Disk/Sync_Folder/Yingshaoxo_Data/Core/Small_Core/My_Code_Mini"
-        #folder = "/home/yingshaoxo/Disk/Sync_Folder/Yingshaoxo_Data/Additional/Ebooks/Chinese/chinese_sex_novels"
         #folder = "/home/yingshaoxo/Downloads/doing/16.百科词典研究"
-
+        #folder = "/home/yingshaoxo/Disk/Sync_Folder/Yingshaoxo_Data/Additional/Ebooks/Chinese/chinese_sex_novels"
         #source_text = yingshaoxo_text_completor.get_all_files_txt_under_a_folder(folder)
         #source_text = source_text.replace("\n", "").replace(" ", "").replace("　","")
-        text_list = source_text.split("__**__**__yingshaoxo_is_the_top_one__**__**__")
+        #text_list = source_text.split("__**__**__yingshaoxo_is_the_top_one__**__**__")
 
         yingshaoxo_text_completor.get_general_word_order_dict(text_list, "./test_dict/1.word_order_dict")
         exit()
@@ -2089,22 +2129,27 @@ if __name__ == "__main__":
 
             #response = yingshaoxo_text_completor.find_next_string_in_disk_txt_file("/home/yingshaoxo/Disk/Sync_Folder/Yingshaoxo_Data/Core/Big_Core/General_Book/wiki_encyclopedia/primary_student_article_15000.txt", input_text, get_previous_text=True)
             #response = yingshaoxo_text_completor.search_relate_data_from_disk_txt_file_by_using_keywords("/home/yingshaoxo/Disk/Sync_Folder/Yingshaoxo_Data/Core/Big_Core/General_Book/wiki_encyclopedia/primary_student_article_15000.txt", input_text, return_list=True)
+            #response = yingshaoxo_text_completor.search_relate_data_from_disk_txt_file_by_using_keywords("/home/yingshaoxo/Disk/Sync_Folder/Yingshaoxo_Data/Additional/Ebooks/wiki_articles/baidu_wiki_2012.txt", input_text, return_list=True)
             #response = "\n\n__________\n\n".join(response[:10])
             #response = yingshaoxo_text_completor.use_simplified_magic_language_tree_dict_to_get_next_text(store_dict, "./test_dict/2.simple_tree", list(input_text_list), how_many_character_you_want=2, no_sleep=True, window_length=4)
 
-            ##source_text_path = "/home/yingshaoxo/Disk/Sync_Folder/Yingshaoxo_Data/Additional/Ebooks/wiki_articles/baidu_wiki_2012.txt"
-            ##source_text_path = "/home/yingshaoxo/Disk/Sync_Folder/Yingshaoxo_Data/Core/Big_Core/General_Book/wiki_encyclopedia/simplified_zh_wiki_2022.txt"
-            #source_text_path = "/home/yingshaoxo/Disk/Sync_Folder/Yingshaoxo_Data/Core/Big_Core/General_Book/wiki_encyclopedia/primary_student_article_15000.txt"
-            ##source_text_path = "/home/yingshaoxo/CS/yingshaoxo_txt_data/all_yingshaoxo_data_2023_11_13.txt"
-            ##source_text_path = "/home/yingshaoxo/CS/yingshaoxo_txt_data/yingshaoxo/temporary_memory.txt"
+            #source_text_path = "/home/yingshaoxo/Disk/Sync_Folder/Yingshaoxo_Data/Additional/Ebooks/wiki_articles/baidu_wiki_2012.txt"
+            #source_text_path = "/home/yingshaoxo/Disk/Sync_Folder/Yingshaoxo_Data/Additional/Ebooks/wiki_articles/en_wiki_2022.txt"
+            #source_text_path = "/home/yingshaoxo/Disk/Sync_Folder/Yingshaoxo_Data/Core/Big_Core/General_Book/wiki_encyclopedia/simplified_zh_wiki_2022.txt"
+            source_text_path = "/home/yingshaoxo/Disk/Sync_Folder/Yingshaoxo_Data/Core/Big_Core/General_Book/wiki_encyclopedia/primary_student_article_15000.txt"
+            #source_text_path = "/home/yingshaoxo/CS/yingshaoxo_txt_data/all_yingshaoxo_data_2023_11_13.txt"
+            #source_text_path = "/home/yingshaoxo/CS/yingshaoxo_txt_data/yingshaoxo/temporary_memory.txt"
+            #source_text_path = "/home/yingshaoxo/Disk/Sync_Folder/Yingshaoxo_Data/Additional/Ebooks/Chinese/chinese_sex_novels.txt"
+            #source_text_path = "/home/yingshaoxo/Disk/Sync_Folder/Yingshaoxo_Data/Additional/Ebooks/Chinese/chinese_sex_novels.txt"
             #response = yingshaoxo_text_completor.search_long_background_context_from_disk_txt_file_by_using_multiprocess(source_text_path, input_text, return_text=True, get_more=False)
             #print(response)
             #tree_dict = yingshaoxo_text_completor.get_magic_language_tree_dict_from_text(response[:50000])
             #response = yingshaoxo_text_completor.use_magic_language_tree_dict_to_generate_next_string(tree_dict, input_text, window_length=6)
             #print("\n\n\nGenerated: ", response)
 
-            response = yingshaoxo_text_completor.real_deep_learning_predict(store_dict, "./test_dict/key_and_value_pair_dict.json", input_text, how_many_character_you_want=512)
-
+            #response = yingshaoxo_text_completor.find_next_string_in_disk_txt_file_by_using_previous_context(source_text_path, input_text, how_many_characters_you_want=1024)
+            response = yingshaoxo_text_completor.find_next_string_in_disk_txt_file_by_using_relate_data(source_text_path, input_text)
+            print("******************")
             if response:
                 response = response.split("__**__**__yingshaoxo_is_the_top_one__**__**__")[0]
                 #print("\n\nComputer: \n" + input_text + response)

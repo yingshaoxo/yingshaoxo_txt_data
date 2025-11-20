@@ -223,6 +223,8 @@ def question_sentence_to_normal_sentence(input_text):
     input_text = input_text.replace("is ", "")
     input_text = input_text.replace("are ", "")
 
+    input_text = input_text.replace("是怎", "是")
+
     return input_text
 
 def ask_zhihu_question_and_answer_database(input_text):
@@ -294,6 +296,54 @@ def replace_your_to_my(input_text):
     input_text = input_text.replace("你", "我")
     return input_text
 
+def switch_you_and_me(input_text):
+    you_index_list = []
+    me_index_list = []
+    for index, char in enumerate(input_text):
+        if char == "我":
+            me_index_list.append(index)
+        if char == "你":
+            you_index_list.append(index)
+    input_text_list = list(input_text)
+    for index in you_index_list:
+        input_text_list[index] = "我"
+    for index in me_index_list:
+        input_text_list[index] = "你"
+    input_text = "".join(input_text_list).strip()
+
+    if " " in input_text:
+        words = input_text.split(" ")
+        if words[0] == "my":
+            words[0] = "you"
+        if words[0] == "you":
+            words[0] = "i|my"
+        if words[0] == "i":
+            words[0] = "you"
+        new_words = [words[0]]
+        for word in words[1:]:
+            new_word = ""
+            if word == "you":
+                new_word = "me|i"
+            elif word == "i":
+                new_word = "you"
+            elif word == "your":
+                new_word = "my"
+            elif word == "my":
+                new_word = "your"
+            elif word == "me":
+                new_word = "you"
+            elif word == "me.":
+                new_word = "you."
+            elif word == "me!":
+                new_word = "you!"
+            else:
+                new_word = word
+            new_words.append(new_word)
+        input_text = " ".join(new_words)
+        input_text = input_text.replace("you am ", "you are ")
+
+    return input_text
+
 def get_next_string(source_text, input_text):
     while len(input_text) > 0:
         parts = source_text.split(input_text)
@@ -302,3 +352,9 @@ def get_next_string(source_text, input_text):
         else:
             input_text = input_text[1:]
     return ""
+
+if __name__ == "__main__":
+    print(switch_you_and_me("你是否知道我？"))
+    print(switch_you_and_me("i am your dad."))
+    print(switch_you_and_me("you dad is me."))
+    print(switch_you_and_me("can you give me a story?"))

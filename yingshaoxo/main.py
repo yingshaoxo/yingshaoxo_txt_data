@@ -18,15 +18,11 @@ def get_keywords_list(input_text):
     if input_text.isascii():
         keyword_list = yingshaoxo_string.split_string_into_n_char_parts(input_text, 4)
     else:
-        #keyword_list = yingshaoxo_string.split_string_into_n_char_parts(input_text, 2)
         keyword_list = list(input_text)
     return keyword_list
 
 def get_memory_piece_list_from_txt_file(a_txt_path, input_text, accurate=True, wrong_limit_ratio=0.05):
-    if accurate == True:
-        get_more = False
-    else:
-        get_more = True
+    get_more = False
 
     size = yingshaoxo_disk.get_file_size(a_txt_path, level="MB", bytes_size=None)
     if size > 10:
@@ -39,26 +35,11 @@ def get_memory_piece_list_from_txt_file(a_txt_path, input_text, accurate=True, w
 
         keyword_list = get_keywords_list(input_text)
 
-        if get_more == False:
-            matched_list = []
-            for text in text_list:
-                if yingshaoxo_string.check_if_string_is_inside_string(text, keyword_list, wrong_limit_ratio=0.5, near_distance=None):
-                    if len(yingshaoxo_string.get_relate_sub_string_in_long_string(text, keyword_list, wrong_limit_ratio=wrong_limit_ratio, window_length=None, return_number=1, include_only_one_line=False, include_previous_and_next_one_line=False)) != 0:
-                        matched_list.append(text)
-        else:
-            dynamic_control_number = 2
-            matched_list = []
-            ratio_kernel = 0.05
-            ratio = 0
-            steps = int(wrong_limit_ratio/ratio_kernel)
-            for _ in range(steps + 1):
-                matched_list = []
-                for text in text_list:
-                    if yingshaoxo_string.check_if_string_is_inside_string(text, keyword_list, wrong_limit_ratio=ratio, near_distance=20):
-                        matched_list.append(text)
-                if len(matched_list) >= dynamic_control_number:
-                    break
-                ratio = ratio + ratio_kernel
+        matched_list = []
+        for text in text_list:
+            if yingshaoxo_string.check_if_string_is_inside_string(text, keyword_list, wrong_limit_ratio=0.5, near_distance=None):
+                if len(yingshaoxo_string.get_relate_sub_string_in_long_string(text, keyword_list, wrong_limit_ratio=wrong_limit_ratio, window_length=None, return_number=1, include_only_one_line=False, include_previous_and_next_one_line=False)) != 0:
+                    matched_list.append(text)
         memory_list = matched_list
 
     return memory_list
@@ -223,7 +204,7 @@ def finish_a_task(task_name, input_text, id_):
             one_sentence = relative_line_list[0].strip()
         else:
             one_sentence = yingshaoxo_text_completor.get_next_text_by_pure_text(response, input_text).strip().split("\n")[0].strip()
-        return replace_your_to_my(one_sentence)
+        return switch_you_and_me(one_sentence)
     elif task_name == "unknown":
         response = "I don't know what you said."
         response += "\n\n" + get_memory_as_pure_string(input_text, include_diary=True)
@@ -480,6 +461,38 @@ def a_normal_sentence(input_text, id_):
                 # it is false
                 return "I think it is not right."
 
+#def feed_knowledge_directly(source_text, txt_path=None):
+#    id_ = "user"
+#    if txt_path != None:
+#        with open(txt_path, "r") as f:
+#            source_text = f.read()
+#    for line in source_text.split("\n"):
+#        line = line.strip()
+#        if len(line) == 0:
+#            continue
+#        for line2 in line.split("。"):
+#            line2 = line2.strip()
+#            if len(line2) == 0:
+#                continue
+#            line2 += "。"
+#            for line3 in line2.split("！"):
+#                line3 = line3.strip()
+#                if len(line3) == 0:
+#                    continue
+#                line3 += "！"
+#                input_text = line3
+#                input_text = input_text.replace("。！", "。")
+#                input_text = input_text.replace("！！", "！")
+#                input_text = input_text.replace("！。", "！")
+#                if does_it_has_values(input_text):
+#                    key_knowledge_list = get_useful_part_of_text(input_text)
+#                    for one in key_knowledge_list:
+#                        old_memory = get_memory_as_pure_string(one, include_diary=False)
+#                        if one not in old_memory:
+#                            remember(one, "just remember.", id_, force=True)
+#                    print("The thing you mentioned can be splited into following:\n" + "\n".join(["* "+one for one in key_knowledge_list]))
+#                    print("\n\n------------\n\n")
+
 def call_yingshaoxo(input_text, id_="user"):
     response = ""
     if is_it_a_question(input_text):
@@ -491,6 +504,9 @@ def call_yingshaoxo(input_text, id_="user"):
 os.system("clear")
 #print(call_yingshaoxo("say hi to everyone"))
 print("OK! No syntax error!\n\n")
+
+#feed_knowledge_directly("", "/home/yingshaoxo/Disk/Sync_Folder/Yingshaoxo_Data/Core/Big_Core/General_Book/wiki_encyclopedia/primary_student_article_15000.txt")
+#exit()
 
 while True:
     try:
