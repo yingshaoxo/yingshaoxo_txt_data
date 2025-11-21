@@ -208,9 +208,11 @@ def what_is_the_task(input_text, id_):
 
     return "unknown", input_text
 
-def finish_a_task(task_name, input_text, id_):
+def finish_a_task(task_name, input_text, id_, old_input="你"):
     if len(input_text) == 0:
-        return "I don't know. Just give a super short question, less than 5."
+        #return "I don't know. Just give a super short question, less than 5."
+        #input_text = old_input[:int(len(old_input)/2)]
+        input_text = question_sentence_to_normal_sentence(old_input, easy=True)
 
     if debug == 1:
         print(make_indents_before_every_lines("task name: " + task_name + "\n" + "input_text: " + input_text, 4, as_code_block=True))
@@ -242,12 +244,14 @@ def finish_a_task(task_name, input_text, id_):
         a_list = yingshaoxo_string.get_relate_sub_string_in_long_string(response, sub_word_list, wrong_limit_ratio=0.5, window_length=len(input_text)*2, return_number=1, include_only_one_line=False, include_previous_and_next_one_line=False, only_return_one_sentence=True)
         if len(a_list) > 0:
             response = a_list[0].strip()
+            response = switch_you_and_me(response)
         else:
             response = "I can't found information of '{}', maybe you can teach me by using a short truth sentence. in chinese randomly。".format(input_text)
         if ":" in response:
             response = ":".join(response.split(":")[1:]).strip()
         if len(response) == 0:
             response = "I can't found information of '{}', maybe you can teach me by using a short sentence.".format(input_text)
+        response = response
         return response
     elif task_name == "unknown":
         response = "你好，你能用你自己的语言评价下这则日记吗？最好能结合自己的知识提取出很多单句的观点:\n\n" + make_indents_before_every_lines(get_a_random_one_from_yingshaoxo_diary(), 4, as_code_block=True)
@@ -265,8 +269,9 @@ def ask_yingshaoxo_ai(input_text, id_="user"):
         for one in key_knowledge_list:
             remember(one, "just remember.", id_)
 
+    old_input = input_text
     the_task, input_text = what_is_the_task(input_text, id_=id_)
-    result = finish_a_task(the_task, input_text, id_=id_)
+    result = finish_a_task(the_task, input_text, id_=id_, old_input=old_input)
     return result
 
 def summarize(input_text):
@@ -401,7 +406,8 @@ def get_useful_part_of_text(input_text, strict=False):
         "xxx is composed by xxx.",
         "you can make xxx by xxx.",
         "the alternative of xxx is xxx.",
-        "i think xxx can xxx",
+        "i think xxx can xxx.",
+        "xxx already xxx.",
 
         "why xxx? because xxx",
         "xxx that is why xxx.",
@@ -427,6 +433,9 @@ def get_useful_part_of_text(input_text, strict=False):
         "xxx是xxx",
         "xxx因为xxx",
         "xxx所以xxx",
+        "xxx应该xxx",
+        "xxx想xxx",
+        "xxx已经xxx",
         "因为xxx所以xxx",
         "如果xxx就会xxx",
         "如果xxx就能xxx",
@@ -446,6 +455,7 @@ def get_useful_part_of_text(input_text, strict=False):
         "xxx就像xxx",
         "xxx确保xxx",
         "xxx帮助xxx",
+        "xxx基于xxx",
         "xxx类似于xxx",
         "为什么xxx？xxx",
         "如何xxx？xxx",
@@ -580,7 +590,8 @@ def magic_knowledge_passing():
 while True:
     try:
         input_text = input("What you want to say: ")
-        response = call_yingshaoxo(input_text)
+        #response = call_yingshaoxo(input_text)
+        response = ask_yingshaoxo_ai(input_text)
         if response:
             response = response.split("__**__**__yingshaoxo_is_the_top_one__**__**__")[0]
             print("\n\nComputer: \n" + response)

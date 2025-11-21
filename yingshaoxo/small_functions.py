@@ -179,7 +179,7 @@ def is_it_a_sure_thing_exists_in_this_world(input_text):
     # todo in the future
     return True
 
-def question_sentence_to_normal_sentence(input_text):
+def question_sentence_to_normal_sentence(input_text, easy=False):
     # author yingshaoxo: a very important function for database search
 
     # for example: "what is desk?" -> "desk is"
@@ -193,13 +193,14 @@ def question_sentence_to_normal_sentence(input_text):
     input_text = input_text.replace("的吧", "")
     input_text = input_text.replace("的呢", "")
 
-    for word in ["知道", "什么", "如何", "怎样", "怎么", "哪儿", "觉得", "认为", "哪些", "哪类", "哪个", " how ", " what ", " where ", " know ", " when ", " feel ", " think "]:
-        index = input_text.find(word)
-        if index != -1:
-            next_2_char = input_text[index+len(word):index+len(word)+2]
-            if ("？" not in next_2_char) and ("?" not in next_2_char):
-                input_text = input_text[index+len(word):]
-    input_text = input_text.strip()
+    if easy == False:
+        for word in ["知道", "什么", "如何", "怎样", "怎么", "哪儿", "觉得", "认为", "哪些", "哪类", "哪个", " how ", " what ", " where ", " know ", " when ", " feel ", " think "]:
+            index = input_text.find(word)
+            if index != -1:
+                next_2_char = input_text[index+len(word):index+len(word)+2]
+                if ("？" not in next_2_char) and ("?" not in next_2_char):
+                    input_text = input_text[index+len(word):]
+        input_text = input_text.strip()
 
     input_text = input_text.replace("?", "")
     input_text = input_text.replace("？", "")
