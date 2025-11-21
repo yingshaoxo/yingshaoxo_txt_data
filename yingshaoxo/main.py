@@ -1,3 +1,5 @@
+#todo: find out why word split involve some space that can't get searched in striped string, this cause the same string can't get searched
+
 import os
 import inspect
 import random
@@ -140,8 +142,6 @@ def ask_other_ai(input_text):
         return response
     except Exception as e:
         return ask_yingshaoxo_ai(input_text)
-        #response = get_memory_as_pure_string(input_text, include_diary=True)
-        #return response + "\n\n" + "I don't know."
 
 def what_is_the_task(input_text, id_):
     input_text = input_text.lower()
@@ -217,10 +217,15 @@ def finish_a_task(task_name, input_text, id_):
 
     if task_name == "remember a thing":
         if not is_it_in_memory(input_text, id_):
-            remember(input_text, "just remember.", id_, force=True)
-            return "remembered: " + switch_you_and_me(input_text)
+            key_knowledge_list = get_useful_part_of_text(input_text, strict=True)
+            if len(key_knowledge_list) > 0:
+                remember(input_text, "just remember.", id_)
+                return "remembered: " + switch_you_and_me(input_text)
+            else:
+                return "ask me a short question, such as: 如何制作自我安慰机器？\n\nor teach me some short truth sentence."
         else:
-            return "remembered: " + switch_you_and_me(input_text) + "\n\n" + "you can first tech me 20 random sentence, such as: 你是我的朋友。\nthen you can ask me some question in next time, such as: 谁是你的朋友？\nbut you have to make sure for each time, there only has one sentence, no new line, no two sentences.\nnow ask me question, or tech me." + "\n\nIf you are tired, you can simply tell me your feeling about one piece of yingshaoxo diary:\n\n" + make_indents_before_every_lines(get_a_random_one_from_yingshaoxo_diary(), 4, as_code_block=True)
+            response = "你好，你能用你自己的语言评价下这则日记吗？最好能结合自己的知识提取出很多单句的观点:\n\n" + make_indents_before_every_lines(get_a_random_one_from_yingshaoxo_diary(), 4, as_code_block=True)
+            return response
     elif task_name == "get memory":
         related_string_list = yingshaoxo_text_completor.search_relate_data_from_disk_txt_file_by_using_keywords(temporary_memory_file_path, input_text, return_list=True)
         if len(related_string_list) != 0:
@@ -238,20 +243,27 @@ def finish_a_task(task_name, input_text, id_):
         if len(a_list) > 0:
             response = a_list[0].strip()
         else:
-            response = "I can't found information of '{}', maybe you can teach me by using a short sentence.".format(input_text)
+            response = "I can't found information of '{}', maybe you can teach me by using a short truth sentence. in chinese randomly。".format(input_text)
         if ":" in response:
             response = ":".join(response.split(":")[1:]).strip()
         if len(response) == 0:
             response = "I can't found information of '{}', maybe you can teach me by using a short sentence.".format(input_text)
         return response
     elif task_name == "unknown":
-        response = "I don't know what you said."
-        response += "\n\n" + get_memory_as_pure_string(input_text, include_diary=True)
+        response = "你好，你能用你自己的语言评价下这则日记吗？最好能结合自己的知识提取出很多单句的观点:\n\n" + make_indents_before_every_lines(get_a_random_one_from_yingshaoxo_diary(), 4, as_code_block=True)
         return response
 
 def ask_yingshaoxo_ai(input_text, id_="user"):
     if debug == 1:
         print(make_indents_before_every_lines("Ask yingshaoxo ai:\n" + make_indents_before_every_lines(input_text, 4, as_code_block=True), 4, as_code_block=True))
+
+    # remember something first
+    sentences = yingshaoxo_string.get_sentence_list(input_text)
+    for sentence in sentences:
+        sentence = sentence.strip()
+        key_knowledge_list = get_useful_part_of_text(sentence, strict=True)
+        for one in key_knowledge_list:
+            remember(one, "just remember.", id_)
 
     the_task, input_text = what_is_the_task(input_text, id_=id_)
     result = finish_a_task(the_task, input_text, id_=id_)
@@ -282,6 +294,10 @@ def remember(input_text, notes, id_, force=False):
 
     if force == False:
         if is_it_in_memory(input_text, id_) == True:
+            return
+
+    with open(temporary_memory_file_path, "r", encoding="utf-8") as f:
+        if input_text in f.read():
             return
 
     with open(temporary_memory_file_path, "a", encoding="utf-8") as f:
@@ -365,19 +381,27 @@ def sentence_pattern_match(pattens, input_text):
         data_list += list(set(string.hard_core_string_pattern_search(input_text, rule)))
     return data_list
 
-def get_useful_part_of_text(input_text):
+def get_useful_part_of_text(input_text, strict=False):
     input_text = input_text.lower()
     patterns = [
-        "my xxx.",
-        "you xxx.",
         "what xxx? xxx.",
         "xxx is xxx.",
+        "xxx are xxx.",
+        "xxx so xxx.",
+        "xxx makes xxx.",
+        "xxx can make xxx.",
+        "xxx can help xxx.",
+        "xxx can be xxx.",
+        "xxx not only xxx but also xxx.",
+        "xxx depends on xxx.",
+        "xxx have xxx to xxx",
+        "xxx has xxx to xxx",
         "xxx can be used for xxx.",
         "xxx can be get from xxx.",
         "xxx is composed by xxx.",
         "you can make xxx by xxx.",
         "the alternative of xxx is xxx.",
-        "i think xxx",
+        "i think xxx can xxx",
 
         "why xxx? because xxx",
         "xxx that is why xxx.",
@@ -393,30 +417,43 @@ def get_useful_part_of_text(input_text):
         "the xxx step for xxx is xxx.",
         "to success in xxx you have to xxx",
 
-        "xxx have xxx",
-        "xxx to xxx",
+        "xxx from xxx.",
+        "xxx the more xxx the more xxx.",
+        "xxx to do xxx.",
+        "xxx love to xxx.",
+        "xxx will be xxx.",
+        "xxx means xxx.",
 
-        "我xxx",
-        "你xxx",
         "xxx是xxx",
-        "xxx有xxx",
+        "xxx因为xxx",
+        "xxx所以xxx",
         "因为xxx所以xxx",
         "如果xxx就会xxx",
         "如果xxx就能xxx",
         "如果xxx就可以xxx",
         "如果xxx就应该xxx",
+        "xxx为了xxx",
+        "xxx不仅xxx还能xxx",
+        "xxx可以xxx",
         "xxx能够xxx",
         "xxx能帮xxx",
         "xxx能做xxx",
         "xxx能干xxx",
         "xxx能得xxx",
         "xxx能取xxx",
+        "xxx可能xxx",
+        "xxx需要xxx",
+        "xxx就像xxx",
+        "xxx确保xxx",
+        "xxx帮助xxx",
+        "xxx类似于xxx",
         "为什么xxx？xxx",
         "如何xxx？xxx",
         "知道xxx吗？xxx",
         "我xxx想到xxx",
         "我xxx发现xxx",
         "看起来xxx",
+        "xxx意思是xxx",
         "xxx想出了xxx",
         "xxx发明了xxx",
         "xxx创造了xxx",
@@ -433,9 +470,25 @@ def get_useful_part_of_text(input_text):
         "实际上xxx",
         "xxx个秘密xxx",
     ]
+    if strict == False:
+        patterns += [
+            "my xxx.",
+            "you xxx.",
+            "我xxx",
+            "你xxx",
+            "xxx有xxx",
+        ]
     result_list = sentence_pattern_match(patterns, input_text)
     result_list = [one for one in result_list if not one.endswith("?")]
     result_list = [one for one in result_list if not one.endswith("？")]
+    result_list = [one for one in result_list if not one.endswith(":")]
+    result_list = [one for one in result_list if not one.endswith("：")]
+    new_list = []
+    for one in result_list:
+        one = one.strip()
+        if one not in new_list:
+            new_list.append(one)
+    result_list = new_list
     return result_list
 
 def does_it_has_values(input_text):
@@ -495,7 +548,7 @@ def a_normal_sentence(input_text, id_):
                         #remember(one, "knowledge.", id_) # not working for unknown reason
                         old_memory = get_memory_as_pure_string(one, include_diary=False)
                         if one not in old_memory:
-                            remember(one, "just remember.", id_, force=True)
+                            remember(one, "just remember.", id_)
                     return "The thing you mentioned can be splited into following:\n" + "\n".join(["* "+one for one in key_knowledge_list])
                 else:
                     a_comment = comment(input_text)
@@ -503,23 +556,6 @@ def a_normal_sentence(input_text, id_):
             else:
                 # it is false
                 return "I think it is not right."
-
-def magic_talking_loop():
-    from time import sleep
-    response = "你好，小婉AI，我是yingshaoxo制作的最简单的人工智能，我们来聊天吧！"
-    print("yingshaoxo:")
-    print(make_indents_before_every_lines(response, 4, as_code_block=True))
-    while True:
-        response = ask_other_ai(response)
-        print("xiaowan:")
-        print(make_indents_before_every_lines(response, 4, as_code_block=True))
-        response = ask_yingshaoxo_ai(response)
-        print("\n\n--------------\n\n")
-        print("bot yingshaoxo:")
-        print(make_indents_before_every_lines(response, 4, as_code_block=True))
-        print("\n\n--------------\n\n")
-        print("\n\n")
-        sleep(3)
 
 def call_yingshaoxo(input_text, id_="user"):
     response = ""
@@ -530,10 +566,16 @@ def call_yingshaoxo(input_text, id_="user"):
     return response
 
 os.system("clear")
-#print(call_yingshaoxo("say hi to everyone"))
 print("OK! No syntax error!\n\n")
 
-#magic_talking_loop()
+def magic_knowledge_passing():
+    # it would have better quality if you tech it from zero
+    with open(yingshaoxo_diary_file_path, "r", encoding="utf-8") as f:
+        source_text = f.read()
+        text_list = source_text.split(magic_splitor)
+        for index, one in enumerate(text_list):
+            ask_yingshaoxo_ai(one)
+            print(index)
 
 while True:
     try:
@@ -547,4 +589,23 @@ while True:
         print("\n")
         continue
 
-# todo: add "search it again"
+#def magic_talking_loop():
+#    # not recommand, because the online bot is more stupid than my code
+#    from time import sleep
+#    response = "你好，AI小婉，我是yingshaoxo制作的最简单的人工智能，我们来聊天吧！"
+#    chat_history = ["User: " + response]
+#    while True:
+#        print("\n\n\n-------------------\n\n\n")
+#        temp_input = "[The following is an interesting chat message log between User and XiaoWan.]\n\n" + "\n".join(chat_history) + "\nXiaoWan:"
+#        print(make_indents_before_every_lines(temp_input, 25, as_code_block=True))
+#        print("\n\n\n-------------------\n\n\n")
+#
+#        response = ask_other_ai(temp_input)
+#        response = response.replace("XiaoWan:", "").replace("User:", "")
+#        chat_history.append("XiaoWan: "+response.strip())
+#        response = ask_yingshaoxo_ai(response)
+#        chat_history.append("User: "+response.strip())
+#
+#        sleep(3)
+#        if len(chat_history) > 2:
+#            chat_history = chat_history[-2:]
