@@ -3552,10 +3552,10 @@ class Yingshaoxo_Text_Completor():
             try:
                 import jieba
                 jieba.setLogLevel(20)
-                keywords = list(jieba.cut(input_text, cut_all=False))
+                keywords = list(jieba.cut(string, cut_all=False))
             except Exception as e:
                 #print(e)
-                keywords = list(input_text)
+                keywords = list(string)
             return keywords
 
     def _is_ascii(self, string):

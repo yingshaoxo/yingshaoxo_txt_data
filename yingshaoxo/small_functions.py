@@ -306,30 +306,38 @@ def switch_you_and_me(input_text):
             you_index_list.append(index)
     input_text_list = list(input_text)
     for index in you_index_list:
+        if 0 <= (index + 1) < len(input_text_list):
+            if input_text_list[index + 1] == "们":
+                continue
         input_text_list[index] = "我"
     for index in me_index_list:
+        if 0 <= (index + 1) < len(input_text_list):
+            if input_text_list[index + 1] == "们":
+                continue
         input_text_list[index] = "你"
     input_text = "".join(input_text_list).strip()
 
     if " " in input_text:
         words = input_text.split(" ")
-        if words[0] == "my":
-            words[0] = "you"
         if words[0] == "you":
-            words[0] = "i|my"
-        if words[0] == "i":
+            words[0] = "i"
+        elif words[0] == "i":
             words[0] = "you"
+        elif words[0] == "my":
+            words[0] = "your"
+        elif words[0] == "your":
+            words[0] = "my"
         new_words = [words[0]]
         for word in words[1:]:
             new_word = ""
-            if word == "you":
-                new_word = "me|i"
-            elif word == "i":
-                new_word = "you"
-            elif word == "your":
+            if word == "your":
                 new_word = "my"
             elif word == "my":
                 new_word = "your"
+            elif word == "i":
+                new_word = "you"
+            elif word == "you":
+                new_word = "me"
             elif word == "me":
                 new_word = "you"
             elif word == "me.":

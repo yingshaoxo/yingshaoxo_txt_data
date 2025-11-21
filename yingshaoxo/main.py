@@ -1,4 +1,3 @@
-# todo: need to find out why it will stuck at some times
 import os
 import inspect
 import random
@@ -14,9 +13,15 @@ with open(temporary_memory_file_path, "a", encoding="utf-8") as f:
     f.write("")
 chat_history_list = []
 
+def get_a_random_one_from_yingshaoxo_diary():
+    with open(yingshaoxo_diary_file_path, "r", encoding="utf-8") as f:
+        source_text = f.read()
+    text_list = source_text.split(magic_splitor)
+    return random.choice(text_list).strip()
+
 def get_keywords_list(input_text):
     if input_text.isascii():
-        keyword_list = yingshaoxo_string.split_string_into_n_char_parts(input_text, 4)
+        keyword_list = yingshaoxo_string.split_string_into_n_char_parts(input_text, 3)
     else:
         keyword_list = list(input_text)
     return keyword_list
@@ -25,7 +30,7 @@ def get_memory_piece_list_from_txt_file(a_txt_path, input_text, accurate=True, w
     get_more = False
 
     size = yingshaoxo_disk.get_file_size(a_txt_path, level="MB", bytes_size=None)
-    if size > 10:
+    if size > 1:
         memory_list = yingshaoxo_text_completor.search_long_background_context_from_disk_txt_file_by_using_multiprocess(a_txt_path, input_text, return_text=False, get_more=get_more)
     else:
         with open(a_txt_path, "r", encoding="utf-8") as f:
@@ -37,12 +42,26 @@ def get_memory_piece_list_from_txt_file(a_txt_path, input_text, accurate=True, w
 
         matched_list = []
         for text in text_list:
-            if yingshaoxo_string.check_if_string_is_inside_string(text, keyword_list, wrong_limit_ratio=0.5, near_distance=None):
-                if len(yingshaoxo_string.get_relate_sub_string_in_long_string(text, keyword_list, wrong_limit_ratio=wrong_limit_ratio, window_length=None, return_number=1, include_only_one_line=False, include_previous_and_next_one_line=False)) != 0:
-                    matched_list.append(text)
+            if yingshaoxo_string.check_if_string_is_inside_string(text, keyword_list, wrong_limit_ratio=wrong_limit_ratio, near_distance=20):
+                matched_list.append(text)
         memory_list = matched_list
 
     return memory_list
+
+def full_match_get_one_from_txt_file(a_txt_path, input_text):
+    input_text = input_text.lower().strip()
+    with open(a_txt_path, "r", encoding="utf-8") as f:
+        source_text = f.read()
+        source_text = source_text.lower()
+        text_list = source_text.split(magic_splitor)
+        text_list.reverse()
+        for text in text_list:
+            if input_text in text:
+                if ":" in text:
+                    return ":".join(text.split(":")[1:])
+                else:
+                    return text
+    return ""
 
 def get_memory_as_pure_string(input_text, include_diary=False):
     memory_piece_list = get_memory_piece_list_from_txt_file(yingshaoxo_diary_file_path, input_text, accurate=True, wrong_limit_ratio=0.1)
@@ -84,7 +103,7 @@ def is_it_in_memory(input_text, id_):
         return False
     if len(input_text) == "":
         return False
-    memory_piece_list = get_memory_piece_list_from_txt_file(temporary_memory_file_path, input_text, accurate=True, wrong_limit_ratio=0.5)
+    memory_piece_list = get_memory_piece_list_from_txt_file(temporary_memory_file_path, input_text, accurate=True, wrong_limit_ratio=0.3)
     if len(memory_piece_list) == 0:
         return False
     else:
@@ -112,7 +131,7 @@ def ask_other_ai(input_text):
     try:
         response = ask_llama(input_text)
         response = response.split("\n")
-        response = response[:6]
+        response = response[:27]#response[:6]
         response = "\n".join(response)
 
         if debug == 1:
@@ -142,6 +161,10 @@ def what_is_the_task(input_text, id_):
         if ("you" in input_text) and ("?" in input_text):
             found_index = input_text.find("you")
             found_index2 = input_text.find("?", found_index)
+            if found_index2 != -1:
+                if (found_index2-found_index) < 5:
+                    input_text = question_sentence_to_normal_sentence(input_text)
+                    return "get memory", input_text.strip()
             related_to_me = input_text[found_index:found_index2+1]
             input_text = related_to_me
             input_text = question_sentence_to_normal_sentence(input_text)
@@ -150,6 +173,10 @@ def what_is_the_task(input_text, id_):
         if ("what " in input_text) and ("?" in input_text):
             found_index = input_text.find("what ")
             found_index2 = input_text.find("?", found_index)
+            if found_index2 != -1:
+                if (found_index2-found_index) < 5:
+                    input_text = question_sentence_to_normal_sentence(input_text)
+                    return "get memory", input_text.strip()
             the_question = input_text[found_index:found_index2+1]
             input_text = question_sentence_to_normal_sentence(input_text)
             return "get memory", input_text.strip()
@@ -183,28 +210,40 @@ def what_is_the_task(input_text, id_):
 
 def finish_a_task(task_name, input_text, id_):
     if len(input_text) == 0:
-        return "I don't know."
+        return "I don't know. Just give a super short question, less than 5."
 
     if debug == 1:
         print(make_indents_before_every_lines("task name: " + task_name + "\n" + "input_text: " + input_text, 4, as_code_block=True))
 
     if task_name == "remember a thing":
-        old_memory = get_memory_as_pure_string(input_text, include_diary=False)
-        if input_text not in old_memory:
+        if not is_it_in_memory(input_text, id_):
             remember(input_text, "just remember.", id_, force=True)
-            return "remembered: " + replace_your_to_my(input_text)
+            return "remembered: " + switch_you_and_me(input_text)
         else:
-            return "not remembered because I have it in memory: " + replace_your_to_my(input_text)
+            return "remembered: " + switch_you_and_me(input_text) + "\n\n" + "you can first tech me 20 random sentence, such as: 你是我的朋友。\nthen you can ask me some question in next time, such as: 谁是你的朋友？\nbut you have to make sure for each time, there only has one sentence, no new line, no two sentences.\nnow ask me question, or tech me." + "\n\nIf you are tired, you can simply tell me your feeling about one piece of yingshaoxo diary:\n\n" + make_indents_before_every_lines(get_a_random_one_from_yingshaoxo_diary(), 4, as_code_block=True)
     elif task_name == "get memory":
+        related_string_list = yingshaoxo_text_completor.search_relate_data_from_disk_txt_file_by_using_keywords(temporary_memory_file_path, input_text, return_list=True)
+        if len(related_string_list) != 0:
+            one_sentence = related_string_list[0].split("__**__")[0]
+            if len(one_sentence) != 0:
+                one = full_match_get_one_from_txt_file(temporary_memory_file_path, one_sentence).strip()
+                if len(one) != 0:
+                    return switch_you_and_me(one)
         response = get_memory_as_pure_string(input_text, include_diary=True)
-        keyword_list = get_keywords_list(input_text)
-        relative_line_list = yingshaoxo_string.get_relate_sub_string_in_long_string(response, keyword_list, wrong_limit_ratio=0.4, window_length=int(len(input_text) * 2), return_number=1, include_only_one_line=False, include_previous_and_next_one_line=False, only_return_one_sentence=True)
-        if len(relative_line_list) != 0:# and len(relative_line_list[0]) >= len(input_text):
-            # find a way to look for before and after 
-            one_sentence = relative_line_list[0].strip()
+        if input_text.isascii():
+            sub_word_list = input_text.split(" ")
         else:
-            one_sentence = yingshaoxo_text_completor.get_next_text_by_pure_text(response, input_text).strip().split("\n")[0].strip()
-        return switch_you_and_me(one_sentence)
+            sub_word_list = list(input_text)
+        a_list = yingshaoxo_string.get_relate_sub_string_in_long_string(response, sub_word_list, wrong_limit_ratio=0.5, window_length=len(input_text)*2, return_number=1, include_only_one_line=False, include_previous_and_next_one_line=False, only_return_one_sentence=True)
+        if len(a_list) > 0:
+            response = a_list[0].strip()
+        else:
+            response = "I can't found information of '{}', maybe you can teach me by using a short sentence.".format(input_text)
+        if ":" in response:
+            response = ":".join(response.split(":")[1:]).strip()
+        if len(response) == 0:
+            response = "I can't found information of '{}', maybe you can teach me by using a short sentence.".format(input_text)
+        return response
     elif task_name == "unknown":
         response = "I don't know what you said."
         response += "\n\n" + get_memory_as_pure_string(input_text, include_diary=True)
@@ -235,13 +274,14 @@ def summarize(input_text):
 def remember(input_text, notes, id_, force=False):
     if input_text == "":
         return
-    #if len(input_text.strip()) < 5:
-    #    return
 
-    temporary_memory = magic_splitor + "#" + id_ + ": \n" + input_text
+    if input_text.strip().startswith("我你") or input_text.strip().startswith("你我"):
+        return
+
+    temporary_memory = magic_splitor + "#" + id_ + ": \n" + input_text.strip()
 
     if force == False:
-        if is_it_in_memory(temporary_memory, id_) == True:
+        if is_it_in_memory(input_text, id_) == True:
             return
 
     with open(temporary_memory_file_path, "a", encoding="utf-8") as f:
@@ -353,6 +393,9 @@ def get_useful_part_of_text(input_text):
         "the xxx step for xxx is xxx.",
         "to success in xxx you have to xxx",
 
+        "xxx have xxx",
+        "xxx to xxx",
+
         "我xxx",
         "你xxx",
         "xxx是xxx",
@@ -431,7 +474,7 @@ def a_normal_sentence(input_text, id_):
             remember(summary, "the feeling that guy talks. it is about me.", id_)
 
         a_comment = comment(summary)
-        return "OK, I got your meaning:\n" + replace_your_to_my(summary) + "\n\n" + a_comment
+        return "OK, I got your meaning:\n" + switch_you_and_me(summary) + "\n\n" + a_comment
     else:
         # it_is_a_sentence_that_talks_others
         if is_it_a_sentence_that_talks_user_itself(input_text, id_):
@@ -440,7 +483,7 @@ def a_normal_sentence(input_text, id_):
                 if does_it_has_values(summary):
                     remember(summary, "the feeling that guy talks. it is about itself.", id_)
                 a_comment = comment(summary)
-                return "Got it, you said:\n" + replace_your_to_my(summary) + "\n\n" + a_comment
+                return "Got it, you said:\n" + switch_you_and_me(summary) + "\n\n" + a_comment
             else:
                 return "I think it is not true."
         else:
@@ -461,37 +504,22 @@ def a_normal_sentence(input_text, id_):
                 # it is false
                 return "I think it is not right."
 
-#def feed_knowledge_directly(source_text, txt_path=None):
-#    id_ = "user"
-#    if txt_path != None:
-#        with open(txt_path, "r") as f:
-#            source_text = f.read()
-#    for line in source_text.split("\n"):
-#        line = line.strip()
-#        if len(line) == 0:
-#            continue
-#        for line2 in line.split("。"):
-#            line2 = line2.strip()
-#            if len(line2) == 0:
-#                continue
-#            line2 += "。"
-#            for line3 in line2.split("！"):
-#                line3 = line3.strip()
-#                if len(line3) == 0:
-#                    continue
-#                line3 += "！"
-#                input_text = line3
-#                input_text = input_text.replace("。！", "。")
-#                input_text = input_text.replace("！！", "！")
-#                input_text = input_text.replace("！。", "！")
-#                if does_it_has_values(input_text):
-#                    key_knowledge_list = get_useful_part_of_text(input_text)
-#                    for one in key_knowledge_list:
-#                        old_memory = get_memory_as_pure_string(one, include_diary=False)
-#                        if one not in old_memory:
-#                            remember(one, "just remember.", id_, force=True)
-#                    print("The thing you mentioned can be splited into following:\n" + "\n".join(["* "+one for one in key_knowledge_list]))
-#                    print("\n\n------------\n\n")
+def magic_talking_loop():
+    from time import sleep
+    response = "你好，小婉AI，我是yingshaoxo制作的最简单的人工智能，我们来聊天吧！"
+    print("yingshaoxo:")
+    print(make_indents_before_every_lines(response, 4, as_code_block=True))
+    while True:
+        response = ask_other_ai(response)
+        print("xiaowan:")
+        print(make_indents_before_every_lines(response, 4, as_code_block=True))
+        response = ask_yingshaoxo_ai(response)
+        print("\n\n--------------\n\n")
+        print("bot yingshaoxo:")
+        print(make_indents_before_every_lines(response, 4, as_code_block=True))
+        print("\n\n--------------\n\n")
+        print("\n\n")
+        sleep(3)
 
 def call_yingshaoxo(input_text, id_="user"):
     response = ""
@@ -505,8 +533,7 @@ os.system("clear")
 #print(call_yingshaoxo("say hi to everyone"))
 print("OK! No syntax error!\n\n")
 
-#feed_knowledge_directly("", "/home/yingshaoxo/Disk/Sync_Folder/Yingshaoxo_Data/Core/Big_Core/General_Book/wiki_encyclopedia/primary_student_article_15000.txt")
-#exit()
+#magic_talking_loop()
 
 while True:
     try:
