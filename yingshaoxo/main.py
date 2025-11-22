@@ -1,16 +1,26 @@
-#todo: find out why word split involve some space that can't get searched in striped string, this cause the same string can't get searched
+"""
+"i have a dog. it is cute." -> when you meet it, include its previous sentences.
+
+"为了完成这个项目，这些努力都值得。" -> when you meet "这些", include its previous sentences, or ask the user "这些努力指的是什么？"
+"这些努力指的是我花了挺多时间写代码。" -> so in the end, it becomes "为了完成这个项目，我花了挺多时间写代码都值得。"
+"""
 
 import os
 import inspect
 import random
 
-from small_functions import *
-from ask_other_ai_help import ask_llama
+try:
+    from small_functions import *
+    from ask_other_ai_help import ask_llama
+except Exception as e:
+    from yingshaoxo.small_functions import *
+    from yingshaoxo.ask_other_ai_help import ask_llama
 
 debug = 1
-yingshaoxo_diary_file_path = os.path.abspath("../all_yingshaoxo_data_2023_11_13.txt")
+current_folder_path = os.path.dirname(__file__)
+yingshaoxo_diary_file_path = os.path.abspath(os.path.join(current_folder_path, "../all_yingshaoxo_data_2023_11_13.txt"))
 magic_splitor = "\n\n__**__**__yingshaoxo_is_the_top_one__**__**__\n\n"
-temporary_memory_file_path = os.path.abspath("./temporary_memory.txt")
+temporary_memory_file_path = os.path.abspath(os.path.join(current_folder_path, "./temporary_memory.txt"))
 with open(temporary_memory_file_path, "a", encoding="utf-8") as f:
     f.write("")
 chat_history_list = []
@@ -575,11 +585,12 @@ def call_yingshaoxo(input_text, id_="user"):
         response = a_normal_sentence(input_text, id_)
     return response
 
+
 os.system("clear")
 print("OK! No syntax error!\n\n")
 
 def magic_knowledge_passing():
-    # it would have better quality if you tech it from zero
+    # it would have 80% better quality if you tech it from zero
     with open(yingshaoxo_diary_file_path, "r", encoding="utf-8") as f:
         source_text = f.read()
         text_list = source_text.split(magic_splitor)
@@ -587,18 +598,20 @@ def magic_knowledge_passing():
             ask_yingshaoxo_ai(one)
             print(index)
 
-while True:
-    try:
-        input_text = input("What you want to say: ")
-        #response = call_yingshaoxo(input_text)
-        response = ask_yingshaoxo_ai(input_text)
-        if response:
-            response = response.split("__**__**__yingshaoxo_is_the_top_one__**__**__")[0]
-            print("\n\nComputer: \n" + response)
-            print("\n\n")
-    except KeyboardInterrupt:
-        print("\n")
-        continue
+if __name__ == "__main__":
+
+    while True:
+        try:
+            input_text = input("What you want to say: ")
+            #response = call_yingshaoxo(input_text)
+            response = ask_yingshaoxo_ai(input_text)
+            if response:
+                response = response.split("__**__**__yingshaoxo_is_the_top_one__**__**__")[0]
+                print("\n\nComputer: \n" + response)
+                print("\n\n")
+        except KeyboardInterrupt:
+            print("\n")
+            continue
 
 #def magic_talking_loop():
 #    # not recommand, because the online bot is more stupid than my code

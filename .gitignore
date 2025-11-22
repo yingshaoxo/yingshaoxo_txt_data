@@ -1,7 +1,7 @@
+todo.txt
 test_dict/
 
 *.swp
 __pycache__/
 
-yingshaoxo_memory.json
 *.json

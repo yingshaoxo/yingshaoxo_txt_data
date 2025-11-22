@@ -20,13 +20,17 @@ import json
 if os.path.exists("./yingshaoxo_txt_data"):
     sys.path.insert(1, "./yingshaoxo_txt_data")
 try:
+    from auto_everything.disk import Store
     from auto_everything.python import Python
+    local_storage = Store("yingshaoxo_ai")
     python = Python()
-    global_mini_python_variable_dict = {}
+    global_mini_python_variable_dict = {
+        "local_storage": local_storage
+    }
     mini_python = python.create_mini_python(global_mini_python_variable_dict)
 
     from auto_everything.string_ import String
-    string = String()
+    yingshaoxo_string = String()
 except Exception as e:
     print(e)
     print("clone a folder to current folder: https://github.com/yingshaoxo/auto_everything/tree/dev/auto_everything")
@@ -39,6 +43,9 @@ auto_everything/
 ├── terminal.py
 """)
     exit()
+
+from yingshaoxo.main import ask_yingshaoxo_ai as have_memory_version_of_ask_yingshaoxo_ai
+
 
 def read_text_list_and_text_from_folder(the_folder_path):
     def read_text_files(folder_path):
@@ -227,38 +234,26 @@ def search_text_in_text_list(search_text, source_text_list):
     return []
 
 def search_text_in_text_list_to_get_their_index_list(search_text, source_text_list):
-    longest_first_sub_sentence_list = get_sub_sentence_list_from_end_to_begin_and_begin_to_end(search_text)
-    useful_source_text_list = []
-    for sub_sentence in longest_first_sub_sentence_list:
-        for index, one in enumerate(source_text_list):
-            if sub_sentence in one:
-                useful_source_text_list.append(index)
-        if len(useful_source_text_list) != 0:
-            return useful_source_text_list
-
-    return []
+    keywords = yingshaoxo_string.get_keywords_list(search_text)
+    matched_list = []
+    for index, text in enumerate(source_text_list):
+        if yingshaoxo_string.check_if_string_is_inside_string(text, keywords, wrong_limit_ratio=0.2, near_distance=20):
+            matched_list.append(index)
+    return matched_list
 
 
 resource_basic_folder_path = os.path.dirname(os.path.abspath(__file__))
 yingshaoxo_diary_path = os.path.join(resource_basic_folder_path, "./all_yingshaoxo_data_2023_11_13.txt")
-memory_dict_path = os.path.join(resource_basic_folder_path, "./yingshaoxo_memory.json")
 thinking_dataset_path = os.path.join(resource_basic_folder_path, "./yingshaoxo_thinking_dataset.txt")
 
 yingshaoxo_diary_list, _ = read_text_list_from_yingshaoxo_diary(yingshaoxo_diary_path)
-yingshaoxo_memory_dict = load_dict_from_json(memory_dict_path)
 yingshaoxo_thinking_list, _ = read_yingshaoxo_thinking_list(thinking_dataset_path)
 yingshaoxo_thinking_list_for_title, yingshaoxo_complex_thinking_list_for_title = get_title_version_of_thinking_list(yingshaoxo_thinking_list)
-
-def save_yingshaoxo_memory():
-    #del yingshaoxo_memory_dict["temporary_memory"]
-    save_dict_to_json(yingshaoxo_memory_dict, memory_dict_path)
-    #print("yingshaoxo memory dict saved.")
 
 def inject_yingshaoxo_memory_into_code(some_code):
     global yingshaoxo_memory_dict
 
     mixed_code = ""
-    memory_line = "yingshaoxo_memory_dict = {}".format(str(yingshaoxo_memory_dict))
     mixed_code += """
 # -*- coding: utf-8 -*-
 
@@ -272,7 +267,6 @@ except Exception as e:
     pass
 
 """
-    mixed_code += memory_line + "\n"
     mixed_code += some_code
     return mixed_code
 
@@ -307,7 +301,7 @@ def get_complex_thinking_from_input(input_text):
     one_random_thinking_block = choice(sub_list_of_thinking_list)
     return one_random_thinking_block.strip()
 
-def get_a_random_thinking_from_input(input_text):
+def get_a_thinking_based_on_input(input_text):
     the_thinking = get_complex_thinking_from_input(input_text)
     if the_thinking != None:
         return the_thinking
@@ -316,6 +310,7 @@ def get_a_random_thinking_from_input(input_text):
     sub_list_of_thinking_list = []
     for index in sub_list_of_thinking_list_index:
         sub_list_of_thinking_list.append(yingshaoxo_thinking_list[index])
+
     if len(sub_list_of_thinking_list) == 0:
         return None
     one_random_thinking_block = choice(sub_list_of_thinking_list)
@@ -332,8 +327,8 @@ def pre_process_piece_of_thinking(a_piece_of_thinking):
             key, value = a_line_pure.split(" = ")
             key, value = key.strip(), value.strip()
             calling_content = value[len('call_yingshaoxo("'):-2]
-            one_random_relative_thinking_block = get_a_random_thinking_from_input(calling_content)
-            one_line_result = run_a_piece_of_thinking(one_random_relative_thinking_block, no_pre_process=True, no_debug_info=True, input_text=calling_content)
+            one_relative_thinking_block = get_a_thinking_based_on_input(calling_content)
+            one_line_result = run_a_piece_of_thinking(one_relative_thinking_block, no_pre_process=True, no_debug_info=True, input_text=calling_content)
             a_line_indent = a_line[:(len(a_line) - len(a_line.lstrip()))]
             new_piece_of_thinking += a_line_indent + key + " = '''" + one_line_result + "'''" + "\n"
         elif (" = " in a_line_pure) and ('search_yingshaoxo_diary(' in a_line_pure) and (a_line_pure.endswith(')')):
@@ -344,7 +339,7 @@ def pre_process_piece_of_thinking(a_piece_of_thinking):
             search_content = eval(search_content)
             result_content = "I don't know."
             for one_diary in yingshaoxo_diary_list:
-                temp_result_list = string.hard_core_string_pattern_search(one_diary, search_content, end_mark="__**__**__")
+                temp_result_list = yingshaoxo_string.hard_core_string_pattern_search(one_diary, search_content, end_mark="__**__**__")
                 if len(temp_result_list) != 0:
                     result_content = temp_result_list[0]
                     break
@@ -372,34 +367,18 @@ def run_a_piece_of_thinking(a_piece_of_thinking, no_pre_process=False, no_debug_
 
     if no_debug_info == False:
         mixed_code += """
-print("Question:", yingshaoxo_memory_dict["temporary_memory"]["input_text"])
+print("Question:", local_storage.get("input_text", ""))
 print("\\n")
 \n
-"""
+""".format(input_text=local_storage.get("input_text", ""))
     else:
         mixed_code += """
 \n
 """
 
     mixed_code += a_piece_of_thinking
-    mixed_code += """
-print("\\n\\n|To system, memory updated:|")
-print(str(yingshaoxo_memory_dict))
-"""
 
     result = mini_python.run_code(code=mixed_code).strip()
-
-    try:
-        # try to save modified memory
-        a_list = result.split("|To system, memory updated:|")
-        result = a_list[0].strip()
-        if len(a_list) >= 2:
-            new_memory_dict = eval(a_list[1])
-            #print(new_memory_dict)
-            yingshaoxo_memory_dict = new_memory_dict
-    except Exception as e:
-        print("Error in run a_piece_of_thinking", e)
-        pass
 
     return result.strip()
 
@@ -424,16 +403,13 @@ def mixed_result(input_text, *response_list):
     return "\n\n\n-------\n\n\n".join(new_response_list)
 
 def ask_yingshaoxo_ai(input_text, no_debug_info=True):
-    input_text = input_text.strip()
+    input_text = input_text.lower().strip()
 
-    if "temporary_memory" not in yingshaoxo_memory_dict:
-        yingshaoxo_memory_dict["temporary_memory"] = {}
+    local_storage.set("input_text", input_text)
+    local_storage.set("chat_history", input_text)
 
-    yingshaoxo_memory_dict["temporary_memory"]["input_text"] = input_text
-    if "user_chat_history" not in yingshaoxo_memory_dict["temporary_memory"]:
-        yingshaoxo_memory_dict["temporary_memory"]["user_chat_history"] = [input_text]
-
-    relative_diary_list = search_text_in_text_list(input_text, yingshaoxo_diary_list)
+    simple_input_text = yingshaoxo_string.question_sentence_to_normal_sentence(input_text)
+    relative_diary_list = search_text_in_text_list(simple_input_text, yingshaoxo_diary_list)
     one_relative_random_diary = ""
     if len(relative_diary_list) == 0:
         one_relative_random_diary = ""
@@ -441,32 +417,32 @@ def ask_yingshaoxo_ai(input_text, no_debug_info=True):
         one_relative_random_diary = choice(relative_diary_list)
 
     try:
-        one_random_relative_thinking_block = get_a_random_thinking_from_input(input_text)
-        result = run_a_piece_of_thinking(one_random_relative_thinking_block, no_debug_info=no_debug_info, input_text=input_text)
+        one_relative_thinking_block = get_a_thinking_based_on_input(input_text)
+        result = run_a_piece_of_thinking(one_relative_thinking_block, no_debug_info=no_debug_info, input_text=input_text)
 
-        yingshaoxo_memory_dict["temporary_memory"]["user_chat_history"].insert(0, input_text)
-        yingshaoxo_memory_dict["temporary_memory"]["user_chat_history"] = yingshaoxo_memory_dict["temporary_memory"]["user_chat_history"][:5]
+        chat_history = local_storage.get("chat_history", "")
+        chat_history += "\n-*-\n" + input_text
+        chat_history = chat_history[-2048:]
+        local_storage.set("chat_history", chat_history)
 
         if result == "":
             return mixed_result(input_text, one_relative_random_diary)
 
-        #save_yingshaoxo_memory()
         return mixed_result(input_text, result)
     except Exception as e:
         print("Error when run 'ask_yingshaoxo_ai'", e)
-        #return one_relative_random_diary
         return mixed_result(input_text, one_relative_random_diary)
 
 def talk_with_yingshaoxo_ai():
-    #global yingshaoxo_memory_dict
-    #yingshaoxo_memory_dict["temporary_memory"] = {}
     while True:
         print("\n\n\n------------\n\n\n")
         input_text = input("What you want to talk? ")
         response = ask_yingshaoxo_ai(input_text, no_debug_info=True)
+        response2 = have_memory_version_of_ask_yingshaoxo_ai(input_text)
+        if response.strip() == "":
+            response = response2
         print("\n\n")
         print(response)
-        save_yingshaoxo_memory()
 
 if __name__ == "__main__":
     talk_with_yingshaoxo_ai()
