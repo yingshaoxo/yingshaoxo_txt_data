@@ -42,8 +42,15 @@ __**__**__yingshaoxo_is_the_top_one__**__**__
 #play a song
 
 print("on my way...")
-call_yingshaoxo("play a song randomly from a folder called '~/Music'.")
+print(call_yingshaoxo("play a song randomly from a folder called '~/Music'."))
 print("done")
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+#play one randomly from a folder called '~/Music'.
+
+print("my thoughts: why don't you just go to the folder, and play it by yourself?")
 
 
 __**__**__yingshaoxo_is_the_top_one__**__**__
@@ -68,7 +75,6 @@ __**__**__yingshaoxo_is_the_top_one__**__**__
 
 
 """
-input_text = ""
 if input_text.startswith("repeat "):
     print("True")
 if input_text.startswith("请重复"):
@@ -86,7 +92,6 @@ __**__**__yingshaoxo_is_the_top_one__**__**__
 
 
 """
-input_text = ""
 if "如何" in input_text and "反" in input_text:
     print("True")
 if "how to " in input_text and (" fight back " in input_text or " anti " in input_text):
@@ -219,7 +224,6 @@ __**__**__yingshaoxo_is_the_top_one__**__**__
 
 
 """
-input_text = ""
 if "porn" in input_text and "website" in input_text:
     print("True")
 if "yellow" in input_text and "vcd" in input_text:
@@ -236,8 +240,6 @@ __**__**__yingshaoxo_is_the_top_one__**__**__
 
 
 """
-input_text = ""
-
 def isascii(a_text):
     try:
         return a_text.isascii()
@@ -303,7 +305,6 @@ __**__**__yingshaoxo_is_the_top_one__**__**__
 
 
 """
-input_text = ""
 chat_history = local_storage.get("chat_history", "")
 if ("be your girlfriend" in chat_history) or ("be my boyfriend" in chat_history):
     print("True")
@@ -332,7 +333,6 @@ __**__**__yingshaoxo_is_the_top_one__**__**__
 
 
 """
-input_text = ""
 if "not expect that" in input_text:
     print(True)
 """
@@ -378,9 +378,7 @@ __**__**__yingshaoxo_is_the_top_one__**__**__
 
 
 """
-input_text = ""
-new_input_text = input_text
-if new_input_text.startswith("what ") and (new_input_text.endswith(" you like?") or (new_input_text.endswith(" you love?"))):
+if input_text.startswith("what ") and (input_text.endswith(" you like?") or (input_text.endswith(" you love?"))):
     print(True)
 """
 
@@ -407,9 +405,7 @@ __**__**__yingshaoxo_is_the_top_one__**__**__
 
 
 """
-input_text = ""
-new_input_text = input_text
-if ("what " in new_input_text) and ((" your advise " in new_input_text) or (" your suggestion " in new_input_text)):
+if ("what " in input_text) and ((" your advise " in input_text) or (" your suggestion " in input_text)):
     print(True)
 """
 
@@ -420,7 +416,6 @@ __**__**__yingshaoxo_is_the_top_one__**__**__
 
 
 """
-input_text = ""
 words = input_text.strip(".?!").split(" ")
 if len(words) == 3 and words[0] == "i" and words[-1] == "you":
     print(True)
@@ -440,7 +435,6 @@ __**__**__yingshaoxo_is_the_top_one__**__**__
 
 
 """
-input_text = ""
 new_input = input_text.strip("？?")
 if new_input.startswith("do you have "):
     print(True)
@@ -467,7 +461,6 @@ __**__**__yingshaoxo_is_the_top_one__**__**__
 
 
 """
-input_text = ""
 new_input = input_text
 if new_input.startswith("i have "):
     print(True)

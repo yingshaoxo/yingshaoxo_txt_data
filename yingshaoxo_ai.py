@@ -1,8 +1,5 @@
 # -*- coding: utf-8 -*-
 """
-yingshaoxo after one month of development: In my thinking, in all current task, it will only last for 5 or 10 history chat message. I mean I should use last 10 chat history to determine if now is in making_love mode or other mode. Sometimes it can be other mode, for example, feel_sad mode. This is just a big picture. Sometimes a variable in temporary_memory will also effects the response, for example, if memory["is_girlfriend"]==True, it will say something differently.
-"""
-"""
 Just think about this:
 
 example: hi, mom! -> hi, kid!
@@ -16,6 +13,19 @@ import sys
 from random import choice
 import json
 
+def search_yingshaoxo_diary(input_text):
+    for one_diary in yingshaoxo_diary_list:
+        temp_result_list = yingshaoxo_string.hard_core_string_pattern_search(one_diary, input_text, end_mark="__**__**__")
+        if len(temp_result_list) != 0:
+            result_content = temp_result_list[0]
+            return result_content
+    return ""
+
+def simple_call_yingshaoxo(input_text):
+    one_relative_thinking_block = get_a_thinking_based_on_input(input_text)
+    result = run_a_piece_of_thinking(one_relative_thinking_block, no_debug_info=True, input_text=input_text)
+    return result
+
 #from yingshaoxo_python import run_python_code
 if os.path.exists("./yingshaoxo_txt_data"):
     sys.path.insert(1, "./yingshaoxo_txt_data")
@@ -25,7 +35,9 @@ try:
     local_storage = Store("yingshaoxo_ai")
     python = Python()
     global_mini_python_variable_dict = {
-        "local_storage": local_storage
+        "local_storage": local_storage,
+        "search_yingshaoxo_diary": search_yingshaoxo_diary,
+        "call_yingshaoxo": simple_call_yingshaoxo,
     }
     mini_python = python.create_mini_python(global_mini_python_variable_dict)
 
@@ -102,6 +114,7 @@ def get_title_version_of_thinking_list(a_thinking_list):
     for one in a_thinking_list:
         if not (one.strip().startswith('"""')):
             lines = one.strip().split("\n")
+            lines = [one.strip() for one in lines if one.strip().startswith("#")]
             if len(lines) > 0:
                 a_line = lines[0]
                 if a_line.startswith("#"):
@@ -117,7 +130,7 @@ def get_title_version_of_thinking_list(a_thinking_list):
         if (one.strip().startswith('"""')) and (one.count('"""') >= 2):
             # read code inside """ """ as python code filter, or regex_similar python code, if that code return True, means it matchs this thinking piece.
             the_filter_code = one.split('"""')[1]
-            if 'input_text = ""' in the_filter_code:
+            if 'True' in the_filter_code:
                 complex_list.append(the_filter_code)
             else:
                 complex_list.append("")
@@ -125,20 +138,6 @@ def get_title_version_of_thinking_list(a_thinking_list):
             complex_list.append("")
 
     return simple_list, complex_list
-
-def save_dict_to_json(a_dict, filename="yingshaoxo_memory.json"):
-    text = json.dumps(a_dict, indent=4)
-    with open(filename, 'w', encoding="utf-8") as f:
-        f.write(text)
-
-def load_dict_from_json(filename="yingshaoxo_memory.json"):
-    if not os.path.exists(filename):
-        save_dict_to_json({}, filename=filename)
-        return load_dict_from_json(filename=filename)
-    with open(filename, 'r', encoding="utf-8") as f:
-        text = f.read()
-    json_dict = json.loads(text)
-    return json_dict
 
 def get_sub_sentence_list_from_end_to_begin_and_begin_to_end(input_text, no_single_char=True, char_limit=True):
     input_text = input_text.strip()
@@ -250,9 +249,13 @@ yingshaoxo_diary_list, _ = read_text_list_from_yingshaoxo_diary(yingshaoxo_diary
 yingshaoxo_thinking_list, _ = read_yingshaoxo_thinking_list(thinking_dataset_path)
 yingshaoxo_thinking_list_for_title, yingshaoxo_complex_thinking_list_for_title = get_title_version_of_thinking_list(yingshaoxo_thinking_list)
 
-def inject_yingshaoxo_memory_into_code(some_code):
-    global yingshaoxo_memory_dict
+def update_thinking_list():
+    global yingshaoxo_thinking_list
+    global yingshaoxo_thinking_list_for_title, yingshaoxo_complex_thinking_list_for_title
+    yingshaoxo_thinking_list, _ = read_yingshaoxo_thinking_list(thinking_dataset_path)
+    yingshaoxo_thinking_list_for_title, yingshaoxo_complex_thinking_list_for_title = get_title_version_of_thinking_list(yingshaoxo_thinking_list)
 
+def inject_predefined_code_into_code(some_code):
     mixed_code = ""
     mixed_code += """
 # -*- coding: utf-8 -*-
@@ -277,15 +280,8 @@ def get_complex_thinking_from_input(input_text):
             if python_code.strip() == "":
                 continue
             else:
-                lines = python_code.split("\n")
-                new_lines = []
-                for line in lines:
-                    if 'input_text = ""' in line:
-                        new_lines.append('input_text = ' + json.dumps(a_input_text))
-                    else:
-                        new_lines.append(line)
-                new_python_code = "\n".join(new_lines)
-                new_python_code = inject_yingshaoxo_memory_into_code(new_python_code)
+                new_python_code = "input_text='''{}'''\n".format(a_input_text) + python_code
+                new_python_code = inject_predefined_code_into_code(new_python_code)
                 result = mini_python.run_code(code=new_python_code).strip()
                 if "True" in result and "error" not in result.lower():
                     the_index_list.append(index)
@@ -317,42 +313,18 @@ def get_a_thinking_based_on_input(input_text):
     return one_random_thinking_block.strip()
 
 def pre_process_piece_of_thinking(a_piece_of_thinking):
-    lines = a_piece_of_thinking.split("\n")
-    new_piece_of_thinking = ""
-    line_index = 0
-    while line_index < len(lines):
-        a_line = lines[line_index]
-        a_line_pure = a_line.strip()
-        if (" = " in a_line_pure) and ('call_yingshaoxo("' in a_line_pure) and (a_line_pure.endswith('")')):
-            key, value = a_line_pure.split(" = ")
-            key, value = key.strip(), value.strip()
-            calling_content = value[len('call_yingshaoxo("'):-2]
-            one_relative_thinking_block = get_a_thinking_based_on_input(calling_content)
-            one_line_result = run_a_piece_of_thinking(one_relative_thinking_block, no_pre_process=True, no_debug_info=True, input_text=calling_content)
-            a_line_indent = a_line[:(len(a_line) - len(a_line.lstrip()))]
-            new_piece_of_thinking += a_line_indent + key + " = '''" + one_line_result + "'''" + "\n"
-        elif (" = " in a_line_pure) and ('search_yingshaoxo_diary(' in a_line_pure) and (a_line_pure.endswith(')')):
-            # this method still has problem, it should get running in runtime than pre_process
-            key, value = a_line_pure.split(" = ")
-            key, value = key.strip(), value.strip()
-            search_content = value[len('search_yingshaoxo_diary('):-1]
-            search_content = eval(search_content)
-            result_content = "I don't know."
-            for one_diary in yingshaoxo_diary_list:
-                temp_result_list = yingshaoxo_string.hard_core_string_pattern_search(one_diary, search_content, end_mark="__**__**__")
-                if len(temp_result_list) != 0:
-                    result_content = temp_result_list[0]
-                    break
-            a_line_indent = a_line[:(len(a_line) - len(a_line.lstrip()))]
-            new_piece_of_thinking += a_line_indent + key + " = '''" + result_content + "'''" + "\n"
-        else:
-            new_piece_of_thinking += a_line + "\n"
-        line_index += 1
-    return new_piece_of_thinking.strip()
+    return a_piece_of_thinking
+    #lines = a_piece_of_thinking.split("\n")
+    #new_piece_of_thinking = ""
+    #line_index = 0
+    #while line_index < len(lines):
+    #    a_line = lines[line_index]
+    #    a_line_pure = a_line.strip()
+    #    new_piece_of_thinking += a_line + "\n"
+    #    line_index += 1
+    #return new_piece_of_thinking.strip()
 
 def run_a_piece_of_thinking(a_piece_of_thinking, no_pre_process=False, no_debug_info=False, input_text=None):
-    global yingshaoxo_memory_dict
-
     result = ""
     if a_piece_of_thinking == None:
         return result
@@ -361,7 +333,7 @@ def run_a_piece_of_thinking(a_piece_of_thinking, no_pre_process=False, no_debug_
         a_piece_of_thinking = pre_process_piece_of_thinking(a_piece_of_thinking)
 
     mixed_code = ""
-    mixed_code = inject_yingshaoxo_memory_into_code(mixed_code)
+    mixed_code = inject_predefined_code_into_code(mixed_code)
     if input_text != None:
         mixed_code += "\n" + "input_text='''{}'''".format(input_text)
 
@@ -403,6 +375,9 @@ def mixed_result(input_text, *response_list):
     return "\n\n\n-------\n\n\n".join(new_response_list)
 
 def ask_yingshaoxo_ai(input_text, no_debug_info=True):
+    if no_debug_info == False:
+        update_thinking_list()
+
     input_text = input_text.lower().strip()
 
     local_storage.set("input_text", input_text)
@@ -433,11 +408,11 @@ def ask_yingshaoxo_ai(input_text, no_debug_info=True):
         print("Error when run 'ask_yingshaoxo_ai'", e)
         return mixed_result(input_text, one_relative_random_diary)
 
-def talk_with_yingshaoxo_ai():
+def talk_with_yingshaoxo_ai(no_debug_info=True):
     while True:
         print("\n\n\n------------\n\n\n")
         input_text = input("What you want to talk? ")
-        response = ask_yingshaoxo_ai(input_text, no_debug_info=True)
+        response = ask_yingshaoxo_ai(input_text, no_debug_info=no_debug_info)
         response2 = have_memory_version_of_ask_yingshaoxo_ai(input_text)
         if response.strip() == "":
             response = response2
@@ -445,4 +420,4 @@ def talk_with_yingshaoxo_ai():
         print(response)
 
 if __name__ == "__main__":
-    talk_with_yingshaoxo_ai()
+    talk_with_yingshaoxo_ai(no_debug_info=False)
