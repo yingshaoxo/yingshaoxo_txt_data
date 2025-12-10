@@ -1,0 +1,40 @@
+# Good format of database
+
+"什么是xxx?" -> "xxx是aaa, xxx可以用来bbb, xxx的获取方式是ccc, xxx是由ddd组成, 维持xxx需要ddd2，xxx的制作方法是eee，xxx的代替品是fff，我对xxx的看法是ggg。"
+
+"为什么xxx?" -> "因为aaa，所以xxx。xxx的表层原因是bbb。xxx的深层次原因是ccc。xxx的好处是ddd。xxx的坏处是eee。我认为xxxfff。"
+
+"如何做xxx?" -> "为了做xxx，你必须先知道aaa，aaa是bbb。aaa需要你ccc。ccc需要ddd步才能完成。做ccc的第一步是eee。做ccc的第二步是fff。做ccc的第二步是ggg。"
+
+"How to do xxx?" -> "To do xxx, you have to know xxx first. xxx is aaa. xxx requires you bbb. xxx needs ccc steps to be done. step 1 for xxx is ddd. step 2 for xxx is eee..."
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+# human
+
+
+## core value
+
+if you can't find freedom, you can die.
+
+
+## what is human? 
+
+human is an advanced animal. human can do a lot of things. 
+
+the way to get human is: ask a human to go to your place.
+
+human is composed by meat, bones. meat is soft, bones are hard.
+
+to keep human stable, you will need food, water, warm shelter, just like other animal.
+
+the way to make human is:
+1. have a man and woman, let them make love, then you could have a new bady.
+2. create a creature from basics, just copy some animal that has temperature 36.
+3. create a virtual man in computer 3D engine, make sure it matches all live human behavior.
+
+the alternative for human is other animal. but you may need to increase their intelligence first.
+
+my view for human is: i am them. i am weak. i can't live by myself without dependencies.
