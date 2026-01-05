@@ -1,0 +1,20 @@
+# make_a_computer_or_make_a_creature
+
+author: yingshaoxo
+writing technique 1: ascii_keyboard + old_ubuntu + ext2 + terminator + vim + lowercase_english + simplified_chinese
+writing technique 2: step by step, physical workable is more important than talking and understanding. experiment driving knowledge base. fully re_produceable if no one breaks the dependencies, for example, remove an material from the world, remove a language from the world.
+
+_______
+
+day 1:
+created a book called "make_a_computer_or_make_a_creature", so that we will not lose memory after day 9999.
+defined a new way to write experiment notes. video is expensive, text is cheap. if we can control the note language, start from basic words and concept and ideas, it can be easy for people to understand. but the main purpose is keep memory safe. you can't share a valuable knowledge to those deeply controlled slaves in this world. those low level people can't control what kind of information they receive.
+
+我听说电线是电脑的基础元件之一。电线是一根线，这根线是导电金属制作的。测量方法是用万用电表，切换到"测电阻模式"的最小档位，如果得到电阻值为0，那么就是可导电金属。
+> but what if there has no "electronic meter", how to know if a line is electronic line? (a tip: when you connect positive and negtive 3V line for 0.1 second, there will have "electronic flowers")
+
+_______
+
+day 2:
+put 2 green vegetable with root into soil. maybe it will grow.
+我把植物带根放进室内泥土杯子，没有太阳，不知道会不会正常生长。已经过了2天，在冬天，植物好像没那么容易死亡。
