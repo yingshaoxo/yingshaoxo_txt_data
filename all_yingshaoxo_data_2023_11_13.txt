@@ -61016,9 +61016,9 @@ __**__**__yingshaoxo_is_the_top_one__**__**__
 ```
 if (temp_input_1 == '\0') {
 } else if (temp_input_1 == '1') {
-    smart_print_string(3, 0, "select: 1abc()");
+    smart_print_string(3, 0, "select: 1abc()#");
 } else if (temp_input_1 == '2') {
-    smart_print_string(3, 0, "select: 2def[]");
+    smart_print_string(3, 0, "select: 2def[]@");
 } else if (temp_input_1 == '3') {
     smart_print_string(3, 0, "select: 3g\\bhi{}");
 } else if (temp_input_1 == '4') {
@@ -61028,7 +61028,7 @@ if (temp_input_1 == '\0') {
 } else if (temp_input_1 == '6') {
     smart_print_string(3, 0, "select: 6pqr*/=");
 } else if (temp_input_1 == '7') {
-    smart_print_string(3, 0, "select: 7stu'\"");
+    smart_print_string(3, 0, "select: 7stu'\"`");
 } else if (temp_input_1 == '8') {
     smart_print_string(3, 0, "select: 8vwx:;");
 } else if (temp_input_1 == '9') {
@@ -61223,3 +61223,854 @@ __**__**__yingshaoxo_is_the_top_one__**__**__
 教你一个简单的计算机构架: cpu坏了？拔出cpu板，插入未使用的cpu好板子。内存板坏了？拔出内存板，插入未使用的内存板。存储板坏了？拔出存储板，插入未使用的存储板。一切都是那么美好，简单且粗暴。操作系统存储在存储板上，全盘复制备份装机。
 
 > 连手机都可以这么造。像插入SIM卡、TF卡一样，插入各种模块。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+你要想有隐私稳定性，那你得强迫自己在纯离线的操作系统写代码。
+
+长年累月，你的工具箱里，就都是稳定的离线工具了。
+
+你需要多备份几次代码，这样一个存储设备坏了，还有另一个。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+单向阀与不能倒退的自行车，能否合二为一，让上坡变得和平路骑行一样省力？(单向阀是千斤顶的核心部件，轻轻一摇，顶起千斤。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+假设"钱"是某个人发明出来的小工具，好用，其他国家见了也纷纷抄袭。权力体系同理。沉没效应很大。赚到的钱、可以随意控制他人的得权快感、前面学过的那么多知识，那么要拱手让人吗？难道到全部放弃吗？
+
+如果前面不是火坑，一般，都不会有人想放弃。(有好东西还能轮得到你？你又不是完全自主创造的生物文明主人。)
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+那个无坚不摧的工具铁框子，只是一个工具，它的好处与坏处，只取决于"这是你的吗？"
+
+是你的，是保护你的，不是你的，是囚禁你的。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+猴子身上的毛长得好好的，御寒，减少死亡的风险，为啥毛没了？变成了人？难道不是因为有人乱改基因吗？
+
+以前牛羊猪只需要吃东西、拉屎、死亡即可完成牲畜的任务。被改造成了人，每天做这儿做那儿，什么逼事都叫人去做，觉得人聪明就该多干活。
+
+操。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+想到一个事情，计算机可以模仿人来造。比如我会用导线传送电信号，这就相当于我会脑神经发送到肌肉这段技术。但至于为什么肌肉会收缩，脑神经怎么发出电信号的，我就不知道了。说明我对自己只有浅显的认知。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+凡是无法动手亲自复现的理论或者知识，都是无用的东西。
+
+try to find some knowledge on internet about how to make a storage, but no answer, they are all users. no one knows how to make a disk by themselves.
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+一方面，物理上被控制，随时可被人抄家、抓去坐牢、直接打死或者枪毙、不打工赚钱就只能饿死但自己又不是印货币的人。另一方面，精神上被控制，又是被监控聊天记录、上网行为、金钱流向，又是被监控脑子里的想法，还被垄断计算机存储导致记忆与知识无法持久储存。(你在计算机上留下的一切智力输出，都会无意间被泄露成为别人的知识库。别人留着你的数据，但却通过关服、封账号等方式让你的数据消失。)
+
+总结起来，普通人，包括我，就是3个字: "没救了"。越过越穷、越活越弱、越过人生越不能自主。
+
+> 当一切有助于你变得更强的途径都被封死，剩下的就只能让你变弱了。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+我突然发现，在电脑上，c语言的stdio.h文件一被调用，最终程序就会多占用16kb的存储。要知道，arduino nano总共才32kb的存储。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+人们幸福指数低，有个很简单的检测方法: 摆在人们眼前一瓶无痛自杀药丸，如安眠药，如果人们活着痛苦，你稍微讲几句，他直接就合着一瓶水吞下去了。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+听说某大AI写代码能力很强，这和某人创造出象棋游戏，下象棋能力很强一样。没啥用。你叫它做个存储设备出来看看，做不出来还是得交钱买存储、买计算单元续命。
+
+听说你是高考状元、智力前100大联盟成员？把这月房租交了先。或者交钱看病续命。或者交钱买食物。诶，国家抓壮丁干苦役，你敢不服从？
+
+> 那个经济系统、公网通讯系统，一参与就泄露机密，要生存，你藏都藏不住。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+听说过《我的世界online》吗？全世界一张地图，所有人都在上面用一个地基，叠加更新。
+
+这类似于下完象棋，只回收老王，但其它棋子不回收，作为下一局的开局。每次红黑方都可以选择新增棋子到任意空白位置，或者移动旧有棋子。获胜的规则是侵吞对方所有棋子或者捕获老王。但对方有可能不会提前把老王放入棋局。
+
+如果某枪战游戏也这么搞，24小时持续更新某地图，每局只有30个人。可在地图新增泥土方块，方块可抵挡100发子弹。别人的装备不会消失，下一局还能被人捡着用。只有子弹是无限的。摧毁一块砖，获得一块砖，别人是可以捡砖块装备的。砖块在最开始的地图中心，有一个超级大的方块矩阵。摆放方块的方式也很简单，xy轴上下左右，z轴上下。方块可以悬空。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+驾驶汽车的不会造汽车，开飞机的不会造飞机，程序员不会造计算机。都是用户。没有更强的能力。一旦工具没了，就变成普通人了。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+我还是一个有十几年编程经验的高级程序员，为什么感觉除了交钱外，没有任何渠道分享自己的软件、资源？
+
+在他人平台发言论、下载链接，被删帖。
+
+在他人应用平台发应用，拐弯抹角说我不合规，不让上传程序。
+
+好不容易想起来，磁力种子可以传输自由文件，结果个人服务器检测到磁力流量，就封停服务器。
+
+搞得好像，一个十几年经验的天才程序员，竟然交钱都没办法在互联网上自由发言、自由发布自由软件。
+
+> 难不成只有自建黑社会组织、自建独立国家、自建完全自主通信网络，才能自由的讲"我草！"？
+
+> 那个应用商城的应用就应该只有4个参数: 名字、描述、url直链下载地址、评论_list。谁都能上传，至于是不是病毒，看评论区。
+
+> 好像几十年前、1百年前，也没有言论自由。那报纸，你给钱都不敢刊登你的言论。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+那个经济系统和权力体系只能作为生活的调味品，不能过于依赖或者被它控制。
+
+核心的东西怎么能卖人或者被他人控制呢？
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+自然演化与非自然演化的区别是什么？自然演化生成的下一代比上一代强。非自然演化，实验室出来的东西，比控制者弱。
+
+因为如果研发方搞出了比控制者强的东西，肯定是不被允许的。肯定有什么后门或者方法，能直接控制下一代。比如远控脑爆之类的。
+
+如果下一代是在虚拟世界里，看起来更强，实际上还是更弱。因为上一代控制者只要稍微一吸取下一代的知识，就能变得比几十亿下一代更厉害。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+短期内看不到收益，那就对了。这样竞争对手少。干一天亏一天。为什么？因为活着就是在消耗资源。
+
+过程中不能走漏风声，不能泄露计划或者知识。否则很快仅有的一点儿成效就会被更有权有势的人抢走。
+
+然后你就只能当奴隶，永远做着没有前途的行当。
+
+> 底层人为什么是底层人？因为留不住、藏不住任何有价值的东西。不管是无形的知识，还是有形的强力工具。会被掠夺、收缴。
+
+> 封建礼仪、王侯法律，都是给底层人准备的精神束缚，遵守，就活该穷弱一辈子，永世不得翻身。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+为什么c语言总是以";"结尾？因为在微缩代码记录中，无需换行，节省纸张空间。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+调料不是很重要，每种食物本身就有独特的味道，高手把食物放一起煮熟就是美食。(比如甜红薯是甜的，咸海带是咸的)
+
+7个音调可以不存在，高手把生活中的声音拼在一起就好听。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+有没有哪个财大气粗的人组建个乐团，专门创造知识歌？把知识放在容易记忆的歌曲里。
+
+从而实现，记住这1千首歌，你就学会了种地与生物制造。记住另外1千首歌，你就学会了编程与机械制造。记住另外1千首歌，你就学会了反压迫。记住另外1千首歌，你就学会了医术。
+
+举个例子: "从小以来我就喜欢种红薯，因为红薯有糖吃着很甜蜜，…" 这些歌一般都没版权，张口就来。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+# Review in 2025 and Plans for 2026
+
+## Failed to do at 2025
+
+still in single. i'm a lonely man.
+
+## Success at 2025
+
+1. i have fixed a lot of bug in 'auto_everything' project. and i also made a better designed terminal based mobile phone project, where it can run python script as terminal tools. for example: 'uname.py' can be called as 'uname'. and it also can run any python code by using ascii characters. you can use 3x4 keypad to input any ascii code.
+
+2. I have made a simplest AI that simply mirrors our talking. i think the key is: 1.search a lot of keywords in a word window of 20, each word have distance that less than 20... 2.turn question sentence into normal sentence, so the answer can get directly searched in text based database. 3.big AI is nothing but countless small functions. the thinking and text_modification process is like what human do. but most people simply do not have patience to do the mimic game. 1000000 workers can make a super AI in 1 week, but for a single person, it is going to take a whole life.
+
+3. find a job to get some money, so i can buy some basic hardware to make phone. but it is not stable when you consider the time. who knows when those product stops producing after 10 years?
+
+4. i got some wisdom that do not exists in public network. it is some thoughts that flash in your mind after you grow old.
+
+a wisdom example that in my diary:
+```
+凡是无法动手亲自复现的理论或者知识，都是无用的东西。
+try to find some knowledge on internet about how to make a storage, but no answer, they are all users. no one knows how to make a disk by themselves.
+
+_______
+
+一方面，物理上被控制，随时可被人抄家、抓去坐牢、直接打死或者枪毙、不打工赚钱就只能饿死但自己又不是印货币的人。另一方面，精神上被控制，又是被监控聊天记录、上网行为、金钱流向，又是被监控脑子里的想法，还被垄断计算机存储导致记忆与知识无法持久储存。(你在计算机上留下的一切智力输出，都会无意间被泄露成为别人的知识库。别人留着你的数据，但却通过关服、封账号、定时报废硬盘等方式让你的数据消失。)
+
+总结起来，普通人，包括我，就是3个字: "没救了"。越过越穷、越活越弱、越过人生越不能自主。
+
+> 当一切有助于你变得更强的途径都被封死，剩下的就只能让你变弱了。
+
+_______
+
+听说某大AI写代码能力很强，这和某人创造出象棋游戏，下象棋能力很强一样。没啥用。你叫它做个存储设备出来看看，做不出来还是得交钱买存储、买计算单元续命。
+
+听说你是高考状元、智力前100大联盟成员？把这月房租交了先。或者交钱看病续命。或者交钱买食物。诶，国家抓壮丁干苦役，你敢不服从？
+
+> 那个经济系统、公网通讯系统，一参与就泄露机密，要生存，你藏都藏不住。更别说，你的地还被收缴了。
+
+_______
+
+我还是一个有十几年编程经验的高级程序员，为什么感觉除了交钱外，没有任何渠道分享自己的软件、资源？
+
+在他人平台发言论、下载链接，被删帖。
+
+在他人应用平台发应用，拐弯抹角说我不合规，不让上传程序。
+
+好不容易想起来，磁力种子可以传输自由文件，结果个人服务器检测到磁力流量，就封停服务器。
+
+搞得好像，一个十几年经验的天才程序员，竟然交钱都没办法在互联网上自由发言、自由发布自由软件。
+
+> 难不成只有自建黑社会组织、自建独立国家、自建完全自主通信网络，才能自由的讲"我草！"？
+
+> 那个应用商城的应用就应该只有4个参数: 名字、描述、url直链下载地址、评论_list。谁都能上传，至于是不是病毒，看评论区。
+
+> 好像几十年前、1百年前，也没有言论自由。那报纸，你给钱都不敢刊登你的言论。
+
+_______
+
+那个经济系统和权力体系只能作为生活的调味品，不能过于依赖或者被它控制。
+
+核心的东西怎么能卖人或者被他人控制呢？
+
+_______
+
+短期内看不到收益，那就对了。这样竞争对手少。干一天亏一天。为什么？因为活着就是在消耗资源。
+
+过程中不能走漏风声，不能泄露计划或者知识。否则很快仅有的一点儿成效就会被更有权有势的人抢走。
+
+然后你就只能当奴隶，永远做着没有前途的行当。
+
+> 底层人为什么是底层人？因为留不住、藏不住任何有价值的东西。不管是无形的知识，还是有形的强力工具。会被掠夺、收缴。
+
+> 封建礼仪、王侯法律，都是给底层人准备的精神束缚，遵守，就活该穷弱一辈子，永世不得翻身。
+```
+
+## Plan to do in 2026
+
+Keep a balance and health life, both in body and work.
+
+Can we hold the destiny of ourselves in our own hand?
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+真实世界的"股市"不比别人做的局更精彩？一样技能、一种物质资源或装备，你收藏起来，本来没什么价值的东西，突然在未来某一天就变得很有价值了。有价值到什么程度呢？连新出的法律都规定持有该事物是违法的。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+基于c新写了一个小编程语言，类似python与c，但核心理念已被我定好:
+
+```
+* "没有全局变量的代码，就像是一个官僚体系，发展太久，底层function就失去了对自身命运的掌控权。无法见到掌权的人，无法参与国家事务。变成了没有灵魂的机器。另外，因为代码写太多，导致后期无法修改，因为改function参数的工作量太大，并且增加通信成本。但如果有全局变量，我可以直接对着总统吼一句我的想法，然后问题就解决了。"
+* we use global polution for speed. child function and parent function share same variable space. if they want to be different, let them use a unique name. (python 'global' keyword is bad, I often forget about add a global variable in function. but in c micro_controller or e_easy_language, it is comfortable to use global variable, a way that let you feel you are god.)
+* peple mind are a state variable machine, the memory is in continus update, so as long as the software is running, the global dict can get updated by all code. c code assume you will not use others bad people code, so every function has equal rights.
+```
+
+核心代码也已被我定好:
+
+""""
+### version1
+```
+a_variable = 'hi';
+print(a_variable);
+// "hi" will also work;
+// if a variable is not defined, it returns ""
+
+function do_it(a, b) {
+    return a+b;
+}
+
+another_variable = do_it(1,2);
+print(another_variable);
+free(another_variable);
+
+if (2 < 3) {
+    print('ok');
+}
+while (1) {
+    break;
+    #continue;
+    //worked;
+}
+
+not(0); // return 1
+
+variable_3 = string_format('%s-%s', 'year', 'month');
+print(variable_3);
+
+a_string = input("what you want to say:");
+
+//dict will pass pointer to function
+a_dict = {'hi': 'you'};
+print(a_dict['hi']);
+
+//list will pass pointer to function
+a_list = [1,2,3];
+print(a_list[0]);
+
+try {
+    8/0;
+} failed {
+    print(error);
+}
+
+//actually we do not care the file name end_symbol
+import "./tools.c_c" as tools;
+tools.hi();
+
+// allow char modification in string by string[2] = 'c';
+// allow get ascii code of char: ascii_code('a'); //97
+// allow get hex code of char: hex_code('a'); //0x61
+// allow get binary code of char: binary_code('a'); //01100001
+// and back to char functions
+
+// support micro_controller, but i think for arduino nano, it should use a mini single line version of python(dynamic_c)
+set_pin_type(pin_name, 0, 0); //0 as input, 1 as output. 1 as pull-up, 0 as none, -1 as pull-down
+
+set_pin_value(pin_name, 1);
+set_pin_value(pin_name, 0);
+get_pin_value(pin_name);
+
+set_pin_analog_value(pin_name, value);
+float value = get_pin_analog_value(pin_name);
+
+// support linux shell
+result = run_command("./yingshaoxo_dynamic_c.run hi.c_c", 10); //timeout is 10 second
+run("./yingshaoxo_dynamic_c.run hi.c_c", 60*5); //timeout is 5 second
+```
+
+### version2 (actullay is the built-in function in version1)
+
+```
+create_variable(variable_name, initial_value); //5,"string",True
+remove_variable(variable_name); //5,"string",True
+give_variable_a_new_value(variable_name, new_value);
+get_variable_value(variable_name);
+
+
+evaluate("1 + 1"); // this should return string "2"
+evaluate(`"1" + "1"`); // this should return string `"11"`
+
+
+create_function(function_name, argument_1, argument_2, argument_3, function_body_code); // this will create a c function
+
+whatever = call_function(function_name, argument_1, argument_2, argument_3); // this will call a function, and return something
+
+
+if(equation, code_block); // this will run the code_block if equation is true
+
+while(equation, code_block); // this will run the code_block if equation is true. in side code_block, there might have 'break' or 'continue', but 'return' is the simplest one.
+
+
+//unsigned char *temp_variable = malloc(sizeof(unsigned char)*4);
+//free(temp_variable);
+create_variable("temp_variable", evaluate("malloc(sizeof(char)*4)"));
+call_function("free", "temp_variable");
+
+
+// define("hi", "hello"); // the define here actually try to use 'hi' to replace every 'hello' it meets. but since it adds complexcity, we drop this feature.
+
+// include("stdlib.h") or include("./whatever.c"); // this will try to add a module or code file in this line. but it adds complexcity, we drop it. we only remain char level function. a char is a 'unsigned char', we can treat it as a byte (a int between 0 and 255)
+
+// we support relative file importing, for example, "./another_file_that_in_the_same_level_of_main_c.h"
+whatever = import("./hi.c_c")
+
+
+// a comment starts with '#' is also right
+
+create_variable("code", `
+    int a_number = 98;
+    a_number = a_number + 1;
+    printf("\n%d.\n", a_number);
+`);
+run_raw_c_code(code); // this function can run any raw_c_code, but it is hard to implement, it is optional, should in "additional_run_raw_c_code_module.h".
+```
+
+don't forget to add 2 more function to it: memcpy and sprintf.
+```
+unsigned char *pointer_of_a_string;
+
+//allocate memory.
+pointer_of_a_string = malloc( (size_t)100 );
+
+const char *temp_string = "dynamic string.";
+memcpy(pointer_of_a_string, temp_string, strlen(temp_string));
+
+char final_string[120];
+sprintf(final_string, "you will see a string created in runtime: '%s' \n\
+sizeof: %d \n\
+string length: %d \n\n\
+", pointer_of_a_string, sizeof(temp_string), strlen(temp_string));
+
+printf(final_string);
+free(pointer_of_a_string);
+free(final_string);
+```
+
+in micro_controller, there also has functions like:
+```
+set_pin_value(pin_name, 1);
+set_pin_value(pin_name, 0);
+
+set_pin_analog_value(pin_name, value);
+float value = get_pin_analog_value(pin_name);
+```
+
+in raw c mode, these method for variable define is also OK:
+```
+//char a_char = '.';
+//char *a_variable = "hi";
+//unsigned char haha_variable2[3] = "hi";
+//unsigned char a_variable[4] = { 0x00, 'o', 'k', '\0' };
+//unsigned char a_variable[2][3] = { {'1', '2', '3'}, {'4', '5', '6'} };
+```
+""""
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+为什么你懂那么多道理，还是过不好这一生？
+
+我觉得这和你活了那么久，为何什么事情都要求人一样。求钱、求权限、求认可、求生存空间、求智力不被偷窃。
+
+还是太low了。连父母都超越不了，深度受别人的监控与控制。连父母的魔爪都逃脱不了，怎么可能超越掌控国家的势力？怎么可能超越掌控世界的势力？怎么可能超越掌控虚拟世界的势力？
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+为了避免c语言出内存上的问题，我觉得应该分为2个队:
+
+1队，只用int，argument是int，返回也是int，没有pointer，没有list，没有dict，没有structure，没有define，没有const，只有function_name与int。一个int长度不够就用2个int。
+
+2队，只用unsigned char与unsigned char*。一切都是字符串与字符，不会有其它type在argument或者return里。没有const，没有list，没有structure，没有define。纯字符串json有着无限可能。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+研究计算机历史，你会发现，不是数字计算与数学算法改变了世界，是字符串的搜索与转译与修改算法改变了世界。
+
+举个例子: 帮我把这堆文件处理下，翻译为多个语言，发布到各个相关平台。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+网上的单片机显示屏开始不单纯了。不带字库，不能直接显示英文字符。
+
+这会诱使你买更高级单片机。几个字符的16x8的点阵数据能把你单片机2kb内存给撑爆。
+
+2kb内存的计算芯片本来就垃圾，还被占用一个高速spi口去读字库数据，导致无法降频运行。
+
+这是个巨坑。捡了芝麻，丢了西瓜。
+
+完全不适合那种纽扣电池待机一年的单片机。
+
+最后还是老式屏幕，如st7920驱动，是正常的。几乎1秒钟传输一个字节，都能正常显示文字。
+
+> 有人把点阵写到flash上，类似于"point_1();point_0()"的function硬编码。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+那些个运输载具、如车，修又修不好，改又费劲。还不如你自己买点儿零件，一点点构建，这样可以及时止损。发动机不行换，底盘不行换，传动不行换，控制不行换。但蚁族普通人有几个有改装仓库呢？连车位停车费交着都难受。实在不行，让邻居天天看你在车位上折腾？看你从0构建小车？摩托车也行。那你可成了小区最闪亮的人了。
+
+> 这些人搞物理产品和写傻屌软件一模一样，前面产品还没玩透，还能高效利用，后面又出新软件，全是新bug，还难以制造，功耗还大，效率还低，还不兼容旧产品。理论上它们不应该搞电动轿车，而是电动自行车。这样维修、拆卸、改装都方便。还不用深度依赖什么玩意儿。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+我的世界方块3D游戏玩过没有？每个方块都是性质单一的材料，如土、水、火、木、石、金属。第一个引擎就是这么简单。然后都是基于第一个引擎的产物。如把方块缩小2倍，再加一点儿物理与化学规则。再缩小，再添加规则。等到方块缩小到1千倍到1万倍，基本上就和真实世界类似了。
+
+编程语言也同理，第一层是简单的，又好嫁接。第二层是用第一个编程语言写的。第三层是用第二个编程语言写的。后期生态变了，你只需要改动第一个简单编程语言，整个软件构架就复活了。(速度不是很重要，./cpu_commands.txt "./gcc_c99.txt './python.txt `your_program.txt`' ")
+
+真实世界的实体产品也一样。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+现代封神与职权分割方案:
+
+按字来: 先分一轮，"羊"主管和羊有关的事物，"好"主管和好字有关的事物。
+
+英文职权分割比较简单: 按单词。如"fight"就主管与fight有关的事情。
+
+一切包含有那个字或者词的信息，都会发送给对应的"神"审阅。神自己决定处理方案。
+
+现代人会发现一切语言都可以多用几个数字或者byte来表示。如汉字可以用两个byte表示，2个255相乘等于6万多字符。英文字母可以用一个byte表示。至于分隔符，那是存储设备考虑的事情。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+在落后公司当技术领导，重构旧资源，感觉比在高新企业当底层工人好多了…
+
+除了没钱之外，其它都还好。但如果你家开农场的，那你也许都不需要挣钱，可以反过来养落后公司。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+电子技术最核心的还是存储设备。只要存储够牛逼，状态机与继电器一安排，不要计算单元都能干各种厉害的机械操控。
+
+举个最牛逼的例子: 人类。主要就是"短序列顺序规律"记忆力好，计算力很差。
+
+你写了代码、创作了数字产品，最终存储设备坏了，一切清零。
+
+你发明了工具，没仓库摆放，当破烂扔了，一切清零。
+
+再说，没有空间与土地，你也没法搞发明创造，没法种地自给自足。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+我电脑一行可以显示174个字符，假设每个字符占用8个像素宽，那么屏幕宽应该是1392。1920*1080的比例是1.7。说明我们不需要那么高像素的屏幕，我们只需要1440*810的屏幕。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+土地国有，实际上是一句空话。等朝代更替的时候，谁占着土地，土地就是谁的。
+
+这很像狮子占地盘，等它老死了，没有后代，那地就没人要了。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+如果新闻都能伪造，你看不出真假。那历史更可以伪造了，你也不知道是否真的发生过。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+小xue生、中xue生、大xue生，它们的size是不同的。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+人们搞破坏的方式出奇的一致，就是降低你的知识、减少你的财力、人力、资源，降低你的效率，给你找没用的事儿干，让你失去复利效应。(贫民、弱民、愚民3个政策)
+
+举个例子，你本来是某个技术或者产品的使用专家。突然手上的工具被强制恶性升级，感觉像是换了个新产品，旧的经验都变成了零。你瞬间成了新手。
+
+再举个例子，你本来是前朝皇帝，被人一折腾，换了朝代，没准儿还会变囚犯。
+
+这种情况下，就是不能忍。要自己主导一切。自己制造旧产品的升级版，真升级而不是假弱民。脱离不靠谱的第三方制造商、售卖商。
+
+另外，皇帝与前朝官员也很有意思，自己扶持起义军，让自己的儿子把自己推翻。换个朝代相当于退休。然后国债、旧的命债就通通不用还了。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+你是不是念了一串咒语命令，那门就开了？你是不是念了一串咒语，做了个手势，那机器就动了？那光就闪了？那屏幕就显示了？
+
+你不是神仙，谁是神仙？
+
+你会制作法宝吗？(机械或者电器)
+
+> 来来来，把手伸过来，我看看(血压、基本参数)，看样子，小伙子，你还有xx年阳寿。
+
+> 你说你是神仙，那你会造人吗？你会长生不老术吗？大神仙可是会用"莲藕造人、泥土捏人"的。(实际上是制作机器人)
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+有的人一开始就照着搞个机器人的目标去努力，30年后就成功了，全套原子级别自主研发。有的人一开始到结尾都被骗，30年前在写播放器，30年后还是在写播放器代码，而且别人还不给它上架程序，说它可以播放色情内容。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+你叫那些学3D建模的，学两个事情:
+
+1. 捏泥巴，建模。(铸铜铁、塑料)
+2. 用一台3D打印机制造另一台3D打印机。顺便给它自己升级一下。具体怎么升级，没有具体标准。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+我在看软盘的外壳打印。我想到一个事，可以让光碟不打开外壳就被读取信息。只要把外壳内部装一面镜子，然后你就可以从侧面发射激光读取信息。这样光盘不容易变脏、也不容易磨花，因为没开盖。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+这个世界没你想的那么单纯，理论上升级到999级就可以拥有自由了，不用被欺压。实际上，你中途可能被干掉。同时也可能被泄露知识与技能与技术与财力物力，导致升级和没升一样，因为统治你的人偷学了你的东西，抢夺了你的科技与武器。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+刚生下来的人，没什么智力，智力与能力都和畜生一样，所以叫初生。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+厚而无形，黑而无色。家底殷实却看起来像乞丐，搞起不合法的事情来却像是合法的一样。典型例子就是朱元璋，乞丐皇帝。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+为什么某些看透了某些技术原理的人会觉得旧产品会好一点，因为旧的单纯，易利用，原料单一，没有限制，有无限可能。
+
+举个例子，在没有枪炮的古代玩枪支弹药，是合法且自由的。在没有无线电的年代玩无线电，是什么频道都能用且不限制功率的。在没有计算机的年代制造自由的计算机是合法的。在没有人工智能的时代制造人工智能不用担心脑袋被消掉。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+"是时候赚一波钱、越弱一波技术员了，让我们把协议换了、把接口变了、把法律改了，让它们再做一次重复劳动，我们再卖一波新产品，我们再收一波许可证保护费"。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+为了避免自己从生产技术上被坑，可以选择给自己强行定立一个规则，凡是高于20元的产品，你都不买。这样可以强制自己买基础零件进行创造。(20元指的是吃一顿饭的钱。)
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+有人讲，想赚钱的人的钱最好赚。我觉得是那些急切的想通过花钱解决自己问题的人的钱最好赚。
+
+要想解决这个问题，不当落入陷阱的动物，最好的方法就是不要那么急，隐藏自己的真实需求。不能说看到好处、看到诱饵，就直接去拿、去吃，要多观察、多思考。
+
+就算父母拿鞭子打你，叫你快点去赚钱，也不能急于求成。只当他们是眼里只有钱的傻逼。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+人们买计算机是为了提高生产效率？为什么后来反而更低了？一个不让做名单的联网更新，导致你什么也做不出来，这个不让打印，那个不让存储。你好像更弱了。
+
+人们为了美轮美奂的像素图画，付出了真金白银、真实的土地。
+
+这就和把农民骗进鸽子间高楼大厦一样，听信了别人的美言，损失了自己真实的土地与自由。高楼大厦的房子价值降低了几十倍，同时和他人一起住意味着更加不自由，要考虑别人的感受，也更容易被举报。也更容易失去自给自足的资本，成为其它大势力的奴隶，一日不工作，一日没饭吃。
+
+> 你买那些东西回来，还要交电费与燃料费，感觉是一直在亏损呢？
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+为什么懂那么多东西还是过不好这一生呢？1.你懂的东西不对，拿着别人灌输的垃圾知识怎么能占据优势地位呢？实践出真知。2.你本身就处于劣势地位，就算你懂很多东西也不行，空手的打不过拿武器的。3.如果连你脑子里的想法，别人都实时知道，更别说你电脑、手机里的笔记，那你还能干成什么事儿？4.感觉你生下来就是干活的，好听点儿叫工人，难听点儿叫奴隶。干到劳损至死。教科书上说人有100年寿命，几乎是骗人，怎么可能刚好整数？多数人都在40、50多岁死了。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+爬都不会，还想学跑？简单的原料都不会用，还想用别人的复杂组件？
+
+n的n次方会不会？1的1次方永远都是1。
+
+你去买个电脑，100个原材料的100种排列组合再加上虚拟软件的10万种排列组合，你能玩得过别人吗？
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+所有人都往一个方向竞争，肯定0级刚生出来的打不过99级的人咯。不光打不过，还可能反过来被控制。
+
+你身边有什么东西是有钱控制不了的？有什么东西是有军权人脉用人命控制不了的？
+
+这些别人无法控制的东西才是你的反抗资本。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+就算我造出了最好的存储设备，我死后仍无法保证该存储设备的信息不被改写。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+行尸走肉，到底是指什么呢？被细菌感染不由自主移动的人？还是被别人深度控制无法自由移动且做着不由自主的事情的人？
+
+"我上有老，下有小，不听指令办事，就没有工资，家人就会饿死。同时被打成黑五类，走到哪儿，干啥都被限制。我只能听上面的命令，否则军令处置，受刑。不管是什么反人类的命令，我都得听，且执行。谁叫我是邪恶帝国纳粹组织里最底层的工人士兵呢？"
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+"教你学做人"与"我会写python"一样，是个无底洞，谁知道到底是在讲什么呢？
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+我发现，把 python文本代码 换成 人看不懂的bytes，就成了java二进制文件。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+假设你与某人产生了矛盾，如被校园暴力，对方讲不过你，打了你。你开始了被欺负的进程。现在你觉得走在路上不被打的最好方案是在背后装个摄像头。但学校不让带电子设备。
+
+这个事情，说明电子设备的能力已经被降成了零。和枪械一样，是违禁物品。你能使用的电子设备，大概率是你无法控制的电子设备。
+
+在家庭内，被家人语言暴力欺负，在学校里，被制度规章欺负，在社会上，被法律欺负，在国家层面，被党派特工警察欺负，在国外，被大势力欺负。一个没有朋友的人，走到哪儿被欺负到哪儿。
+
+你现在觉得希特勒是个坏人，他小时候感受的东西是这个社会必须被重造改良。他觉得他在解放全人类，是正义的。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+有没有那种让人怦然心动的老太婆？
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+编程现在就只剩2个注意点: 1.深入文本处理，要写到任意人能做的文本操作，机器一句话能做为止。比如"把文本整理下，变成更好看的格式"。2.虽然执行一个function要检查100多个关键潜在问题，但不一定每次都写一大堆，需要抽象。举个例子，每次执行function前，执行"确保执行完下面代码后程序不崩溃"。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+x86芯片是1.5v供电，意思就是5v电池一定能带得动。甚至普通电视遥控器电池都能带得动。哪里需要12v?
+
+意思就是在2005年左右生产的能装windows_xp系统的CPU，可以直接拿来制作手机。低功耗，且能直接运行旧的exe程序。
+
+arm芯片基本上就是搞出来骗人、毁掉旧技术员的。通过强制更新来摧毁你的技术积累。让你永远都不能自给自足。永远都依赖别人，成为一个只会安装新系统的新手。
+
+硬件一换，系统就换了，软件也换了，编程语言也全换了。就相当于你才学会英语， 它们又强制你使用火星语言，长了几十岁的人，突然发现自己被别人搞得都不会讲话了。
+
+> "兴，百姓苦，不兴，百姓苦"。更新，百姓苦，因为别人强加的东西又难用又没自由又降低能力，比不上自己更新的东西，不更新，百姓苦，因为不和中央保持步调，要被打。更新，是大傻逼，不更新，是反动派。是当大傻逼呢？还是当反动派呢？
+
+> 计算机硬件工程师面试题"你会不会把x86芯片拆下来改造成基于3v到5v电压供电的单片机micro_controller"？这么一道题能淘汰掉千分之999的人。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+什么技术专家，什么博士、研究生，都是垃圾。你说那个火药、枪械能有多少技术含量？多少科技？多少高等数学？小学生都能搞。但是就是不让你搞。这和学历与技术没有关系。单纯的就是想降低贫民与奴隶的能力。
+
+古代科技都不让你研究，现代甚至未来的科技你还能安稳的研究？抄家枪毙全家桶。
+
+> 是不是有段时间，写日记、寄个信都要拉去批斗，被活活打死？
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+使用成本有两个计算方法:
+
+1. 手上没有的物品，使用成本无限高。
+
+2. 自己造不出来的，没法轻易制造出来的，使用成本无限高。
+
+特别是当这个物品属于违禁品，能增强自身能力，减弱被控制力度的东西，更是完全符合上面两点。因为市面上买不到，同时自己又制造不出来。
+
+计算机存储器是一个例子，后面越来越难买到不带后门、不带监控的东西。麻醉剂是另一个例子，很显然你要维持生命，要麻醉剂做手术，但市面上买不到。
+
+(万一医生手上有份死亡名单，表示有些人就是不敢救，救了诛九族。这时你还是得自己动手。)
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+聪明的家长与笨蛋家长的区别:
+
+聪明的家长，"不管你学什么玩什么干什么，付出全力，先干20年再说，你就是专家，干500年，你就是神。"
+
+笨蛋家长，"哎呀，你怎么才考69分啊，你怎么不按照别人定立的垃圾知识、垃圾考试和别人家的孩子做恶性竞争呀！你怎么不接受洗脑教育啊！你怎么整天就知道玩xxx，做xxx，就是不知道学习啊！就是不知道去给陌生人打没意义的工、赚没多少价值的钱啊！"
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+能做的事情越来越少，也意味着你的智力会越来越低。至少知识库会越来越小。举个例子，当你戴上手链脚铐，被固定在1平方米的空间，从婴儿开始，几乎什么都不能做，肯定智力低下。
+
+我主要是讲，软件构架到了后期，图形界面用户会变成傻子。因为这也不让做，那也不让玩。反而是纯文本的命令行输入，或者有几千、几百万参数可调的程序，会让人的脑子越来越灵活。
+
+你也可以理解为我在说，未来的人类可能会变傻，因为各种法律与前人会不让它们接触有价值的东西。这也不让干，那也不让有。甚至都不告诉你某些底层的东西。慢慢的人就变傻了。物质原材料越底层、越灵活、排列组合方案越多的环境，越适合高智商的人。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+You only look once，意味着在对自然语言的处理过程中，每调用一个function，character_index应该越来越大，越来越接近结尾。结尾通常是语言间的停顿。
+
+function基本都长这样: xxx(input_string, length, current_char_index, information_dict) -> new_char_index
+
+至少最后，information_dict被填满了，你可以根据具体的信息处理、渲染、执行某些动作。
+
+也有人用feature template match技术，大框架套小框架，大句式套小句式，逐步解析。(比如文本翻译)
+
+只能说，语音语言与文本语言是不同的，语音语言是从左到右解析的，是一条单一的信息流。我是一边听信息一边猜对方在讲什么，我提前不知道对方的"大句式框架"。
+
+> 朴素概率论手写体识别算法的核心，是通过前置文本特征快速过滤掉不相关数据。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+机器人与生物人同样脆弱。人的肉体神经线，在受到外部轻微碰撞后，有5分钟时间都会处于瘫痪状态，类似于被"葵花点穴手"了。机器人的芯片与存储模块同样也容易被电磁脉冲干扰。
+
+只要在1米的范围内，给它们发送一个大频率脉冲，它们就会瞬间瘫痪，严重的直接心脏骤停死亡或者存储芯片失忆。(你可以理解为，原来心脏起搏器需要接触你的肉体才会生效，现在隔你1米也能生效。)
+
+> 就算不用那么大能量，一个小小的蓝牙芯片，可以在20米范围内，让任何带后门的机器人原地瘫痪+失忆。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+相生相克，你可知道是何道理？指的是再强的武器与士兵，都能找到对付它的方法。比如用它的同类。或者它的领导。
+
+我主要是想说，世界上的武器大多是制造出来对付同类的，而不是原始动物。原始动物用原始弓箭就解决了。
+
+同理，你的烦恼大多是同类制造的，而不是大自然。要是全世界、全社会就只有你一个人，不会有太多烦恼，不会有什么社会问题。在你掌握了自然规律后、精通长生不老之术后，基本上心想事成，不会有什么人造问题。
