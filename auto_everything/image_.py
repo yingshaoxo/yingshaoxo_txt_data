@@ -175,6 +175,165 @@ def change_image_style_with_random_number(source_image, random_numbers):
     return source_image
 
 
+def magic_wand_fuzz_area_select(a_image, center_y, center_x, similarity_gate=10, quick_mode=True, cache_image=None):
+    # return a transparent layout that has similar color around a point(center_y, center_x)
+    # author: yingshaoxo
+    from queue import Queue
+    old_image = a_image.copy()
+    old_height, old_width = old_image.get_shape()
+    new_image = a_image.create_an_image(old_height, old_width, [0,0,0,0])
+    #edge_line = a_image.to_edge_line(downscale_ratio=2, gaussian_blur=True, gaussian_kernel=2)
+
+    if quick_mode == False:
+        gaussian_blur_image = a_image.copy().resize(int(old_height/2), int(old_width/2)).get_gaussian_blur_image(2, bug_version=False)
+        gaussian_blur_image.resize(old_height, old_width)
+        a_image = gaussian_blur_image
+
+    def get_id(temp_y, temp_x):
+        return str(temp_y) + "," + str(temp_x)
+
+    checked_set = set()
+
+    def is_point_valid(id_, temp_y, temp_x):
+        if id_ in checked_set:
+            return False
+
+        if temp_y < 0 or temp_y >= old_height:
+            return False
+        if temp_x < 0 or temp_x >= old_width:
+            return False
+
+        # maybe add a edge wall by reuse edge line, if it is in edge, we return None
+        return True
+
+    if is_point_valid(get_id(center_y, center_x), center_y, center_x) == False:
+        return new_image
+
+    def is_two_point_similar(pixel_1, pixel_2):
+        r1,g1,b1,a1 = pixel_1
+        r2,g2,b2,a2 = pixel_2
+        difference = abs(r1-r2) + abs(g1-g2) + abs(b1-b2)
+        if difference < similarity_gate:
+            return True
+        else:
+            return False
+
+    waiting_for_check_list = Queue()
+    waiting_for_check_list.put([center_y, center_x])
+    while not waiting_for_check_list.empty():
+        a_pixel = waiting_for_check_list.get()
+        temp_y, temp_x = a_pixel
+        temp_id = get_id(temp_y, temp_x)
+
+        around_pixel_list = [
+            [temp_y-1, temp_x-1],
+            [temp_y, temp_x-1],
+            [temp_y+1, temp_x-1],
+            [temp_y-1, temp_x],
+            #[temp_y, temp_x],
+            [temp_y+1, temp_x],
+            [temp_y-1, temp_x+1],
+            [temp_y, temp_x+1],
+            [temp_y+1, temp_x+1],
+        ]
+
+        for temp_y2, temp_x2 in around_pixel_list:
+            temp_id_2 = get_id(temp_y2, temp_x2)
+            if is_point_valid(temp_id_2, temp_y2, temp_x2):
+                if is_two_point_similar(a_image[temp_y][temp_x], a_image[temp_y2][temp_x2]):
+                    waiting_for_check_list.put([temp_y2, temp_x2])
+                    checked_set.add(temp_id_2)
+                    new_image[temp_y2][temp_x2] = old_image[temp_y2][temp_x2]
+                    if cache_image != None:
+                        cache_image[temp_y2][temp_x2] = old_image[temp_y2][temp_x2]
+
+        checked_set.add(temp_id)
+        new_image[temp_y][temp_x] = old_image[temp_y][temp_x]
+        if cache_image != None:
+            cache_image[temp_y][temp_x] = old_image[temp_y][temp_x]
+
+    return new_image
+
+
+def simplify_picture_by_layout(a_image, kernel=50, quick_mode=True, return_layout_list=False):
+    # 1. extract layout by 50x50 kernel point
+    # 2. do not look for kernel that looked before, do not look for kernel that in other layout
+    # 3. when merge sub layout image, use left_right jump point to quick scale/crop sub_image, then paste on new image
+    # author: yingshaoxo
+    if quick_mode == True:
+        old_height, old_width = a_image.get_shape()
+        new_height, new_width = int(old_height/kernel), int(old_width/kernel)
+        cache_image = a_image.create_an_image(old_height, old_width, [0,0,0,0])
+        new_image = a_image.copy()
+        #a_image = a_image.get_gaussian_blur_image(2, bug_version=False)
+        layout_list = []
+        for y in range(new_height):
+            for x in range(new_width):
+                start_y = y * kernel
+                end_y = start_y + kernel
+                start_x = x * kernel
+                end_x = start_x + kernel
+                center_y, center_x = start_y + int(kernel/2), start_x + int(kernel/2)
+                if cache_image[center_y][center_x][3] != 255:
+                    layout_list.append(a_image.magic_wand_fuzz_area_select(center_y, center_x, similarity_gate=10, quick_mode=True, cache_image=cache_image))
+
+        if return_layout_list == True:
+            return layout_list
+
+        for one in layout_list:
+            average_color = one.get_average_color()
+            for y in range(old_height):
+                for x in range(old_width):
+                    if one[y][x][3] == 255:
+                        new_image[y][x] = average_color
+        return new_image
+    else:
+        old_image = a_image.copy()
+        edge_line = a_image.to_edge_line(downscale_ratio=2, gaussian_blur=True, gaussian_kernel=10)
+        a_image = a_image.get_gaussian_blur_image(2, bug_version=False)
+
+        new_image = old_image.copy()
+        layout_list = []
+        if kernel == None:
+            kernel = 100
+        height, width = a_image.get_shape()
+        new_height, new_width = int(height/kernel), int(width/kernel)
+        for y in range(new_height):
+            for x in range(new_width):
+                start_y = y * kernel
+                end_y = start_y + kernel
+                start_x = x * kernel
+                end_x = start_x + kernel
+
+                has_edge = False
+                sub_edge_image = edge_line.get_inner_image(start_y, end_y, start_x, end_x)
+                for row in sub_edge_image.raw_data:
+                    for pixel in row:
+                        if pixel[3] == 255:
+                            has_edge = True
+                            break
+                    if has_edge == True:
+                        break
+                if has_edge == True:
+                    break
+
+                center_y, center_x = start_y + int(kernel/2), start_x + int(kernel/2)
+                a_layout = a_image.magic_wand_fuzz_area_select(center_y, center_x, similarity_gate=10)
+                layout_list.append(a_layout)
+
+                average_color = a_layout.get_average_color()
+                for y2 in range(height):
+                    for x2 in range(width):
+                        pixel = a_layout[y2][x2]
+                        if pixel[3] == 255:
+                            new_image.raw_data[y2][x2] = average_color
+
+        if return_layout_list == True:
+            return layout_list
+
+        return new_image
+
+
 def to_mosaic(self, ratio=0.99, kernel_number=6):
     """
     ratio: 0 to 1, more close to 1, more simplified
@@ -896,6 +1055,7 @@ def simplify_color_by_merge_sub_image(input_image, kernel=3, similarity_gate=0.6
     output_image = real_process(input_image)
 
     if deep_mode == True:
+        # bug: did not rotate edge line
         output_image.rotate()
         output_image = real_process(output_image)
         output_image.rotate()
@@ -1172,7 +1332,7 @@ class Image:
         self.raw_data = data_2
         return self
 
-    def paste_image_on_top_of_this_image(self, another_image, top, left, height, width):
+    def paste_image_on_top_of_this_image(self, another_image, top, left, height=None, width=None):
         """
         top: start_y
         left: start_x
@@ -1187,6 +1347,11 @@ class Image:
             # overflow_situation: another image bigger than original image
             #raise Exception("The another image height and width should smaller than base image.")
             pass
+
+        if height == None:
+            height = another_image_height
+        if width == None:
+            width = another_image_width
 
         if another_image_height != height or another_image_width != width:
             another_image = another_image.copy()
@@ -1203,24 +1368,57 @@ class Image:
         if x_end > base_image_width:
             x_end = base_image_width
 
+        # sub image move beyound view case
+        if x_start < 0:
+            # top, left point is beyound old image, out of range, like object is sliding out the window(camera)
+            has_negative = True
+            temp_x_value = abs(x_start)
+            x_start = 0
+            x_end = width - temp_x_value
+            if x_end < 0:
+                x_end = 0
+        else:
+            # normal case, where sub_image is inside background
+            has_negative = False
+
+        # real function
         for y_index in range(y_start, y_end):
-            #row = self.raw_data[y_index]
-            #first_part = row[0:x_start]
-            #second_part = row[x_end:]
-            #new_row = first_part + another_image[y_index] + second_part
-            #self.raw_data[y_index] = new_row
-
-            #self.raw_data[y_index][x_start: x_end] = another_image[y_index-y_start]
-
+            if y_index < 0:
+                continue
             old_data = self.raw_data[y_index][x_start: x_end]
             old_data_length = len(old_data)
             new_data = [None] * old_data_length
-            for index, one in enumerate(another_image[y_index-y_start][:old_data_length]):
+            if has_negative == False:
+                temp_x_list = another_image[y_index-y_start][:old_data_length]
+            else:
+                temp_x_list = another_image[y_index-y_start][temp_x_value:temp_x_value+old_data_length]
+            for index, one in enumerate(temp_x_list):
                 if one[3] == 0:
                     new_data[index] = old_data[index]
                 else:
                     new_data[index] = one
             self.raw_data[y_index][x_start: x_end] = new_data
+
+        return self
+
+    def paste_image_on_top_of_this_image_with_center_y_and_x(self, another_image, center_y, center_x, height=None, width=None):
+        base_image_height, base_image_width = self.get_shape()
+        another_image_height, another_image_width = another_image.get_shape()
+
+        if height == None:
+            height = another_image_height
+        if width == None:
+            width = another_image_width
+
+        if another_image_height != height or another_image_width != width:
+            another_image = another_image.copy()
+            another_image.resize(height, width)
+
+        half_height = int(height/2)
+        half_width = int(width/2)
+        top = center_y - half_height
+        left = center_x - half_width
+        self.paste_image_on_top_of_this_image(another_image, top, left, height, width)
 
         return self
 
@@ -1381,6 +1579,12 @@ class Image:
     def to_rgb(self):
         self = hsv_to_rgb(self)
         return self
+
+    def magic_wand_fuzz_area_select(self, center_y, center_x, similarity_gate=10, quick_mode=True, cache_image=None):
+        return magic_wand_fuzz_area_select(self, center_y, center_x, similarity_gate=similarity_gate, quick_mode=quick_mode, cache_image=cache_image)
+
+    def simplify_picture_by_layout(self, kernel=50, quick_mode=True, return_layout_list=False):
+        return simplify_picture_by_layout(self, kernel=kernel, quick_mode=quick_mode, return_layout_list=return_layout_list)
 
     def to_edge_line(self, min_color_distance=15, downscale_ratio=2, gaussian_blur=False, gaussian_kernel=2):
         return get_edge_lines_of_a_image_by_using_yingshaoxo_method(self, min_color_distance=min_color_distance, downscale_ratio=downscale_ratio, gaussian_blur=gaussian_blur, gaussian_kernel=gaussian_kernel)
@@ -1567,6 +1771,74 @@ class Image:
         """
         return get_simplified_image_in_an_accurate_way(self, level, extreme_color_number, predefined_color_list)
 
+    def directly_scale_down_image_to_reduce_size(self):
+        height, width = self.get_shape()
+        self.resize(int(height/2), int(width/2))
+        return self
+
+    def simplify_image_by_yingshaoxo_method(self, level=8, quick_mode=False):
+        original_image = self.copy()
+        original_height, original_width = original_image.get_shape()
+
+        self = original_image.copy()
+
+        # step1, scale down and take average value
+        if quick_mode == False:
+            self = self.blur(kernel=2)
+            self = self.directly_scale_down_image_to_reduce_size()
+            self = self.blur(kernel=2)
+            self = self.directly_scale_down_image_to_reduce_size()
+            self = self.blur(kernel=2)
+            self = self.directly_scale_down_image_to_reduce_size()
+            self = self.blur(kernel=2)
+            self = self.directly_scale_down_image_to_reduce_size()
+        else:
+            chunks_length = 54#27
+            kernel_height, kernel_width = int(original_height/chunks_length), int(original_width/chunks_length)
+            new_height = int(original_height / kernel_height)
+            new_width = int(original_width / kernel_width)
+            self.resize(new_height, new_width)
+            for y in range(new_height):
+                for x in range(new_width):
+                    start_y = y * kernel_height
+                    end_y = start_y + kernel_height
+                    start_x = x * kernel_width
+                    end_x = start_x + kernel_width
+                    sub_image = original_image.get_inner_image(start_y, end_y, start_x, end_x)
+                    average_color = sub_image.get_average_color()
+                    self.raw_data[y][x] = average_color
+
+        # step2, do a simple simplify by similarity
+        # simplify color by replace similar color into one common pixel
+        difference_gate = level
+        replaced_color_dict = {}
+        for y, raw in enumerate(self.raw_data):
+            for x, pixel in enumerate(raw):
+                if (str(y) + "," + str(x)) not in replaced_color_dict:
+                    pixel_1 = pixel
+                    for y2, raw2 in enumerate(self.raw_data):
+                        for x2, pixel2 in enumerate(raw2):
+                            if (str(y2) + "," + str(x2)) not in replaced_color_dict:
+                                if y != y2 and x != x2:
+                                    if pixel2[3] == 255:
+                                        pixel_2 = pixel2
+                                        similarity = 0
+                                        r1,g1,b1,_ = pixel_1
+                                        r2,g2,b2,_ = pixel_2
+                                        difference = abs(r1-r2) + abs(g1-g2) + abs(b1-b2)
+                                        if difference <= difference_gate:
+                                            self.raw_data[y2][x2] = pixel_1
+                                            replaced_color_dict[str(y2) + "," + str(x2)] = 1
+
+        # step3, use scale_down pixel as base pixel to do simplify for the original image
+        pixel_list = []
+        for y, raw in enumerate(self.raw_data):
+            for x, pixel in enumerate(raw):
+                if pixel not in pixel_list:
+                    pixel_list.append(pixel)
+        pixel_list = list(reversed(pixel_list[:int(len(pixel_list) / 2)])) + pixel_list[int(len(pixel_list) / 2):] #start match from center color
+        return original_image.get_simplified_image(predefined_color_list=pixel_list[:1000])
+
     def get_simplified_image_in_a_quick_way(self, level=25):
         """
         level: int
@@ -1618,6 +1890,7 @@ class Image:
 
     def blur(self, kernel=8):
         # if kernel bigger, mosaic bigger. This method produce less size image than normal mosaic. Better just use it to process background, leave human picture layer unchanged.
+        # suggest to use: image.get_gaussian_blur_image(kernel=2, bug_version=False)
         return optimal_blur(self, kernel=kernel)
 
     def change_image_style(self, target_image, simple_mode=False, random_mode=False, random_numbers=None):
@@ -1862,6 +2135,8 @@ class Image:
                     print(e1)
                     print(e)
                     print("Since png or jpg is too complex to implement, we strongly recommand you to save raw_data as text, for example, 'hi.png.txt', then do a text level compression.")
+        elif file_path.endswith(".bmp"):
+            print("Save failed! bmp format is not supported, try .png or .txt")
         elif file_path.endswith(".json") or file_path.endswith(".txt"):
             height, width = self.get_shape()
 
@@ -2656,6 +2931,80 @@ try:
             return out
 except Exception as e:
     pass
+
+
+class Improved_Bezier_Curve_Line:
+    # created by baidu ai 2025 (maybe deepseek v3)
+    def __init__(self):
+        self.control_points = []
+        self.curve_points = []
+
+    @staticmethod
+    def binomial_coefficient(n, k):
+        if k < 0 or k > n:
+            return 0
+        if k == 0 or k == n:
+            return 1
+
+        result = 1
+        for i in range(1, k + 1):
+            result = result * (n - k + i) // i
+        return result
+
+    def bernstein_basis(self, n, i, t):
+        coefficient = self.binomial_coefficient(n, i)
+        return coefficient * (t ** i) * ((1 - t) ** (n - i))
+
+    def bezier_curve_point(self, control_points, t):
+        n = len(control_points) - 1
+        point = [0.0, 0.0]
+
+        for i in range(n + 1):
+            basis = self.bernstein_basis(n, i, t)
+            point[0] += basis * control_points[i][0]
+            point[1] += basis * control_points[i][1]
+
+        return point
+
+    def generate_bezier_curve(self, control_points, num_points=None):
+        # num_points == len(control_points) * 3 by default
+        if len(control_points) < 2:
+            raise ValueError("need at least two points")
+
+        num_points = len(control_points) * 3
+
+        curve_points = []
+        for i in range(num_points):
+            t = i / (num_points - 1) if num_points > 1 else 0
+            point = self.bezier_curve_point(control_points, t)
+            curve_points.append(point)
+
+        return curve_points
+
+    def catmull_rom_to_bezier(self, point_list, tension=0.5):
+        # use this function after generate_bezier_curve() to get a line that you can control tension
+        # tension == 1 is stright line, tension == 0 is a curve line
+        if len(point_list) < 3:
+            return point_list
+
+        bezier_controls = [point_list[0]]
+
+        for i in range(1, len(point_list) - 1):
+            tangent1_x = (point_list[i + 1][0] - point_list[i - 1][0]) * tension
+            tangent1_y = (point_list[i + 1][1] - point_list[i - 1][1]) * tension
+
+            ctrl1_x = point_list[i][0] - tangent1_x / 3.0
+            ctrl1_y = point_list[i][1] - tangent1_y / 3.0
+
+            ctrl2_x = point_list[i][0] + tangent1_x / 3.0
+            ctrl2_y = point_list[i][1] + tangent1_y / 3.0
+
+            bezier_controls.append([ctrl1_x, ctrl1_y])
+            bezier_controls.append([ctrl2_x, ctrl2_y])
+            bezier_controls.append(point_list[i])
+
+        bezier_controls.append(point_list[-1])
+        return bezier_controls
 
 
 if __name__ == "__main__":

@@ -599,7 +599,6 @@ def magic_knowledge_passing():
             print(index)
 
 if __name__ == "__main__":
-
     while True:
         try:
             input_text = input("What you want to say: ")

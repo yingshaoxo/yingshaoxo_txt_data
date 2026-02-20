@@ -50,6 +50,46 @@ You write a nutrual language parsing software.
 
 ## Example 2
 
+Replace similar sentences or words to get new article from old article. Or simply use this tech to simplify articles.
+
+```
+[
+    ["no matter what you say", "no matter how you say", "no matter what you think", "no matter how you look"],
+    ["it is right", "it is correct"],
+    ["it could be wrong", "it could be un_correct", "it may not right"],
+    ["我觉得", "我认为", "我的看法是"],
+]
+```
+
+## Example 3
+```
+再谈语言解析与执行器:
+
+"你帮我随机放首歌从一个叫music的文件夹。"
+
+如果你想要像python一样完全解析上面那句话，是不可能的，你不知道别人会在语句中放什么你看不懂的名称或者表情包。
+
+你有可能，没听清"随机"，没听清"music与文件夹"，最终你得到的命令是"你帮我放首歌"。
+
+所以你知道了，语言的解析是离散且跳跃的，如果后面有词匹配到了关键词，就执行对应的功能，如果没有，就return不处理。
+
+
+similar to possibility tree.
+
+最终你的function名字是一串连续的关键词列表，由它你可以快速过滤掉几亿种不需要的情况: 
+
+[放，歌]
+[放，电影]
+[看，小说]
+[帮，写，文章]
+[帮，写，代码]
+…
+
+我就是喜欢用最简单的原理解决超级复杂的问题，我相信，要模拟人脑行为，只需要高中水平的概率论知识，还是那种只懂基本概念的水平，考试不及格的水平。
+```
+
+## Example 4
+
 Write code. 
 
 Low inteligence people can't write high inteligence code. Unless he or she do copy.
@@ -58,7 +98,7 @@ Low inteligence people can't write high inteligence code. Unless he or she do co
 
 shi_jie_shang hao_duo_dong_xi dou_hui_guo_shi, dan_shi wo_zhe_ge xiang_fa, ji_qian_nian dou_bu_hui guo_shi.
 
-## Detailed (Language Generation) Algorithm
+## An Stupid (Language Generation) Algorithm Example
 
 ### Step 1, split text into 8000 char sub_string_window
 

@@ -1,3 +1,4 @@
+level_1 = """
 # make_a_computer_or_make_a_creature
 
 author: yingshaoxo
@@ -25,3 +26,54 @@ _______
 
 day 6:
 try to find some knowledge on internet about how to make a storage, but no answer, they are all users. no one knows how to make a disk by themselves. i basically think the computing part is secondary, the storage part is first. because without memory, people are low level animal.
+"""
+
+def 我靠_function_可以支持中文():
+    print("牛逼牛逼" + ", 真自然语言编程！")
+
+def 三极管实验():
+    print("""
+好像没有毛用。三极管这个滑动变阻器发烫严重，一点都不省电。只是拿来当个反向逻辑生成器，就烫得不得了，浪费电。还不如用NMOS。NMOS类似于arduino的range_map function，但可以操控现实世界的电压。
+    """)
+
+
+
+
+
+
+all_function_list = dir()
+all_function_list = [one for one in all_function_list if (not one.startswith("_"))]
+
+def search_text_in_list(search_text, a_list):
+    for one in a_list:
+        if search_text == one:
+            return one
+    keyword_length = 4
+    while keyword_length >= 2:
+        sub_string_list = []
+        a_index = 0
+        while a_index < len(search_text):
+            temp_string = search_text[a_index:a_index + keyword_length]
+            if len(temp_string) == keyword_length:
+                sub_string_list.append(temp_string)
+            a_index += 1
+        for one in a_list:
+            for sub_string in sub_string_list:
+                if sub_string in one:
+                    return one
+        keyword_length -= 1
+    return ""
+
+while True:
+    input_text = input("哎呀呀，你想知道啥？我帮你看看yingshaoxo的实验日志里有没有: ").strip()
+    print()
+    function_name = search_text_in_list(input_text, all_function_list)
+    if function_name != "":
+        instance = globals()[function_name]
+        if type(instance) == str:
+            print(instance)
+        else:
+            result = instance()
+            if result != None:
+                print(result)
+    print()
