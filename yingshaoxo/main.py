@@ -4,6 +4,8 @@
 "为了完成这个项目，这些努力都值得。" -> when you meet "这些", include its previous sentences, or ask the user "这些努力指的是什么？"
 "这些努力指的是我花了挺多时间写代码。" -> so in the end, it becomes "为了完成这个项目，我花了挺多时间写代码都值得。"
 """
+import sys
+sys.path.insert(1, "../")
 
 import os
 import inspect
@@ -15,6 +17,9 @@ try:
 except Exception as e:
     from yingshaoxo.small_functions import *
     from yingshaoxo.ask_other_ai_help import ask_llama
+
+def my_is_ascii(string):
+    return all([ord(char) < 128 for char in string])
 
 debug = 1
 current_folder_path = os.path.dirname(__file__)
@@ -32,7 +37,7 @@ def get_a_random_one_from_yingshaoxo_diary():
     return random.choice(text_list).strip()
 
 def get_keywords_list(input_text):
-    if input_text.isascii():
+    if my_is_ascii(input_text):
         keyword_list = yingshaoxo_string.split_string_into_n_char_parts(input_text, 3)
     else:
         keyword_list = list(input_text)
@@ -247,7 +252,7 @@ def finish_a_task(task_name, input_text, id_, old_input="你"):
                 if len(one) != 0:
                     return switch_you_and_me(one)
         response = get_memory_as_pure_string(input_text, include_diary=True)
-        if input_text.isascii():
+        if my_is_ascii(input_text):
             sub_word_list = input_text.split(" ")
         else:
             sub_word_list = list(input_text)

@@ -1,8 +1,9 @@
-from auto_everything.ml import Yingshaoxo_Text_Completor
 from auto_everything.string_ import String
 from auto_everything.disk import Disk
 yingshaoxo_string = String()
 yingshaoxo_disk = Disk()
+
+from auto_everything.ml import Yingshaoxo_Text_Completor
 yingshaoxo_text_completor = Yingshaoxo_Text_Completor()
 
 def is_it_english(input_text):
