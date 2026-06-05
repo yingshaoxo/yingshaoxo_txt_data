@@ -1,0 +1,170 @@
+i
+
+# linux or unix is so good for using, you type, you get target result, anything. others shell commands software is far away better than yours. they have level 9999 intelligent command line software that uses 1GB more if-else code to parse and execute human language in bash or shell.
+___
+
+\n
+
+___
+
+play
+
+add("action", "play")
+# next_word() should treat "./dd/aa.wav" as one word
+if (next_word()):
+    api_play_a_file(next_word())
+    go_to_line_end()
+___
+
+you
+
+if (previous_word() == "do"):
+    add("task_type", "question")
+___
+
+remember
+
+if (get("task_type") == "question"):
+    result = api_search_diary(next_string())
+    print2(result)
+else:
+    api_save_diary(next_string())
+    print2("rememberd:" + next_string())
+    go_to_line_end()
+
+___
+
+know
+
+if (get("task_type") == "question"):
+    result = api_search_diary(next_string())
+    print2(result)
+    go_to_line_end()
+___
+
+:
+
+if (get("action") == "remember"):
+    some_string = next_string()
+    api_save_diary(some_string)
+    print2("rememberd:" + some_string)
+
+___
+
+?
+
+temp_string = previous_string()
+is_math = False
+for i in "+-*/":
+    if i in temp_string:
+        is_math = True
+        break
+if is_math:
+    result = str(eval(temp_string))
+else:
+    result = api_search_diary(temp_string)
+print2(result)
+
+___
+
+.
+
+if ((next_word() == "") or (next_word() not in "01234567890")):
+    useful_text = get_useful_part_of_text(previous_string().lower()+".")
+    api_save_diary(useful_text)
+    print2("rememberd:" + useful_text)
+
+___
+
+about
+
+if "think" == previous_word():
+    next = next_string()
+    go_to_line_end()
+    run("what is " + next.strip("?") + "?")
+___
+
+is
+
+if previous_word() in ["what", "who", "where"]:
+    next = next_string()
+    go_to_line_end()
+    run(next.strip("?") + "?")
+___
+
+me
+
+if "help" == previous_word():
+    response = input2("why you need to '" + next_string() + "'? is that really necessary? ").strip()
+    if "yes" in response:
+        print2("ok, got it. now you do it by yourself. because that is the most reliable way.")
+    else:
+        while True:
+            response = input("why " + switch_you_and_me(response) + "? ")
+            if ("it" in response) or ("need" in response) or ("because" in response):
+                continue
+            else:
+                print2("now you should know your situation better now, you do not know what you really need.")
+                break
+___
+
+repeat
+
+print2(next_string())
+
+___
+
+bot
+
+if "are you" in previous_string():
+    print2("i could be human if human add enough thinking code to me.")
+    #go_to_line_end()
+___
+
+shenmeshi
+
+add("task_type", "question")
+if ("?" not in next_string()):
+    result = api_search_diary(next_string())
+    print2(result)
+___
+
+jizhu
+
+api_save_diary(next_string())
+print2("rememberd:" + next_string())
+___
+
+jiao
+
+person = None
+if "baba" in next_string():
+    person = "baba"
+if "mama" in next_string():
+    person = "mama"
+if person:
+    speak(person)
+
+___
+
+bangwo
+
+response = input2("weishenmo niyao '" + next_string() + "'? zhe heng zhongyao ma? ").strip()
+if "shide" in response:
+    print2("nani jiu yinggai ziji zuo, zhe caishi zui kaopu de.")
+else:
+    while True:
+        response = input("weishenmo " + response + "? ")
+        if ("yinwei" in response) or ("xuyao" in response) or ("yuanyin" in response):
+            response = string_after(response, "ta")
+            continue
+        else:
+            print2("xianzai ni yinggai zhidao gengduo le.")
+            break
+___
+
+jiaoshuohua
+
+print2("maybe you should write some code to help to do the record and replay.")
+
+___
