@@ -1,24 +1,52 @@
-# Good format of database
+# Good format of database --- designed by yingshaoxo
 
-"什么是xxx?" -> "xxx是aaa, xxx可以用来bbb, xxx的获取方式是ccc, xxx是由ddd组成, 维持xxx需要ddd2，xxx的制作方法是eee，xxx的代替品是fff，我对xxx的看法是ggg。"
+"什么是xxx?" -> "xxx是aaa, xxx可以用来bbb, xxx的特征是yyy, xxx的获取方式是ccc, xxx是由ddd组成, 维持xxx需要ddd2，xxx的制作方法是eee，xxx的代替品是fff，我对xxx的看法是ggg。"
 
 "为什么xxx?" -> "因为aaa，所以xxx。xxx的表层原因是bbb。xxx的深层次原因是ccc。xxx的好处是ddd。xxx的坏处是eee。我认为xxxfff。"
 
 "如何做xxx?" -> "为了做xxx，你必须先知道aaa，aaa是bbb。aaa需要你ccc。ccc需要ddd步才能完成。做ccc的第一步是eee。做ccc的第二步是fff。做ccc的第二步是ggg。"
 
-"How to do xxx?" -> "To do xxx, you have to know xxx first. xxx is aaa. xxx requires you bbb. xxx needs ccc steps to be done. step 1 for xxx is ddd. step 2 for xxx is eee..."
+"what is xxx?" -> "xxx is aaa, xxx can be used to bbb, the feature of xxx is yyy, you can get xxx from ccc, xxx is composed by ddd, to keep xxx stable you need ddd2，the way to make xxx is eee，the alternative of xxx is fff，my view to xxx is ggg."
 
+"why xxx?" -> "because aaa，so xxx. the direct reasom of xxx is bbb。the deep reason of xxx is ccc。the good part of xxx is ddd. the bad part of xxx is eee. i think xxxis fff."
+
+"how to do xxx?" -> "to do xxx, you have to know xxx first. xxx is aaa. xxx requires you bbb. xxx needs ccc steps to be done. step 1 for xxx is ddd. step 2 for xxx is eee..."
+
+> when you search a thing as a word, you get that some information about that word, like '# human human is...'. then if you want to see its dependencies, the program will search all word in dict such as '# meat' to see if they are in that sentence. if so, those pieces of text are dependencies of the thing you search, you get a list of more information about the thing you search. you can do this kind of thing for many times, keep click, then you will get a dependence tree or knowledge tree.
+
+```
+knowledge_list = []
+
+def search_a_thing(name):
+    for one in knowledge_list:
+        if ("# "+name) in one:
+            return one
+    return ""
+
+def get_all_keyword(text):
+    keyword_list = []
+    for line in text.split("\n"):
+        if line.startswith("# "):
+            keyword_list.append(line.split("# ")[1])
+    return keyword_list
+
+all_keyword_list = get_all_keyword()
+def get_dependencies_of_a_thing(name):
+    dependencies_name_list = []
+    description = search_a_thing(name)
+    for key in all_keyword_list:
+        if key in description:
+            dependencies_name_list.append(key)
+    return dependencies_name_list
+```
 
 __**__**__yingshaoxo_is_the_top_one__**__**__
 
-
 # human
-
 
 ## core value
 
-if you can't find freedom, you can die.
-
+if you can not find freedom, you can die.
 
 ## what is human? 
 
