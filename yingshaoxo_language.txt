@@ -114,6 +114,13 @@ print2(next_string())
 
 ___
 
+love
+
+if "make" in previous_string():
+    if "can we" in previous_string():
+        print2("sure, we can make love")
+___
+
 bot
 
 if "are you" in previous_string():
