@@ -126,3 +126,37 @@ all_in_all += novel_2.strip() + magic_splitor
 all_in_all += complex_theory_book_data.strip()
 with open("./test_dict/yingshaoxo_data.txt", "w", encoding="utf-8") as f:
     f.write(all_in_all)
+
+
+
+
+# convert to pinyin
+with open("/home/yingshaoxo/Disk/Sync_Folder/Yingshaoxo_Data/Core/Big_Core/Unix_System/raspberry_pi_pico_micropython/chinese_input_and_display_system/chinese_pinyin_data_by_yingshaoxo.txt", "r", encoding="utf-8") as f:
+    text = f.read().strip()
+
+the_pinyin_dict = {}
+for row in text.split("\n"):
+    splits = row.split(" ")
+    chinese_char = splits[0][0]
+    pinyin = splits[1]
+    the_pinyin_dict[chinese_char] = pinyin
+
+def convert_to_pinyin(text):
+    new_text = ""
+    for char in text:
+        if char in the_pinyin_dict.keys():
+            if (not new_text.endswith(" ")) and (not new_text.endswith("\n")):
+                new_text += " "
+            new_text += the_pinyin_dict[char][:-1] + " "
+        else:
+            new_text += char
+    return new_text
+
+def convert_my_diary(old_path, new_path):
+    with open(old_path, "r", encoding="utf-8") as f:
+        text = f.read()
+    new_text = convert_to_pinyin(text)
+    with open(new_path, "w", encoding="utf-8") as f:
+        f.write(new_text)
+
+convert_my_diary("./test_dict/yingshaoxo_data.txt", "./test_dict/[unrecommand]pinyin_yingshaoxo_data.txt")

@@ -62,6 +62,8 @@ for i in "+-*/":
 if is_math:
     result = str(eval(temp_string))
 else:
+    print("searching '{}'...".format(temp_string))
+    print("\n")
     result = api_search_diary(temp_string)
 print2(result)
 
@@ -128,28 +130,33 @@ if "are you" in previous_string():
     #go_to_line_end()
 ___
 
-shenmeshi
+shi
 
-add("task_type", "question")
-if ("?" not in next_string()):
-    result = api_search_diary(next_string())
-    print2(result)
+if previous_string_is("shen me "):
+    add("task_type", "question")
+    if ("?" not in next_string()):
+        result = api_search_diary(next_string())
+        print2(result)
 ___
 
-jizhu
+zhu
 
-api_save_diary(next_string())
-print2("rememberd:" + next_string())
+#if previous_string().endswith("ji"):
+if previous_string_is("ji "):
+    api_save_diary(next_string())
+    print2("rememberd:" + next_string())
+    go_to_line_end()
 ___
 
 jiao
 
 person = None
-if "baba" in next_string():
+if next_string_is(" baba"):
     person = "baba"
-if "mama" in next_string():
+if next_string_is(" mama"):
     person = "mama"
 if person:
+    print(person)
     speak(person)
 
 ___

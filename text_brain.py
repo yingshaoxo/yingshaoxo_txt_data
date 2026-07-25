@@ -1,3 +1,5 @@
+# forget about the punctuation to get real talking stability.
+
 import os
 from auto_everything.terminal import Terminal
 terminal = Terminal()
@@ -38,11 +40,12 @@ def is_pure_abc(a_char):
 
 def split_sentence_into_words_list(a_string):
     a_string = a_string.lower()
-    a_string = a_string.replace("。", ".").replace("？", "?")
+    a_string = a_string.replace("。", ".").replace("？", "?").replace("！", "!").replace("，", ",")
+
     word_list = []
     temp_word = ""
     for a_char in a_string:
-        if is_pure_abc(a_char): 
+        if is_pure_abc(a_char):
             temp_word += a_char
         else:
             if temp_word != "":
@@ -70,6 +73,27 @@ def next_string():
 
 def previous_string(until=""):
     return "".join(hidden_conscious_dict["input_word_list"][:hidden_conscious_dict["index"]]).strip()
+
+def previous_string_is(a_string):
+    word_list = split_sentence_into_words_list(a_string)
+    length = len(word_list)
+    current_index = hidden_conscious_dict["index"]
+    previous_word_list = hidden_conscious_dict["input_word_list"][current_index-length:current_index]
+    #print(previous_word_list, word_list)
+    if previous_word_list == word_list:
+        return True
+    else:
+        return False
+
+def next_string_is(a_string):
+    word_list = split_sentence_into_words_list(a_string)
+    length = len(word_list)
+    current_index = hidden_conscious_dict["index"]
+    next_word_list = hidden_conscious_dict["input_word_list"][current_index+1:current_index+1+length]
+    if next_word_list == word_list:
+        return True
+    else:
+        return False
 
 def next_word():
     current_index = hidden_conscious_dict["index"]
@@ -147,7 +171,7 @@ def api_search_diary(a_string):
                 for word in words_list:
                     if word in a_line:
                         matched += 1
-                if (matched / length) >= 0.6:
+                if (matched / length) >= 0.7:
                     result_text = a_line.strip()
                     result_text = switch_you_and_me(result_text)
                     got = True
