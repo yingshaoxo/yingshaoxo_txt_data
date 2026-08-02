@@ -25,13 +25,19 @@ def speak(a_string):
     #terminal.run_command("espeak '" + a_string + "'")
     terminal.run_command("echo '{}' | festival --tts".format(a_string))
 
-def print2(a_string):
+def print1(a_string):
     print(a_string)
+
+def print2(a_string):
+    print1(a_string)
     speak(a_string)
+
+def input1(a_string):
+    return input(a_string)
 
 def input2(a_string):
     speak(a_string)
-    return input(a_string)
+    return input1(a_string)
 
 def is_pure_abc(a_char):
     if a_char in "abcdefghijklmnopqrstuvwxyz":
@@ -69,17 +75,17 @@ def get(key):
     return result
 
 def next_string():
-    return "".join(hidden_conscious_dict["input_word_list"][hidden_conscious_dict["index"]+1:]).strip()
+    return "".join(hidden_conscious_dict["input_word_list"][hidden_conscious_dict["index"]+1:])
 
 def previous_string(until=""):
-    return "".join(hidden_conscious_dict["input_word_list"][:hidden_conscious_dict["index"]]).strip()
+    return "".join(hidden_conscious_dict["input_word_list"][:hidden_conscious_dict["index"]])
 
 def previous_string_is(a_string):
     word_list = split_sentence_into_words_list(a_string)
     length = len(word_list)
     current_index = hidden_conscious_dict["index"]
     previous_word_list = hidden_conscious_dict["input_word_list"][current_index-length:current_index]
-    #print(previous_word_list, word_list)
+    #print1(previous_word_list, word_list)
     if previous_word_list == word_list:
         return True
     else:
@@ -117,7 +123,36 @@ def previous_word():
         word = hidden_conscious_dict["input_word_list"][current_index-2]
     return word
 
-def go_to_line_end():
+def string_after(source_string, a_string):
+    index = source_string.find(a_string)
+    if index == -1:
+        return source_string
+    else:
+        return source_string[index+len(a_string):]
+
+def jump_to(target_word):
+    index = hidden_conscious_dict["index"] + 1
+    word_list = hidden_conscious_dict["input_word_list"]
+    end_index = hidden_conscious_dict["end_index"]
+    while True:
+        if index >= end_index:
+            break
+        a_word = word_list[index]
+        if a_word == target_word:
+            hidden_conscious_dict["index"] = index - 1
+            return
+        index += 1
+    hidden_conscious_dict["index"] = end_index + 1
+
+def skip_text(a_string):
+    word_list = split_sentence_into_words_list(a_string)
+    end_index = hidden_conscious_dict["end_index"]
+    index = hidden_conscious_dict["index"] + 1
+    new_index = index + len(word_list)
+    if new_index <= end_index:
+        hidden_conscious_dict["index"] = new_index
+
+def go_to_line_end(end_symbol_list=[".", "\n", "?", "!"]):
     #1.what is line end? .。\n
     #2.what is the target text? hidden_conscious_dict.get(input_text)
     index = hidden_conscious_dict["index"] + 1
@@ -127,12 +162,13 @@ def go_to_line_end():
         if index >= end_index:
             break
         a_word = word_list[index]
-        if a_word in [".", "\n", "?", "!"]:
-            if index + 1 < end_index:
-                next_word = word_list[index+1]
-                if next_word in "01234567890":
-                    # this dot is a number
-                    continue
+        if a_word in end_symbol_list:
+            if a_word == ".":
+                if index + 1 < end_index:
+                    next_word = word_list[index+1]
+                    if next_word in "01234567890":
+                        # this dot is a number
+                        continue
             hidden_conscious_dict["index"] = index
             return
         index += 1
@@ -147,7 +183,7 @@ def api_save_diary(a_string):
         f.write(a_string + "\n\n" + magic_splitor + "\n\n")
 
 def api_search_diary(a_string):
-    #print("search word:" + a_string)
+    #print1("search word:" + a_string)
     try:
         with open(note_path, "r") as f:
             f.readline()
@@ -181,16 +217,6 @@ def api_search_diary(a_string):
     else:
         result_text = "you tell me"
     return result_text
-
-#def get_integer_from_text(a_string):
-#    a_number = 0
-#    number_string = ""
-#    for i in "0123456789":
-#        if i in a_string:
-#            number_string += i
-#    if number_string != "":
-#        a_number = int(number_string)
-#    return a_number
 
 def sentence_pattern_match(pattens, input_text):
     data_list = []
@@ -313,7 +339,7 @@ def single_word_analyze_and_operation():
     if current_word == " ":
         return
     a_part = ""
-    #print(current_word)
+    #print1(current_word)
     with open(intelligent_source, "r") as f:
         while True:
             sentence = f.readline()
@@ -324,13 +350,15 @@ def single_word_analyze_and_operation():
             if sentence == "___\n":
                 a_part = a_part.strip()
                 head_line = a_part.split("\n")[0]
+                if head_line == "\\n":
+                    head_line = "\n"
                 if head_line == current_word:
-                    #print(a_part)
+                    #print1(a_part)
                     code = "\n".join(a_part.split("\n")[1:])
                     try:
                         exec(code)
                     except Exception as e:
-                        print(e)
+                        print1(e)
                     break
                 a_part = ""
             else:
@@ -352,5 +380,5 @@ def run(a_string, id="yingshaoxo"):
 
 if __name__ == "__main__":
     while True:
-        input_string = input("___\n\nwhat you want to say? ").strip()
+        input_string = input1("___\n\nwhat you want to say? ").strip()
         output_string = run(input_string)

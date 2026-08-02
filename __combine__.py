@@ -7,6 +7,12 @@ diary_date_txt_path = "/home/yingshaoxo/CS/yingshaoxo_txt_data/date_for_all_ying
 auto_everything_folder_path = "/home/yingshaoxo/CS/auto_everything" # should convert folder file tree into pure text that starts with "# <path>\n\n<content>"
 yingshaoxo_file_path = "/home/yingshaoxo/CS/yingshaoxo_txt_data/yingshaoxo/main.py"
 yingshaoxo_file_path2 = "/home/yingshaoxo/CS/yingshaoxo_txt_data/yingshaoxo/small_functions.py"
+yingshaoxo_file_path3 = "/home/yingshaoxo/CS/yingshaoxo_txt_data/yingshaoxo_ai.py"
+yingshaoxo_file_path4 = "/home/yingshaoxo/CS/yingshaoxo_txt_data/yingshaoxo_thinking_dataset.txt"
+yingshaoxo_file_list = [
+    "/home/yingshaoxo/CS/yingshaoxo_txt_data/text_brain.py",
+    "/home/yingshaoxo/CS/yingshaoxo_txt_data/yingshaoxo_language.txt",
+]
 
 novel_1_path = "/home/yingshaoxo/CS/yingshaoxo_txt_data/books/a_typical_chinese_novel.txt"
 novel_2_path = "/home/yingshaoxo/CS/yingshaoxo_txt_data/yingshaoxo/life_simulator.py"
@@ -85,6 +91,19 @@ yingshaoxo_thinking_logic = "# " + "yingshaoxo_main.py\n\n" + yingshaoxo_thinkin
 with open(yingshaoxo_file_path2, "r", encoding="utf-8") as f:
     yingshaoxo_thinking_logic2 = f.read()
 yingshaoxo_thinking_logic += "# " + "small_functions.py\n\n" + yingshaoxo_thinking_logic2 + magic_splitor
+
+for a_path in [yingshaoxo_file_path3, yingshaoxo_file_path4]:
+    with open(a_path, "r", encoding="utf-8") as f:
+        yingshaoxo_thinking_logic_temp = f.read()
+    yingshaoxo_thinking_logic_temp = yingshaoxo_thinking_logic_temp.replace("yingshaoxo_is_the_top_one", "y_ingshaox_o")
+    temp_name = a_path.split("/")[-1]
+    yingshaoxo_thinking_logic += "# " + temp_name+"\n\n" + yingshaoxo_thinking_logic_temp + magic_splitor
+
+for a_path in yingshaoxo_file_list:
+    with open(a_path, "r", encoding="utf-8") as f:
+        yingshaoxo_thinking_logic_temp = f.read()
+    temp_name = a_path.split("/")[-1]
+    yingshaoxo_thinking_logic += "# " + temp_name+"\n\n" + yingshaoxo_thinking_logic_temp + magic_splitor
 
 
 # handle novel_1

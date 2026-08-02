@@ -62,8 +62,8 @@ for i in "+-*/":
 if is_math:
     result = str(eval(temp_string))
 else:
-    print("searching '{}'...".format(temp_string))
-    print("\n")
+    print1("searching '{}'...".format(temp_string))
+    print1("\n")
     result = api_search_diary(temp_string)
 print2(result)
 
@@ -102,7 +102,7 @@ if "help" == previous_word():
         print2("ok, got it. now you do it by yourself. because that is the most reliable way.")
     else:
         while True:
-            response = input("why " + switch_you_and_me(response) + "? ")
+            response = input1("why '" + switch_you_and_me(response) + "'? ")
             if ("it" in response) or ("need" in response) or ("because" in response):
                 continue
             else:
@@ -156,25 +156,28 @@ if next_string_is(" baba"):
 if next_string_is(" mama"):
     person = "mama"
 if person:
-    print(person)
+    print1(person)
     speak(person)
 
 ___
 
-bangwo
+bang
 
-response = input2("weishenmo niyao '" + next_string() + "'? zhe heng zhongyao ma? ").strip()
-if "shide" in response:
-    print2("nani jiu yinggai ziji zuo, zhe caishi zui kaopu de.")
-else:
-    while True:
-        response = input("weishenmo " + response + "? ")
-        if ("yinwei" in response) or ("xuyao" in response) or ("yuanyin" in response):
-            response = string_after(response, "ta")
-            continue
-        else:
-            print2("xianzai ni yinggai zhidao gengduo le.")
-            break
+if next_string_is(" wo"):
+    response = input2("wei shen mo ni yao '" + next_string()[4:] + "'? zhe heng zhong yao ma? ").strip()
+    if "shi de" in response:
+        print2("na ni jiu ying gai zi ji zuo, zhe cai shi zui kao pu de.")
+    else:
+        while True:
+            response = response.replace(" ni ", " wo ")
+            for one in ["yin wei ", "xu yao ", "yuan yin shi ", "yuan yin "]
+                response = string_after(response, one) 
+            response = input1("wei shen mo '" + response + "'? ")
+            if ("yin wei " in response) or ("xu yao " in response) or ("yuan yin " in response):
+                continue
+            else:
+                print2("xian zai ni ying gai zhi dao geng duo le.")
+                break
 ___
 
 jiaoshuohua
