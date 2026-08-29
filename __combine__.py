@@ -12,6 +12,8 @@ yingshaoxo_file_path4 = "/home/yingshaoxo/CS/yingshaoxo_txt_data/yingshaoxo_thin
 yingshaoxo_file_list = [
     "/home/yingshaoxo/CS/yingshaoxo_txt_data/text_brain.py",
     "/home/yingshaoxo/CS/yingshaoxo_txt_data/yingshaoxo_language.txt",
+    "/home/yingshaoxo/CS/auto_everything/example/image/micropython/main_unix.py",
+    "/home/yingshaoxo/CS/auto_everything/example/image/micropython/applications/vi.py",
 ]
 
 novel_1_path = "/home/yingshaoxo/CS/yingshaoxo_txt_data/books/a_typical_chinese_novel.txt"
