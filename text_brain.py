@@ -179,10 +179,22 @@ def api_play_a_file(path):
 
 def api_save_diary(a_string):
     a_string = a_string.strip()
-    with open(note_path, "a") as f:
-        f.write(a_string + "\n\n" + magic_splitor + "\n\n")
+    if a_string != "":
+        with open(note_path, "a") as f:
+            f.write(a_string + "\n\n" + magic_splitor + "\n\n")
 
-def api_search_diary(a_string):
+def api_delete_one_record_in_diary(a_string):
+    a_string = a_string.strip()
+    if a_string != "":
+        one_record = api_search_diary(a_string, raw=True)
+        if one_record != "you tell me":
+            with open(note_path, "r") as f:
+                all_data = f.read()
+            all_data = all_data.replace("\n"+one_record+"\n", "")
+            with open(note_path, "w") as f:
+                f.write(all_data)
+
+def api_search_diary(a_string, raw=False):
     #print1("search word:" + a_string)
     try:
         with open(note_path, "r") as f:
@@ -209,7 +221,8 @@ def api_search_diary(a_string):
                         matched += 1
                 if (matched / length) >= 0.7:
                     result_text = a_line.strip()
-                    result_text = switch_you_and_me(result_text)
+                    if raw == False:
+                        result_text = switch_you_and_me(result_text)
                     got = True
                     break
         if got == False:
@@ -224,7 +237,7 @@ def sentence_pattern_match(pattens, input_text):
         data_list += list(set(string_.hard_core_string_pattern_search(input_text, rule)))
     return data_list
 
-def get_useful_part_of_text(input_text, strict=False):
+def get_useful_part_of_text(input_text, strict=True):
     input_text = input_text.lower()
     patterns = [
         "xxx is xxx.",
@@ -245,6 +258,8 @@ def get_useful_part_of_text(input_text, strict=False):
         "the alternative of xxx is xxx.",
         "i think xxx can xxx.",
         "xxx already xxx.",
+        "xxx needs xxx.",
+        "xxx have xxx.",
 
         "xxx is because xxx.",
         "xxx that is why xxx.",
@@ -317,6 +332,7 @@ def get_useful_part_of_text(input_text, strict=False):
         patterns += [
             "my xxx.",
             "you xxx.",
+            "xxx have xxx",
             "我xxx",
             "你xxx",
             "xxx有xxx",
@@ -381,4 +397,5 @@ def run(a_string, id="yingshaoxo"):
 if __name__ == "__main__":
     while True:
         input_string = input1("___\n\nwhat you want to say? ").strip()
+        print()
         output_string = run(input_string)

@@ -18,28 +18,49 @@ ___
 
 you
 
-if (previous_word() == "do"):
-    add("task_type", "question")
+if "who are" in previous_string():
+    run("what is your name?")
+    go_to_line_end()
+else:
+    if "do" == previous_word():
+        if "know" == next_word():
+            jump_to("know")
+
+    if (previous_word() == "do"):
+        add("task_type", "question")
 ___
 
 remember
 
-if (get("task_type") == "question"):
-    result = api_search_diary(next_string())
-    print2(result)
-else:
-    api_save_diary(next_string())
-    print2("rememberd:" + next_string())
+if ("could " in previous_string()) or ("can " in previous_string()):
+    print1("yes, just try to say 'remember xxx.'")
     go_to_line_end()
+else:
+    if (get("task_type") == "question"):
+        result = api_search_diary(next_string())
+        print2(result)
+        go_to_line_end()
+        add("task_type", "")
+    else:
+        api_save_diary(next_string())
+        print2("rememberd:" + next_string())
+        go_to_line_end()
 
 ___
 
 know
 
+if "do you" in previous_string():
+    if "?" in next_string():
+        result = api_search_diary(next_string())
+        print2(result)
+        go_to_line_end()
+        
 if (get("task_type") == "question"):
     result = api_search_diary(next_string())
     print2(result)
     go_to_line_end()
+
 ___
 
 :
@@ -67,6 +88,9 @@ else:
     result = api_search_diary(temp_string)
 print2(result)
 
+go_to_line_end()
+add("task_type", "")
+
 ___
 
 .
@@ -88,10 +112,26 @@ ___
 
 is
 
-if previous_word() in ["what", "who", "where"]:
+if previous_word() in ["what", "who", "where", "when"]:
     next = next_string()
     go_to_line_end()
-    run(next.strip("?") + "?")
+    run(next.strip("? ") + "?")
+___
+
+do
+
+if previous_word() in ["what", "who", "where", "how", "when", "why"]:
+    next = next_string()
+    go_to_line_end()
+    run(next.strip("? ") + "?")
+___
+
+did
+
+if previous_word() in ["what", "who", "where", "how", "when", "why"]:
+    next = next_string()
+    go_to_line_end()
+    run(next.strip("? ") + "?")
 ___
 
 me
@@ -128,6 +168,69 @@ bot
 if "are you" in previous_string():
     print2("i could be human if human add enough thinking code to me.")
     #go_to_line_end()
+___
+
+hi
+
+print1("hi, you.")
+___
+
+name
+
+if "your" == previous_word():
+    if "?" == next_word():
+        print1("my name is yingshaoxo.")
+        go_to_line_end()
+___
+
+old
+
+if "how" == previous_word():
+    if "you" in next_string():
+        if "are?" in next_string():
+            print1("i young forever. i do not have age.")
+            go_to_line_end()
+___
+
+age
+
+if "your" == previous_word() or "you" == previous_word():
+    if "?" == next_word():
+        run("how old you are?")
+___
+
+create
+
+if "who" in previous_string():
+    if "you?" in next_string():
+        print1("i was created by the real world yingshaoxo.")
+        print1("but may get changed by others.")
+        go_to_line_end()
+___
+
+created
+
+if "get" == previous_word():
+    if "how" in previous_string():
+        if "you" in previous_string():
+            run("who create you" + "?")
+if "who" == previous_word():
+    if "you?" in next_string():
+        run("who create you" + "?")
+___
+
+creator
+
+if " of you?" in next_string():
+    run("who create you?")
+___
+
+teach
+
+if "can" in previous_string():
+    if "you" in next_string():
+        print1("yes, why not? just tell me a truth and end with dot(.)")
+        go_to_line_end()
 ___
 
 shi
