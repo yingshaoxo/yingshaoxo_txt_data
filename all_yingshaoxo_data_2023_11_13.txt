@@ -79267,7 +79267,7 @@ __**__**__yingshaoxo_is_the_top_one__**__**__
 
 > 另一个方案是"pyboard+新版st7920黑白屏小屏幕版"，测出来效果不好，一个小时电压下降0.012v。意思是显示文字的情况下只能撑2天。这还是频率降为21mhz的时候，不然在168mhz时，只能撑2个小时。
 
-> 更极端费电的方案是"pico/edp32s3+ili9341彩色屏幕"，屏幕开机启动慢，要3秒以上，电流要求高，低了不启动。然后整个手机亮屏的情况下只能撑半个小时。1个小时电压下降2.9v。
+> 更极端费电的方案是"pico/esp32s3+ili9341彩色屏幕"，屏幕开机启动慢，要3秒以上，电流要求高，低了不启动。然后整个手机亮屏的情况下只能撑半个小时。1个小时电压下降2.9v。esp32s3读取flash存储文件的速度比pico与pyboard慢4倍以上，不知道原因。
 
 > 这些都是基于旧硬件的测试数据，新的可能更费电。
 
@@ -79284,3 +79284,212 @@ __**__**__yingshaoxo_is_the_top_one__**__**__
 我试了试在wine上运行vb。发现闪退。那些操作系统模拟器的作者，为什么最重要的软件都不测试？为什么"编译器与解释器与界面程序编写ide工具包"都不测试？
 
 这种基础的软件不测试，以后在新操作系统给旧操作系统编写软件，就会比登天还难。就会感觉在屏幕上画点东西异常困难。就会感觉 录音、播放首歌、摄像头录像并回放 几乎不可能。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+少看点不真实的虚假视频，看多了会污染你的思想，导致你无法想象出真实的画面。你的想象本身，有可能就是顶尖电影特效。你只缺把幻想视频从你脑子导出的工具。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+我突然发现在我内存为6gb的安卓手机上，运行15mb的windows98.img，内存只需要占用100mb，无比流畅。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+我突然发现密封袋也能捕鱼，直接把食物装里面，然后等鱼进去，然后拉绳子，袋子会关闭，水会漏掉。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+想象一下，它搞那么多权限在手机上，只是拿来限制别人，它自己为所欲为，一个权限都不遵守，24小时后台常驻，全程联网监控，全程偷拿文件数据、篡改文件数据。那个hash从头到尾都可以是假的，毕竟是程序打印的。你又不会真的去数几千万个字节。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+simple c99 minimum example:
+
+```
+#include <stdio.h>
+
+int main() {
+    //unsigned char input_string[100]; input_string[99] = '\0';
+    unsigned char *input_string = (unsigned char *)malloc(50 * sizeof(unsigned char));
+    
+    printf("hi, yingshaoxo!\n");
+    printf("what you want to do today? ");
+    scanf("%[^\n]", input_string);
+    printf("ok, you want to do: %s\n", input_string);
+}
+```
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+为什么人会花钱如流水，挣得越多花得越多？因为之前网速只有1kb一秒的时候，你一般只会下载几百kb的东西。后来当你网速达到了1mb每秒，你就想下载几百mb的东西了。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+我翻到了我高中画的一个流程图，关于人是如何得到智力的:
+
+开始->观察事物->得到规律->进行预测->实践检验->理论不符合观察->规律错误->放弃此规律->观察事物。
+
+开始->观察事物->得到规律->进行预测->实践检验->理论符合观察->规律正确->保存并等待应用->结束。
+
+```
+void 找规律() {
+    while (1) {
+        一个规律 = 观察事物();
+        将会发生的事情 = 进行预测(一个规律);
+        实际发生的事情 = 实践检验();
+        if (符合观察(将会发生的事情, 实际发生的事情)) {
+            //规律正确
+            保存并等待应用(一个规律);
+            break;
+        } else (不符合观察(将会发生的事情, 实际发生的事情)) {
+            //规律错误
+            放弃此规律(一个规律);
+        }
+    }
+}
+```
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+搞计算机信息技术，本质上你只需要: 
+
+1.自己制造硬盘，保证信息，如书籍、笔记、脚本代码的稳定存在。
+2.自己制造 代码编译器、解释器，也就是中央处理器，或者虚拟机处理器。保证你能阅读、搜索书籍与笔记。保证你的硬件能执行你写的代码。
+
+> 真实的东西比虚拟的东西好。举个例子，用最新的cpu运行50年前的操作系统，1万倍增速、流畅。不过由于那个芯片不是你自己制造的，别人是不允许你安装旧系统的。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+本来有键盘的年代，你有10根手指输入信息，现在只剩1根在手机屏幕上点击。意思就是思考速度降低了10倍。信息交互速度降低了10倍。
+
+> 拿着手机只能被日晒风吹雨淋，饿死在野外。但保养室内计算机的人，在室内就是比较舒适，除了没吃的。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+windows xp可以用，但要偷偷用。什么时候光明正大的用？等到微软倒闭的时候。到时候就没有版权了。看你能不能活到那一天。
+
+举个例子，一首写于1千年前的诗词与图书，现在肯定是没有版权的，谁都能用。
+
+> 别人拳头大的时候，你连没有版权的"滚"字都不敢说。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+信息技术、计算机科学、通信技术的悲哀: 学一堆别人随时都可以改写的技术与知识，几十年经验分分钟归零。
+
+什么叫"脱实向虚"？什么叫"泡沫"？除了罪恶经济资本主义外，疯狂使用别人的东西也是一个问题。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+你现在遇到的"存储爆炸"与"数字软件体积与数量失控增长"的问题主要有两个解决方案:
+1.自己制造不变协议、兼容旧软件的硬件，这样就不会有分支，操作系统与软件的体积就不会变大。
+2.不收录别人的东西，自己的键入速度有限，所以几十年也不会生产出很多数字产品。
+3.所有别人的新东西都放在临时存储器里，每隔10年从里面挑选一些精华与最优的资源，放进永久存储器里。(要求更严格的，是每隔50年收录一批工具与技术)
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+小盒子可以放进大盒子里，大盒子放不进小盒子里。
+
+底层技术，几十、几百、几千年前的技术，在现在用起来成本很低。高级技术、最新技术，在现在用起来成本很高，在古代根本没办法用。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+为什么会发生南京大屠杀？因为路修得太好了，别人轻易能进去。所以轻松被侵略。10个土著被屠杀，9个是因为路被修通，军队大规模入侵。
+
+举个例子，要想别人不进自己的菜园偷菜，比较简单的方法就是做个围栏。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+做一个10年增加一个function的编程语言(build a programming language by adding a function per 10 years):
+
+1.if-else, while, function define and call, try and when error happen
+2.string add, string length, string slicing, string char modification, string format
+3.open(), file related operations
+4.dict get key and value, dict update key and value, based on memory or disk_file. list append, pop, slice, index element change.
+5.print_char(), get_char_input(), clear_screen(), draw_pixel()
+6.search engine, call_ai()
+7.play_wav_sound(), record_sound_by_milliseconds_chunk(), take_picture_from_camera()
+8.robot body control, pin controls
+9.maintain...
+10.build computer such as disk from mud, build robot component such as motor and baterry from mud
+11.maintain...
+12.build a kindom that has freedom. (so you will not die by not working for others, so you can finish this project.)
+
+> 我一直觉得现有的单进程计算机程序太傻了，竟然没办法精确控制某个function的运行时间，不知道超时就报错误。raise_error_after_running_more_than_x_milliseconds(1000, a_function_that_may_have_infinite_loop)。举个例子，人听别人讲话，别人中途停止，人5秒后就会停止聆听，而程序不一样了，会永久性卡死、锁死。我经常看到很多启动系统的程序，bios引导程序，直接卡死超时锁死在启动界面。要是它们有我这个function，就能知道是哪个function死了。程序就可以实时换个方案。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+i just found a good way to debug my python software:
+
+```
+in linux python, you can get debug info by:
+import traceback
+try:
+    1/0
+except Exception as e:
+    print(e)
+    traceback.print_exc()
+    #with open("log.txt", "w") as f:
+    #    traceback.print_exc(file=f)
+
+in micropython, you can get debug info by:
+try:
+    import sys
+    #import real_main
+    1/0
+except Exception as e:
+    sys.print_exception(e)
+    #with open("log.txt", "w") as f:
+    #    sys.print_exception(e, f)
+```
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+一般反编译进安卓apk的lib文件夹，需要确保它有armeabi或者armeabi-v7a文件夹，否则在旧手机上无法安装与运行。
+
+只有arm64-v8a的，很多旧手机都无法安装。而且这是个坑，后面的版本号会一直加，然后强制你用最新版，相当于全程联网。
+
+比较稳妥的办法就是只用没有lib文件夹的apk程序。这种程序与cpu构架不相关，可跨平台。
+
+
+__**__**__yingshaoxo_is_the_top_one__**__**__
+
+
+操作系统千万不要更新别人的，不然每更新一次，技术智商就要倒退好几年。
+
+举例，"诶，那个功能在哪儿呢？找不到按钮了。诶，这个软件怎么无法运行了？咦，xxx怎么下架了？那个命令行怎么参数变了？不对，名字都变了。怎么无法正常工作了？诶，不读盘了。"
+
+再举例，"诶，那个功能收费了，被隐藏了，要注册登陆刷脸开会员才能使用。诶，新版本把旧的实用功能删了，新的加入了新bug，还不允许降级退版。艹，有权限了，以前直接运行，现在要多点十几下。我靠，新系统比旧的慢了不止10倍，我xp可是1秒开。我1990年的unix开机只需0.01秒。"
